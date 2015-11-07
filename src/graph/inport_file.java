@@ -75,9 +75,11 @@ public class inport_file {
 		
 		for(int i=0; i < rootChildren.getLength(); i++) {
 			Node node = rootChildren.item(i);
+			ArrayList<String> usedInternal_temp = new ArrayList<String>(); 
 			
 			if (node.getNodeType() == Node.ELEMENT_NODE) {
 				Element element = (Element)node;
+				
 				// 関係ないので<cycles><packageCycles><packages>を削除
 				if(!(element.getNodeName()=="classes"))continue;			
 				NodeList pChildren = node.getChildNodes();
@@ -88,9 +90,10 @@ public class inport_file {
 				for (int j=0;j<pChildren.getLength();j++) {
 					Node Pnode = pChildren.item(j);
 					NamedNodeMap pAtr = Pnode.getAttributes();
-					ArrayList<String> usedInternal_temp = new ArrayList<String>(); 
+					int class_num=0;
+					
 					if (pAtr!=null) {
-						System.out.println(pAtr.getNamedItem("name"));
+						//System.out.println(pAtr.getNamedItem("name"));
 						// innerClass="true"の<class>を削除 
 						if(pAtr.getNamedItem("innerClass").getNodeValue().equals("true")){
 							System.out.println("\\"+pAtr.getNamedItem("innerClass"));
@@ -100,17 +103,14 @@ public class inport_file {
 						// XMLに存在するクラスのリストを作成
 						list_xml.add(pAtr.getNamedItem("name").getNodeValue());	
 						node_Name.add(pAtr.getNamedItem("name").getNodeValue());
+						class_num = node_Name.size()-1;
 						if(pAtr.getNamedItem("usesInternal")!=null){					
 							node_branch.add(pAtr.getNamedItem("usesInternal").getNodeValue());
-							System.out.println("==="+pAtr.getNamedItem("usesInternal").getNodeValue()); 
 						}
 					}
 							
 					// nameに$を含む<classRef>を削除
 					NodeList ppChildren = Pnode.getChildNodes();
-					
-					System.out.println("子要素の数：" + rootChildren.getLength());
-					System.out.println("------------------"); 
 					
 					for (int k=0;k<ppChildren.getLength();k++) {
 						Node personNode = ppChildren.item(k);
@@ -126,26 +126,27 @@ public class inport_file {
 								//System.out.println("\\\\"+ppAtr.getNamedItem("type"));
 								continue;
 							}
-							System.out.println("["+j+"]"+ppAtr.getNamedItem("type").getNodeValue()+":::"+ppAtr.getNamedItem("name").getNodeValue()); 
 							usedInternal_temp.add(ppAtr.getNamedItem("name").getNodeValue());
 						}
 					}
-					usedInternal[j]=(String[])usedInternal_temp.toArray(new String[0]);
+					for(int l=0;l<usedInternal_temp.size();l++){System.out.println(class_num + usedInternal_temp.get(l));}
+					usedInternal[class_num]=(String[])usedInternal_temp.toArray(new String[0]);
+					
+					//for(int l=0;l<usedInternal.length;l++)
+						//System.out.print(usedInternal[l][0]);
+						//for(int m=0;m<usedInternal[l].length;m++){System.out.println(l+m+":"+usedInternal[l][m]);}
+					usedInternal_temp.clear();
 				}
 				
-				//////////////////////////////////////////////////////////////////////////
-				//未実装
-				System.out.println("[["+usedInternal.length+"]]");
-				for(int j=0;j<usedInternal.length;j++){
-					System.out.println("[["+usedInternal[j].length+"]]");
-					for(int k=0;k<usedInternal[j].length;k++)
-						System.out.println("["+j+"]["+k+"]"+usedInternal[j][k]);
-				}
-				System.out.println("------------------");
-				//////////////////////////////////////////////////////////////////////////
 			}
 		}
-	/**inport_file=============================*/
+		//usedInternalの配列
+		for(int j=0;j<usedInternal.length;j++){
+			if(usedInternal[j]==null)continue;
+			for(int k=0;k<usedInternal[j].length;k++)
+				System.out.println("["+j+"]["+k+"]"+usedInternal[j][k]);
+		}
+		/**inport_file=============================*/
 		
 	/** ----------------------------------------------------
 	// 変数リストの作成
@@ -190,6 +191,7 @@ public class inport_file {
 			//System.out.print("["+i+"]"+no_used.get(i)+"\n");
 		}
 		divide_package();
+		graph_draw();
 	}
 
 	/**パッケージごとに分ける=============================*/
@@ -289,33 +291,39 @@ public class inport_file {
 			//System.out.println("["+i+"]"+parent_package.get(i));
 		}
 	}
-	/**ノード=============================*/
+	
+	/**スプリングアルゴリズム=============================*/
 	public void graph_draw() {
 		ArrayList<ClassNode> nodes = new ArrayList<ClassNode>();
 		
 		//ノードの定義
 		for(int i=0;i<node_Name.size();i++){
+			//System.out.println(node_Name.get(i));
 			if(i==max_class){
-				//nodes.add(new ClassNode(i,center.x,center.y,classgroup_number.get(i)));
+				nodes.add(new ClassNode(i,0,0,classgroup_number.get(i),0));
 			}else{
-				//nodes.add(new ClassNode(i,center.x-250+(int)(Math.random()*500),center.y-250+(int)(Math.random()*500),classgroup_number.get(i));
+				nodes.add(new ClassNode(i,0-250+(int)(Math.random()*500),0+(int)(Math.random()*500),classgroup_number.get(i),0));
 			}
 		}
-		
+		System.out.println("\\\\\\"+nodes.size());
 		//利用関係が無いノードを消す
 		for(int i=0;i<nodes.size();i++){
-			if(no_used.get(i))nodes.get(i).not_use();
+			if(no_used.get(i))
+				nodes.get(i).not_use();
 		}
 		
 		//演算クラスにノードを代入
 		ForceDirectedGraph graph = new ForceDirectedGraph(nodes);
 		
 		//アークの定義
-		for(int i=0;i<node_branch.size();i++){
-			for(int k=0;k<node_branch.size();k++){
-				//connect = (string)$xml->classes->class[$i]->classRef[$k]->attributes()->name;
-				//key = array_search(connect, node);
-				//graph.connect(i,key);
+		for(int j=0;j<usedInternal.length;j++){
+			if(usedInternal[j]==null)
+				continue;
+			int key;
+			for(int k=0;k<usedInternal[j].length;k++){
+				key = node_Name.indexOf(usedInternal[j][k]);
+				System.out.println(j+"--"+key);
+				graph.connect(j,key);
 			}
 		}
 	}
