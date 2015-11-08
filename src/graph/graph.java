@@ -4,21 +4,24 @@ import java.awt.BasicStroke;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 
 
-public class graph extends Canvas{
+public class Graph extends Canvas{
 	
 	Image img;
 	Graphics graphics;
-	ArrayList<ForceDirectedGraph> elements = new ArrayList<ForceDirectedGraph>(); 
+	ArrayList<ForceDirectedGraph> elements = new ArrayList<ForceDirectedGraph>();
+	public Object balance; 
 	
 	//graphのコンストラクタ
-	public graph(Image img){
-		this.img=img;
+	public Graph(){
+		
 	}
 	
 	//エレメントの追加
@@ -28,7 +31,9 @@ public class graph extends Canvas{
 	
 	//グラフ全般の描写処理
 	public void paint(Graphics g){
-		this.drawaxis();
+		graphics = g;
+		clear();
+		//this.drawaxis();
 	    for (int element=0;element<this.elements.size();element++) {
     		NODE_CONNECT(element);
     		NODE_FOCUS(element);
@@ -56,18 +61,18 @@ public class graph extends Canvas{
 	
 	//connected[a][b]で,node[a]とnode[b]が繋がっていたらtrue
 	private void NODE_CONNECT(int element){
-		
 		boolean[][] connected = new boolean[elements.get(element).classNodes.size()][elements.get(element).classNodes.size()];
-		for (int i=0;i<=elements.get(element).classNodes.size();i++)
-			for (int j=0;j<=elements.get(element).classNodes.size();j++)
+		for (int i=0;i<elements.get(element).classNodes.size();i++)
+			for (int j=0;j<elements.get(element).classNodes.size();j++){
 				connected[i][j] = false;
+			}
 		for (int i=0;i<elements.get(element).classNodes.size();i++){
 			ClassNode node = elements.get(element).classNodes.get(i);
-			for (int j=0;j<elements.get(element).classNodes.size();j++){
+			for (int j=0;j<node.connections.size();j++){
 				if (connected[i][j] || connected[j][i])continue;
 				connected[i][j] = true;
 				connected[j][i] = true;
-				line(node.x, node.y, node.connections.get(j).x, node.connections.get(j).y,0xFF0000);
+				line(node.x, node.y, node.connections.get(j).x, node.connections.get(j).y,0xCCCCCC);
 			}
 		}
 	}
@@ -83,7 +88,7 @@ public class graph extends Canvas{
 			}
 		}
 		//パッケージを押したときは灰色ハイライトに
-		for (int i=0;i<=elements.get(element).classNodes.size();i++){
+		for (int i=0;i<elements.get(element).classNodes.size();i++){
 			ClassNode node = elements.get(element).classNodes.get(i);
 			//if (node.isFocus)
 				//_this.circle(node.x, node.y, node.r + 5, '#444');
@@ -91,7 +96,7 @@ public class graph extends Canvas{
 				circle(node.x, node.y, node.r, node.background);
 			else
 				circle(node.x, node.y, node.r, 0xCCCCCC);
-				text(node.value,node.x,node.y,0xFF0000);
+			text(node.value,node.x,node.y,0xFF0000);
 		}
 	}
 	
@@ -120,7 +125,7 @@ public class graph extends Canvas{
 	//円の描写(座標(x,y),半径r)
 	private void circle(double x,double y,int r,int bg){
 		graphics.setColor(new Color(bg));
-		graphics.fillOval((int)x,(int)y,r,r);     
+		graphics.fillOval((int)(x-r),(int)(y-r), r*2, r*2);     
 	}
 		
 	//長方形の描画(左上(x1,y1),右下(x2,y2))
@@ -132,7 +137,7 @@ public class graph extends Canvas{
 	//線の描写(始点(fromX,fromY),終点(toX,toY))
 	private void line(double fromX,double fromY,double toX,double toY,int color) {
 		Graphics2D g = (Graphics2D)graphics;
-		BasicStroke wideStroke = new BasicStroke(2.0f);
+		BasicStroke wideStroke = new BasicStroke(0.5f);
 		g.setStroke(wideStroke);
 	    g.setColor(new Color(color));
 	    g.drawLine((int)fromX,(int)fromY,(int)toX,(int)toY);
@@ -140,10 +145,20 @@ public class graph extends Canvas{
 
 	//テキストの描画(文章txt,座標(x,y))
 	private void text(String txt,double x,double y,int color) {
+		
 	    Graphics2D g2 = (Graphics2D)graphics;
 	    Font font = new Font("Arial", Font.BOLD, 12);
 	    g2.setFont(font);
-		g2.drawString(txt,(int)x,(int)y);
+	    g2.setColor(new Color(0xFFFFFF));
+	    FontMetrics fm = g2.getFontMetrics();
+		Rectangle rectText = fm.getStringBounds(txt,g2).getBounds();
+		int str_x = (int) (rectText.width/2);
+        int str_y = (int) (rectText.height/2-fm.getMaxAscent());
+		g2.drawString(txt,(int)(x-str_x),(int)(y-str_y));
 	}
-
+	
+	//背景色を白で塗りつぶす
+	private void clear(){
+		graphics.clearRect(0,0,1000,1000);
+	}
 }

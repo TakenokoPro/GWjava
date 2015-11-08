@@ -1,5 +1,7 @@
 package graph;
 
+import java.awt.Frame;
+import java.awt.Graphics;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -14,12 +16,14 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class inport_file {
+public class Inport_file extends Frame{
 	/**=============================*/	
 	/**object**/
 	static String in_Path = "xml\\classycle.xml";//""内に分析したいフォルダを(\は２連続で)
 	int count = 0;
 	ArrayList<String> split_str;
+	static int centerX=500;
+	static int centerY=500;
 	
 	//inport_file method
 	ArrayList<String> list_xml = new ArrayList<String>(); //XMLに存在するクラスのリスト
@@ -39,14 +43,32 @@ public class inport_file {
 	ArrayList<Integer> classgroup_color2 = new ArrayList<Integer>();//一番親のパッケージ番号.何層目にあるか
 	ArrayList<Integer>parent_package = new ArrayList<Integer>();//親パッケージを挿入
 	
+	//graph_draw method
+	Graph springGraph = new Graph();
+	ForceDirectedGraph graph;
 	/**=============================*/
 	/**main*/
-	public static void main(String[] args){
-		new inport_file();
+	//public static void main(String[] args){
+		//inport_file f = new inport_file();
+		//フレーム作成
+		//f.setSize(centerX*2,centerY*2);
+		//f.setVisible(true);
+	
+		//new inport_file();
+	//}
+	
+	//スプリングアルゴリズムの演算
+	public void run(){
+		graph.balance(max_class);
+	} 
+	
+	//スプリングアルゴリズムの描画
+	public void paint(Graphics g){
+			springGraph.paint(g);
 	}
 	
 	/**inport_file=============================*/
-	public inport_file(){
+	public Inport_file(){
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder documentBuilder = null;
 		try {
@@ -93,10 +115,8 @@ public class inport_file {
 					int class_num=0;
 					
 					if (pAtr!=null) {
-						//System.out.println(pAtr.getNamedItem("name"));
 						// innerClass="true"の<class>を削除 
 						if(pAtr.getNamedItem("innerClass").getNodeValue().equals("true")){
-							System.out.println("\\"+pAtr.getNamedItem("innerClass"));
 							continue;
 						}
 						
@@ -118,23 +138,16 @@ public class inport_file {
 						//if(personNode.getNodeName()){}
 						if (ppAtr!=null) {
 							if(ppAtr.getNamedItem("name").getNodeValue().matches(".*\\$.*")){
-								//System.out.println("\\\\"+ppAtr.getNamedItem("name").getNodeValue());
 								continue;
 							}
 							if(ppAtr.getNamedItem("type").getNodeValue().matches("usedBy")
 									||ppAtr.getNamedItem("type").getNodeValue().matches("usesExternal")){
-								//System.out.println("\\\\"+ppAtr.getNamedItem("type"));
 								continue;
 							}
 							usedInternal_temp.add(ppAtr.getNamedItem("name").getNodeValue());
 						}
 					}
-					for(int l=0;l<usedInternal_temp.size();l++){System.out.println(class_num + usedInternal_temp.get(l));}
 					usedInternal[class_num]=(String[])usedInternal_temp.toArray(new String[0]);
-					
-					//for(int l=0;l<usedInternal.length;l++)
-						//System.out.print(usedInternal[l][0]);
-						//for(int m=0;m<usedInternal[l].length;m++){System.out.println(l+m+":"+usedInternal[l][m]);}
 					usedInternal_temp.clear();
 				}
 				
@@ -143,8 +156,6 @@ public class inport_file {
 		//usedInternalの配列
 		for(int j=0;j<usedInternal.length;j++){
 			if(usedInternal[j]==null)continue;
-			for(int k=0;k<usedInternal[j].length;k++)
-				System.out.println("["+j+"]["+k+"]"+usedInternal[j][k]);
 		}
 		/**inport_file=============================*/
 		
@@ -185,10 +196,6 @@ public class inport_file {
 		    no_used.set(i,false);
 			no_used.set(key,false);
 		  }
-		}
-		//System.out.println("\n--max----------------");
-		for(int i=0;i<node_Name.size();i++){
-			//System.out.print("["+i+"]"+no_used.get(i)+"\n");
 		}
 		divide_package();
 		graph_draw();
@@ -263,7 +270,6 @@ public class inport_file {
 		        if(color_num>=12)color_num=0;//色の数で変動
 		        parent_package.add(package_num);
 		        package_num++;
-		        //System.out.println(color_num);
 		    }
 		    else{
 		    	classgroup_color1.add(0);
@@ -279,17 +285,6 @@ public class inport_file {
 		        parent_package.set(i,parent_package.get(classgroup_internal.get(i)));
 		    }
 		}	
-		
-		//System.out.print("==DIVIDE============\n");
-		for(int i=0;i<classgroup_color1.size();i++){
-			//System.out.println(node_Name.get(i));
-			//System.out.println("[0]["+i+"]"+classgroup_color1.get(i));
-			//System.out.println("[1]["+i+"]"+classgroup_color2.get(i)+"\n");
-		}
-		//System.out.print("\n==DIVIDE============\n");
-		for(int i=0;i<parent_package.size();i++){
-			//System.out.println("["+i+"]"+parent_package.get(i));
-		}
 	}
 	
 	/**スプリングアルゴリズム=============================*/
@@ -298,14 +293,12 @@ public class inport_file {
 		
 		//ノードの定義
 		for(int i=0;i<node_Name.size();i++){
-			//System.out.println(node_Name.get(i));
 			if(i==max_class){
-				nodes.add(new ClassNode(i,0,0,classgroup_number.get(i),0));
+				nodes.add(new ClassNode(i,centerX,centerY,classgroup_number.get(i),0xf2a218));
 			}else{
-				nodes.add(new ClassNode(i,0-250+(int)(Math.random()*500),0+(int)(Math.random()*500),classgroup_number.get(i),0));
+				nodes.add(new ClassNode(i,centerX-250+(int)(Math.random()*500),centerY-250+(int)(Math.random()*500),classgroup_number.get(i),0xf2a218));
 			}
 		}
-		System.out.println("\\\\\\"+nodes.size());
 		//利用関係が無いノードを消す
 		for(int i=0;i<nodes.size();i++){
 			if(no_used.get(i))
@@ -313,7 +306,7 @@ public class inport_file {
 		}
 		
 		//演算クラスにノードを代入
-		ForceDirectedGraph graph = new ForceDirectedGraph(nodes);
+		graph = new ForceDirectedGraph(nodes);
 		
 		//アークの定義
 		for(int j=0;j<usedInternal.length;j++){
@@ -322,9 +315,9 @@ public class inport_file {
 			int key;
 			for(int k=0;k<usedInternal[j].length;k++){
 				key = node_Name.indexOf(usedInternal[j][k]);
-				System.out.println(j+"--"+key);
 				graph.connect(j,key);
 			}
 		}
+		springGraph.add(graph);
 	}
 }
