@@ -1,33 +1,20 @@
 package graph;
 
-public class GlobalValue {
-	String[][] colorPalettes = new String[12][5];
-	/*
-	colorPalettes[0] = ['#f39800','#f2a218','#f2ab30','#f2b449','#f2bd61'];//橙
-	colorPalettes[1] = ['#e6002d','#e6002e','#e62e53','#e64565','#e65c77'];//赤
-	colorPalettes[2] = ['#00b350','#009944','#009948','#1f9956','#2e995e'];//緑
-	colorPalettes[3] = ['#36318f','#07008f','#150e8f','#302b8f','#3d398f'];//青
-	colorPalettes[4] = ['#801e6c','#74085e','#800d69','#803370','#804073'];//紫
-	colorPalettes[5] = ['#00e6da','#00ccc2','#009e96','#109e97','#3f9e99'];//水
-	colorPalettes[6] = ['#5d310c','#5c2900','#5c3312','#5c381c','#5c3d25'];//茶
-	colorPalettes[7] = ['#ff6666','#f07070','#f29696','#f08b8b','#f59494'];//ピンク
-	colorPalettes[8] = ['#88e02e','#92e043','#96db50','#b2d63c','#ccf058'];//ライム
-	colorPalettes[9] = ['#07194b','#0f2257','#12296a','#17213e','#0f296f'];//藍
-	colorPalettes[10] = ['#339933','#38ac38','#4fac4f','#469546','#42b742'];//緑
-	colorPalettes[11] = ['#3978f5','#417cf4','#6699ff','#5d8ae2','#2c65d6'];//青*/
+public interface GlobalValue {
 	
-	//2点間の距離
-	double calcDistance(double x1,double y1,double x2,double y2) {
-		double a, b, d;
-		a = x1 - x2;
-		b = y1 - y2;
-		d = Math.sqrt(Math.pow(a,2) + Math.pow(b,2));
-		return d;
-	}
-	
-	//ランダム数字の出力
-	double random(int max){
-	  return Math.random() * max;
-	}
+	int[][] colorPalettes = {
+		{0xf39800,0xf2a218,0xf2ab30,0xf2b449,0xf2bd61},//橙
+		{0xe6002d,0xe6002e,0xe62e53,0xe64565,0xe65c77},//赤
+		{0x00b350,0x009944,0x009948,0x1f9956,0x2e995e},//緑
+		{0x36318f,0x07008f,0x150e8f,0x302b8f,0x3d398f},//青
+		{0x801e6c,0x74085e,0x800d69,0x803370,0x804073},//紫
+		{0x00e6da,0x00ccc2,0x009e96,0x109e97,0x3f9e99},//水
+		{0x5d310c,0x5c2900,0x5c3312,0x5c381c,0x5c3d25},//茶
+		{0xff6666,0xf07070,0xf29696,0xf08b8b,0xf59494},//ピンク
+		{0x88e02e,0x92e043,0x96db50,0xb2d63c,0xccf058},//ライム
+		{0x07194b,0x0f2257,0x12296a,0x17213e,0x0f296f},//藍
+		{0x339933,0x38ac38,0x4fac4f,0x469546,0x42b742},//緑
+		{0x3978f5,0x417cf4,0x6699ff,0x5d8ae2,0x2c65d6}//青*/
+	};
 
 }

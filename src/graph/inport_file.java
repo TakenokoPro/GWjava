@@ -16,7 +16,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class Inport_file extends Frame{
+public class Inport_file extends Frame implements GlobalValue{
 	/**=============================*/	
 	/**object**/
 	static String in_Path = "xml\\classycle.xml";//""内に分析したいフォルダを(\は２連続で)
@@ -41,21 +41,13 @@ public class Inport_file extends Frame{
 	ArrayList<Integer> classgroup_internal = new ArrayList<Integer>();//パッケージが下の階層であるなら上の階層の配列番号が入る
 	ArrayList<Integer> classgroup_color1 = new ArrayList<Integer>();//一番親のパッケージ番号.何層目にあるか
 	ArrayList<Integer> classgroup_color2 = new ArrayList<Integer>();//一番親のパッケージ番号.何層目にあるか
-	ArrayList<Integer>parent_package = new ArrayList<Integer>();//親パッケージを挿入
+	ArrayList<Integer> parent_package = new ArrayList<Integer>();//親パッケージを挿入
 	
 	//graph_draw method
 	Graph springGraph = new Graph();
 	ForceDirectedGraph graph;
 	/**=============================*/
 	/**main*/
-	//public static void main(String[] args){
-		//inport_file f = new inport_file();
-		//フレーム作成
-		//f.setSize(centerX*2,centerY*2);
-		//f.setVisible(true);
-	
-		//new inport_file();
-	//}
 	
 	//スプリングアルゴリズムの演算
 	public void run(){
@@ -284,7 +276,7 @@ public class Inport_file extends Frame{
 		        classgroup_color2.add(i,classgroup_color2.get(classgroup_internal.get(i))+1);
 		        parent_package.set(i,parent_package.get(classgroup_internal.get(i)));
 		    }
-		}	
+		}
 	}
 	
 	/**スプリングアルゴリズム=============================*/
@@ -293,10 +285,13 @@ public class Inport_file extends Frame{
 		
 		//ノードの定義
 		for(int i=0;i<node_Name.size();i++){
+			int temp_color = colorPalettes[classgroup_color1.get(classgroup_number.get(i))][classgroup_color2.get(classgroup_number.get(i))];
 			if(i==max_class){
-				nodes.add(new ClassNode(i,centerX,centerY,classgroup_number.get(i),0xf2a218));
+				nodes.add(new ClassNode(i,centerX,centerY,classgroup_number.get(i),temp_color));
 			}else{
-				nodes.add(new ClassNode(i,centerX-250+(int)(Math.random()*500),centerY-250+(int)(Math.random()*500),classgroup_number.get(i),0xf2a218));
+				System.out.print(classgroup_color1.get(classgroup_number.get(i))+"::");
+				System.out.println(classgroup_color2.get(classgroup_number.get(i)));
+				nodes.add(new ClassNode(i,centerX-250+(int)(Math.random()*500),centerY-250+(int)(Math.random()*500),classgroup_number.get(i),temp_color));
 			}
 		}
 		//利用関係が無いノードを消す

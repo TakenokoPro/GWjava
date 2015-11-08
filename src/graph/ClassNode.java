@@ -2,7 +2,7 @@ package graph;
 
 import java.util.ArrayList;
 
-public class ClassNode extends GlobalValue{
+public class ClassNode implements GlobalValue{
 	
 	int id;
 	String value;
