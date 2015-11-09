@@ -8,8 +8,9 @@ public class ForceDirectedGraph {
 	double ATTENUATION = 0.8;//減衰定数(ATTENUATION < 1[必須])
 	double COULOMB = 30;//クーロン数
 	ArrayList<ClassNode> classNodes;
-
-	public ForceDirectedGraph(ArrayList<ClassNode> nodes) {
+	
+	//TODO: ForceDirectedGraphのコンストラクタ
+	public ForceDirectedGraph(ArrayList<ClassNode> nodes) {	
 		classNodes = nodes;
 	}
 

@@ -19,7 +19,7 @@ public class Graph extends Canvas{
 	ArrayList<ForceDirectedGraph> elements = new ArrayList<ForceDirectedGraph>();
 	public Object balance; 
 	
-	//graphのコンストラクタ
+	// TODO:graphのコンストラクタ
 	public Graph(){
 		
 	}
