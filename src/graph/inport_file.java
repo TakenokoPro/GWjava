@@ -25,6 +25,9 @@ public class Inport_file extends Frame implements GlobalValue{
 	static int centerX=500;
 	static int centerY=500;
 	
+	//paint method
+	ClassTable classTable = new ClassTable();
+	
 	//inport_file method
 	ArrayList<String> list_xml = new ArrayList<String>(); //XMLに存在するクラスのリスト
 	ArrayList<String> node_Name = new ArrayList<String>();//ノードの設定
@@ -49,14 +52,14 @@ public class Inport_file extends Frame implements GlobalValue{
 	/**=============================*/
 	/**main*/
 	
-	//スプリングアルゴリズムの演算
+	//TODO: スプリングアルゴリズムの演算
 	public void run(){
 		graph.balance(max_class);
 	} 
 	
-	//スプリングアルゴリズムの描画
+	//TODO: スプリングアルゴリズムの描画
 	public void paint(Graphics g){
-			springGraph.paint(g);
+		springGraph.paint(g);
 	}
 	
 	/**inport_file=============================*/
@@ -314,5 +317,11 @@ public class Inport_file extends Frame implements GlobalValue{
 			}
 		}
 		springGraph.add(graph);
+		
+		//テーブルの表示
+		for(int i=0;i<list_xml.size();i++){
+			classTable.Add(i,list_xml.get(i),Integer.valueOf(node_branch.get(i)),classgroup.get(classgroup_number.get(i)));
+		}
+		classTable.DisplayTable();
 	}
 }
