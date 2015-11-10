@@ -320,7 +320,8 @@ public class Inport_file extends Frame implements GlobalValue{
 		
 		//テーブルの表示
 		for(int i=0;i<list_xml.size();i++){
-			classTable.Add(i,list_xml.get(i),Integer.valueOf(node_branch.get(i)),classgroup.get(classgroup_number.get(i)));
+			int temp_color = colorPalettes[classgroup_color1.get(classgroup_number.get(i))][classgroup_color2.get(classgroup_number.get(i))];
+			classTable.Add(i,list_xml.get(i),Integer.valueOf(node_branch.get(i)),classgroup.get(classgroup_number.get(i)),temp_color);
 		}
 		classTable.DisplayTable();
 	}

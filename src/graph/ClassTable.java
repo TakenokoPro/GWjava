@@ -1,5 +1,7 @@
 package graph;
 
+import java.awt.Color;
+import java.awt.Component;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Vector;
@@ -10,6 +12,7 @@ import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableRowSorter;
 
@@ -21,6 +24,7 @@ public class ClassTable {
 	
 	Vector<Vector<String>> row = new Vector<Vector<String>>();
 	Vector<String> column = new Vector<String>();
+	Vector<Integer> color = new Vector<Integer>();
 	
 	public ClassTable() {
 		//列名
@@ -30,28 +34,45 @@ public class ClassTable {
 		column.add("パッケージ");
 	}
 	
-	public void Add(int i,String pass,int internal,String pac){
+	public void Add(int i,String pass,int internal,String pac,int color){
 		Vector<String> temp = new Vector<String>();
 		temp.add(String.valueOf(i));
 		temp.add(pass);
 		temp.add(String.valueOf(internal));
 		temp.add(pac);
+		temp.add(String.valueOf(color));
 		row.add(temp);
+		this.color.add(color);
 	}
 	
 	public void DisplayTable(){
-		JTable table = new JTable(row,column);	
-		JScrollPane scrollPane = new JScrollPane(table);
+		//JTable table = new JTable(row,column);	
+		//JScrollPane scrollPane = new JScrollPane(table);
 		
 		 // モデル作成
 	    TableModel model = new TableModel(row);
 
 	    //ソート機能（未実装）
-	    /*
-	    JTable table = new JTable(model);
+	    JTable table = new JTable(model) {
+	    	private Vector<Vector<String>> row_c = (Vector<Vector<String>>) row.clone();
+
+			@Override
+	    	public Component prepareRenderer(TableCellRenderer tcr, int row, int column) {
+		    	Component c = super.prepareRenderer(tcr, row, column);
+		    	if(column==3){
+		    		c.setForeground(Color.WHITE);
+			    	c.setBackground(new Color(Integer.valueOf(row_c .get(row).get(4))));
+		    	}
+		    	else{
+		    		c.setForeground(getForeground());
+		    		c.setBackground(getBackground());
+		    	}
+		    	return c;
+	    	}
+	    }; 
 	    JScrollPane scrollPane = new JScrollPane(table);
 		TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel> (new TableModel(row));
-		table.setRowSorter(sorter);*/
+		table.setRowSorter(sorter);
 		
 		// テーブル作成
 		DefaultTableColumnModel columnModel
@@ -77,7 +98,6 @@ class TableModel extends AbstractTableModel {
 	  private int[] Internal;
 	  private String[] pac;
 
-	  
 	  public TableModel(Vector vector){
 		  index =new int[vector.size()];
 		  pass =new String[vector.size()];
@@ -97,8 +117,10 @@ class TableModel extends AbstractTableModel {
 	  // 列データのクラスを返す
 	  public Class getColumnClass(int columnIndex) {
 	    switch(columnIndex) {
-		    case(0) : return String.class;
-		    case(1) : return Integer.class;
+		    case(0) : return Integer.class;
+		    case(1) : return String.class;
+		    case(2) : return Integer.class;
+		    case(3) : return String.class;
 	    }
 	    return null;
 	  }
