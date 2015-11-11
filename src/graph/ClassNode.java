@@ -22,7 +22,7 @@ public class ClassNode implements GlobalValue{
 	    this.value = String.valueOf(value);
 	    this.x = x;
 	    this.y = y;
-		this.r = 10;
+		this.r = 8;
 		this.pac = pac;//パッケージ番号
 		this.background = background;
 		this.exist = true;

@@ -18,12 +18,13 @@ import org.xml.sax.SAXException;
 
 public class Inport_file extends Frame implements GlobalValue{
 	/**=============================*/	
-	/**object**/
+	/**object*/
 	static String in_Path = "xml\\classycle.xml";//""内に分析したいフォルダを(\は２連続で)
 	int count = 0;
 	ArrayList<String> split_str;
 	static int centerX=500;
 	static int centerY=500;
+	int click_focus = 0;
 	
 	//paint method
 	ClassTable classTable = new ClassTable();
@@ -47,7 +48,7 @@ public class Inport_file extends Frame implements GlobalValue{
 	ArrayList<Integer> parent_package = new ArrayList<Integer>();//親パッケージを挿入
 	
 	//graph_draw method
-	Graph springGraph = new Graph();
+	GraphCanvas springGraph = new GraphCanvas();
 	ForceDirectedGraph graph;
 	/**=============================*/
 	/**main*/
@@ -317,7 +318,7 @@ public class Inport_file extends Frame implements GlobalValue{
 			}
 		}
 		springGraph.add(graph);
-		
+	
 		//テーブルの表示
 		for(int i=0;i<list_xml.size();i++){
 			int temp_color = colorPalettes[classgroup_color1.get(classgroup_number.get(i))][classgroup_color2.get(classgroup_number.get(i))];
@@ -325,4 +326,5 @@ public class Inport_file extends Frame implements GlobalValue{
 		}
 		classTable.DisplayTable();
 	}
+
 }

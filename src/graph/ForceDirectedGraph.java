@@ -2,16 +2,21 @@ package graph;
 
 import java.util.ArrayList;
 
-public class ForceDirectedGraph {
+public class ForceDirectedGraph implements GlobalValue{
 
-	double BOUNCE = 0.03;//バネ定数(BOUNCE < 0.1[推奨])
-	double ATTENUATION = 0.8;//減衰定数(ATTENUATION < 1[必須])
-	double COULOMB = 30;//クーロン数
+	/**=============================*/
+	double BOUNCE;//バネ定数(BOUNCE < 0.1[推奨])
+	double ATTENUATION;//減衰定数(ATTENUATION < 1[必須])
+	double COULOMB;//クーロン数
 	ArrayList<ClassNode> classNodes;
+	/**=============================*/
 	
 	//TODO: ForceDirectedGraphのコンストラクタ
 	public ForceDirectedGraph(ArrayList<ClassNode> nodes) {	
 		classNodes = nodes;
+		this.BOUNCE = GlobalValue.BOUNCE;
+		this.ATTENUATION = GlobalValue.ATTENUATION;
+		this.COULOMB = GlobalValue.COULOMB;
 	}
 
 	//ノードの読み取り

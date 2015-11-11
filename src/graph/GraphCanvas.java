@@ -12,15 +12,18 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 
 
-public class Graph extends Canvas{
+public class GraphCanvas extends Canvas{
 	
+	/**=============================*/
 	Image img;
 	Graphics graphics;
 	ArrayList<ForceDirectedGraph> elements = new ArrayList<ForceDirectedGraph>();
 	public Object balance; 
+	int click_focus=0;
+	/**=============================*/
 	
 	// TODO:graphのコンストラクタ
-	public Graph(){
+	public GraphCanvas() {
 		
 	}
 	
@@ -92,11 +95,15 @@ public class Graph extends Canvas{
 			ClassNode node = elements.get(element).classNodes.get(i);
 			//if (node.isFocus)
 				//_this.circle(node.x, node.y, node.r + 5, '#444');
-			if(node.colorflag)
+			if(i==click_focus)
+				circle(node.x, node.y, node.r+3, 0xFF0000);
+			if(node.colorflag){
 				circle(node.x, node.y, node.r, node.background);
-			else
+			}else{
 				circle(node.x, node.y, node.r, 0xCCCCCC);
+			}
 			text(node.value,node.x,node.y,0xFF0000);
+			
 		}
 	}
 	
@@ -147,7 +154,7 @@ public class Graph extends Canvas{
 	private void text(String txt,double x,double y,int color) {
 		
 	    Graphics2D g2 = (Graphics2D)graphics;
-	    Font font = new Font("Arial", Font.BOLD, 12);
+	    Font font = new Font("Arial", Font.BOLD, 10);
 	    g2.setFont(font);
 	    g2.setColor(new Color(0xFFFFFF));
 	    FontMetrics fm = g2.getFontMetrics();
@@ -161,4 +168,5 @@ public class Graph extends Canvas{
 	private void clear(){
 		graphics.clearRect(0,0,1000,1000);
 	}
+
 }

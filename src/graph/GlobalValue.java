@@ -16,5 +16,15 @@ public interface GlobalValue {
 		{0x339933,0x38ac38,0x4fac4f,0x469546,0x42b742},//緑
 		{0x3978f5,0x417cf4,0x6699ff,0x5d8ae2,0x2c65d6}//青*/
 	};
+	
+	/**スプリングアルゴリズムのパラメータ  */
+	//TODO: バネ定数(BOUNCE < 0.1[推奨])
+	double BOUNCE = 0.05;
+	
+	//TODO: 減衰定数(ATTENUATION < 1[必須])
+	double ATTENUATION = 0.8;
+	
+	//TODO: クーロン数
+	double COULOMB = 40;
 
 }
