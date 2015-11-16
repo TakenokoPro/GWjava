@@ -14,12 +14,15 @@ public class Clear_source {
 
 	/**=============================*/	
 	/**object**/
-	static String in_Path = "Z:\\Eclipse\\readFolder\\src\\";//""内に分析したいフォルダを(\は２連続で)
+	static String in_Path = "Z:\\Dropbox\\Dropbox\\GraduationWork\\ResearchResults\\JUnit\\junit3.4\\src\\";//""内に分析したいフォルダを(\は２連続で)
 	static String out_path = "Z:\\Dropbox\\Dropbox\\GraduationWork\\ResearchResults\\sourse.txt";
 	//static String out_path= "C:\\pleiades\\workspace\\ReadFolder\\out\\out.txt";
 	int count = 0;
 	ArrayList<String> split_str;
 	String temp_str="";
+	//comment
+	boolean comment_flag = false; //単一コメント
+	boolean block_comment_flag = false; //ブロックコメント
 	/**=============================*/
 	/**main**/
 	Clear_source(){
@@ -70,27 +73,26 @@ public class Clear_source {
 			File javaFile = new File(filePath);
 			BufferedReader br = new BufferedReader(new FileReader(javaFile));
 			String str = br.readLine();
-			boolean comment_flag = false; //単一コメント
-			boolean block_comment_flag = false; //ブロックコメント
 			while(str != null){
+				System.out.println("\n\n="+str+"=");
 				//str += str_encode(temp_str+str);
 				String[] str_split = str.split( (""
 						+ "(?<=;)|(?<=\\{)|(?<=\\})"
-						+ "|(?<=(/))|(?=(/))"
-						+ "|(?<=(\\*))|(?=(\\*))"
+						+ "|(?<=\\s(/)(\\*))|(?=\\s(/)(\\*))"
+						+ "|(?<=(\\*)(/))|(?=(\\*)(/))"
+						+ "|(?<=(//))|(?=(//))"
 						),0);
 				for(int i=0;i<str_split.length;i++){
-					//String_Write(str_split2[j]+"\n");
+					System.out.print("["+str_split[i]+"]");
 					str_split[i] = str_split[i].replaceAll("\t","");
 					if(str_split[i].equals("\\s*"))break;
 					if(str_split[i].equals(""))break;
-					if(str_split[i].equals("/")&&str_split[i+1].equals("/")){
-						comment_flag = true;
-						break;
-					}
-					if(str_split[i].equals("/")&&str_split[i].equals("\\*"))
+					
+					if(str_split[i].matches((".*(/)(\\*).*"))){
 						block_comment_flag = true;
-					if(!block_comment_flag)
+						System.out.print("=block=true==========\n\n");
+					}
+					if(!block_comment_flag){
 						if(str_split[i].matches(".*;")
 								||str_split[i].matches(".*\\{")
 								||str_split[i].matches(".*\\}")){
@@ -98,13 +100,20 @@ public class Clear_source {
 						} else {
 							String_Write(str_split[i]);
 						}
-					if(str_split[i].equals("\\*")&&str_split[i].equals("/"))
+					}
+					if(block_comment_flag && str_split[i].matches("\\*/")){
 						block_comment_flag = false;
+						System.out.print("=block=false==========\n\n");
+					}
+					if(str_split[i].matches("//")){
+						comment_flag = true;
+						break;
+					}
 				}
 				//if(!block_comment_flag&&!comment_flag)
 					//temp_str = str_split[str_split.length-1];
 				comment_flag = false;
-				block_comment_flag = false;
+				//block_comment_flag = false;
 				//String_Write(str);
 				str = br.readLine();
 			}
@@ -130,7 +139,7 @@ public class Clear_source {
 			FileWriter fw = new FileWriter(out_path, true);
 			PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
 			pw.print(str);
-			System.out.print(str);
+			//System.out.print(str);
 			pw.close();
 		} catch (IOException e) {e.printStackTrace();}
 	}

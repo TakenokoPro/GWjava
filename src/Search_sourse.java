@@ -18,6 +18,7 @@ public class Search_sourse {
 	//static String out_path= "C:\\pleiades\\workspace\\ReadFolder\\out\\out.txt";
 	int count = 0;
 	ArrayList<String> split_str;
+	ArrayList<class_info> class_infos = new ArrayList<class_info>();
 	/**=============================*/
 	/**main**/
 	public Search_sourse() {
@@ -172,7 +173,7 @@ public class Search_sourse {
 					split_str = split_token(str);
 					String temp_str = "";
 					temp_str = "";
-					for(int i=1;i<split_str.size();i++)System.out.print("["+split_str.get(i-1)+"]");System.out.print("\n"); 
+					//for(int i=1;i<split_str.size();i++)System.out.print("["+split_str.get(i-1)+"]");System.out.print("\n"); 
 					for(int i=1;i<split_str.size();i++){
 						if(split_str.get(i).equals("(")&&!reserved_word(split_str.get(i-1))){
 							temp_str = split_str.get(i-1);
@@ -209,7 +210,7 @@ public class Search_sourse {
 					split_str = split_token(str);
 					String temp_str = "";
 					temp_str = "";
-					for(int i=1;i<split_str.size();i++)System.out.print("["+split_str.get(i-1)+"]");System.out.print("\n"); 
+					//for(int i=1;i<split_str.size();i++)System.out.print("["+split_str.get(i-1)+"]");System.out.print("\n"); 
 					for(int i=1;i<split_str.size();i++){
 						if(split_str.get(i).equals("(")&&!reserved_word(split_str.get(i-1))){
 							temp_str = split_str.get(i-1);
@@ -384,8 +385,10 @@ public class Search_sourse {
 			ClassName += str.get(i);i++;
 		}
 		
-		if(i==str.size())
+		if(i==str.size()){
 			System.out.println(num+",class,"+","+Modifier+","+ClassKind+","+ClassName+","+Stringkind);
+			class_infos.add(new class_info(ClassName,ClassKind));
+		}
 		
 		while(i<str.size()){
 			if(str.get(i).equals("extends"))
@@ -479,7 +482,7 @@ public class Search_sourse {
 			FileWriter fw = new FileWriter(out_path, true);
 			PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
 			pw.print(str);
-			System.out.print(str);
+			//System.out.print(str);
 			pw.close();
 		} catch (IOException e) {e.printStackTrace();}
 	}
