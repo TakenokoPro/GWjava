@@ -24,6 +24,8 @@ public class Search_sourse {
 	public Search_sourse() {
 		String_Clear();
 		execute();
+		//for(int i=0;i<class_infos.size();i++)
+			//System.out.println(class_infos.get(i));
 	}
 	/**=============================*/
 	/**method**/
@@ -143,12 +145,13 @@ public class Search_sourse {
 			BufferedReader br = new BufferedReader(new FileReader(javaFile));
 			String str = br.readLine();
 			while(str != null){
+				System.out.println(str);
 				str = str_encode(str);
 				if(str.matches("(^\\s*$)|(.*(\\*).*)|(.*(//).*)")){
 					str = br.readLine();
 					continue;
 				}
-				if(str.matches("(.*\\s(class).*)|(.*\\s(interface).*)")){
+				if(str.matches("(.*\\s(class).*)|(.*\\s(interface).*)")){	
 					if(split_class(str)==null)break;
 					split_str = split_class(str);		
 					OutputFunction(split_str,++count);

@@ -64,17 +64,17 @@ public class Clear_source {
 		
 		/**javaファイルの時の処理*/
 		if(extension.equals("java")){
-			 replace_n(filePath);
+			System.out.println(splitPath[0]);
+			replace_n(filePath);
 		}
-	}
-	
+	}	
 	public void replace_n(String filePath){
 		try{
 			File javaFile = new File(filePath);
 			BufferedReader br = new BufferedReader(new FileReader(javaFile));
 			String str = br.readLine();
 			while(str != null){
-				System.out.println("\n\n="+str+"=");
+				//System.out.println("\n\n="+str+"=");
 				//str += str_encode(temp_str+str);
 				String[] str_split = str.split( (""
 						+ "(?<=;)|(?<=\\{)|(?<=\\})"
@@ -83,14 +83,13 @@ public class Clear_source {
 						+ "|(?<=(//))|(?=(//))"
 						),0);
 				for(int i=0;i<str_split.length;i++){
-					System.out.print("["+str_split[i]+"]");
+					//System.out.print("["+str_split[i]+"]");
 					str_split[i] = str_split[i].replaceAll("\t","");
 					if(str_split[i].equals("\\s*"))break;
 					if(str_split[i].equals(""))break;
 					
 					if(str_split[i].matches((".*(/)(\\*).*"))){
 						block_comment_flag = true;
-						System.out.print("=block=true==========\n\n");
 					}
 					if(!block_comment_flag){
 						if(str_split[i].matches(".*;")
@@ -103,7 +102,6 @@ public class Clear_source {
 					}
 					if(block_comment_flag && str_split[i].matches("\\*/")){
 						block_comment_flag = false;
-						System.out.print("=block=false==========\n\n");
 					}
 					if(str_split[i].matches("//")){
 						comment_flag = true;
