@@ -19,7 +19,7 @@ import org.xml.sax.SAXException;
 public class Inport_file extends Frame implements GlobalValue{
 	/**=============================*/	
 	/**object*/
-	static String in_Path = "xml\\classycle.xml";//""内に分析したいフォルダを(\は２連続で)
+	static String in_Path = "xml\\cl_junit3.5.xml";//""内に分析したいフォルダを(\は２連続で)
 	int count = 0;
 	ArrayList<String> split_str;
 	static int centerX=500;
@@ -322,7 +322,8 @@ public class Inport_file extends Frame implements GlobalValue{
 		//テーブルの表示
 		for(int i=0;i<list_xml.size();i++){
 			int temp_color = colorPalettes[classgroup_color1.get(classgroup_number.get(i))][classgroup_color2.get(classgroup_number.get(i))];
-			classTable.Add(i,list_xml.get(i),Integer.valueOf(node_branch.get(i)),classgroup.get(classgroup_number.get(i)),temp_color);
+			String[] str = list_xml.get(i).split("(\\.)");
+			classTable.Add(i,str[str.length-1],Integer.valueOf(node_branch.get(i)),classgroup.get(classgroup_number.get(i)),temp_color);
 		}
 		classTable.DisplayTable();
 	}

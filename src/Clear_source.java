@@ -15,7 +15,7 @@ public class Clear_source {
 	/**object**/
 	static String //path_str = "Z:\\Dropbox\\";
 	path_str = "C:\\"; 
-	static String in_Path = path_str+"Dropbox\\GraduationWork\\ResearchResults\\JUnit\\junit4.5\\org";//""内に分析したいフォルダを(\は２連続で)
+	static String in_Path = path_str+"Dropbox\\GraduationWork\\ResearchResults\\JUnit\\junit3.5";//""内に分析したいフォルダを(\は２連続で)
 	static String out_path = path_str+"Dropbox\\GraduationWork\\ResearchResults\\sourse.txt";
 	//static String out_path= "C:\\pleiades\\workspace\\ReadFolder\\out\\out.txt";
 	int count = 0;
