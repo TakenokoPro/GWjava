@@ -1,6 +1,5 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.Console;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -14,8 +13,10 @@ public class Clear_source {
 
 	/**=============================*/	
 	/**object**/
-	static String in_Path = "Z:\\Dropbox\\Dropbox\\GraduationWork\\ResearchResults\\JUnit\\junit3.4\\src\\";//""内に分析したいフォルダを(\は２連続で)
-	static String out_path = "Z:\\Dropbox\\Dropbox\\GraduationWork\\ResearchResults\\sourse.txt";
+	static String //path_str = "Z:\\Dropbox\\";
+	path_str = "C:\\"; 
+	static String in_Path = path_str+"Dropbox\\GraduationWork\\ResearchResults\\JUnit\\junit4.5\\org";//""内に分析したいフォルダを(\は２連続で)
+	static String out_path = path_str+"Dropbox\\GraduationWork\\ResearchResults\\sourse.txt";
 	//static String out_path= "C:\\pleiades\\workspace\\ReadFolder\\out\\out.txt";
 	int count = 0;
 	ArrayList<String> split_str;
@@ -81,16 +82,23 @@ public class Clear_source {
 						+ "|(?<=\\s(/)(\\*))|(?=\\s(/)(\\*))"
 						+ "|(?<=(\\*)(/))|(?=(\\*)(/))"
 						+ "|(?<=(//))|(?=(//))"
+						+ "|(?<=(@))|(?=(@))"
 						),0);
 				for(int i=0;i<str_split.length;i++){
 					//System.out.print("["+str_split[i]+"]");
 					str_split[i] = str_split[i].replaceAll("\t","");
 					if(str_split[i].equals("\\s*"))break;
 					if(str_split[i].equals(""))break;
-					
+					if(str_split[i].matches("//")){
+						comment_flag = true;
+						break;
+					}
 					if(str_split[i].matches((".*(/)(\\*).*"))){
 						block_comment_flag = true;
 					}
+					/*if(str_split[i].matches("@")){
+						i++;
+					}*/
 					if(!block_comment_flag){
 						if(str_split[i].matches(".*;")
 								||str_split[i].matches(".*\\{")
@@ -103,10 +111,7 @@ public class Clear_source {
 					if(block_comment_flag && str_split[i].matches("\\*/")){
 						block_comment_flag = false;
 					}
-					if(str_split[i].matches("//")){
-						comment_flag = true;
-						break;
-					}
+					
 				}
 				//if(!block_comment_flag&&!comment_flag)
 					//temp_str = str_split[str_split.length-1];

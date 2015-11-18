@@ -13,12 +13,17 @@ import java.util.List;
 public class Search_sourse {
 	/**=============================*/	
 	/**object**/
-	static String in_Path = "Z:\\Dropbox\\Dropbox\\GraduationWork\\ResearchResults\\sourse.txt";//""内に分析したいフォルダを(\は２連続で)
-	static String out_path = "Z:\\Dropbox\\Dropbox\\GraduationWork\\ResearchResults\\out.csv";
+	static String //path_str = "Z:\\Dropbox\\";
+	path_str = "C:\\"; 
+	static String in_Path = path_str+"Dropbox\\GraduationWork\\ResearchResults\\sourse.txt";//""内に分析したいフォルダを(\は２連続で)
+	static String out_path = path_str+"\\Dropbox\\GraduationWork\\ResearchResults\\out.csv";
 	//static String out_path= "C:\\pleiades\\workspace\\ReadFolder\\out\\out.txt";
 	int count = 0;
 	ArrayList<String> split_str;
 	ArrayList<class_info> class_infos = new ArrayList<class_info>();
+	
+	//paint method
+	ClassInfoTable classTable = new ClassInfoTable();
 	/**=============================*/
 	/**main**/
 	public Search_sourse() {
@@ -43,8 +48,8 @@ public class Search_sourse {
 		//クラス
 		search_class(filePath);
 		
-		//メソッド呼び出し
-		search_method(filePath);
+		//メソッド呼び出し()
+		//search_method(filePath);
 		
 		//search_obj(filePath,"(.*\\s(interface).*)");
 		//search_obj(filePath,".*\\s*[A-Za-z_][0-9A-Za-z_]*;.*");
@@ -58,11 +63,21 @@ public class Search_sourse {
 			search_obj(filePath,search_str);
 		}*/
 		
-		//変数 ...を抽出
-		search_object(filePath);
+		//変数 ...を抽出()
+		//search_object(filePath);
 		
-		//new ...を抽出
-		search_new(filePath);
+		//new ...を抽出()
+		//search_new(filePath);
+		
+		System.out.println("=====");
+		//テーブルの表示
+		for(int i=0;i<class_infos.size();i++){
+			class_info temp = class_infos.get(i);
+			String ext_get = temp.extend_get();
+			String int_get = temp.interface_get();
+			ClassInfoTable.Add(i,temp.class_name,temp.kind,ext_get,int_get);
+		}
+		classTable.DisplayTable();
 	}
 	public ArrayList<String> split_class(String str) {
 		String[] return_str = str.split("(\\s)|(,)", 0);
@@ -142,20 +157,17 @@ public class Search_sourse {
 	public void search_class(String filePath){
 		try{
 			File javaFile = new File(filePath);
-			BufferedReader br = new BufferedReader(new FileReader(javaFile));
+			//System.out.println("===="+javaFile.length()+"====");
+			BufferedReader br = new BufferedReader(new FileReader(javaFile),1024 * 1024);
+			//System.out.println("===="+br.length()+"====");
 			String str = br.readLine();
 			while(str != null){
-				System.out.println(str);
 				str = str_encode(str);
-				if(str.matches("(^\\s*$)|(.*(\\*).*)|(.*(//).*)")){
-					str = br.readLine();
-					continue;
-				}
-				if(str.matches("(.*\\s(class).*)|(.*\\s(interface).*)")){	
-					if(split_class(str)==null)break;
-					split_str = split_class(str);		
-					OutputFunction(split_str,++count);
-					//System.out.print("\n");
+				if(str.matches("(.*\\s(class)\\s.*(\\{))|(.*\\s(interface)\\s.*)")){	
+					if(split_class(str)!=null){
+						split_str = split_class(str);		
+						OutputFunction(split_str,count++);
+					}
 				}
 				str = br.readLine();
 			}
@@ -363,6 +375,12 @@ public class Search_sourse {
 		String ClassKind = "";
 		String ClassName = "";
 		String Stringkind = "";
+
+		if(str.get(i).equals("static")){
+			Modifier += ","+str.get(i);
+			i++;
+		} else {Modifier += ",";}
+		
 		if(str.get(i).equals("public")||str.get(i).equals("protected")||str.get(i).equals("private")){
 			Modifier += str.get(i);
 			i++;
@@ -378,20 +396,22 @@ public class Search_sourse {
 			i++;
 		} else {Modifier += ",";}
 		
-		
 		if(str.get(i).equals("class")){
 			ClassKind = "class";i++;
 			ClassName += str.get(i);i++;
+			System.out.print(num+"::");
+			class_infos.add(new class_info(ClassName,ClassKind));
+			//System.out.println(class_infos.get(class_infos.size()-1).class_name);
 		}
 		else if(str.get(i).equals("interface")){
 			ClassKind = "interface";i++;
 			ClassName += str.get(i);i++;
+			System.out.print(num+"::");
+			class_infos.add(new class_info(ClassName,ClassKind));
+			//System.out.println(class_infos.get(class_infos.size()-1).class_name);
 		}
 		
-		if(i==str.size()){
-			System.out.println(num+",class,"+","+Modifier+","+ClassKind+","+ClassName+","+Stringkind);
-			class_infos.add(new class_info(ClassName,ClassKind));
-		}
+		//クラスの代入
 		
 		while(i<str.size()){
 			if(str.get(i).equals("extends"))
@@ -399,10 +419,16 @@ public class Search_sourse {
 			else if(str.get(i).equals("implements"))
 				Stringkind = "implements";
 			else{
-				System.out.println(num+",class,"+Modifier+","+ClassKind+","+ClassName+","+Stringkind+","+str_decode(str.get(i)));
+				System.out.println(num+"::"+(class_infos.size()-1)+",class,"+Modifier+","+ClassKind+","+ClassName+","+Stringkind+","+str_decode(str.get(i)));
+				if(Stringkind.equals("extends"))
+					(class_infos.get(num)).extendString.add(str_decode(str.get(i)));
+				else if(Stringkind.equals("implements"))
+					(class_infos.get(num)).interfaceString.add(str_decode(str.get(i)));
+				
 			}
-			i++;
+			i++;	
 		}
+		System.out.println("-----------");
 		return;
 	}
 	
