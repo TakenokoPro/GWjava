@@ -1,3 +1,4 @@
+package seach;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -13,8 +14,8 @@ import java.util.List;
 public class Search_sourse {
 	/**=============================*/	
 	/**object**/
-	static String //path_str = "Z:\\Dropbox\\";
-	path_str = "C:\\"; 
+	static String path_str = "Z:\\Dropbox\\";
+	//path_str = "C:\\"; 
 	static String in_Path = path_str+"Dropbox\\GraduationWork\\ResearchResults\\sourse.txt";//""内に分析したいフォルダを(\は２連続で)
 	static String out_path = path_str+"\\Dropbox\\GraduationWork\\ResearchResults\\out.csv";
 	//static String out_path= "C:\\pleiades\\workspace\\ReadFolder\\out\\out.txt";
@@ -524,4 +525,8 @@ public class Search_sourse {
 		} catch (IOException e) {e.printStackTrace();}
 	}
 	
+	//getter
+	public ArrayList<class_info> get_classinfo(){
+		return class_infos;
+	}
 }

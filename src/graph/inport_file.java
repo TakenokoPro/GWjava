@@ -16,18 +16,17 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import com.sun.javafx.image.impl.ByteIndexed.Getter;
+
 public class Inport_file extends Frame implements GlobalValue{
 	/**=============================*/	
 	/**object*/
-	static String in_Path = "xml\\cl_junit3.5.xml";//""内に分析したいフォルダを(\は２連続で)
+	static String in_Path = "xml\\cl_geoapi1.0.0.xml";//""内に分析したいフォルダを(\は２連続で)
 	int count = 0;
 	ArrayList<String> split_str;
 	static int centerX=500;
 	static int centerY=500;
 	int click_focus = 0;
-	
-	//paint method
-	ClassTable classTable = new ClassTable();
 	
 	//inport_file method
 	ArrayList<String> list_xml = new ArrayList<String>(); //XMLに存在するクラスのリスト
@@ -65,7 +64,14 @@ public class Inport_file extends Frame implements GlobalValue{
 	
 	/**inport_file=============================*/
 	public Inport_file(){
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		import_method();
+		divide_package();
+		graph_draw();
+	}
+	
+	/**入力処理=============================*/
+	public void import_method(){
+				DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder documentBuilder = null;
 		try {
 			documentBuilder = factory.newDocumentBuilder();
@@ -193,10 +199,8 @@ public class Inport_file extends Frame implements GlobalValue{
 			no_used.set(key,false);
 		  }
 		}
-		divide_package();
-		graph_draw();
 	}
-
+	
 	/**パッケージごとに分ける=============================*/
 	public void divide_package(){
 		//System.out.print("==DIVIDE============\n");
@@ -318,14 +322,18 @@ public class Inport_file extends Frame implements GlobalValue{
 			}
 		}
 		springGraph.add(graph);
-	
+	}
+
+	public ClassTable get_ClassTable(){
+		ClassTable classTable = new ClassTable();
+		
 		//テーブルの表示
 		for(int i=0;i<list_xml.size();i++){
 			int temp_color = colorPalettes[classgroup_color1.get(classgroup_number.get(i))][classgroup_color2.get(classgroup_number.get(i))];
 			String[] str = list_xml.get(i).split("(\\.)");
 			classTable.Add(i,str[str.length-1],Integer.valueOf(node_branch.get(i)),classgroup.get(classgroup_number.get(i)),temp_color);
 		}
-		classTable.DisplayTable();
+		
+		return classTable;
 	}
-
 }

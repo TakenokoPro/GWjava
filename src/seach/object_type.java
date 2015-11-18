@@ -1,3 +1,4 @@
+package seach;
 
 public class object_type {
 	String type;

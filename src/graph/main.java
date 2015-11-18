@@ -4,7 +4,7 @@ package graph;
 public class main {
 
 	public static void main(String[] args) {
-		// TODO: メイン
+		// TODO: 単体テスト（スプリングアルゴリズム）
 		SpringAnim springAnim =new SpringAnim();
 		springAnim.addMouseListener(springAnim);
 		springAnim.addMouseMotionListener(springAnim);
@@ -13,6 +13,12 @@ public class main {
 	    springAnim.addWindowListener(springAnim.new Adapter());
 		springAnim.init();
 		springAnim.setTitle("SpringGraph");
+		
+		// TODO: 単体テスト（テーブル出力）
+		ClassTable classTable = springAnim.get_inport_file().get_ClassTable();
+		System.out.print(classTable);
+		classTable.DisplayTable();
+		
 		while(true)springAnim.repaint();
 	}
 }

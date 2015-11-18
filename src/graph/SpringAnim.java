@@ -45,7 +45,6 @@ public class SpringAnim extends Frame implements Runnable,MouseListener,MouseMot
 		
 		g.drawImage(OSI,0,0,this);
 	}
-
 	public void update(Graphics g) {
 		paint(g);
 	}
@@ -56,12 +55,10 @@ public class SpringAnim extends Frame implements Runnable,MouseListener,MouseMot
 		th = new Thread(this);
 		th.start();
 	}
-
 	//TODO: アプレットが停止する時の処理
 	public void stop() {
 			th = null;
 	}
-	
 	//TODO: スレッドに処理させるプログラム
 	public void run() {
 		Thread me = Thread.currentThread();
@@ -81,7 +78,6 @@ public class SpringAnim extends Frame implements Runnable,MouseListener,MouseMot
 	   }
 	}
 
-	
 	//マウス動作
 	public void mouseClicked(MouseEvent e) {
 	
@@ -129,5 +125,9 @@ public class SpringAnim extends Frame implements Runnable,MouseListener,MouseMot
 		b = y1 - y2;
 		d = Math.sqrt(Math.pow(a,2) + Math.pow(b,2));
 		return (int)d;
+	}
+
+	public Inport_file get_inport_file() {
+		return inport_file;
 	}
 }

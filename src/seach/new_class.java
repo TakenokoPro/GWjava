@@ -1,3 +1,4 @@
+package seach;
 
 public class new_class {
 	int class_id;

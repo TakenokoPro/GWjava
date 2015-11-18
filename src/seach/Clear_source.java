@@ -1,3 +1,4 @@
+package seach;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -13,9 +14,9 @@ public class Clear_source {
 
 	/**=============================*/	
 	/**object**/
-	static String //path_str = "Z:\\Dropbox\\";
-	path_str = "C:\\"; 
-	static String in_Path = path_str+"Dropbox\\GraduationWork\\ResearchResults\\JUnit\\junit3.5";//""内に分析したいフォルダを(\は２連続で)
+	static String path_str = "Z:\\Dropbox\\";
+	//path_str = "C:\\"; 
+	static String in_Path = path_str+"Dropbox\\GraduationWork\\ResearchResults\\GeoAPI\\1.0.0\\sources\\org\\opengis";//""内に分析したいフォルダを(\は２連続で)
 	static String out_path = path_str+"Dropbox\\GraduationWork\\ResearchResults\\sourse.txt";
 	//static String out_path= "C:\\pleiades\\workspace\\ReadFolder\\out\\out.txt";
 	int count = 0;
@@ -26,7 +27,7 @@ public class Clear_source {
 	boolean block_comment_flag = false; //ブロックコメント
 	/**=============================*/
 	/**main**/
-	Clear_source(){
+	public Clear_source(){
 		String_Clear();
 		File readfolder = new File(in_Path);
 		readFolder(readfolder);
