@@ -1,5 +1,7 @@
 package graph;
 
+import graph.io.GraphIOmodel;
+
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.io.IOException;
@@ -15,8 +17,6 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
-import com.sun.javafx.image.impl.ByteIndexed.Getter;
 
 public class Inport_file extends Frame implements GlobalValue{
 	/**=============================*/	
@@ -324,16 +324,25 @@ public class Inport_file extends Frame implements GlobalValue{
 		springGraph.add(graph);
 	}
 
+	/**getter=============================*/
 	public ClassTable get_ClassTable(){
 		ClassTable classTable = new ClassTable();
-		
 		//テーブルの表示
 		for(int i=0;i<list_xml.size();i++){
 			int temp_color = colorPalettes[classgroup_color1.get(classgroup_number.get(i))][classgroup_color2.get(classgroup_number.get(i))];
 			String[] str = list_xml.get(i).split("(\\.)");
 			classTable.Add(i,str[str.length-1],Integer.valueOf(node_branch.get(i)),classgroup.get(classgroup_number.get(i)),temp_color);
 		}
-		
 		return classTable;
 	}
+	public GraphIOmodel get_GraphIOmodel(){
+		GraphIOmodel graphIOmodel = new GraphIOmodel();
+		for(int i=0;i<list_xml.size();i++){
+			int temp_color = colorPalettes[classgroup_color1.get(classgroup_number.get(i))][classgroup_color2.get(classgroup_number.get(i))];
+			String[] str = list_xml.get(i).split("(\\.)");
+			graphIOmodel.add(str[str.length-1],Integer.valueOf(node_branch.get(i)),classgroup.get(classgroup_number.get(i)),temp_color);
+		}
+		return graphIOmodel;
+	} 
+
 }
