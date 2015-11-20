@@ -9,13 +9,17 @@ public class class_info {
 	ArrayList<String> extendString = new ArrayList<String>();
 	ArrayList<new_class> new_classes = new ArrayList<new_class>();
 	ArrayList<object_type> object_types = new ArrayList<object_type>();
-	ArrayList<String> definitionMethod = new ArrayList<String>();
+	ArrayList<method_type> definitionMethod = new ArrayList<method_type>();
 	ArrayList<String> callMethod = new ArrayList<String>();
 	
-	public class_info(String class_name,String kind){
+	//開始行
+	int startLine;
+	
+	public class_info(String class_name,String kind,int startLine){
 		this.class_name = class_name;
 		this.kind = kind;
-		System.out.println(this.kind+" "+this.class_name);
+		this.startLine = startLine;
+		//System.out.println(startLine);
 	}
 	
 	public void interface_add(String iString){
@@ -32,11 +36,11 @@ public class class_info {
 	public void object_types_add(String type,String identifier){
 		this.object_types.add(new object_type(type,identifier));
 	}
-	public void definitionMethod_add(String dString){
-		this.definitionMethod.add(dString);
+	public void definitionMethod_add(String type,String identifier){
+		this.definitionMethod.add(new method_type(type,identifier));
 	}
-	public void callMethod_add(String cString){
-		this.callMethod.add(cString);
+	public void callMethod_add(String identifier){
+		this.callMethod.add(identifier);
 	}
 	
 	/*getter*/
@@ -61,5 +65,11 @@ public class class_info {
 			return_str += extendString.get(i);
 		}
 		return return_str;
+	}
+	public ArrayList<method_type> definition_get(){
+		return definitionMethod;
+	}
+	public int startline_get(){
+		return startLine;
 	}
 }
