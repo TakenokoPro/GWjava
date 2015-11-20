@@ -38,6 +38,14 @@ public class class_info {
 	public void callMethod_add(String cString){
 		this.callMethod.add(cString);
 	}
+	
+	/*getter*/
+	public String name_get(){
+		return class_name;
+	}
+	public String kind_get(){
+		return kind;
+	}
 	public String interface_get(){
 		String return_str = "";
 		for(int i=0;i<interfaceString.size();i++){

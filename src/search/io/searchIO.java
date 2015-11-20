@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import search.Search_sourse;
 import search.class_info;
+import search.new_class;
 
 public class searchIO {
 	
@@ -22,7 +23,9 @@ public class searchIO {
 	}
 
 	public SearchIOmodel get_searchIOmodel() {
-		searchIOmodel.add(class_infos.name, internal, pac, color);
+		SearchIOmodel searchIOmodel = new SearchIOmodel();
+		for(int i=0;i<class_infos.size();i++)
+			searchIOmodel.add(class_infos.get(i).name_get(),class_infos.get(i).kind_get(),class_infos.get(i).extend_get(),class_infos.get(i).interface_get());
 		return searchIOmodel;
 	}
 	

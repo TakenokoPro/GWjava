@@ -14,8 +14,8 @@ public class Clear_source {
 
 	/**=============================*/	
 	/**object**/
-	static String //path_str = "Z:\\Dropbox\\";
-	path_str = "C:\\"; 
+	static String path_str = "Z:\\Dropbox\\";
+	//path_str = "C:\\"; 
 	static String in_Path = path_str+"Dropbox\\GraduationWork\\ResearchResults\\GeoAPI\\1.0.0\\sources\\org\\opengis";//""内に分析したいフォルダを(\は２連続で)
 	static String out_path = "result\\sourse.txt";
 	//static String out_path= "C:\\pleiades\\workspace\\ReadFolder\\out\\out.txt";

@@ -1,6 +1,8 @@
 
 
 
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.MouseEvent;
 import java.util.Vector;
 
@@ -9,6 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableColumnModel;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableRowSorter;
 
@@ -17,6 +20,7 @@ public class TotalInfoTable {
 	/**=============================*/
 	static Vector<Vector<String>> row = new Vector<Vector<String>>();
 	Vector<String> column = new Vector<String>();
+	Vector<Integer> color = new Vector<Integer>();
 	
     TableModel model;// モデル作成
     JTable table;//ソート機能（未実装）
@@ -26,18 +30,26 @@ public class TotalInfoTable {
 		//列名
 		column.add("番号");
 		column.add("クラス名");
+		column.add("Internal数");
+		column.add("パッケージ");
 		column.add("class/interface");
 		column.add("extend");
 		column.add("implements");
+		column.add("色");
 	}	
-	public static void Add(int i,String name,String kind,String ext,String imp){
+	public void Add(
+			int i,String name,int internal,String pac,String kind,String ext,String imp,int color){
 		Vector<String> temp = new Vector<String>();
 		temp.add(String.valueOf(i));
 		temp.add(name);
+		temp.add(String.valueOf(internal));
+		temp.add(pac);
 		temp.add(kind);
 		temp.add(ext);
 		temp.add(imp);
+		temp.add(String.valueOf(color));
 		row.add(temp);
+		this.color.add(color);
 	}
 	public void DisplayTable(){
 		
@@ -83,30 +95,39 @@ public class TotalInfoTable {
 class TableModel extends AbstractTableModel {
 	  private int[] index;
 	  private String[] name;
+	  private int[] internal;
+	  private String[] pac;
 	  private String[] kind;
 	  private String[] ext;
 	  private String[] imp;
-	  private int colcount = 5;//列数
+	  private int[] colors;
+	  private int colcount = 8;//列数
 
 	  public TableModel(Vector<Vector<String>> vector){
 		  
 		  index =new int[vector.size()];
 		  name =new String[vector.size()];
+		  internal =new int[vector.size()];
+		  pac =new String[vector.size()];
 		  kind =new String[vector.size()];
 		  ext =new String[vector.size()];
 		  imp =new String[vector.size()];
+		  colors =new int[vector.size()];
 		  
 		  for(int i=0;i<vector.size();i++){
 			  Vector<String> vec = (Vector<String>)vector.get(i);
 			  index[i] = Integer.valueOf((String) vec.get(0));
 			  name[i] =   vec.get(1).toString();
-			  kind[i] = (String)vec.get(2);
-			  ext[i] =  (String)vec.get(3);
-			  imp[i] = (String)vec.get(4);
+			  internal[i] = Integer.valueOf((String)vec.get(2));
+			  pac[i] = (String)vec.get(3);
+			  kind[i] = (String)vec.get(4);
+			  ext[i] =  (String)vec.get(5);
+			  imp[i] = (String)vec.get(6);
+			  colors[i] = Integer.valueOf((String)vec.get(7));
 		  }	  
 	  }
 	  public JTable Table_init(TableModel model){
-		   JTable table = new JTable(model) {/*
+		   JTable table = new JTable(model) {
 				@Override
 		    	public Component prepareRenderer(TableCellRenderer tcr, int row, int column) {
 			    	Component c = super.prepareRenderer(tcr, row, column);
@@ -119,7 +140,7 @@ class TableModel extends AbstractTableModel {
 			    		c.setBackground(getBackground());
 			    	}
 			    	return c;
-		    	}*/
+		    	}
 		    };
 		   return table;
 	  }
@@ -129,9 +150,12 @@ class TableModel extends AbstractTableModel {
 	    switch(columnIndex) {
 		    case(0) : return Integer.class;
 		    case(1) : return String.class;
-		    case(2) : return String.class;
+		    case(2) : return Integer.class;
 		    case(3) : return String.class;
 		    case(4) : return String.class;
+		    case(5) : return String.class;
+		    case(6) : return String.class;
+		    case(7) : return Integer.class;
 	    }
 	    return null;
 	  }
@@ -139,9 +163,12 @@ class TableModel extends AbstractTableModel {
 	    switch(column) {
 		    case(0) : return "番号";
 		    case(1) : return "クラス名";
-		    case(2) : return "class/interface";
-		    case(3) : return "extend";
-		    case(4) : return "implements";
+		    case(2) : return "Internal数";
+		    case(3) : return "パッケージ";
+		    case(4) : return "class/interface";
+		    case(5) : return "extend";
+		    case(6) : return "implements";
+		    case(7) : return "色";
 	    }
 	    return null;
 	  }
@@ -151,9 +178,12 @@ class TableModel extends AbstractTableModel {
 	    switch(column) {
 		    case(0) : return index[row];
 		    case(1) : return name[row];
-		    case(2) : return kind[row];
-		    case(3) : return ext[row];
-		    case(4) : return imp[row];
+		    case(2) : return internal[row];
+		    case(3) : return pac[row];
+		    case(4) : return kind[row];
+		    case(5) : return ext[row];
+		    case(6) : return imp[row];
+		    case(7) : return colors[row];
 	    }
 	    return null;
 	  }

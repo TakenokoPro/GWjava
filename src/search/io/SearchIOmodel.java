@@ -3,15 +3,19 @@ package search.io;
 import java.util.Vector;
 
 public class SearchIOmodel {
-	Vector<String> name = new Vector<String>();
-	Vector<Integer> internal = new Vector<Integer>();
-	Vector<String> packagePath = new Vector<String>();
-	Vector<Integer> colorHex = new Vector<Integer>();
+	public Vector<String> name = new Vector<String>();
+	public Vector<String> classinternal = new Vector<String>();
+	public Vector<String> extend = new Vector<String>();
+	public Vector<String> inplement = new Vector<String>();
 	
-	public void add(String name,int internal,String pac,int color) {
+	public void add(String name,String classinternal,String extend,String inplement) {
 		this.name.add(name);
-		this.internal.add(internal);
-		this.packagePath.add(pac);
-		this.colorHex.add(color);
+		this.classinternal.add(classinternal);
+		this.extend.add(extend);
+		this.inplement.add(inplement);
+	}
+	
+	public int length(){
+		return name.size();
 	}
 }
