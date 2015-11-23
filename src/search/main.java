@@ -20,7 +20,11 @@ public class main {
 			for(int j=0;j<temp.size();j++){
 				System.out.println(temp.get(j).returnType_get()+",==="+temp.get(j).identifier_get());
 				ObjectInfoTable.Add("関数定義",temp.get(j).returnType_get(),temp.get(j).identifier_get());
-				
+			}
+			ArrayList<String> temp1 = class_infos.get(i).callmethod_get();
+			for(int j=0;j<temp1.size();j++){
+				System.out.println(temp1.get(j));
+				ObjectInfoTable.Add("関数呼出",temp1.get(j),"");
 			}
 		}
 		objectTable.DisplayTable();

@@ -69,6 +69,10 @@ public class class_info {
 	public ArrayList<method_type> definition_get(){
 		return definitionMethod;
 	}
+	public ArrayList<String> callmethod_get(){
+		return callMethod;
+	}
+	
 	public int startline_get(){
 		return startLine;
 	}
