@@ -16,15 +16,20 @@ public class main {
 		//テーブルの表示
 		class_infos = search_sourse.get_classinfo();
 		for(int i=0;i<class_infos.size();i++){
-			ArrayList<method_type> temp = class_infos.get(i).definition_get();
-			for(int j=0;j<temp.size();j++){
-				System.out.println(temp.get(j).returnType_get()+",==="+temp.get(j).identifier_get());
-				ObjectInfoTable.Add("関数定義",temp.get(j).returnType_get(),temp.get(j).identifier_get());
+			ArrayList<method_type> temp_m = class_infos.get(i).definition_get();
+			for(int j=0;j<temp_m.size();j++){
+				System.out.println(temp_m.get(j).returnType_get()+",==="+temp_m.get(j).identifier_get());
+				ObjectInfoTable.Add("関数定義",temp_m.get(j).returnType_get(),temp_m.get(j).identifier_get());
 			}
-			ArrayList<String> temp1 = class_infos.get(i).callmethod_get();
-			for(int j=0;j<temp1.size();j++){
-				System.out.println(temp1.get(j));
-				ObjectInfoTable.Add("関数呼出",temp1.get(j),"");
+			ArrayList<String> temp_s = class_infos.get(i).callmethod_get();
+			for(int j=0;j<temp_s.size();j++){
+				System.out.println(temp_s.get(j));
+				ObjectInfoTable.Add("関数呼出",temp_s.get(j),"");
+			}
+			ArrayList<new_class> temp_c = class_infos.get(i).new_class_get();
+			for(int j=0;j<temp_c.size();j++){
+				System.out.println(temp_c.get(j));
+				ObjectInfoTable.Add("オブジェクト生成",temp_c.get(j).class_name,temp_c.get(j).identifier);
 			}
 		}
 		objectTable.DisplayTable();
