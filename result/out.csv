@@ -1,50 +1,48 @@
 
 6,method,,definition,CannotEvaluateException,       public CannotEvaluateException() {
 9,method,,definition,CannotEvaluateException,       public CannotEvaluateException(String message) {
-19,method,,call,newArrayList,       private static final List VALUES = new ArrayList(14);
-20,method,,call,newColorInterpretation,       public static final ColorInterpretation UNDEFINED = new ColorInterpretation("UNDEFINED");
-21,method,,call,newColorInterpretation,       public static final ColorInterpretation GRAY_INDEX = new ColorInterpretation("GRAY_INDEX");
-22,method,,call,newColorInterpretation,       public static final ColorInterpretation PALETTE_INDEX = new ColorInterpretation("PALETTE_INDEX");
-23,method,,call,newColorInterpretation,       public static final ColorInterpretation RED_BAND = new ColorInterpretation("RED_BAND");
-24,method,,call,newColorInterpretation,       public static final ColorInterpretation GREEN_BAND = new ColorInterpretation("GREEN_BAND");
-25,method,,call,newColorInterpretation,       public static final ColorInterpretation BLUE_BAND = new ColorInterpretation("BLUE_BAND");
-26,method,,call,newColorInterpretation,       public static final ColorInterpretation ALPHA_BAND = new ColorInterpretation("ALPHA_BAND");
-27,method,,call,newColorInterpretation,       public static final ColorInterpretation HUE_BAND = new ColorInterpretation("HUE_BAND");
-28,method,,call,newColorInterpretation,       public static final ColorInterpretation SATURATION_BAND = new ColorInterpretation("SATURATION_BAND");
-29,method,,call,newColorInterpretation,       public static final ColorInterpretation LIGHTNESS_BAND = new ColorInterpretation("LIGHTNESS_BAND");
-30,method,,call,newColorInterpretation,       public static final ColorInterpretation CYAN_BAND = new ColorInterpretation("CYAN_BAND");
-31,method,,call,newColorInterpretation,       public static final ColorInterpretation MAGENTA_BAND = new ColorInterpretation("MAGENTA_BAND");
-32,method,,call,newColorInterpretation,       public static final ColorInterpretation YELLOW_BAND = new ColorInterpretation("YELLOW_BAND");
-33,method,,call,newColorInterpretation,       public static final ColorInterpretation BLACK_BAND = new ColorInterpretation("BLACK_BAND");
+19,method,,call,ArrayList,       private static final List VALUES = new ArrayList(14);
+20,method,,call,ColorInterpretation,       public static final ColorInterpretation UNDEFINED = new ColorInterpretation("UNDEFINED");
+21,method,,call,ColorInterpretation,       public static final ColorInterpretation GRAY_INDEX = new ColorInterpretation("GRAY_INDEX");
+22,method,,call,ColorInterpretation,       public static final ColorInterpretation PALETTE_INDEX = new ColorInterpretation("PALETTE_INDEX");
+23,method,,call,ColorInterpretation,       public static final ColorInterpretation RED_BAND = new ColorInterpretation("RED_BAND");
+24,method,,call,ColorInterpretation,       public static final ColorInterpretation GREEN_BAND = new ColorInterpretation("GREEN_BAND");
+25,method,,call,ColorInterpretation,       public static final ColorInterpretation BLUE_BAND = new ColorInterpretation("BLUE_BAND");
+26,method,,call,ColorInterpretation,       public static final ColorInterpretation ALPHA_BAND = new ColorInterpretation("ALPHA_BAND");
+27,method,,call,ColorInterpretation,       public static final ColorInterpretation HUE_BAND = new ColorInterpretation("HUE_BAND");
+28,method,,call,ColorInterpretation,       public static final ColorInterpretation SATURATION_BAND = new ColorInterpretation("SATURATION_BAND");
+29,method,,call,ColorInterpretation,       public static final ColorInterpretation LIGHTNESS_BAND = new ColorInterpretation("LIGHTNESS_BAND");
+30,method,,call,ColorInterpretation,       public static final ColorInterpretation CYAN_BAND = new ColorInterpretation("CYAN_BAND");
+31,method,,call,ColorInterpretation,       public static final ColorInterpretation MAGENTA_BAND = new ColorInterpretation("MAGENTA_BAND");
+32,method,,call,ColorInterpretation,       public static final ColorInterpretation YELLOW_BAND = new ColorInterpretation("YELLOW_BAND");
+33,method,,call,ColorInterpretation,       public static final ColorInterpretation BLACK_BAND = new ColorInterpretation("BLACK_BAND");
 34,method,,definition,ColorInterpretation,       public ColorInterpretation(final String name) {
 37,method,,definition,values,       public static ColorInterpretation[] values() {
-39,method,,call,VALUES.toArray,            return (ColorInterpretation[]) VALUESDottttTtoArray(new ColorInterpretation[VALUESDottttTsize()]);
-39,method,,call,VALUES.size,            return (ColorInterpretation[]) VALUESDottttTtoArray(new ColorInterpretation[VALUESDottttTsize()]);
+39,method,,call,VALUESDottttTtoArray,            return (ColorInterpretation[]) VALUESDottttTtoArray(new ColorInterpretation[VALUESDottttTsize()]);
 42,method,,definition,family,       public CodeList[] family() {
 43,method,,call,values,        return values();
 53,method,,call,getCoordinateReferenceSystem,       CoordinateReferenceSystem getCoordinateReferenceSystem();
 54,method,,call,getEnvelope,       Envelope getEnvelope();
-55,method,,call,]getDimensionNames,       String[] getDimensionNames();
+55,method,,call,getDimensionNames,       String[] getDimensionNames();
 56,method,,call,getNumSampleDimensions,       int getNumSampleDimensions();
 57,method,,call,getSampleDimension,       SampleDimension getSampleDimension(int index) throws IndexOutOfBoundsException;
 58,method,,call,getNumSources,       int getNumSources();
 59,method,,call,getSource,       Coverage getSource(int sourceDataIndex) throws IndexOutOfBoundsException;
-60,method,,call,]getMetadataNames,       String[] getMetadataNames();
+60,method,,call,getMetadataNames,       String[] getMetadataNames();
 61,method,,call,getMetadataValue,       String getMetadataValue(String name) throws MetadataNameNotFoundException;
 62,method,,call,evaluate,       Object evaluate(DirectPosition point) throws CannotEvaluateException;
-63,method,,call,]evaluate,       boolean[] evaluate(DirectPosition point, boolean[] destination)            throws CannotEvaluateException, ArrayIndexOutOfBoundsException;
-64,method,,call,]evaluate,       byte[] evaluate(DirectPosition point, byte[] destination)            throws CannotEvaluateException, ArrayIndexOutOfBoundsException;
-65,method,,call,]evaluate,       int[] evaluate(DirectPosition point, int[] destination)            throws CannotEvaluateException, ArrayIndexOutOfBoundsException;
-66,method,,call,]evaluate,       double[] evaluate(DirectPosition point, float[] destination)            throws CannotEvaluateException, ArrayIndexOutOfBoundsException;
-67,method,,call,]evaluate,       double[] evaluate(DirectPosition point, double[] destination)            throws CannotEvaluateException, ArrayIndexOutOfBoundsException;
+63,method,,call,evaluate,       boolean[] evaluate(DirectPosition point, boolean[] destination)            throws CannotEvaluateException, ArrayIndexOutOfBoundsException;
+64,method,,call,evaluate,       byte[] evaluate(DirectPosition point, byte[] destination)            throws CannotEvaluateException, ArrayIndexOutOfBoundsException;
+65,method,,call,evaluate,       int[] evaluate(DirectPosition point, int[] destination)            throws CannotEvaluateException, ArrayIndexOutOfBoundsException;
+66,method,,call,evaluate,       double[] evaluate(DirectPosition point, float[] destination)            throws CannotEvaluateException, ArrayIndexOutOfBoundsException;
+67,method,,call,evaluate,       double[] evaluate(DirectPosition point, double[] destination)            throws CannotEvaluateException, ArrayIndexOutOfBoundsException;
 68,method,,call,getRenderableImage,           RenderableImage getRenderableImage(int xAxis, int yAxis)            throws UnsupportedOperationException, IndexOutOfBoundsException;
-76,method,,call,newArrayList,       private static final List VALUES = new ArrayList(2);
-77,method,,call,newByteInValuePacking,       public static final ByteInValuePacking WKB_XDR = new ByteInValuePacking("WKB_XDR");
-78,method,,call,newByteInValuePacking,       public static final ByteInValuePacking WKB_NDR = new ByteInValuePacking("WKB_NDR");
+76,method,,call,ArrayList,       private static final List VALUES = new ArrayList(2);
+77,method,,call,ByteInValuePacking,       public static final ByteInValuePacking WKB_XDR = new ByteInValuePacking("WKB_XDR");
+78,method,,call,ByteInValuePacking,       public static final ByteInValuePacking WKB_NDR = new ByteInValuePacking("WKB_NDR");
 79,method,,definition,ByteInValuePacking,       public ByteInValuePacking(final String name) {
 82,method,,definition,values,       public static ByteInValuePacking[] values() {
-84,method,,call,VALUES.toArray,            return (ByteInValuePacking[]) VALUESDottttTtoArray(new ByteInValuePacking[VALUESDottttTsize()]);
-84,method,,call,VALUES.size,            return (ByteInValuePacking[]) VALUESDottttTtoArray(new ByteInValuePacking[VALUESDottttTsize()]);
+84,method,,call,VALUESDottttTtoArray,            return (ByteInValuePacking[]) VALUESDottttTtoArray(new ByteInValuePacking[VALUESDottttTsize()]);
 87,method,,definition,family,       public CodeList[] family() {
 88,method,,call,values,        return values();
 95,method,,definition,CannotCreateGridCoverageException,       public CannotCreateGridCoverageException() {
@@ -52,17 +50,17 @@
 108,method,,call,isDataEditable,       boolean isDataEditable();
 109,method,,call,getGridPacking,       GridPacking getGridPacking();
 110,method,,call,getGridGeometry,       GridGeometry getGridGeometry();
-111,method,,call,]getOptimalDataBlockSizes,       int[] getOptimalDataBlockSizes();
+111,method,,call,getOptimalDataBlockSizes,       int[] getOptimalDataBlockSizes();
 112,method,,call,getNumOverviews,       int getNumOverviews();
 113,method,,call,getOverviewGridGeometry,       GridGeometry getOverviewGridGeometry(int overviewIndex) throws IndexOutOfBoundsException;
 114,method,,call,getOverview,       GridCoverage getOverview(int overviewIndex) throws IndexOutOfBoundsException;
-115,method,,call,]getDataBlock,          boolean[] getDataBlock(GridRange gridRange, boolean[] destination)            throws InvalidRangeException, ArrayIndexOutOfBoundsException;
-116,method,,call,]getDataBlock,       byte[] getDataBlock(GridRange gridRange, byte[] destination)            throws InvalidRangeException, ArrayIndexOutOfBoundsException;
-117,method,,call,]getDataBlock,       short[] getDataBlock(GridRange gridRange, short[] destination)            throws InvalidRangeException, ArrayIndexOutOfBoundsException;
-118,method,,call,]getDataBlock,       int[] getDataBlock(GridRange gridRange, int[] destination)            throws InvalidRangeException, ArrayIndexOutOfBoundsException;
-119,method,,call,]getDataBlock,       float[] getDataBlock(GridRange gridRange, float[] destination)            throws InvalidRangeException, ArrayIndexOutOfBoundsException;
-120,method,,call,]getDataBlock,       double[] getDataBlock(GridRange gridRange, double[] destination)            throws InvalidRangeException, ArrayIndexOutOfBoundsException;
-121,method,,call,]getPackedDataBlock,       byte[] getPackedDataBlock(GridRange gridRange) throws InvalidRangeException;
+115,method,,call,getDataBlock,          boolean[] getDataBlock(GridRange gridRange, boolean[] destination)            throws InvalidRangeException, ArrayIndexOutOfBoundsException;
+116,method,,call,getDataBlock,       byte[] getDataBlock(GridRange gridRange, byte[] destination)            throws InvalidRangeException, ArrayIndexOutOfBoundsException;
+117,method,,call,getDataBlock,       short[] getDataBlock(GridRange gridRange, short[] destination)            throws InvalidRangeException, ArrayIndexOutOfBoundsException;
+118,method,,call,getDataBlock,       int[] getDataBlock(GridRange gridRange, int[] destination)            throws InvalidRangeException, ArrayIndexOutOfBoundsException;
+119,method,,call,getDataBlock,       float[] getDataBlock(GridRange gridRange, float[] destination)            throws InvalidRangeException, ArrayIndexOutOfBoundsException;
+120,method,,call,getDataBlock,       double[] getDataBlock(GridRange gridRange, double[] destination)            throws InvalidRangeException, ArrayIndexOutOfBoundsException;
+121,method,,call,getPackedDataBlock,       byte[] getPackedDataBlock(GridRange gridRange) throws InvalidRangeException;
 122,method,,call,setDataBlock,       void setDataBlock(GridRange gridRange, boolean[] values)            throws InvalidRangeException, GridNotEditableException, ArrayIndexOutOfBoundsException;
 123,method,,call,setDataBlock,       void setDataBlock(GridRange gridRange, byte[] values)            throws InvalidRangeException, GridNotEditableException, ArrayIndexOutOfBoundsException;
 124,method,,call,setDataBlock,       void setDataBlock(GridRange gridRange, short[] values)            throws InvalidRangeException, GridNotEditableException, ArrayIndexOutOfBoundsException;
@@ -77,35 +75,33 @@
 149,method,,call,getByteInValuePacking,       ByteInValuePacking getByteInValuePacking();
 150,method,,call,getValueInBytePacking,       ValueInBytePacking getValueInBytePacking();
 151,method,,call,getBandPacking,       int getBandPacking();
-155,method,,call,]getLower,       int[] getLower();
-156,method,,call,]getUpper,       int[] getUpper();
+155,method,,call,getLower,       int[] getLower();
+156,method,,call,getUpper,       int[] getUpper();
 161,method,,definition,InvalidRangeException,       public InvalidRangeException() {
 164,method,,definition,InvalidRangeException,       public InvalidRangeException(String message) {
-175,method,,call,newArrayList,       private static final List VALUES = new ArrayList(2);
-176,method,,call,newValueInBytePacking,       public static final ValueInBytePacking LO_BIT_FIRST = new ValueInBytePacking("LO_BIT_FIRST");
-177,method,,call,newValueInBytePacking,       public static final ValueInBytePacking HI_BIT_FIRST = new ValueInBytePacking("HI_BIT_FIRST");
+175,method,,call,ArrayList,       private static final List VALUES = new ArrayList(2);
+176,method,,call,ValueInBytePacking,       public static final ValueInBytePacking LO_BIT_FIRST = new ValueInBytePacking("LO_BIT_FIRST");
+177,method,,call,ValueInBytePacking,       public static final ValueInBytePacking HI_BIT_FIRST = new ValueInBytePacking("HI_BIT_FIRST");
 178,method,,definition,ValueInBytePacking,       public ValueInBytePacking(final String name) {
 181,method,,definition,values,       public static ValueInBytePacking[] values() {
-183,method,,call,VALUES.toArray,            return (ValueInBytePacking[]) VALUESDottttTtoArray(new ValueInBytePacking[VALUESDottttTsize()]);
-183,method,,call,VALUES.size,            return (ValueInBytePacking[]) VALUESDottttTtoArray(new ValueInBytePacking[VALUESDottttTsize()]);
+183,method,,call,VALUESDottttTtoArray,            return (ValueInBytePacking[]) VALUESDottttTtoArray(new ValueInBytePacking[VALUESDottttTsize()]);
 186,method,,definition,family,       public CodeList[] family() {
 187,method,,call,values,        return values();
 193,method,,definition,MetadataNameNotFoundException,       public MetadataNameNotFoundException() {
 196,method,,definition,MetadataNameNotFoundException,       public MetadataNameNotFoundException(String message) {
-207,method,,call,newArrayList,       private static final List VALUES = new ArrayList(4);
-208,method,,call,newPaletteInterpretation,       public static final PaletteInterpretation GRAY = new PaletteInterpretation("GRAY");
-209,method,,call,newPaletteInterpretation,       public static final PaletteInterpretation RGB = new PaletteInterpretation("RGB");
-210,method,,call,newPaletteInterpretation,       public static final PaletteInterpretation CMYK = new PaletteInterpretation("CMYK");
-211,method,,call,newPaletteInterpretation,       public static final PaletteInterpretation HLS = new PaletteInterpretation("HLS");
+207,method,,call,ArrayList,       private static final List VALUES = new ArrayList(4);
+208,method,,call,PaletteInterpretation,       public static final PaletteInterpretation GRAY = new PaletteInterpretation("GRAY");
+209,method,,call,PaletteInterpretation,       public static final PaletteInterpretation RGB = new PaletteInterpretation("RGB");
+210,method,,call,PaletteInterpretation,       public static final PaletteInterpretation CMYK = new PaletteInterpretation("CMYK");
+211,method,,call,PaletteInterpretation,       public static final PaletteInterpretation HLS = new PaletteInterpretation("HLS");
 212,method,,definition,PaletteInterpretation,       public PaletteInterpretation(final String name) {
 215,method,,definition,values,       public static PaletteInterpretation[] values() {
-217,method,,call,VALUES.toArray,            return (PaletteInterpretation[]) VALUESDottttTtoArray(new PaletteInterpretation[VALUESDottttTsize()]);
-217,method,,call,VALUES.size,            return (PaletteInterpretation[]) VALUESDottttTtoArray(new PaletteInterpretation[VALUESDottttTsize()]);
+217,method,,call,VALUESDottttTtoArray,            return (PaletteInterpretation[]) VALUESDottttTtoArray(new PaletteInterpretation[VALUESDottttTsize()]);
 220,method,,definition,family,       public CodeList[] family() {
 221,method,,call,values,        return values();
 228,method,,definition,PointOutsideCoverageException,           public PointOutsideCoverageException() {
 231,method,,definition,PointOutsideCoverageException,           public PointOutsideCoverageException(String message) {
-244,method,,call,]getMetadataNames,       String[] getMetadataNames();
+244,method,,call,getMetadataNames,       String[] getMetadataNames();
 245,method,,call,getMetadataValue,       String getMetadataValue(String name) throws MetadataNameNotFoundException;
 246,method,,call,getNumOperations,       int getNumOperations();
 247,method,,call,getOperation,       Operation getOperation(int index) throws IndexOutOfBoundsException;
@@ -119,53 +115,52 @@
 267,method,,call,getDocURL,       String getDocURL();
 268,method,,call,getVersion,       String getVersion();
 269,method,,call,getNumSources,       int getNumSources();
-270,method,,call,]getParameters,       GeneralOperationParameter[] getParameters();
+270,method,,call,getParameters,       GeneralOperationParameter[] getParameters();
 275,method,,definition,OperationNotFoundException,       public OperationNotFoundException() {
 278,method,,definition,OperationNotFoundException,       public OperationNotFoundException(String message) {
 286,method,,call,getDescription,       String getDescription();
 287,method,,call,getSampleDimensionType,       SampleDimensionType getSampleDimensionType();
-288,method,,call,]getCategoryNames,       String[] getCategoryNames();
+288,method,,call,getCategoryNames,       String[] getCategoryNames();
 289,method,,call,getColorInterpretation,       ColorInterpretation getColorInterpretation();
 290,method,,call,getPaletteInterpretation,       PaletteInterpretation getPaletteInterpretation();
-291,method,,call,]getPalette,       int[][] getPalette();
-292,method,,call,]getNoDataValues,       double[] getNoDataValues();
+291,method,,call,getPalette,       int[][] getPalette();
+292,method,,call,getNoDataValues,       double[] getNoDataValues();
 293,method,,call,getMinimumValue,       double getMinimumValue();
 294,method,,call,getMaximumValue,       double getMaximumValue();
 295,method,,call,getUnits,       Unit getUnits();
 296,method,,call,getOffset,       double getOffset();
 297,method,,call,getScale,       double getScale();
 298,method,,call,getSampleToGeophysics,       MathTransform1D getSampleToGeophysics();
-299,method,,call,]getMetaDataNames,       String[] getMetaDataNames();
+299,method,,call,getMetaDataNames,       String[] getMetaDataNames();
 300,method,,call,getMetadataValue,       String getMetadataValue(String name) throws MetadataNameNotFoundException;
-309,method,,call,newArrayList,       private static final List VALUES = new ArrayList(11);
-310,method,,call,newSampleDimensionType,       public static final SampleDimensionType UNSIGNED_1BIT = new SampleDimensionType("UNSIGNED_1BIT");
-311,method,,call,newSampleDimensionType,       public static final SampleDimensionType UNSIGNED_2BITS = new SampleDimensionType("UNSIGNED_2BITS");
-312,method,,call,newSampleDimensionType,       public static final SampleDimensionType UNSIGNED_4BITS = new SampleDimensionType("UNSIGNED_4BITS");
-313,method,,call,newSampleDimensionType,       public static final SampleDimensionType UNSIGNED_8BITS = new SampleDimensionType("UNSIGNED_8BITS");
-314,method,,call,newSampleDimensionType,       public static final SampleDimensionType SIGNED_8BITS = new SampleDimensionType("SIGNED_8BITS");
-315,method,,call,newSampleDimensionType,       public static final SampleDimensionType UNSIGNED_16BITS = new SampleDimensionType("UNSIGNED_16BITS");
-316,method,,call,newSampleDimensionType,       public static final SampleDimensionType SIGNED_16BITS = new SampleDimensionType("SIGNED_16BITS");
-317,method,,call,newSampleDimensionType,       public static final SampleDimensionType UNSIGNED_32BITS = new SampleDimensionType("UNSIGNED_32BITS");
-318,method,,call,newSampleDimensionType,       public static final SampleDimensionType SIGNED_32BITS = new SampleDimensionType("SIGNED_32BITS");
-319,method,,call,newSampleDimensionType,       public static final SampleDimensionType REAL_32BITS = new SampleDimensionType("REAL_32BITS");
-320,method,,call,newSampleDimensionType,       public static final SampleDimensionType REAL_64BITS = new SampleDimensionType("REAL_64BITS");
+309,method,,call,ArrayList,       private static final List VALUES = new ArrayList(11);
+310,method,,call,SampleDimensionType,       public static final SampleDimensionType UNSIGNED_1BIT = new SampleDimensionType("UNSIGNED_1BIT");
+311,method,,call,SampleDimensionType,       public static final SampleDimensionType UNSIGNED_2BITS = new SampleDimensionType("UNSIGNED_2BITS");
+312,method,,call,SampleDimensionType,       public static final SampleDimensionType UNSIGNED_4BITS = new SampleDimensionType("UNSIGNED_4BITS");
+313,method,,call,SampleDimensionType,       public static final SampleDimensionType UNSIGNED_8BITS = new SampleDimensionType("UNSIGNED_8BITS");
+314,method,,call,SampleDimensionType,       public static final SampleDimensionType SIGNED_8BITS = new SampleDimensionType("SIGNED_8BITS");
+315,method,,call,SampleDimensionType,       public static final SampleDimensionType UNSIGNED_16BITS = new SampleDimensionType("UNSIGNED_16BITS");
+316,method,,call,SampleDimensionType,       public static final SampleDimensionType SIGNED_16BITS = new SampleDimensionType("SIGNED_16BITS");
+317,method,,call,SampleDimensionType,       public static final SampleDimensionType UNSIGNED_32BITS = new SampleDimensionType("UNSIGNED_32BITS");
+318,method,,call,SampleDimensionType,       public static final SampleDimensionType SIGNED_32BITS = new SampleDimensionType("SIGNED_32BITS");
+319,method,,call,SampleDimensionType,       public static final SampleDimensionType REAL_32BITS = new SampleDimensionType("REAL_32BITS");
+320,method,,call,SampleDimensionType,       public static final SampleDimensionType REAL_64BITS = new SampleDimensionType("REAL_64BITS");
 321,method,,definition,SampleDimensionType,       public SampleDimensionType(final String name) {
 324,method,,definition,values,       public static SampleDimensionType[] values() {
-326,method,,call,VALUES.toArray,            return (SampleDimensionType[]) VALUESDottttTtoArray(new SampleDimensionType[VALUESDottttTsize()]);
-326,method,,call,VALUES.size,            return (SampleDimensionType[]) VALUESDottttTtoArray(new SampleDimensionType[VALUESDottttTsize()]);
+326,method,,call,VALUESDottttTtoArray,            return (SampleDimensionType[]) VALUESDottttTtoArray(new SampleDimensionType[VALUESDottttTsize()]);
 329,method,,definition,family,       public CodeList[] family() {
 330,method,,call,values,        return values();
-337,method,,call,]getSupportedBounds,       Class[] getSupportedBounds();
-338,method,,call,]getSupportedDirectPositions,       Class[] getSupportedDirectPositions();
-339,method,,call,]getSupportedDirectPositions,       Class[] getSupportedDirectPositions(CoordinateReferenceSystem crs);
-340,method,,call,]getSupportedSpatialSchemaObjects,       Class[] getSupportedSpatialSchemaObjects(CoordinateReferenceSystem crs);
-341,method,,call,]getSupportedOrientations,       Class[] getSupportedOrientations();
-342,method,,call,]getSupportedOrientations,       Class[] getSupportedOrientations(CoordinateReferenceSystem crs);
-343,method,,call,]getSupportedGeometries,       Class[] getSupportedGeometries();
-344,method,,call,]getSupportedCoordinateReferenceSystems,       String[] getSupportedCoordinateReferenceSystems();
-345,method,,call,]getSupportedDatums,       String[] getSupportedDatums();
-346,method,,call,]getSupportedPathTypes,       PathType[] getSupportedPathTypes();
-347,method,,call,]getSupportedProjections,       String[] getSupportedProjections();
+337,method,,call,getSupportedBounds,       Class[] getSupportedBounds();
+338,method,,call,getSupportedDirectPositions,       Class[] getSupportedDirectPositions();
+339,method,,call,getSupportedDirectPositions,       Class[] getSupportedDirectPositions(CoordinateReferenceSystem crs);
+340,method,,call,getSupportedSpatialSchemaObjects,       Class[] getSupportedSpatialSchemaObjects(CoordinateReferenceSystem crs);
+341,method,,call,getSupportedOrientations,       Class[] getSupportedOrientations();
+342,method,,call,getSupportedOrientations,       Class[] getSupportedOrientations(CoordinateReferenceSystem crs);
+343,method,,call,getSupportedGeometries,       Class[] getSupportedGeometries();
+344,method,,call,getSupportedCoordinateReferenceSystems,       String[] getSupportedCoordinateReferenceSystems();
+345,method,,call,getSupportedDatums,       String[] getSupportedDatums();
+346,method,,call,getSupportedPathTypes,       PathType[] getSupportedPathTypes();
+347,method,,call,getSupportedProjections,       String[] getSupportedProjections();
 356,method,,call,getCapabilities,       public CommonCapabilities getCapabilities();
 357,method,,call,getBoundsFactory,              public BoundsFactory getBoundsFactory();
 358,method,,call,getCRSFactory,       public CRSFactory getCRSFactory();
@@ -186,8 +181,8 @@
 384,method,,call,findEventManager,       EventManager findEventManager(Class eventManagerClass);
 385,method,,call,addEventManager,       void addEventManager(EventManager eventManager);
 386,method,,call,getTopGraphicAt,       Graphic getTopGraphicAt(DirectPosition directPosition);
-387,method,,call,]getGraphicsAt,       Graphic[] getGraphicsAt(DirectPosition directPosition);
-388,method,,call,]getGraphicsIn,       Graphic[] getGraphicsIn(BoundingRectangle bounds);
+387,method,,call,getGraphicsAt,       Graphic[] getGraphicsAt(DirectPosition directPosition);
+388,method,,call,getGraphicsIn,       Graphic[] getGraphicsIn(BoundingRectangle bounds);
 389,method,,call,addCanvasListener,           void addCanvasListener(CanvasListener listener);
 390,method,,call,removeCanvasListener,       void removeCanvasListener(CanvasListener listener);
 391,method,,call,enableCanvasHandler,           void enableCanvasHandler(CanvasHandler handler);
@@ -209,26 +204,26 @@
 421,method,,call,getCenter,       public DirectPosition getCenter();
 422,method,,call,clone,       public Object clone() throws CloneNotSupportedException;
 423,method,,call,equals,       public boolean equals(Object object);
-439,method,,call,]getSupportedPrimitives,           public Class[] getSupportedPrimitives();
+439,method,,call,getSupportedPrimitives,           public Class[] getSupportedPrimitives();
 440,method,,call,isEventManagerSupported,           public boolean isEventManagerSupported(Class eventManagerClass);
 441,method,,call,isBacklightingSupported,           public boolean isBacklightingSupported();
 442,method,,call,isLineWidthSupported,           public boolean isLineWidthSupported();
 443,method,,call,isLineGapSupported,           public boolean isLineGapSupported();
-444,method,,call,]getSupportedArrowStyles,           public ArrowStyle[] getSupportedArrowStyles();
-445,method,,call,]getSupportedLineStyles,           public LineStyle[] getSupportedLineStyles();
-446,method,,call,]getSupportedLineJoins,           public LineJoin[] getSupportedLineJoins();
-447,method,,call,]getSupportedLineCaps,           public LineCap[] getSupportedLineCaps();
+444,method,,call,getSupportedArrowStyles,           public ArrowStyle[] getSupportedArrowStyles();
+445,method,,call,getSupportedLineStyles,           public LineStyle[] getSupportedLineStyles();
+446,method,,call,getSupportedLineJoins,           public LineJoin[] getSupportedLineJoins();
+447,method,,call,getSupportedLineCaps,           public LineCap[] getSupportedLineCaps();
 448,method,,call,isDashPatternSupported,           public boolean isDashPatternSupported();
 449,method,,call,isBlinkSupported,           public boolean isBlinkSupported();
-450,method,,call,]getSupportedFillStyles,           public FillStyle[] getSupportedFillStyles();
-451,method,,call,]getSupportedFillPatterns,           public FillPattern[] getSupportedFillPatterns();
-452,method,,call,]getSupportedMarks,           public Mark[] getSupportedMarks();
-453,method,,call,]getSupportedLinePatterns,           public LinePattern[] getSupportedLinePatterns();
-454,method,,call,]getSupportedXAnchors,           public XAnchor[] getSupportedXAnchors();
-455,method,,call,]getSupportedYAnchors,           public YAnchor[] getSupportedYAnchors();
+450,method,,call,getSupportedFillStyles,           public FillStyle[] getSupportedFillStyles();
+451,method,,call,getSupportedFillPatterns,           public FillPattern[] getSupportedFillPatterns();
+452,method,,call,getSupportedMarks,           public Mark[] getSupportedMarks();
+453,method,,call,getSupportedLinePatterns,           public LinePattern[] getSupportedLinePatterns();
+454,method,,call,getSupportedXAnchors,           public XAnchor[] getSupportedXAnchors();
+455,method,,call,getSupportedYAnchors,           public YAnchor[] getSupportedYAnchors();
 456,method,,call,isGradientSupported,           public boolean isGradientSupported();
 457,method,,call,getDefaultGraphicStyle,           public GraphicStyle getDefaultGraphicStyle();
-458,method,,call,]getSupportedSymbologies,           public SymbologyInfo[] getSupportedSymbologies();
+458,method,,call,getSupportedSymbologies,           public SymbologyInfo[] getSupportedSymbologies();
 466,method,,call,createGraphic,       public Graphic createGraphic(Class implementsGraphic);
 467,method,,call,getCapabilities,       public DisplayCapabilities getCapabilities();
 468,method,,call,createCanvas,           public Canvas createCanvas(Properties canvasProperties, Container container);
@@ -236,9 +231,9 @@
 470,method,,call,getCanvas,           public Canvas getCanvas(String uid);
 477,method,,call,getID,       public int getID();
 482,method,,call,aggregationChanged,                   public void aggregationChanged(AggregationChangeEvent event);
-487,method,,call,voidhandlerEnabled,       public abstract void handlerEnabled();
-488,method,,call,voidhandlerDisabled,       public abstract void handlerDisabled();
-489,method,,call,voidhandlerRemoved,       public abstract void handlerRemoved();
+487,method,,call,handlerEnabled,       public abstract void handlerEnabled();
+488,method,,call,handlerDisabled,       public abstract void handlerDisabled();
+489,method,,call,handlerRemoved,       public abstract void handlerRemoved();
 503,method,,call,getID,                   public int getID();
 508,method,,call,getGraphic,                   public Graphic getGraphic();
 509,method,,call,consume,       public void consume();
@@ -262,15 +257,15 @@
 550,method,,call,removeKeyHandler,       public void removeKeyHandler(KeyHandler keyHandler);
 551,method,,call,replaceKeyHandler,       public boolean replaceKeyHandler(KeyHandler existingHandler,                                     KeyHandler replacementHandler);
 552,method,,call,getCurrentKeyHandler,       public KeyHandler getCurrentKeyHandler();
-553,method,,call,]getFallbackKeyHandlers,       public KeyHandler[] getFallbackKeyHandlers();
+553,method,,call,getFallbackKeyHandlers,       public KeyHandler[] getFallbackKeyHandlers();
 562,method,,call,enableMouseHandler,       public void enableMouseHandler(MouseHandler mouseHandler);
 563,method,,call,pushMouseHandler,       public void pushMouseHandler(MouseHandler mouseHandler);
 564,method,,call,removeMouseHandler,       public void removeMouseHandler(MouseHandler mouseHandler);
 565,method,,call,replaceMouseHandler,       public boolean replaceMouseHandler(MouseHandler existingHandler,        MouseHandler replacementHandler);
 566,method,,call,getCurrentMouseHandler,       public MouseHandler getCurrentMouseHandler();
-567,method,,call,]getFallbackMouseHandlers,       public MouseHandler[] getFallbackMouseHandlers();
+567,method,,call,getFallbackMouseHandlers,       public MouseHandler[] getFallbackMouseHandlers();
 573,method,,call,setChildren,       public void setChildren(Graphic[] children);
-574,method,,call,]getChildren,       public Graphic[] getChildren();
+574,method,,call,getChildren,       public Graphic[] getChildren();
 575,method,,call,addChild,       public Graphic addChild(Graphic child);
 576,method,,call,removeChild,       public Graphic removeChild(Graphic child);
 577,method,,call,removeChildren,       public void removeChildren();
@@ -325,16 +320,15 @@
 653,method,,call,setAllowingExtentsChange,       public void setAllowingExtentsChange(boolean newValue);
 654,method,,call,setClosurePathType,           public void setClosurePathType(PathType pathType);
 655,method,,call,getClosurePathType,       public PathType getClosurePathType();
-657,method,,call,newArrayList,           private static final List VALUES = new ArrayList(3);
-658,method,,call,newArcClosure,               public static final ArcClosure OPEN = new ArcClosure("Open", "");
-659,method,,call,newArcClosure,               public static final ArcClosure CHORD = new ArcClosure("Chord", "");
-660,method,,call,newArcClosure,               public static final ArcClosure PIE = new ArcClosure("Pie", "");
+657,method,,call,ArrayList,           private static final List VALUES = new ArrayList(3);
+658,method,,call,ArcClosure,               public static final ArcClosure OPEN = new ArcClosure("Open", "");
+659,method,,call,ArcClosure,               public static final ArcClosure CHORD = new ArcClosure("Chord", "");
+660,method,,call,ArcClosure,               public static final ArcClosure PIE = new ArcClosure("Pie", "");
 661,method,,definition,ArcClosure,                                                                       private ArcClosure(String name, String description) {
 664,method,,definition,getArray,                      public static ArcClosure[] getArray() {
 665,method,,call,values,            return values();
 667,method,,definition,values,               public static ArcClosure[] values() {
-669,method,,call,VALUES.toArray,            return (ArcClosure[]) VALUESDottttTtoArray(new ArcClosure[VALUESDottttTsize()]);
-669,method,,call,VALUES.size,            return (ArcClosure[]) VALUESDottttTtoArray(new ArcClosure[VALUESDottttTsize()]);
+669,method,,call,VALUESDottttTtoArray,            return (ArcClosure[]) VALUESDottttTtoArray(new ArcClosure[VALUESDottttTsize()]);
 672,method,,definition,family,       public CodeList[] family() {
 673,method,,call,values,        return values();
 682,method,,call,setCompositeCurve,           public void setCompositeCurve(CompositeCurve compositeCurve) throws GeometryNotSupportedException;
@@ -347,7 +341,7 @@
 689,method,,call,removeSegment,           public Graphic removeSegment(int index);
 690,method,,call,isValid,           public boolean isValid();
 691,method,,call,insertSegment,           public Graphic insertSegment(int index, Graphic segment);
-692,method,,call,]getSegments,           public Graphic[] getSegments();
+692,method,,call,getSegments,           public Graphic[] getSegments();
 693,method,,call,getSegmentCount,           public int getSegmentCount();
 694,method,,call,getSegment,           public Graphic getSegment(int index);
 695,method,,call,addSegment,           public Graphic addSegment(Graphic segment);
@@ -358,7 +352,7 @@
 707,method,,call,getCurveSegment,       public CurveSegment getCurveSegment();
 708,method,,call,getPointArray,       public PointArray getPointArray();
 709,method,,call,setPointArray,       public void setPointArray(PointArray pointArray);
-710,method,,call,]getPoints,       public DirectPosition[] getPoints();
+710,method,,call,getPoints,       public DirectPosition[] getPoints();
 711,method,,call,setPoints,       public void setPoints(DirectPosition[] coords);
 712,method,,call,addPoint,       public void addPoint(DirectPosition coord);
 713,method,,call,deletePoint,       public void deletePoint(int index);
@@ -413,7 +407,7 @@
 791,method,,call,getSurfaceBoundary,           public SurfaceBoundary getSurfaceBoundary();
 792,method,,call,getExterior,           public GraphicRing getExterior();
 793,method,,call,setExterior,       public void setExterior(GraphicRing exterior);
-794,method,,call,]getInteriors,               public GraphicRing[] getInteriors();
+794,method,,call,getInteriors,               public GraphicRing[] getInteriors();
 795,method,,call,setInteriors,                          public void setInteriors(GraphicRing[] interiors);
 802,method,,call,addAnchorPoint,           public void addAnchorPoint(DirectPosition anchor);
 803,method,,call,deleteAnchorPoint,           public void deleteAnchorPoint(int index) throws IndexOutOfBoundsException;
@@ -421,7 +415,7 @@
 805,method,,call,insertAnchorPoint,           public void insertAnchorPoint(int index, DirectPosition anchor)         throws IndexOutOfBoundsException;
 806,method,,call,setAnchorPoint,           public void setAnchorPoint(int index, DirectPosition anchor)         throws IndexOutOfBoundsException;
 807,method,,call,setAnchorPoints,           public void setAnchorPoints(DirectPosition[] anchors);
-808,method,,call,]getAnchorPoints,           public DirectPosition[] getAnchorPoints();
+808,method,,call,getAnchorPoints,           public DirectPosition[] getAnchorPoints();
 809,method,,call,setAnchorPointArray,           public void setAnchorPointArray(PointArray pointArray);
 810,method,,call,getAnchorPointArray,           public PointArray getAnchorPointArray();
 811,method,,call,getSymbology,           public Symbology getSymbology(String symbologyName);
@@ -432,19 +426,18 @@
 819,method,,call,insertChild,       public Graphic insertChild(int index, Graphic child);
 820,method,,call,getChild,       public Graphic getChild(int index);
 821,method,,call,removeChild,       public Graphic removeChild(int index);
-829,method,,call,newArrayList,                   private static final List VALUES = new ArrayList(4);
-830,method,,call,newArrowStyle,       public static final ArrowStyle NONE = new ArrowStyle("NONE", "No arrow head will be drawn");
-831,method,,call,newArrowStyle,       public static final ArrowStyle OPEN_ARROW =        new ArrowStyle("OPEN_ARROW", "Single line with an open arrowheadDottttT");
-832,method,,call,newArrowStyle,       public static final ArrowStyle SOLID_ARROW =        new ArrowStyle("SOLID_ARROW", "Single line with a filled arrowheadDottttT");
-833,method,,call,newArrowStyle,       public static final ArrowStyle BROAD_ARROW        = new ArrowStyle("BROAD_ARROW",                         "Double line with large arrowheadDottttT");
+829,method,,call,ArrayList,                   private static final List VALUES = new ArrayList(4);
+830,method,,call,ArrowStyle,       public static final ArrowStyle NONE = new ArrowStyle("NONE", "No arrow head will be drawn");
+831,method,,call,ArrowStyle,       public static final ArrowStyle OPEN_ARROW =        new ArrowStyle("OPEN_ARROW", "Single line with an open arrowheadDottttT");
+832,method,,call,ArrowStyle,       public static final ArrowStyle SOLID_ARROW =        new ArrowStyle("SOLID_ARROW", "Single line with a filled arrowheadDottttT");
+833,method,,call,ArrowStyle,       public static final ArrowStyle BROAD_ARROW        = new ArrowStyle("BROAD_ARROW",                         "Double line with large arrowheadDottttT");
 834,method,,definition,ArrowStyle,                   protected ArrowStyle(String name, String description) {
-835,method,,call,,loadIconResource,        super(VALUES, name, description, loadIconResource(ArrowStyleDottttTclass, name + "DottttTgif"));
+835,method,,call,loadIconResource,        super(VALUES, name, description, loadIconResource(ArrowStyleDottttTclass, name + "DottttTgif"));
 837,method,,definition,values,                   public static ArrowStyle[] values() {
-839,method,,call,VALUES.toArray,            return (ArrowStyle[]) VALUESDottttTtoArray(new ArrowStyle[VALUESDottttTsize()]);
-839,method,,call,VALUES.size,            return (ArrowStyle[]) VALUESDottttTtoArray(new ArrowStyle[VALUESDottttTsize()]);
+839,method,,call,VALUESDottttTtoArray,            return (ArrowStyle[]) VALUESDottttTtoArray(new ArrowStyle[VALUESDottttTsize()]);
 842,method,,definition,family,       public CodeList[] family() {
 843,method,,call,values,        return values();
-848,method,,call,newDashArray,                       public static final DashArray NONE = new DashArray("NONE", "No Dash Array", new float[0]);
+848,method,,call,DashArray,                       public static final DashArray NONE = new DashArray("NONE", "No Dash Array", new float[0]);
 850,method,,definition,DashArray,                   public DashArray(String name, String description, float[] pattern) {
 854,method,,definition,getDashPattern,                   public float[] getDashPattern() {
 868,method,,call,getEditabilityAutoEdit,                           public boolean getEditabilityAutoEdit();
@@ -471,7 +464,7 @@
 899,method,,call,isBackgroundColorSet,               public boolean isBackgroundColorSet();
 900,method,,call,setBackgroundColor,               public void setBackgroundColor(Color fillBackgroundColor);
 901,method,,call,setBackgroundColorSet,               public void setBackgroundColorSet(boolean flag);
-902,method,,call,]getGradientPoints,           public float[] getGradientPoints();
+902,method,,call,getGradientPoints,           public float[] getGradientPoints();
 903,method,,call,isGradientPointsSet,               public boolean isGradientPointsSet();
 904,method,,call,setGradientPoints,               public void setGradientPoints(float[] fillGradientPoints);
 905,method,,call,setGradientPointsSet,               public void setGradientPointsSet(boolean flag);
@@ -487,35 +480,33 @@
 915,method,,call,isFillStyleSet,               public boolean isFillStyleSet();
 916,method,,call,setFillStyle,               public void setFillStyle(FillStyle fillStyle);
 917,method,,call,setFillStyleSet,               public void setFillStyleSet(boolean flag);
-925,method,,call,newArrayList,                   private static final List VALUES = new ArrayList(11);
-926,method,,call,newFillPattern,       public static final FillPattern NONE = new FillPattern("NONE", "No fillDottttT");
-927,method,,call,newFillPattern,       public static final FillPattern DOTS =        new FillPattern("DOTS", "Regularly spaced single pixelsDottttT");
-928,method,,call,newFillPattern,       public static final FillPattern VERTICAL_LINES =        new FillPattern("VERTICAL_LINES", "Parallel vertical linesDottttT");
-929,method,,call,newFillPattern,       public static final FillPattern HORIZONTAL_LINES =        new FillPattern("HORIZONTAL_LINES", "Parallel horizontal linesDottttT");
-930,method,,call,newFillPattern,       public static final FillPattern NEGATIVE_SLANTS =        new FillPattern(            "NEGATIVE_SLANTS",            "Parallel slanted lines running from upper left to lower rightDottttT");
-931,method,,call,newFillPattern,       public static final FillPattern POSITIVE_SLANTS =        new FillPattern(            "POSITIVE_SLANTS",            "Parallel slanted lines running from lower left to upper rightDottttT");
-932,method,,call,newFillPattern,       public static final FillPattern PLUSSES =        new FillPattern("PLUSSES", "Small closely spaced '+' marksDottttT");
-933,method,,call,newFillPattern,       public static final FillPattern XHATCH =        new FillPattern("XHATCH", "Two series of intersecting parallel linesDottttT");
-934,method,,call,newFillPattern,       public static final FillPattern FILL_25_PERCENT =        new FillPattern("FILL_25_PERCENT", "25% fillDottttT  Can be used to simulate transparencyDottttT");
-935,method,,call,newFillPattern,       public static final FillPattern FILL_50_PERCENT =        new FillPattern("FILL_50_PERCENT", "50% fillDottttT  Can be used to simulate transparencyDottttT");
-936,method,,call,newFillPattern,       public static final FillPattern FILL_75_PERCENT        = new FillPattern("FILL_75_PERCENT", "75% fillDottttT  Can be used to simulate transparencyDottttT");
+925,method,,call,ArrayList,                   private static final List VALUES = new ArrayList(11);
+926,method,,call,FillPattern,       public static final FillPattern NONE = new FillPattern("NONE", "No fillDottttT");
+927,method,,call,FillPattern,       public static final FillPattern DOTS =        new FillPattern("DOTS", "Regularly spaced single pixelsDottttT");
+928,method,,call,FillPattern,       public static final FillPattern VERTICAL_LINES =        new FillPattern("VERTICAL_LINES", "Parallel vertical linesDottttT");
+929,method,,call,FillPattern,       public static final FillPattern HORIZONTAL_LINES =        new FillPattern("HORIZONTAL_LINES", "Parallel horizontal linesDottttT");
+930,method,,call,FillPattern,       public static final FillPattern NEGATIVE_SLANTS =        new FillPattern(            "NEGATIVE_SLANTS",            "Parallel slanted lines running from upper left to lower rightDottttT");
+931,method,,call,FillPattern,       public static final FillPattern POSITIVE_SLANTS =        new FillPattern(            "POSITIVE_SLANTS",            "Parallel slanted lines running from lower left to upper rightDottttT");
+932,method,,call,FillPattern,       public static final FillPattern PLUSSES =        new FillPattern("PLUSSES", "Small closely spaced '+' marksDottttT");
+933,method,,call,FillPattern,       public static final FillPattern XHATCH =        new FillPattern("XHATCH", "Two series of intersecting parallel linesDottttT");
+934,method,,call,FillPattern,       public static final FillPattern FILL_25_PERCENT =        new FillPattern("FILL_25_PERCENT", "25% fillDottttT  Can be used to simulate transparencyDottttT");
+935,method,,call,FillPattern,       public static final FillPattern FILL_50_PERCENT =        new FillPattern("FILL_50_PERCENT", "50% fillDottttT  Can be used to simulate transparencyDottttT");
+936,method,,call,FillPattern,       public static final FillPattern FILL_75_PERCENT        = new FillPattern("FILL_75_PERCENT", "75% fillDottttT  Can be used to simulate transparencyDottttT");
 937,method,,definition,FillPattern,                   protected FillPattern(String name, String description) {
-938,method,,call,,loadIconResource,        super(VALUES, name, description, loadIconResource(FillPatternDottttTclass, name + "DottttTgif"));
+938,method,,call,loadIconResource,        super(VALUES, name, description, loadIconResource(FillPatternDottttTclass, name + "DottttTgif"));
 940,method,,definition,values,                   public static FillPattern[] values() {
-942,method,,call,VALUES.toArray,            return (FillPattern[]) VALUESDottttTtoArray(new FillPattern[VALUESDottttTsize()]);
-942,method,,call,VALUES.size,            return (FillPattern[]) VALUESDottttTtoArray(new FillPattern[VALUESDottttTsize()]);
+942,method,,call,VALUESDottttTtoArray,            return (FillPattern[]) VALUESDottttTtoArray(new FillPattern[VALUESDottttTsize()]);
 945,method,,definition,family,       public CodeList[] family() {
 946,method,,call,values,        return values();
-955,method,,call,newArrayList,                   private static final List VALUES = new ArrayList(5);
-956,method,,call,newFillStyle,       public static final FillStyle SOLID = new FillStyle("SOLID", "Fill entirely with the colorDottttT");
-957,method,,call,newFillStyle,       public static final FillStyle EMPTY = new FillStyle("EMPTY", "Do not fillDottttT");
-958,method,,call,newFillStyle,       public static final FillStyle STIPPLED =        new FillStyle("STIPPLED", "Fill using a transparent, tiled patternDottttT");
-959,method,,call,newFillStyle,       public static final FillStyle OPAQUE_STIPPLED =        new FillStyle("OPAQUE_STIPPLED", "Fill using an opaque, tiled patternDottttT");
-960,method,,call,newFillStyle,       public static final FillStyle GRADIENT =            new FillStyle("GRADIENT",                    "Fill using a smooth transition between the current " +                    "foreground and background colorsDottttT");
+955,method,,call,ArrayList,                   private static final List VALUES = new ArrayList(5);
+956,method,,call,FillStyle,       public static final FillStyle SOLID = new FillStyle("SOLID", "Fill entirely with the colorDottttT");
+957,method,,call,FillStyle,       public static final FillStyle EMPTY = new FillStyle("EMPTY", "Do not fillDottttT");
+958,method,,call,FillStyle,       public static final FillStyle STIPPLED =        new FillStyle("STIPPLED", "Fill using a transparent, tiled patternDottttT");
+959,method,,call,FillStyle,       public static final FillStyle OPAQUE_STIPPLED =        new FillStyle("OPAQUE_STIPPLED", "Fill using an opaque, tiled patternDottttT");
+960,method,,call,FillStyle,       public static final FillStyle GRADIENT =            new FillStyle("GRADIENT",                    "Fill using a smooth transition between the current " +                    "foreground and background colorsDottttT");
 961,method,,definition,FillStyle,                   protected FillStyle(String name, String description) {
 964,method,,definition,values,       public static FillStyle[] values() {
-966,method,,call,VALUES.toArray,            return (FillStyle[]) VALUESDottttTtoArray(new FillStyle[VALUESDottttTsize()]);
-966,method,,call,VALUES.size,            return (FillStyle[]) VALUESDottttTtoArray(new FillStyle[VALUESDottttTsize()]);
+966,method,,call,VALUESDottttTtoArray,            return (FillStyle[]) VALUESDottttTtoArray(new FillStyle[VALUESDottttTsize()]);
 969,method,,definition,family,       public CodeList[] family() {
 970,method,,call,values,        return values();
 988,method,,call,getGraphic,                                                  public Graphic getGraphic();
@@ -550,7 +541,7 @@
 1030,method,,call,isHighlightBlinkingSet,               public boolean isHighlightBlinkingSet();
 1031,method,,call,setHighlightBlinking,               public void setHighlightBlinking(boolean blinking);
 1032,method,,call,setHighlightBlinkingSet,               public void setHighlightBlinkingSet(boolean flag);
-1033,method,,call,]getHighlightBlinkPattern,          public float[] getHighlightBlinkPattern();
+1033,method,,call,getHighlightBlinkPattern,          public float[] getHighlightBlinkPattern();
 1034,method,,call,isHighlightBlinkPatternSet,               public boolean isHighlightBlinkPatternSet();
 1035,method,,call,setHighlightBlinkPattern,               public void setHighlightBlinkPattern(float[] blinkPattern);
 1036,method,,call,setHighlightBlinkPatternSet,               public void setHighlightBlinkPatternSet(boolean flag);
@@ -590,48 +581,44 @@
 1087,method,,call,isShowLabelSet,               public boolean isShowLabelSet();
 1088,method,,call,setShowLabel,               public void setShowLabel(boolean showLabel);
 1089,method,,call,setShowLabelSet,               public void setShowLabelSet(boolean flag);
-1097,method,,call,newArrayList,                   private static final List VALUES = new ArrayList(3);
-1098,method,,call,newLineCap,       public static final LineCap BUTT = new LineCap("BUTT", "Draw line ends with no decorationDottttT");
-1099,method,,call,newLineCap,       public static final LineCap ROUND = new LineCap("ROUND", "Draw line ends with half circlesDottttT");
-1100,method,,call,newLineCap,       public static final LineCap SQUARE =            new LineCap("SQUARE", "Draw line ends with a square capDottttT");
+1097,method,,call,ArrayList,                   private static final List VALUES = new ArrayList(3);
+1098,method,,call,LineCap,       public static final LineCap BUTT = new LineCap("BUTT", "Draw line ends with no decorationDottttT");
+1099,method,,call,LineCap,       public static final LineCap ROUND = new LineCap("ROUND", "Draw line ends with half circlesDottttT");
+1100,method,,call,LineCap,       public static final LineCap SQUARE =            new LineCap("SQUARE", "Draw line ends with a square capDottttT");
 1101,method,,definition,LineCap,                   protected LineCap(String name, String description) {
 1104,method,,definition,values,                   public static LineCap[] values() {
-1106,method,,call,VALUES.toArray,            return (LineCap[]) VALUESDottttTtoArray(new LineCap[VALUESDottttTsize()]);
-1106,method,,call,VALUES.size,            return (LineCap[]) VALUESDottttTtoArray(new LineCap[VALUESDottttTsize()]);
+1106,method,,call,VALUESDottttTtoArray,            return (LineCap[]) VALUESDottttTtoArray(new LineCap[VALUESDottttTsize()]);
 1109,method,,definition,family,       public CodeList[] family() {
 1110,method,,call,values,        return values();
-1119,method,,call,newArrayList,                       private static final List VALUES = new ArrayList(3);
-1120,method,,call,newLineJoin,           public static final LineJoin MITER =        new LineJoin("MITER", "Join lines by extending outside edges until they meetDottttT");
-1121,method,,call,newLineJoin,               public static final LineJoin ROUND =        new LineJoin("ROUND", "Join lines with a circular arc equal to hald the line widthDottttT");
-1122,method,,call,newLineJoin,               public static final LineJoin BEVEL =            new LineJoin("BEVEL",                    "Joine lines by connecting outer corners with a segmentDottttT");
+1119,method,,call,ArrayList,                       private static final List VALUES = new ArrayList(3);
+1120,method,,call,LineJoin,           public static final LineJoin MITER =        new LineJoin("MITER", "Join lines by extending outside edges until they meetDottttT");
+1121,method,,call,LineJoin,               public static final LineJoin ROUND =        new LineJoin("ROUND", "Join lines with a circular arc equal to hald the line widthDottttT");
+1122,method,,call,LineJoin,               public static final LineJoin BEVEL =            new LineJoin("BEVEL",                    "Joine lines by connecting outer corners with a segmentDottttT");
 1123,method,,definition,LineJoin,                           protected LineJoin(String name, String description) {
 1126,method,,definition,values,                           public static LineJoin[] values() {
-1128,method,,call,VALUES.toArray,            return (LineJoin[]) VALUESDottttTtoArray(new LineJoin[VALUESDottttTsize()]);
-1128,method,,call,VALUES.size,            return (LineJoin[]) VALUESDottttTtoArray(new LineJoin[VALUESDottttTsize()]);
+1128,method,,call,VALUESDottttTtoArray,            return (LineJoin[]) VALUESDottttTtoArray(new LineJoin[VALUESDottttTsize()]);
 1131,method,,definition,family,       public CodeList[] family() {
 1132,method,,call,values,        return values();
-1141,method,,call,newArrayList,                       private static final List VALUES = new ArrayList(6);
-1142,method,,call,newLinePattern,           public static final LinePattern NONE = new LinePattern("NONE", "A line with no patternDottttT");
-1143,method,,call,newLinePattern,           public static final LinePattern DASHED = new LinePattern("DASHED", "A dashed line");
-1144,method,,call,newLinePattern,           public static final LinePattern DOTTED = new LinePattern("DOTTED", "A dotted line");
-1145,method,,call,newLinePattern,           public static final LinePattern DOT_DASHED = new LinePattern("DOT_DASHED", "Dot dashed line");
-1146,method,,call,newLinePattern,           public static final LinePattern LONG_DASHED =        new LinePattern("LONG_DASHED", "Long dashed line");
-1147,method,,call,newLinePattern,               public static final LinePattern LONG_DOT_DASHED            = new LinePattern("LONG_DOT_DASHED", "Long dot dashed line");
+1141,method,,call,ArrayList,                       private static final List VALUES = new ArrayList(6);
+1142,method,,call,LinePattern,           public static final LinePattern NONE = new LinePattern("NONE", "A line with no patternDottttT");
+1143,method,,call,LinePattern,           public static final LinePattern DASHED = new LinePattern("DASHED", "A dashed line");
+1144,method,,call,LinePattern,           public static final LinePattern DOTTED = new LinePattern("DOTTED", "A dotted line");
+1145,method,,call,LinePattern,           public static final LinePattern DOT_DASHED = new LinePattern("DOT_DASHED", "Dot dashed line");
+1146,method,,call,LinePattern,           public static final LinePattern LONG_DASHED =        new LinePattern("LONG_DASHED", "Long dashed line");
+1147,method,,call,LinePattern,               public static final LinePattern LONG_DOT_DASHED            = new LinePattern("LONG_DOT_DASHED", "Long dot dashed line");
 1148,method,,definition,LinePattern,                        protected LinePattern(String name, String description) {
-1149,method,,call,,loadIconResource,        super(VALUES, name, description, loadIconResource(LinePatternDottttTclass, name + "DottttTgif"));
+1149,method,,call,loadIconResource,        super(VALUES, name, description, loadIconResource(LinePatternDottttTclass, name + "DottttTgif"));
 1151,method,,definition,values,       public static LinePattern[] values() {
-1153,method,,call,VALUES.toArray,            return (LinePattern[]) VALUESDottttTtoArray(new LinePattern[VALUESDottttTsize()]);
-1153,method,,call,VALUES.size,            return (LinePattern[]) VALUESDottttTtoArray(new LinePattern[VALUESDottttTsize()]);
+1153,method,,call,VALUESDottttTtoArray,            return (LinePattern[]) VALUESDottttTtoArray(new LinePattern[VALUESDottttTsize()]);
 1156,method,,definition,family,       public CodeList[] family() {
 1157,method,,call,values,        return values();
-1166,method,,call,newArrayList,                       private static final List VALUES = new ArrayList(2);
-1167,method,,call,newLineStyle,           public static final LineStyle SINGLE = new LineStyle("SINGLE", "Single Line");
-1168,method,,call,newLineStyle,           public static final LineStyle DOUBLE        = new LineStyle("DOUBLE", "Double Line");
+1166,method,,call,ArrayList,                       private static final List VALUES = new ArrayList(2);
+1167,method,,call,LineStyle,           public static final LineStyle SINGLE = new LineStyle("SINGLE", "Single Line");
+1168,method,,call,LineStyle,           public static final LineStyle DOUBLE        = new LineStyle("DOUBLE", "Double Line");
 1169,method,,definition,LineStyle,                           protected LineStyle(String name, String description) {
-1170,method,,call,,loadIconResource,        super(VALUES, name, description, loadIconResource(LineStyleDottttTclass, name + "DottttTgif"));
+1170,method,,call,loadIconResource,        super(VALUES, name, description, loadIconResource(LineStyleDottttTclass, name + "DottttTgif"));
 1172,method,,definition,values,                   public static LineStyle[] values() {
-1174,method,,call,VALUES.toArray,            return (LineStyle[]) VALUESDottttTtoArray(new LineStyle[VALUESDottttTsize()]);
-1174,method,,call,VALUES.size,            return (LineStyle[]) VALUESDottttTtoArray(new LineStyle[VALUESDottttTsize()]);
+1174,method,,call,VALUESDottttTtoArray,            return (LineStyle[]) VALUESDottttTtoArray(new LineStyle[VALUESDottttTsize()]);
 1177,method,,definition,family,       public CodeList[] family() {
 1178,method,,call,values,        return values();
 1220,method,,call,getLineStrokeBeginArrowStyle,                   public ArrowStyle getLineStrokeBeginArrowStyle();
@@ -662,7 +649,7 @@
 1245,method,,call,isLineStrokeFillBackgroundColorSet,           public boolean isLineStrokeFillBackgroundColorSet();
 1246,method,,call,setLineStrokeFillBackgroundColor,           public void setLineStrokeFillBackgroundColor(Color fillBackgroundColor);
 1247,method,,call,setLineStrokeFillBackgroundColorSet,           public void setLineStrokeFillBackgroundColorSet(boolean flag);
-1248,method,,call,]getLineStrokeFillGradientPoints,       public float[] getLineStrokeFillGradientPoints();
+1248,method,,call,getLineStrokeFillGradientPoints,       public float[] getLineStrokeFillGradientPoints();
 1249,method,,call,isLineStrokeFillGradientPointsSet,           public boolean isLineStrokeFillGradientPointsSet();
 1250,method,,call,setLineStrokeFillGradientPoints,           public void setLineStrokeFillGradientPoints(float[] fillGradientPoints);
 1251,method,,call,setLineStrokeFillGradientPointsSet,           public void setLineStrokeFillGradientPointsSet(boolean flag);
@@ -706,18 +693,17 @@
 1289,method,,call,isLineStrokeWidthSet,               public boolean isLineStrokeWidthSet();
 1290,method,,call,setLineStrokeWidth,               public void setLineStrokeWidth(float width);
 1291,method,,call,setLineStrokeWidthSet,               public void setLineStrokeWidthSet(boolean flag);
-1299,method,,call,newArrayList,                   private static final List VALUES = new ArrayList(7);
-1300,method,,call,newMark,       public static final Mark CUSTOM =        new Mark("CUSTOM", "Symbolize with a custom markDottttT");
-1301,method,,call,newMark,       public static final Mark CIRCLE =        new Mark("CIRCLE", "Symbolize with a circle markDottttT");
-1302,method,,call,newMark,       public static final Mark CROSS =        new Mark("CROSS", "Symbolize with a cross markDottttT");
-1303,method,,call,newMark,       public static final Mark SQUARE =        new Mark("SQUARE", "Symbolize with a square markDottttT");
-1304,method,,call,newMark,       public static final Mark STAR =        new Mark("STAR", "Symbolize with a star markDottttT");
-1305,method,,call,newMark,       public static final Mark TRIANGLE =        new Mark("TRIANGLE", "Symbolize with a triangle markDottttT");
-1306,method,,call,newMark,       public static final Mark X =            new Mark("X", "Symbolize with an X markDottttT");
+1299,method,,call,ArrayList,                   private static final List VALUES = new ArrayList(7);
+1300,method,,call,Mark,       public static final Mark CUSTOM =        new Mark("CUSTOM", "Symbolize with a custom markDottttT");
+1301,method,,call,Mark,       public static final Mark CIRCLE =        new Mark("CIRCLE", "Symbolize with a circle markDottttT");
+1302,method,,call,Mark,       public static final Mark CROSS =        new Mark("CROSS", "Symbolize with a cross markDottttT");
+1303,method,,call,Mark,       public static final Mark SQUARE =        new Mark("SQUARE", "Symbolize with a square markDottttT");
+1304,method,,call,Mark,       public static final Mark STAR =        new Mark("STAR", "Symbolize with a star markDottttT");
+1305,method,,call,Mark,       public static final Mark TRIANGLE =        new Mark("TRIANGLE", "Symbolize with a triangle markDottttT");
+1306,method,,call,Mark,       public static final Mark X =            new Mark("X", "Symbolize with an X markDottttT");
 1307,method,,definition,Mark,                   protected Mark(String name, String description) {
 1310,method,,definition,values,                           public static Mark[] values() {
-1312,method,,call,VALUES.toArray,            return (Mark[]) VALUESDottttTtoArray(new Mark[VALUESDottttTsize()]);
-1312,method,,call,VALUES.size,            return (Mark[]) VALUESDottttTtoArray(new Mark[VALUESDottttTsize()]);
+1312,method,,call,VALUESDottttTtoArray,            return (Mark[]) VALUESDottttTtoArray(new Mark[VALUESDottttTsize()]);
 1315,method,,definition,family,       public CodeList[] family() {
 1316,method,,call,values,        return  values();
 1379,method,,call,getPointFillColor,                           public Color getPointFillColor();
@@ -728,7 +714,7 @@
 1384,method,,call,isPointFillBackgroundColorSet,           public boolean isPointFillBackgroundColorSet();
 1385,method,,call,setPointFillBackgroundColor,           public void setPointFillBackgroundColor(Color fillBackgroundColor);
 1386,method,,call,setPointFillBackgroundColorSet,           public void setPointFillBackgroundColorSet(boolean flag);
-1387,method,,call,]getPointFillGradientPoints,       public float[] getPointFillGradientPoints();
+1387,method,,call,getPointFillGradientPoints,       public float[] getPointFillGradientPoints();
 1388,method,,call,isPointFillGradientPointsSet,           public boolean isPointFillGradientPointsSet();
 1389,method,,call,setPointFillGradientPoints,           public void setPointFillGradientPoints(float[] fillGradientPoints);
 1390,method,,call,setPointFillGradientPointsSet,           public void setPointFillGradientPointsSet(boolean flag);
@@ -788,7 +774,7 @@
 1444,method,,call,isPointStrokeFillBackgroundColorSet,           public boolean isPointStrokeFillBackgroundColorSet();
 1445,method,,call,setPointStrokeFillBackgroundColor,           public void setPointStrokeFillBackgroundColor(Color fillBackgroundColor);
 1446,method,,call,setPointStrokeFillBackgroundColorSet,           public void setPointStrokeFillBackgroundColorSet(boolean flag);
-1447,method,,call,]getPointStrokeFillGradientPoints,       public float[] getPointStrokeFillGradientPoints();
+1447,method,,call,getPointStrokeFillGradientPoints,       public float[] getPointStrokeFillGradientPoints();
 1448,method,,call,isPointStrokeFillGradientPointsSet,           public boolean isPointStrokeFillGradientPointsSet();
 1449,method,,call,setPointStrokeFillGradientPoints,           public void setPointStrokeFillGradientPoints(float[] fillGradientPoints);
 1450,method,,call,setPointStrokeFillGradientPointsSet,           public void setPointStrokeFillGradientPointsSet(boolean flag);
@@ -840,7 +826,7 @@
 1549,method,,call,isPolygonFillBackgroundColorSet,           public boolean isPolygonFillBackgroundColorSet();
 1550,method,,call,setPolygonFillBackgroundColor,           public void setPolygonFillBackgroundColor(Color fillBackgroundColor);
 1551,method,,call,setPolygonFillBackgroundColorSet,           public void setPolygonFillBackgroundColorSet(boolean flag);
-1552,method,,call,]getPolygonFillGradientPoints,       public float[] getPolygonFillGradientPoints();
+1552,method,,call,getPolygonFillGradientPoints,       public float[] getPolygonFillGradientPoints();
 1553,method,,call,isPolygonFillGradientPointsSet,           public boolean isPolygonFillGradientPointsSet();
 1554,method,,call,setPolygonFillGradientPoints,           public void setPolygonFillGradientPoints(float[] fillGradientPoints);
 1555,method,,call,setPolygonFillGradientPointsSet,           public void setPolygonFillGradientPointsSet(boolean flag);
@@ -884,7 +870,7 @@
 1593,method,,call,isPolygonStrokeFillBackgroundColorSet,           public boolean isPolygonStrokeFillBackgroundColorSet();
 1594,method,,call,setPolygonStrokeFillBackgroundColor,           public void setPolygonStrokeFillBackgroundColor(Color fillBackgroundColor);
 1595,method,,call,setPolygonStrokeFillBackgroundColorSet,           public void setPolygonStrokeFillBackgroundColorSet(boolean flag);
-1596,method,,call,]getPolygonStrokeFillGradientPoints,       public float[] getPolygonStrokeFillGradientPoints();
+1596,method,,call,getPolygonStrokeFillGradientPoints,       public float[] getPolygonStrokeFillGradientPoints();
 1597,method,,call,isPolygonStrokeFillGradientPointsSet,           public boolean isPolygonStrokeFillGradientPointsSet();
 1598,method,,call,setPolygonStrokeFillGradientPoints,           public void setPolygonStrokeFillGradientPoints(float[] fillGradientPoints);
 1599,method,,call,setPolygonStrokeFillGradientPointsSet,           public void setPolygonStrokeFillGradientPointsSet(boolean flag);
@@ -977,7 +963,7 @@
 1702,method,,call,setWidth,               public void setWidth(float width);
 1703,method,,call,setWidthSet,               public void setWidthSet(boolean flag);
 1707,method,,call,getSymbologyPropertyCount,               public int getSymbologyPropertyCount(SymbologyInfo info);
-1708,method,,call,]getSymbologyPropertyNames,           public String[] getSymbologyPropertyNames(SymbologyInfo info);
+1708,method,,call,getSymbologyPropertyNames,           public String[] getSymbologyPropertyNames(SymbologyInfo info);
 1709,method,,call,getSymbologyPropertyType,           public Class getSymbologyPropertyType(SymbologyInfo info, String propertyName);
 1710,method,,call,getSymbologyProperty,           public Object getSymbologyProperty(SymbologyInfo info, String propertyName) throws IllegalArgumentException;
 1711,method,,call,setSymbologyProperty,           public void setSymbologyProperty(SymbologyInfo info, String propertyName, Object value)        throws IllegalArgumentException;
@@ -993,7 +979,7 @@
 1759,method,,call,isTextFillBackgroundColorSet,           public boolean isTextFillBackgroundColorSet();
 1760,method,,call,setTextFillBackgroundColor,           public void setTextFillBackgroundColor(Color fillBackgroundColor);
 1761,method,,call,setTextFillBackgroundColorSet,           public void setTextFillBackgroundColorSet(boolean flag);
-1762,method,,call,]getTextFillGradientPoints,       public float[] getTextFillGradientPoints();
+1762,method,,call,getTextFillGradientPoints,       public float[] getTextFillGradientPoints();
 1763,method,,call,isTextFillGradientPointsSet,           public boolean isTextFillGradientPointsSet();
 1764,method,,call,setTextFillGradientPoints,           public void setTextFillGradientPoints(float[] fillGradientPoints);
 1765,method,,call,setTextFillGradientPointsSet,           public void setTextFillGradientPointsSet(boolean flag);
@@ -1061,30 +1047,28 @@
 1838,method,,call,isViewabilityVisibleSet,               public boolean isViewabilityVisibleSet();
 1839,method,,call,setViewabilityVisible,               public void setViewabilityVisible(boolean visible);
 1840,method,,call,setViewabilityVisibleSet,               public void setViewabilityVisibleSet(boolean flag);
-1848,method,,call,newArrayList,                       private static final List VALUES = new ArrayList(3);
-1849,method,,call,newXAnchor,           public static final XAnchor LEFT = new XAnchor("LEFT", "");
-1850,method,,call,newXAnchor,           public static final XAnchor CENTER = new XAnchor("CENTER", "");
-1851,method,,call,newXAnchor,           public static final XAnchor RIGHT = new XAnchor("RIGHT", "");
+1848,method,,call,ArrayList,                       private static final List VALUES = new ArrayList(3);
+1849,method,,call,XAnchor,           public static final XAnchor LEFT = new XAnchor("LEFT", "");
+1850,method,,call,XAnchor,           public static final XAnchor CENTER = new XAnchor("CENTER", "");
+1851,method,,call,XAnchor,           public static final XAnchor RIGHT = new XAnchor("RIGHT", "");
 1852,method,,definition,XAnchor,                           protected XAnchor(String name, String description) {
 1855,method,,definition,values,                   public static XAnchor[] values() {
-1857,method,,call,VALUES.toArray,            return (XAnchor[]) VALUESDottttTtoArray(new XAnchor[VALUESDottttTsize()]);
-1857,method,,call,VALUES.size,            return (XAnchor[]) VALUESDottttTtoArray(new XAnchor[VALUESDottttTsize()]);
+1857,method,,call,VALUESDottttTtoArray,            return (XAnchor[]) VALUESDottttTtoArray(new XAnchor[VALUESDottttTsize()]);
 1860,method,,definition,family,       public CodeList[] family() {
 1861,method,,call,values,        return values();
-1870,method,,call,newArrayList,                       private static final List VALUES = new ArrayList(4);
-1871,method,,call,newYAnchor,           public static final YAnchor TOP = new YAnchor("Top", "");
-1872,method,,call,newYAnchor,           public static final YAnchor MIDDLE = new YAnchor("Middle", "");
-1873,method,,call,newYAnchor,           public static final YAnchor BASELINE = new YAnchor("Baseline", "");
-1874,method,,call,newYAnchor,           public static final YAnchor BOTTOM = new YAnchor("Bottom", "");
+1870,method,,call,ArrayList,                       private static final List VALUES = new ArrayList(4);
+1871,method,,call,YAnchor,           public static final YAnchor TOP = new YAnchor("Top", "");
+1872,method,,call,YAnchor,           public static final YAnchor MIDDLE = new YAnchor("Middle", "");
+1873,method,,call,YAnchor,           public static final YAnchor BASELINE = new YAnchor("Baseline", "");
+1874,method,,call,YAnchor,           public static final YAnchor BOTTOM = new YAnchor("Bottom", "");
 1876,method,,definition,nextValue,                           private static synchronized int nextValue() {
 1879,method,,definition,getNumberOfStyles,           public static int getNumberOfStyles() {
 1882,method,,definition,YAnchor,                           protected YAnchor(String name, String description) {
 1885,method,,definition,values,                   public static YAnchor[] values() {
-1887,method,,call,VALUES.toArray,            return (YAnchor[]) VALUESDottttTtoArray(new YAnchor[VALUESDottttTsize()]);
-1887,method,,call,VALUES.size,            return (YAnchor[]) VALUESDottttTtoArray(new YAnchor[VALUESDottttTsize()]);
+1887,method,,call,VALUESDottttTtoArray,            return (YAnchor[]) VALUESDottttTtoArray(new YAnchor[VALUESDottttTsize()]);
 1890,method,,definition,family,       public CodeList[] family() {
 1891,method,,call,values,        return values();
-1897,method,,call,]getVertices,           public DirectPosition[] getVertices();
+1897,method,,call,getVertices,           public DirectPosition[] getVertices();
 1898,method,,call,setVertices,           public void setVertices(DirectPosition[] vertices);
 1903,method,,call,setTopLeft,       public void setTopLeft(DirectPosition coord);
 1904,method,,call,getTopLeft,       public DirectPosition getTopLeft();
@@ -1099,25 +1083,24 @@
 1918,method,,call,getCoordinateReferenceSystem,       public CoordinateReferenceSystem getCoordinateReferenceSystem();
 1919,method,,call,setCoordinateReferenceSystem,       public void setCoordinateReferenceSystem(CoordinateReferenceSystem crs);
 1923,method,,call,createBounds,           public Bounds createBounds(Class boundsInterface);
-1930,method,,call,newGlobalPathType,        public static final GlobalPathType GREAT_CIRCLE_ELLIPSOIDAL =        new GlobalPathType("GREAT_CIRCLE_ELLIPSOIDAL",            "The path that is the shortest distance path over the WGS84 ellipsoidDottttT");
-1931,method,,call,newGlobalPathType,                public static final GlobalPathType GREAT_CIRCLE_SPHERICAL =        new GlobalPathType("GREAT_CIRCLE_SPHERICAL",            "The path that is the shortest distance path over the sphere whose radius is the equatorial radius of the WGS84 ellipsoidDottttT");
-1932,method,,call,newGlobalPathType,        public static final GlobalPathType RHUMBLINE_ELLIPSOIDAL =        new GlobalPathType("RHUMBLINE_ELLIPSOIDAL",            "The path that is the path of constant bearing over the WGS84 ellipsoidDottttT");
-1933,method,,call,newGlobalPathType,        public static final GlobalPathType RHUMBLINE_SPHERICAL =        new GlobalPathType("RHUMBLINE_SPHERICAL",            "The path that is the path of constant bearing over the sphere whose radius is the equatorial radius of the WGS84 ellipsoidDottttT");
-1944,method,,call,newArrayList,       protected static final List VALUES = new ArrayList();
+1930,method,,call,GlobalPathType,        public static final GlobalPathType GREAT_CIRCLE_ELLIPSOIDAL =        new GlobalPathType("GREAT_CIRCLE_ELLIPSOIDAL",            "The path that is the shortest distance path over the WGS84 ellipsoidDottttT");
+1931,method,,call,GlobalPathType,                public static final GlobalPathType GREAT_CIRCLE_SPHERICAL =        new GlobalPathType("GREAT_CIRCLE_SPHERICAL",            "The path that is the shortest distance path over the sphere whose radius is the equatorial radius of the WGS84 ellipsoidDottttT");
+1932,method,,call,GlobalPathType,        public static final GlobalPathType RHUMBLINE_ELLIPSOIDAL =        new GlobalPathType("RHUMBLINE_ELLIPSOIDAL",            "The path that is the path of constant bearing over the WGS84 ellipsoidDottttT");
+1933,method,,call,GlobalPathType,        public static final GlobalPathType RHUMBLINE_SPHERICAL =        new GlobalPathType("RHUMBLINE_SPHERICAL",            "The path that is the path of constant bearing over the sphere whose radius is the equatorial radius of the WGS84 ellipsoidDottttT");
+1944,method,,call,ArrayList,       protected static final List VALUES = new ArrayList();
 1945,method,,definition,PathType,               protected PathType(String name, String description) {
 1948,method,,definition,values,               public static PathType[] values() {
-1950,method,,call,VALUES.toArray,            return (PathType[]) VALUESDottttTtoArray(new PathType[VALUESDottttTsize()]);
-1950,method,,call,VALUES.size,            return (PathType[]) VALUESDottttTtoArray(new PathType[VALUESDottttTsize()]);
+1950,method,,call,VALUESDottttTtoArray,            return (PathType[]) VALUESDottttTtoArray(new PathType[VALUESDottttTsize()]);
 1953,method,,definition,family,       public CodeList[] family() {
 1954,method,,call,values,        return values();
 1959,method,,definition,UnprojectedPathType,       protected UnprojectedPathType(String name, String description) {
-1962,method,,call,newUnprojectedPathType,        public static final UnprojectedPathType PIXEL_STRAIGHT =        new UnprojectedPathType("PIXEL_STRAIGHT",            "The path that is drawn as screen-straight, regardless of any current projectionDottttT");
-1963,method,,call,newUnprojectedPathType,                public static final UnprojectedPathType CONTINUOUS_SPLINE =        new UnprojectedPathType("CONTINUOUS_SPLINE",            "The path that connects its points via a continuous (although not necessarily smooth) splineDottttT");
-1963,method,,call,acontinuous,                public static final UnprojectedPathType CONTINUOUS_SPLINE =        new UnprojectedPathType("CONTINUOUS_SPLINE",            "The path that connects its points via a continuous (although not necessarily smooth) splineDottttT");
+1962,method,,call,UnprojectedPathType,        public static final UnprojectedPathType PIXEL_STRAIGHT =        new UnprojectedPathType("PIXEL_STRAIGHT",            "The path that is drawn as screen-straight, regardless of any current projectionDottttT");
+1963,method,,call,UnprojectedPathType,                public static final UnprojectedPathType CONTINUOUS_SPLINE =        new UnprojectedPathType("CONTINUOUS_SPLINE",            "The path that connects its points via a continuous (although not necessarily smooth) splineDottttT");
+1963,method,,call,continuous,                public static final UnprojectedPathType CONTINUOUS_SPLINE =        new UnprojectedPathType("CONTINUOUS_SPLINE",            "The path that connects its points via a continuous (although not necessarily smooth) splineDottttT");
 1967,method,,definition,VectorPathType,           protected VectorPathType(String name, String description) {
-1970,method,,call,newVectorPathType,        public static final VectorPathType VECTOR =        new VectorPathType("VECTOR", "The path that is the Euclidean shortest distance pathDottttT");
+1970,method,,call,VectorPathType,        public static final VectorPathType VECTOR =        new VectorPathType("VECTOR", "The path that is the Euclidean shortest distance pathDottttT");
 1978,method,,call,getTitle,       String getTitle(Locale locale);
-1979,method,,call,]getAlternateTitles,       String[] getAlternateTitles(Locale locale);
+1979,method,,call,getAlternateTitles,       String[] getAlternateTitles(Locale locale);
 1999,method,,call,getPolygon,       public Geometry getPolygon();
 2004,method,,call,getDescription,       public String getDescription(Locale locale);
 2005,method,,call,getGeographicElement,       public GeographicExtent getGeographicElement();
@@ -1129,7 +1112,7 @@
 2014,method,,call,getNorthBoundLatitude,       public double getNorthBoundLatitude();
 2019,method,,call,getGeographicIdentifier,       public Identifier getGeographicIdentifier();
 2023,method,,call,isInclusion,       public boolean isInclusion();
-2027,method,,call,]getSpatialExtent,       public GeographicExtent[] getSpatialExtent();
+2027,method,,call,getSpatialExtent,       public GeographicExtent[] getSpatialExtent();
 2032,method,,call,getStartTime,       public Date getStartTime();
 2033,method,,call,getEndTime,       public Date getEndTime();
 2039,method,,call,getMinimumValue,       public double getMinimumValue();
@@ -1147,9 +1130,9 @@
 2077,method,,definition,getParameterName,       public String getParameterName() {
 2086,method,,definition,InvalidParameterValueException,       public InvalidParameterValueException(String message, String parameterName, Object value) {
 2091,method,,definition,InvalidParameterValueException,       public InvalidParameterValueException(String message, String parameterName, double value) {
-2092,method,,call,newDouble,        this(message, parameterName, new Double(value));
+2092,method,,call,Double,        this(message, parameterName, new Double(value));
 2094,method,,definition,InvalidParameterValueException,       public InvalidParameterValueException(String message, String parameterName, int value) {
-2095,method,,call,newInteger,        this(message, parameterName, new Integer(value));
+2095,method,,call,Integer,        this(message, parameterName, new Integer(value));
 2097,method,,definition,getParameterName,       public String getParameterName() {
 2100,method,,definition,getValue,       public Object getValue() {
 2108,method,,call,getValueClass,          Class getValueClass();
@@ -1158,7 +1141,7 @@
 2111,method,,call,getMinimumValue,       Comparable getMinimumValue();
 2112,method,,call,getMaximumValue,       Comparable getMaximumValue();
 2113,method,,call,getUnit,       Unit getUnit();
-2117,method,,call,]getParameters,          GeneralOperationParameter[] getParameters();
+2117,method,,call,getParameters,          GeneralOperationParameter[] getParameters();
 2118,method,,call,getParameter,       GeneralOperationParameter getParameter(String name) throws ParameterNotFoundException;
 2124,method,,definition,ParameterNotFoundException,       public ParameterNotFoundException(String message, String parameterName) {
 2128,method,,definition,getParameterName,       public String getParameterName() {
@@ -1168,9 +1151,9 @@
 2139,method,,call,intValue,       int intValue() throws InvalidParameterTypeException;
 2140,method,,call,booleanValue,       boolean booleanValue() throws InvalidParameterTypeException;
 2141,method,,call,stringValue,       String stringValue() throws InvalidParameterTypeException;
-2142,method,,call,]doubleValueList,       double[] doubleValueList(final Unit unit) throws InvalidParameterTypeException;
-2143,method,,call,]doubleValueList,       double[] doubleValueList() throws InvalidParameterTypeException;
-2144,method,,call,]intValueList,       int[] intValueList() throws InvalidParameterTypeException;
+2142,method,,call,doubleValueList,       double[] doubleValueList(final Unit unit) throws InvalidParameterTypeException;
+2143,method,,call,doubleValueList,       double[] doubleValueList() throws InvalidParameterTypeException;
+2144,method,,call,intValueList,       int[] intValueList() throws InvalidParameterTypeException;
 2145,method,,call,valueFile,       URL valueFile() throws InvalidParameterTypeException;
 2146,method,,call,getValue,       Object getValue();
 2147,method,,call,setValue,       void setValue(double[] values, Unit unit) throws InvalidParameterValueException;
@@ -1180,7 +1163,7 @@
 2151,method,,call,setValue,       void setValue(boolean value) throws InvalidParameterValueException;
 2152,method,,call,setValue,       void setValue(Object value) throws InvalidParameterValueException;
 2153,method,,call,clone,       Object clone();
-2157,method,,call,]getValues,          GeneralParameterValue[] getValues();
+2157,method,,call,getValues,          GeneralParameterValue[] getValues();
 2158,method,,call,getValue,       GeneralParameterValue getValue(String name) throws ParameterNotFoundException;
 2159,method,,call,clone,       Object clone();
 2166,method,,call,getFactory,       Factory getFactory();
@@ -1188,7 +1171,7 @@
 2168,method,,call,getAuthorityCodes,       Set getAuthorityCodes(Class type) throws FactoryException;
 2169,method,,call,getDescriptionText,       String getDescriptionText(String code, Locale locale) throws FactoryException;
 2170,method,,call,createObject,       Object createObject(String code) throws FactoryException;
-2174,method,,call,]getCoordinateReferenceSystems,       CoordinateReferenceSystem[] getCoordinateReferenceSystems();
+2174,method,,call,getCoordinateReferenceSystems,       CoordinateReferenceSystem[] getCoordinateReferenceSystems();
 2181,method,,call,getCoordinateSystem,       CoordinateSystem getCoordinateSystem();
 2182,method,,call,getDatum,       Datum getDatum();
 2189,method,,call,createCoordinateReferenceSystem,       CoordinateReferenceSystem createCoordinateReferenceSystem(String code) throws FactoryException;
@@ -1217,31 +1200,30 @@
 2244,method,,call,getBaseCRS,       CoordinateReferenceSystem getBaseCRS();
 2245,method,,call,getConversionFromBase,       Conversion getConversionFromBase();
 2253,method,,call,getCoordinateSystem,       CoordinateSystem getCoordinateSystem();
-2287,method,,call,newArrayList,       private static final List VALUES = new ArrayList(13);
-2288,method,,call,newAxisDirection,                       public static final AxisDirection OTHER = new AxisDirection("OTHER");
-2289,method,,call,newAxisDirection,        public static final AxisDirection NORTH = new AxisDirection("NORTH");
-2290,method,,call,newAxisDirection,        public static final AxisDirection SOUTH = new AxisDirection("SOUTH");
-2291,method,,call,newAxisDirection,        public static final AxisDirection EAST = new AxisDirection("EAST");
-2292,method,,call,newAxisDirection,        public static final AxisDirection WEST = new AxisDirection("WEST");
-2293,method,,call,newAxisDirection,        public static final AxisDirection UP = new AxisDirection("UP");
-2294,method,,call,newAxisDirection,        public static final AxisDirection DOWN = new AxisDirection("DOWN");
-2295,method,,call,newAxisDirection,        public static final AxisDirection RIGHT = new AxisDirection("RIGHT");
-2296,method,,call,newAxisDirection,        public static final AxisDirection LEFT = new AxisDirection("LEFT");
-2297,method,,call,newAxisDirection,        public static final AxisDirection TOP = new AxisDirection("TOP");
-2298,method,,call,newAxisDirection,        public static final AxisDirection BOTTOM = new AxisDirection("BOTTOM");
-2299,method,,call,newAxisDirection,        public static final AxisDirection FUTURE = new AxisDirection("FUTURE");
-2300,method,,call,newAxisDirection,        public static final AxisDirection PAST = new AxisDirection("PAST");
-2301,method,,call,=values,        private static final AxisDirection[] STANDARD_VALUES = values();
+2287,method,,call,ArrayList,       private static final List VALUES = new ArrayList(13);
+2288,method,,call,AxisDirection,                       public static final AxisDirection OTHER = new AxisDirection("OTHER");
+2289,method,,call,AxisDirection,        public static final AxisDirection NORTH = new AxisDirection("NORTH");
+2290,method,,call,AxisDirection,        public static final AxisDirection SOUTH = new AxisDirection("SOUTH");
+2291,method,,call,AxisDirection,        public static final AxisDirection EAST = new AxisDirection("EAST");
+2292,method,,call,AxisDirection,        public static final AxisDirection WEST = new AxisDirection("WEST");
+2293,method,,call,AxisDirection,        public static final AxisDirection UP = new AxisDirection("UP");
+2294,method,,call,AxisDirection,        public static final AxisDirection DOWN = new AxisDirection("DOWN");
+2295,method,,call,AxisDirection,        public static final AxisDirection RIGHT = new AxisDirection("RIGHT");
+2296,method,,call,AxisDirection,        public static final AxisDirection LEFT = new AxisDirection("LEFT");
+2297,method,,call,AxisDirection,        public static final AxisDirection TOP = new AxisDirection("TOP");
+2298,method,,call,AxisDirection,        public static final AxisDirection BOTTOM = new AxisDirection("BOTTOM");
+2299,method,,call,AxisDirection,        public static final AxisDirection FUTURE = new AxisDirection("FUTURE");
+2300,method,,call,AxisDirection,        public static final AxisDirection PAST = new AxisDirection("PAST");
+2301,method,,call,values,        private static final AxisDirection[] STANDARD_VALUES = values();
 2302,method,,definition,AxisDirection,       public AxisDirection(final String name) {
 2305,method,,definition,values,       public static AxisDirection[] values() {
-2307,method,,call,VALUES.toArray,            return (AxisDirection[]) VALUESDottttTtoArray(new AxisDirection[VALUESDottttTsize()]);
-2307,method,,call,VALUES.size,            return (AxisDirection[]) VALUESDottttTtoArray(new AxisDirection[VALUESDottttTsize()]);
+2307,method,,call,VALUESDottttTtoArray,            return (AxisDirection[]) VALUESDottttTtoArray(new AxisDirection[VALUESDottttTsize()]);
 2310,method,,definition,family,       public CodeList[] family() {
 2311,method,,call,values,        return values();
 2313,method,,definition,inverse,       public AxisDirection inverse() {
-2314,method,,call,=ordinal,        final int value = ordinal()-1;
+2314,method,,call,ordinal,        final int value = ordinal()-1;
 2322,method,,definition,absolute,       public AxisDirection absolute() {
-2323,method,,call,=ordinal,        final int value = ordinal()-1;
+2323,method,,call,ordinal,        final int value = ordinal()-1;
 2338,method,,call,getDimension,       int getDimension();
 2339,method,,call,getAxis,       CoordinateSystemAxis getAxis(int dimension) throws IndexOutOfBoundsException;
 2345,method,,call,getAbbreviation,       String getAbbreviation();
@@ -1298,13 +1280,12 @@
 2470,method,,call,getEllipsoid,       Ellipsoid getEllipsoid();
 2471,method,,call,getPrimeMeridian,       PrimeMeridian getPrimeMeridian();
 2475,method,,call,getPixelInCell,       PixelInCell getPixelInCell();
-2483,method,,call,newArrayList,       private static final List VALUES = new ArrayList(2);
-2484,method,,call,newPixelInCell,       public static final PixelInCell CELL_CENTER = new PixelInCell("CELL_CENTER");
-2485,method,,call,newPixelInCell,       public static final PixelInCell CELL_CORNER = new PixelInCell("CELL_CORNER");
+2483,method,,call,ArrayList,       private static final List VALUES = new ArrayList(2);
+2484,method,,call,PixelInCell,       public static final PixelInCell CELL_CENTER = new PixelInCell("CELL_CENTER");
+2485,method,,call,PixelInCell,       public static final PixelInCell CELL_CORNER = new PixelInCell("CELL_CORNER");
 2486,method,,definition,PixelInCell,       public PixelInCell(final String name) {
 2489,method,,definition,values,       public static PixelInCell[] values() {
-2491,method,,call,VALUES.toArray,            return (PixelInCell[]) VALUESDottttTtoArray(new PixelInCell[VALUESDottttTsize()]);
-2491,method,,call,VALUES.size,            return (PixelInCell[]) VALUESDottttTtoArray(new PixelInCell[VALUESDottttTsize()]);
+2491,method,,call,VALUESDottttTtoArray,            return (PixelInCell[]) VALUESDottttTtoArray(new PixelInCell[VALUESDottttTsize()]);
 2494,method,,definition,family,       public CodeList[] family() {
 2495,method,,call,values,        return values();
 2502,method,,call,getGreenwichLongitude,       double getGreenwichLongitude();
@@ -1313,24 +1294,23 @@
 2510,method,,call,getAnchorPoint,       String getAnchorPoint(Locale locale);
 2511,method,,call,getRealizationEpoch,       Date getRealizationEpoch();
 2515,method,,call,getVerticalDatumType,       VerticalDatumType getVerticalDatumType();
-2523,method,,call,newArrayList,       private static final List VALUES = new ArrayList(6);
-2524,method,,call,newVerticalDatumType,       public static final VerticalDatumType OTHER_SURFACE = new VerticalDatumType("OTHER_SURFACE");
-2525,method,,call,newVerticalDatumType,       public static final VerticalDatumType GEOIDAL = new VerticalDatumType("GEOIDAL");
-2526,method,,call,newVerticalDatumType,       public static final VerticalDatumType ELLIPSOIDAL = new VerticalDatumType("ELLIPSOIDAL");
-2527,method,,call,newVerticalDatumType,       public static final VerticalDatumType DEPTH = new VerticalDatumType("DEPTH");
-2528,method,,call,newVerticalDatumType,       public static final VerticalDatumType BAROMETRIC = new VerticalDatumType("BAROMETRIC");
-2529,method,,call,newVerticalDatumType,       public static final VerticalDatumType ORTHOMETRIC = new VerticalDatumType("ORTHOMETRIC");
+2523,method,,call,ArrayList,       private static final List VALUES = new ArrayList(6);
+2524,method,,call,VerticalDatumType,       public static final VerticalDatumType OTHER_SURFACE = new VerticalDatumType("OTHER_SURFACE");
+2525,method,,call,VerticalDatumType,       public static final VerticalDatumType GEOIDAL = new VerticalDatumType("GEOIDAL");
+2526,method,,call,VerticalDatumType,       public static final VerticalDatumType ELLIPSOIDAL = new VerticalDatumType("ELLIPSOIDAL");
+2527,method,,call,VerticalDatumType,       public static final VerticalDatumType DEPTH = new VerticalDatumType("DEPTH");
+2528,method,,call,VerticalDatumType,       public static final VerticalDatumType BAROMETRIC = new VerticalDatumType("BAROMETRIC");
+2529,method,,call,VerticalDatumType,       public static final VerticalDatumType ORTHOMETRIC = new VerticalDatumType("ORTHOMETRIC");
 2530,method,,definition,VerticalDatumType,       public VerticalDatumType(final String name) {
 2533,method,,definition,values,       public static VerticalDatumType[] values() {
-2535,method,,call,VALUES.toArray,            return (VerticalDatumType[]) VALUESDottttTtoArray(new VerticalDatumType[VALUESDottttTsize()]);
-2535,method,,call,VALUES.size,            return (VerticalDatumType[]) VALUESDottttTtoArray(new VerticalDatumType[VALUESDottttTsize()]);
+2535,method,,call,VALUESDottttTtoArray,            return (VerticalDatumType[]) VALUESDottttTtoArray(new VerticalDatumType[VALUESDottttTsize()]);
 2538,method,,definition,family,       public CodeList[] family() {
 2539,method,,call,values,        return values();
 2545,method,,call,getVendor,       Citation getVendor();
 2550,method,,definition,FactoryException,       public FactoryException() {
 2552,method,,definition,FactoryException,       public FactoryException(String message) {
 2555,method,,definition,FactoryException,       public FactoryException(Exception cause) {
-2556,method,,call,cause.getLocalizedMessage,        super(causeDottttTgetLocalizedMessage(), cause);
+2556,method,,call,causeDottttTgetLocalizedMessage,        super(causeDottttTgetLocalizedMessage(), cause);
 2558,method,,definition,FactoryException,       public FactoryException(String message, Throwable cause) {
 2566,method,,call,getCode,       String getCode();
 2567,method,,call,getCodeSpace,       String getCodeSpace();
@@ -1338,19 +1318,19 @@
 2569,method,,call,getAuthority,       Citation getAuthority();
 2570,method,,call,getRemarks,       String getRemarks(Locale locale);
 2575,method,,call,getName,       String getName(Locale locale);
-2576,method,,call,]getIdentifiers,       Identifier[] getIdentifiers();
+2576,method,,call,getIdentifiers,       Identifier[] getIdentifiers();
 2577,method,,call,getRemarks,       String getRemarks(Locale locale);
 2584,method,,definition,NoSuchAuthorityCodeException,       public NoSuchAuthorityCodeException(String message, String authority, String code) {
 2589,method,,definition,getAuthority,       public String getAuthority() {
 2592,method,,definition,getAuthorityCode,       public String getAuthorityCode() {
 2600,method,,definition,NoSuchClassificationException,       public NoSuchClassificationException(final String message, final String classification) {
 2604,method,,definition,getClassification,           public String getClassification() {
-2610,method,,call,]getOperations,       SingleOperation[] getOperations();
+2610,method,,call,getOperations,       SingleOperation[] getOperations();
 2617,method,,call,getOperationVersion,       String getOperationVersion();
 2626,method,,call,getSourceCRS,       CoordinateReferenceSystem getSourceCRS();
 2627,method,,call,getTargetCRS,       CoordinateReferenceSystem getTargetCRS();
 2628,method,,call,getOperationVersion,       String getOperationVersion();
-2629,method,,call,]getPositionalAccuracy,       PositionalAccuracy[] getPositionalAccuracy();
+2629,method,,call,getPositionalAccuracy,       PositionalAccuracy[] getPositionalAccuracy();
 2630,method,,call,getValidArea,       Extent getValidArea();
 2631,method,,call,getScope,       String getScope(Locale locale);
 2632,method,,call,getMathTransform,           MathTransform getMathTransform();
@@ -1377,7 +1357,7 @@
 2698,method,,call,createConcatenatedTransform,       MathTransform createConcatenatedTransform(MathTransform transform1, MathTransform transform2) throws FactoryException;
 2699,method,,call,createPassThroughTransform,       MathTransform createPassThroughTransform(int firstAffectedOrdinate, MathTransform subTransform, int numTrailingOrdinates) throws FactoryException;
 2700,method,,call,createParameterizedTransform,       MathTransform createParameterizedTransform(String classification, GeneralParameterValue[] parameters) throws FactoryException;
-2701,method,,call,]getDefaultParameters,       GeneralParameterValue[] getDefaultParameters(String classification) throws NoSuchClassificationException;
+2701,method,,call,getDefaultParameters,       GeneralParameterValue[] getDefaultParameters(String classification) throws NoSuchClassificationException;
 2702,method,,call,createFromXML,       MathTransform createFromXML(String xml) throws FactoryException;
 2703,method,,call,createFromWKT,       MathTransform createFromWKT(String wkt) throws FactoryException;
 2708,method,,call,getNumRow,       int getNumRow();
@@ -1390,13 +1370,13 @@
 2720,method,,definition,NoninvertibleTransformException,       public NoninvertibleTransformException(String message) {
 2723,method,,definition,NoninvertibleTransformException,       public NoninvertibleTransformException(String message, Throwable cause) {
 2730,method,,call,getMethod,       OperationMethod getMethod();
-2731,method,,call,]getParameterValues,       GeneralParameterValue[] getParameterValues();
+2731,method,,call,getParameterValues,       GeneralParameterValue[] getParameterValues();
 2738,method,,call,getFormula,       String getFormula(Locale locale);
 2739,method,,call,getSourceDimensions,       int getSourceDimensions();
 2740,method,,call,getTargetDimensions,       int getTargetDimensions();
-2741,method,,call,]getParameters,       GeneralOperationParameter[] getParameters();
+2741,method,,call,getParameters,       GeneralOperationParameter[] getParameters();
 2745,method,,call,getOperation,       Operation getOperation();
-2746,method,,call,]getModifiedCoordinates,       int[] getModifiedCoordinates();
+2746,method,,call,getModifiedCoordinates,       int[] getModifiedCoordinates();
 2760,method,,call,getOperationVersion,       String getOperationVersion();
 2766,method,,definition,TransformException,       public TransformException() {
 2768,method,,definition,TransformException,       public TransformException(String message) {
@@ -1407,7 +1387,7 @@
 2785,method,,call,getColumnIndex,       int getColumnIndex();
 2786,method,,call,getCovariance,       double getCovariance();
 2787,method,,call,getUnit,       Unit getUnit();
-2793,method,,call,]getElements,       CovarianceElement[] getElements();
+2793,method,,call,getElements,       CovarianceElement[] getElements();
 2794,method,,call,getUnit,       Unit getUnit(int row, int column);
 2798,method,,call,getMeasureDescription,       String getMeasureDescription();
 2803,method,,call,getResult,       double getResult();
@@ -1416,14 +1396,14 @@
 2811,method,,call,getScope,       String getScope(Locale locale);
 2829,method,,call,isCycle,       public boolean isCycle();
 2836,method,,call,isMaximal,       public boolean isMaximal();
-2837,method,,call,]getSuperComplexex,       public Complex[] getSuperComplexex();
-2838,method,,call,]getSubComplexes,       public Complex[] getSubComplexes();
+2837,method,,call,getSuperComplexex,       public Complex[] getSuperComplexex();
+2838,method,,call,getSubComplexes,       public Complex[] getSubComplexes();
 2839,method,,call,getElements,       public Set getElements();
 2849,method,,call,getGenerators,       public List getGenerators();
 2855,method,,call,getGenerators,       public List getGenerators();
 2861,method,,call,getGenerators,       public List getGenerators();
 2867,method,,call,getDimension,       public int getDimension();
-2868,method,,call,]getCoordinates,       public double[] getCoordinates();
+2868,method,,call,getCoordinates,       public double[] getCoordinates();
 2869,method,,call,getOrdinate,       public double getOrdinate(int dimension) throws IndexOutOfBoundsException;
 2870,method,,call,setOrdinate,       public void setOrdinate(int dimension, double value) throws IndexOutOfBoundsException;
 2871,method,,call,getCoordinateReferenceSystem,       public CoordinateReferenceSystem getCoordinateReferenceSystem();
@@ -1437,14 +1417,14 @@
 2896,method,,call,getControlPoints,       public PointArray getControlPoints();
 2897,method,,call,getInterpolation,       public CurveInterpolation getInterpolation();
 2898,method,,call,asArcs,       public List asArcs();
-2905,method,,call,]getBulges,       public double[] getBulges();
+2905,method,,call,getBulges,       public double[] getBulges();
 2906,method,,call,getNumArc,       public int getNumArc();
 2907,method,,call,getNormals,       public List getNormals();
 2908,method,,call,getInterpolation,       public CurveInterpolation getInterpolation();
 2909,method,,call,asArcString,       public ArcString asArcString();
 2921,method,,call,getStartPoint,       public DirectPosition getStartPoint();
 2922,method,,call,getEndPoint,       public DirectPosition getEndPoint();
-2923,method,,call,]getTangent,       public double[] getTangent(double s);
+2923,method,,call,getTangent,       public double[] getTangent(double s);
 2924,method,,call,getStartParam,       public double getStartParam();
 2925,method,,call,getEndParam,       public double getEndParam();
 2926,method,,call,getStartConstructiveParam,       public double getStartConstructiveParam();
@@ -1455,7 +1435,7 @@
 2931,method,,call,length,       public double length(Position point1, Position point2);
 2932,method,,call,length,       public double length(double cparam1, double cparam2);
 2933,method,,call,asLineString,       public LineString asLineString(double maxSpacing, double maxOffset);
-2938,method,,call,]getUpNormal,       public double[] getUpNormal(DirectPosition point);
+2938,method,,call,getUpNormal,       public double[] getUpNormal(DirectPosition point);
 2939,method,,call,getPerimeter,       public double getPerimeter();
 2940,method,,call,getArea,       public double getArea();
 2950,method,,call,getControlPoints,       public PointArray getControlPoints();
@@ -1481,7 +1461,7 @@
 2993,method,,call,get,       public DirectPosition get(int column) throws IndexOutOfBoundsException;
 2994,method,,call,get,       public DirectPosition get(int column, DirectPosition dest) throws IndexOutOfBoundsException;
 2995,method,,call,set,       public void set(int column, DirectPosition position) throws IndexOutOfBoundsException,                                                                UnsupportedOperationException;
-2996,method,,call,]toArray,           public DirectPosition[] toArray();
+2996,method,,call,toArray,           public DirectPosition[] toArray();
 2997,method,,call,positions,       public List positions();
 3003,method,,call,width,       public int width();
 3004,method,,call,height,       public int height();
@@ -1511,26 +1491,25 @@
 3042,method,,call,getBuffer,       public Geometry getBuffer(double distance);
 3047,method,,definition,MismatchedDimensionException,       public MismatchedDimensionException() {
 3050,method,,definition,MismatchedDimensionException,           public MismatchedDimensionException(final String message) {
-3056,method,,call,]getAngles,       public double[] getAngles();
-3057,method,,call,]getDirection,       public double[] getDirection();
+3056,method,,call,getAngles,       public double[] getAngles();
+3057,method,,call,getDirection,       public double[] getDirection();
 3063,method,,call,getSegments,       public List getSegments();
 3067,method,,call,getStartPoint,       public Point getStartPoint();
 3068,method,,call,getEndPoint,       public Point getEndPoint();
-3077,method,,call,newArrayList,       private static final List VALUES = new ArrayList(10);
-3078,method,,call,newCurveInterpolation,       public static final CurveInterpolation LINEAR = new CurveInterpolation("LINEAR");
-3079,method,,call,newCurveInterpolation,       public static final CurveInterpolation GEODESIC = new CurveInterpolation("GEODESIC");
-3080,method,,call,newCurveInterpolation,       public static final CurveInterpolation CIRCULAR_ARC_3_POINTS = new CurveInterpolation(                                          "CIRCULAR_ARC_3_POINTS");
-3081,method,,call,newCurveInterpolation,        public static final CurveInterpolation CIRCULAR_ARC_2_POINTS_WITH_BULGE = new CurveInterpolation(                                          "CIRCULAR_ARC_2_POINTS_WITH_BULGE");
-3082,method,,call,newCurveInterpolation,        public static final CurveInterpolation ELLIPTICAL = new CurveInterpolation(                                          "ELLIPTICAL");
-3083,method,,call,newCurveInterpolation,        public static final CurveInterpolation CLOTHOID = new CurveInterpolation(                                          "CLOTHOID");
-3084,method,,call,newCurveInterpolation,       public static final CurveInterpolation CONIC = new CurveInterpolation(                                          "CONIC");
-3085,method,,call,newCurveInterpolation,        public static final CurveInterpolation POLYNOMIAL_SPLINE = new CurveInterpolation(                                          "POLYNOMIAL_SPLINE");
-3086,method,,call,newCurveInterpolation,        public static final CurveInterpolation CUBIC_SPLINE = new CurveInterpolation(                                          "CUBIC_SPLINE");
-3087,method,,call,newCurveInterpolation,        public static final CurveInterpolation RATIONAL_SPLINE = new CurveInterpolation(                                          "RATIONAL_SPLINE");
+3077,method,,call,ArrayList,       private static final List VALUES = new ArrayList(10);
+3078,method,,call,CurveInterpolation,       public static final CurveInterpolation LINEAR = new CurveInterpolation("LINEAR");
+3079,method,,call,CurveInterpolation,       public static final CurveInterpolation GEODESIC = new CurveInterpolation("GEODESIC");
+3080,method,,call,CurveInterpolation,       public static final CurveInterpolation CIRCULAR_ARC_3_POINTS = new CurveInterpolation(                                          "CIRCULAR_ARC_3_POINTS");
+3081,method,,call,CurveInterpolation,        public static final CurveInterpolation CIRCULAR_ARC_2_POINTS_WITH_BULGE = new CurveInterpolation(                                          "CIRCULAR_ARC_2_POINTS_WITH_BULGE");
+3082,method,,call,CurveInterpolation,        public static final CurveInterpolation ELLIPTICAL = new CurveInterpolation(                                          "ELLIPTICAL");
+3083,method,,call,CurveInterpolation,        public static final CurveInterpolation CLOTHOID = new CurveInterpolation(                                          "CLOTHOID");
+3084,method,,call,CurveInterpolation,       public static final CurveInterpolation CONIC = new CurveInterpolation(                                          "CONIC");
+3085,method,,call,CurveInterpolation,        public static final CurveInterpolation POLYNOMIAL_SPLINE = new CurveInterpolation(                                          "POLYNOMIAL_SPLINE");
+3086,method,,call,CurveInterpolation,        public static final CurveInterpolation CUBIC_SPLINE = new CurveInterpolation(                                          "CUBIC_SPLINE");
+3087,method,,call,CurveInterpolation,        public static final CurveInterpolation RATIONAL_SPLINE = new CurveInterpolation(                                          "RATIONAL_SPLINE");
 3088,method,,definition,CurveInterpolation,        public CurveInterpolation(final String name) {
 3091,method,,definition,values,       public static CurveInterpolation[] values() {
-3093,method,,call,VALUES.toArray,            return (CurveInterpolation[]) VALUESDottttTtoArray(new CurveInterpolation[VALUESDottttTsize()]);
-3093,method,,call,VALUES.size,            return (CurveInterpolation[]) VALUESDottttTtoArray(new CurveInterpolation[VALUESDottttTsize()]);
+3093,method,,call,VALUESDottttTtoArray,            return (CurveInterpolation[]) VALUESDottttTtoArray(new CurveInterpolation[VALUESDottttTsize()]);
 3096,method,,definition,family,       public CodeList[] family() {
 3097,method,,call,values,        return values();
 3104,method,,call,getCurve,       public Curve getCurve();
@@ -1550,7 +1529,7 @@
 3141,method,,call,getContainedPrimitives,          public Set getContainedPrimitives();
 3142,method,,call,getContainingPrimitives,       public Set getContainingPrimitives();
 3143,method,,call,getComplexes,       public Set getComplexes();
-3144,method,,call,]getProxy,       public OrientablePrimitive[] getProxy();
+3144,method,,call,getProxy,       public OrientablePrimitive[] getProxy();
 3157,method,,call,getCoordinateReferenceSystem,       public CoordinateReferenceSystem getCoordinateReferenceSystem();
 3158,method,,call,createPrimitive,       public Primitive createPrimitive(Envelope envelope);
 3159,method,,call,createDirectPosition,       public DirectPosition createDirectPosition(double[] coordinates);
@@ -1565,25 +1544,24 @@
 3179,method,,call,getArea,          public double getArea();
 3180,method,,call,getVolume,       public double getVolume();
 3184,method,,call,getExterior,       public Shell getExterior();
-3185,method,,call,]getInteriors,       public Shell[] getInteriors();
+3185,method,,call,getInteriors,       public Shell[] getInteriors();
 3191,method,,call,getPatches,       public List getPatches();
 3195,method,,call,getExterior,       public Ring getExterior();
-3196,method,,call,]getInteriors,       public Ring[] getInteriors();
-3204,method,,call,newArrayList,       private static final List VALUES = new ArrayList(10);
-3205,method,,call,newSurfaceInterpolation,       public static final SurfaceInterpolation NONE = new SurfaceInterpolation(                                            "NONE");
-3206,method,,call,newSurfaceInterpolation,       public static final SurfaceInterpolation PLANAR = new SurfaceInterpolation(                                            "PLANAR");
-3207,method,,call,newSurfaceInterpolation,       public static final SurfaceInterpolation SPHERICAL = new SurfaceInterpolation(                                            "SPHERICAL");
-3208,method,,call,newSurfaceInterpolation,       public static final SurfaceInterpolation ELLIPTICAL = new SurfaceInterpolation(                                            "ELLIPTICAL");
-3209,method,,call,newSurfaceInterpolation,       public static final SurfaceInterpolation CONIC = new SurfaceInterpolation(                                            "CONIC");
-3210,method,,call,newSurfaceInterpolation,       public static final SurfaceInterpolation TIN = new SurfaceInterpolation(                                            "TIN");
-3211,method,,call,newSurfaceInterpolation,       public static final SurfaceInterpolation PARAMETRIC_CURVE = new SurfaceInterpolation(                                            "PARAMETRIC_CURVE");
-3212,method,,call,newSurfaceInterpolation,       public static final SurfaceInterpolation POLYNOMIAL_SPLINE = new SurfaceInterpolation(                                            "POLYNOMIAL_SPLINE");
-3213,method,,call,newSurfaceInterpolation,       public static final SurfaceInterpolation RATIONAL_SPLINE = new SurfaceInterpolation(                                            "RATIONAL_SPLINE");
-3214,method,,call,newSurfaceInterpolation,       public static final SurfaceInterpolation TRIANGULATED_SPLINE = new SurfaceInterpolation(                                            "TRIANGULATED_SPLINE");
+3196,method,,call,getInteriors,       public Ring[] getInteriors();
+3204,method,,call,ArrayList,       private static final List VALUES = new ArrayList(10);
+3205,method,,call,SurfaceInterpolation,       public static final SurfaceInterpolation NONE = new SurfaceInterpolation(                                            "NONE");
+3206,method,,call,SurfaceInterpolation,       public static final SurfaceInterpolation PLANAR = new SurfaceInterpolation(                                            "PLANAR");
+3207,method,,call,SurfaceInterpolation,       public static final SurfaceInterpolation SPHERICAL = new SurfaceInterpolation(                                            "SPHERICAL");
+3208,method,,call,SurfaceInterpolation,       public static final SurfaceInterpolation ELLIPTICAL = new SurfaceInterpolation(                                            "ELLIPTICAL");
+3209,method,,call,SurfaceInterpolation,       public static final SurfaceInterpolation CONIC = new SurfaceInterpolation(                                            "CONIC");
+3210,method,,call,SurfaceInterpolation,       public static final SurfaceInterpolation TIN = new SurfaceInterpolation(                                            "TIN");
+3211,method,,call,SurfaceInterpolation,       public static final SurfaceInterpolation PARAMETRIC_CURVE = new SurfaceInterpolation(                                            "PARAMETRIC_CURVE");
+3212,method,,call,SurfaceInterpolation,       public static final SurfaceInterpolation POLYNOMIAL_SPLINE = new SurfaceInterpolation(                                            "POLYNOMIAL_SPLINE");
+3213,method,,call,SurfaceInterpolation,       public static final SurfaceInterpolation RATIONAL_SPLINE = new SurfaceInterpolation(                                            "RATIONAL_SPLINE");
+3214,method,,call,SurfaceInterpolation,       public static final SurfaceInterpolation TRIANGULATED_SPLINE = new SurfaceInterpolation(                                            "TRIANGULATED_SPLINE");
 3215,method,,definition,SurfaceInterpolation,       public SurfaceInterpolation(final String name) {
 3218,method,,definition,values,       public static SurfaceInterpolation[] values() {
-3220,method,,call,VALUES.toArray,            return (SurfaceInterpolation[]) VALUESDottttTtoArray(new SurfaceInterpolation[VALUESDottttTsize()]);
-3220,method,,call,VALUES.size,            return (SurfaceInterpolation[]) VALUESDottttTtoArray(new SurfaceInterpolation[VALUESDottttTsize()]);
+3220,method,,call,VALUESDottttTtoArray,            return (SurfaceInterpolation[]) VALUESDottttTtoArray(new SurfaceInterpolation[VALUESDottttTsize()]);
 3223,method,,definition,family,       public CodeList[] family() {
 3224,method,,call,values,        return values();
 3230,method,,call,getSurface,       public Surface getSurface();
@@ -1600,58 +1578,54 @@
 3244,method,,call,symmetricDifference,       public TransfiniteSet symmetricDifference(TransfiniteSet pointSet);
 3248,method,,call,clone,       public Object clone();
 3260,method,,definition,CodeList,       protected CodeList(String name, final Collection values) {
-3261,method,,call,name=,        thisDottttTname = (name=nameDottttTtrim());
-3261,method,,call,name.trim,        thisDottttTname = (name=nameDottttTtrim());
-3263,method,,call,values.size,            thisDottttTordinal = valuesDottttTsize();
-3264,method,,call,values.add,                        if (!valuesDottttTadd(this)) {
+3261,method,,call,nameDottttTtrim,        thisDottttTname = (name=nameDottttTtrim());
+3263,method,,call,valuesDottttTsize,            thisDottttTordinal = valuesDottttTsize();
+3264,method,,call,valuesDottttTadd,                        if (!valuesDottttTadd(this)) {
 3265,method,,call,IllegalArgumentException,                throw new IllegalArgumentException(StringDottttTvalueOf(values));
-3265,method,,call,String.valueOf,                throw new IllegalArgumentException(StringDottttTvalueOf(values));
+3265,method,,call,StringDottttTvalueOf,                throw new IllegalArgumentException(StringDottttTvalueOf(values));
 3269,method,,definition,contains,       private static boolean contains(final Collection values, final String name) {
-3270,method,,call,values.iterator,        for (final Iterator it=valuesDottttTiterator();
-3271,method,,call,hasNext, itDottttThasNext();
-3273,method,,call,code=,            final CodeList code = (CodeList) itDottttTnext();
-3273,method,,call,it.next,            final CodeList code = (CodeList) itDottttTnext();
-3274,method,,call,name.equalsIgnoreCase,            if (nameDottttTequalsIgnoreCase(codeDottttTname)) {
+3270,method,,call,valuesDottttTiterator,        for (final Iterator it=valuesDottttTiterator();
+3271,method,,call,itDottttThasNext, itDottttThasNext();
+3273,method,,call,itDottttTnext,            final CodeList code = (CodeList) itDottttTnext();
+3274,method,,call,nameDottttTequalsIgnoreCase,            if (nameDottttTequalsIgnoreCase(codeDottttTname)) {
 3280,method,,definition,ordinal,       public final int ordinal() {
 3283,method,,definition,name,       public final String name() {
-3286,method,,call,]family,       public abstract CodeList[] family();
+3286,method,,call,family,       public abstract CodeList[] family();
 3287,method,,definition,toString,       public String toString() {
-3288,method,,call,=getClass,        String classname = getClass()DottttTgetName();
-3288,method,,call,getClass().getName,        String classname = getClass()DottttTgetName();
-3289,method,,call,classname.lastIndexOf,        final int i = classnameDottttTlastIndexOf('DottttT');
-3291,method,,call,classname.substring,            classname = classnameDottttTsubstring(i+1);
+3288,method,,call,getClass,        String classname = getClass()DottttTgetName();
+3288,method,,call,DottttTgetName,        String classname = getClass()DottttTgetName();
+3289,method,,call,classnameDottttTlastIndexOf,        final int i = classnameDottttTlastIndexOf('DottttT');
+3291,method,,call,classnameDottttTsubstring,            classname = classnameDottttTsubstring(i+1);
 3295,method,,call,readResolve,       protected Object readResolve() throws ObjectStreamException {
-3296,method,,call,=family,        final CodeList[] codes = family();
-3300,method,,call,name.equals,                        if (nameDottttTequals(codes[i]DottttTname)) {
+3296,method,,call,family,        final CodeList[] codes = family();
+3300,method,,call,nameDottttTequals,                        if (nameDottttTequals(codes[i]DottttTname)) {
 3304,method,,call,InvalidObjectException,        throw new InvalidObjectException(toString());
-3304,method,,call,(toString,        throw new InvalidObjectException(toString());
+3304,method,,call,toString,        throw new InvalidObjectException(toString());
 3310,method,,definition,NoSuchEnumerationException,           public NoSuchEnumerationException(final int value) {
 3314,method,,definition,getValue,           public int getValue() {
 3326,method,,definition,loadIconResource,                   protected static Icon loadIconResource(Class a_class, String name) {
-3327,method,,call,a_class.getResource,        URL iconURL = a_classDottttTgetResource(name);
+3327,method,,call,a_classDottttTgetResource,        URL iconURL = a_classDottttTgetResource(name);
 3329,method,,call,getNullIcon,            return getNullIcon();
 3331,method,,call,ImageIcon,        return new ImageIcon(iconURL);
 3333,method,,definition,getNullIcon,       public static Icon getNullIcon() {
-3336,method,,call,newNullIcon,                   private final static Icon NULL_ICON = new NullIcon();
+3336,method,,call,NullIcon,                   private final static Icon NULL_ICON = new NullIcon();
 3339,method,,definition,SimpleEnumerationType,                   protected SimpleEnumerationType(Collection values, String name, String description) {
-3342,method,,call,=getNullIcon,        thisDottttTicon = getNullIcon();
+3342,method,,call,getNullIcon,        thisDottttTicon = getNullIcon();
 3344,method,,definition,SimpleEnumerationType,       protected SimpleEnumerationType(Collection values, String name, String description, Icon icon) {
 3349,method,,definition,toString,                   public String toString() {
 3350,method,,call,name,        return name();
 3352,method,,definition,getDescription,                   public String getDescription() {
 3355,method,,definition,getIcon,       public Icon getIcon() {
 3358,method,,definition,compareTo,                   public int compareTo(Object obj) {
-3360,method,,call,this.getClass,        if (thisDottttTgetClass() != objDottttTgetClass()) {
-3360,method,,call,obj.getClass,        if (thisDottttTgetClass() != objDottttTgetClass()) {
+3360,method,,call,thisDottttTgetClass,        if (thisDottttTgetClass() != objDottttTgetClass()) {
+3360,method,,call,objDottttTgetClass,        if (thisDottttTgetClass() != objDottttTgetClass()) {
 3361,method,,call,ClassCastException,            throw new ClassCastException("Can't compare " +                                            thisDottttTgetClass()DottttTgetName() +                                            " to " +                                            objDottttTgetClass()DottttTgetName());
-3361,method,,call,this.getClass,            throw new ClassCastException("Can't compare " +                                            thisDottttTgetClass()DottttTgetName() +                                            " to " +                                            objDottttTgetClass()DottttTgetName());
-3361,method,,call,this.getClass().getName,            throw new ClassCastException("Can't compare " +                                            thisDottttTgetClass()DottttTgetName() +                                            " to " +                                            objDottttTgetClass()DottttTgetName());
-3361,method,,call,obj.getClass,            throw new ClassCastException("Can't compare " +                                            thisDottttTgetClass()DottttTgetName() +                                            " to " +                                            objDottttTgetClass()DottttTgetName());
-3361,method,,call,obj.getClass().getName,            throw new ClassCastException("Can't compare " +                                            thisDottttTgetClass()DottttTgetName() +                                            " to " +                                            objDottttTgetClass()DottttTgetName());
-3364,method,,call,this.ordinal,            rv = thisDottttTordinal() - ((SimpleEnumerationType)obj)DottttTordinal();
-3364,method,,call,this.ordinal()-,            rv = thisDottttTordinal() - ((SimpleEnumerationType)obj)DottttTordinal();
-3364,method,,call,-(,            rv = thisDottttTordinal() - ((SimpleEnumerationType)obj)DottttTordinal();
-3364,method,,call,(().ordinal,            rv = thisDottttTordinal() - ((SimpleEnumerationType)obj)DottttTordinal();
+3361,method,,call,thisDottttTgetClass,            throw new ClassCastException("Can't compare " +                                            thisDottttTgetClass()DottttTgetName() +                                            " to " +                                            objDottttTgetClass()DottttTgetName());
+3361,method,,call,DottttTgetName,            throw new ClassCastException("Can't compare " +                                            thisDottttTgetClass()DottttTgetName() +                                            " to " +                                            objDottttTgetClass()DottttTgetName());
+3361,method,,call,objDottttTgetClass,            throw new ClassCastException("Can't compare " +                                            thisDottttTgetClass()DottttTgetName() +                                            " to " +                                            objDottttTgetClass()DottttTgetName());
+3361,method,,call,DottttTgetName,            throw new ClassCastException("Can't compare " +                                            thisDottttTgetClass()DottttTgetName() +                                            " to " +                                            objDottttTgetClass()DottttTgetName());
+3364,method,,call,thisDottttTordinal,            rv = thisDottttTordinal() - ((SimpleEnumerationType)obj)DottttTordinal();
+3364,method,,call,DottttTordinal,            rv = thisDottttTordinal() - ((SimpleEnumerationType)obj)DottttTordinal();
 3369,method,,definition,getIconHeight,        public int getIconHeight() {
 3372,method,,definition,getIconWidth,        public int getIconWidth() {
 3375,method,,definition,paintIcon,        public void paintIcon(Component c, Graphics g, int x, int y) {

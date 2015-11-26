@@ -127,13 +127,13 @@ public class Search_sourse {
 				+ "|(?<=\\})|(?=\\})"
 				+ "|(?<=\\()|(?=\\()"
 				+ "|(?<=\\))|(?=\\))"
-				+ "|(?<=\\[)|(?=\\[)"
-				+ "|(?<=\\])|(?=\\])"
+				//+ "|(?<=\\[)|(?=\\[)"
+				//+ "|(?<=\\])|(?=\\])"
 				+ "|(?<=\\+)|(?=\\+)"
 				+ "|(?<=-)|(?=-)"
 				+ "|(?<=\\*)|(?=\\*)"
 				+ "|(?<=/)|(?=/)"
-				+ "|(?<=DottttT)|(?=DottttT)"
+				//+ "|(?<=DottttT)|(?=DottttT)"
 				+ "|(?<=(!))|(?=(!))"
 				+ "|(?<=\\|)|(?=\\|)";
 	}
@@ -147,7 +147,7 @@ public class Search_sourse {
 			while(str != null){
 				str = str_encode(str);
 				if(str.matches("(.*\\s(void main).*)")){
-					System.out.print(str);
+					//System.out.print(str);
 				} 
 				str = br.readLine();
 			}
@@ -199,29 +199,6 @@ public class Search_sourse {
 							type_str = split_str.get(i-2);
 							if(split_str.get(i-2).equals("]"))
 								type_str = split_str.get(i-4)+split_str.get(i-3)+split_str.get(i-2);
-							/*if(i==1)continue;
-							int j = i-2;
-							while(j>1){
-								if(split_str.get(j).equals("DottttT")){
-									temp_str = "." +temp_str;
-									if(j>1)j--;
-								}
-								else if(split_str.get(j).equals(")")){
-									temp_str = ")" + temp_str;
-									while(j>0){
-										j--;
-										if(split_str.get(j).equals("(")){
-											temp_str = "(" + temp_str;
-											break;
-										}
-									}
-									if(j>1)j--;
-								}else{
-									temp_str = split_str.get(j) + temp_str;
-									if(split_str.get(j-1).equals("DottttT")&&j>1)j--;
-									else break;
-								}
-							}*/
 							String_Write(readline+",method,"//+filePath
 									+",definition,"+temp_str+","+str_decode(str)+"\n");////抽出
 							//System.out.println(readline+",method,"+returnClassToLine(readline)+",definition,"+temp_str+","+str_decode(str));
@@ -231,36 +208,17 @@ public class Search_sourse {
 				}
 				//呼び出し文
 				else if(str.matches(".*\\s*[A-Za-z_][0-9A-Za-z_]*(\\().*(\\)).*")){
+					split_str = null;
 					split_str = split_token(str);
 					String temp_str = "";
 					temp_str = "";
-					//for(int i=1;i<split_str.size();i++)System.out.print("["+split_str.get(i-1)+"]");System.out.print("\n"); 
+					//System.out.print(str);
+					for(int i=1;i<split_str.size();i++)System.out.print("["+split_str.get(i-1)+"]");System.out.print("\n"); 
 					for(int i=1;i<split_str.size();i++){
 						if(split_str.get(i).equals("(")&&!reserved_word(split_str.get(i-1))){
+							if(!split_str.get(i-1).matches("[A-Za-z_][0-9A-Za-z_]*"))continue;
 							temp_str = split_str.get(i-1);
-							if(i==1)continue;
-							int j = i-2;
-							while(j>1){
-								if(split_str.get(j).equals("DottttT")){
-									temp_str = "." +temp_str;
-									if(j>1)j--;
-								}
-								else if(split_str.get(j).equals(")")){
-									temp_str = ")" + temp_str;
-									while(j>0){
-										j--;
-										if(split_str.get(j).equals("(")){
-											temp_str = "(" + temp_str;
-											break;
-										}
-									}
-									if(j>1)j--;
-								}else{
-									temp_str = split_str.get(j) + temp_str;
-									if(split_str.get(j-1).equals("DottttT")&&j>1)j--;
-									else break;
-								}
-							}
+							//if(i==1)continue;
 							String_Write(readline+",method,"//+filePath+""
 									+ ",call,"+temp_str+","+str+"\n");////抽出
 							//System.out.println(readline+",method,"+returnClassToLine(readline)+",call,"+temp_str/*+","+str_decode(str)*/);
@@ -557,6 +515,12 @@ public class Search_sourse {
 	}
 	
 	//getter
+	//卒論の構成
+	//グラフを書いた
+	//変数にフォーカスを当てて分析した時に結果が出た。
+	//凝集度の高すぎるものを分解できそうだ
+	//以上
+	
 	public ArrayList<class_info> get_classinfo(){
 		return class_infos;
 	}

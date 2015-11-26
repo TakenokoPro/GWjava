@@ -18,16 +18,31 @@ public class main {
 		for(int i=0;i<class_infos.size();i++){
 			ArrayList<method_type> temp = class_infos.get(i).definition_get();
 			for(int j=0;j<temp.size();j++){
-				System.out.println(temp.get(j).returnType_get()+",==="+temp.get(j).identifier_get());
-				ObjectInfoTable.Add("関数定義",temp.get(j).returnType_get(),temp.get(j).identifier_get());
+				//System.out.println(temp.get(j).returnType_get()+",==="+temp.get(j).identifier_get());
+				System.out.println(class_infos.get(i).name_get());
+				ObjectInfoTable.Add("関数定義",temp.get(j).returnType_get(),temp.get(j).identifier_get(),class_infos.get(i).name_get());
 			}
 			ArrayList<String> temp1 = class_infos.get(i).callmethod_get();
 			for(int j=0;j<temp1.size();j++){
-				System.out.println(temp1.get(j));
-				ObjectInfoTable.Add("関数呼出",temp1.get(j),"");
+				//System.out.println(temp1.get(j));
+				int num = getNameForMethod(temp1.get(j));
+				//System.out.println(num);
+				String aString;
+				if(num != -1){
+					aString = class_infos.get(getNameForMethod(temp1.get(j))).name_get();	
+				}
+				else aString = "------";
+				ObjectInfoTable.Add("関数呼出","",temp1.get(j),aString);
 			}
 		}
 		objectTable.DisplayTable();
+	}
+	public static int getNameForMethod(String methodName){
+		for(int i=0;i<class_infos.size();i++){
+			if(class_infos.get(i).definition_search(methodName))return i;
+			//System.out.println(class_infos.get(i).name_get());
+		}
+		return -1;
 	}
 
 }

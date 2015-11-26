@@ -19,16 +19,13 @@ public class class_info {
 		this.class_name = class_name;
 		this.kind = kind;
 		this.startLine = startLine;
-		//System.out.println(startLine);
 	}
 	
 	public void interface_add(String iString){
 		this.interfaceString.add(iString);
-		//System.out.println(this.kind+" "+this.class_name+this.interfaceString.toString());
 	}
 	public void extend_add(String eString){
 		this.extendString.add(eString);
-		//System.out.println(this.kind+" "+this.class_name+this.extendString.toString());
 	}
 	public void new_class_add(int id,String name,String identifer){
 		this.new_classes.add(new new_class(id,name,identifer));
@@ -71,6 +68,13 @@ public class class_info {
 	}
 	public ArrayList<String> callmethod_get(){
 		return callMethod;
+	}
+	
+	/*search*/
+	public boolean definition_search(String search){
+		for(int i=0;i<definitionMethod.size();i++)
+			if(definitionMethod.get(i).identifier_get().equals(search))return true;
+		return false;
 	}
 	
 	public int startline_get(){

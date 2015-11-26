@@ -26,12 +26,14 @@ public class ObjectInfoTable {
 		column.add("種類");
 		column.add("返り値");
 		column.add("識別子");
+		column.add("クラス");
 	}	
-	public static void Add(String kind,String returnObject,String identifier){
+	public static void Add(String kind,String returnObject,String identifier,String in_class){
 		Vector<String> temp = new Vector<String>();
 		temp.add(kind);
 		temp.add(returnObject);
 		temp.add(identifier);
+		temp.add(in_class);
 		row.add(temp);
 	}
 	public void DisplayTable(){
@@ -39,8 +41,6 @@ public class ObjectInfoTable {
 		 // モデル作成
 	    model = new ObjectTableModel(row);
 	    table = model.Table_init(model);
-	    
-		System.out.println(table);
 
 	    JScrollPane scrollPane = new JScrollPane(table);
 		TableRowSorter<ObjectTableModel> sorter = new TableRowSorter<ObjectTableModel> (new ObjectTableModel(row));
@@ -73,19 +73,22 @@ class ObjectTableModel extends AbstractTableModel {
 	private String[] kind;
 	private String[] returnObject;
 	private String[] identifier;
-	private int colcount = 3;//列数
+	private String[] in_class;
+	private int colcount = 4;//列数
 
 	public ObjectTableModel(Vector<Vector<String>> vector){
 	  
 		kind =new String[vector.size()];
 		returnObject =new String[vector.size()];
 		identifier = new String[vector.size()];
+		in_class = new String[vector.size()];
 	  
 		for(int i=0;i<vector.size();i++){
 			Vector<String> vec = (Vector<String>)vector.get(i);
 			kind[i] =  (String)vec.get(0);
 			returnObject[i] = (String)vec.get(1);
 			identifier[i] = (String)vec.get(2);
+			in_class[i] = (String)vec.get(3);
 		}	  
 	}
 	public JTable Table_init(ObjectTableModel model){
@@ -113,6 +116,7 @@ class ObjectTableModel extends AbstractTableModel {
 			case(0) : return String.class;
 			case(1) : return String.class;
 			case(2) : return String.class;
+			case(3) : return String.class;
 		}
 		return null;
 	}
@@ -121,6 +125,7 @@ class ObjectTableModel extends AbstractTableModel {
 		    case(0) : return "種類";
 		    case(1) : return "返り値";
 		    case(2) : return "識別子";
+		    case(3) : return "クラス";
 	    }
 	    return null;
   }
@@ -131,6 +136,7 @@ class ObjectTableModel extends AbstractTableModel {
 		    case(0) : return kind[row];
 		    case(1) : return returnObject[row];
 		    case(2) : return identifier[row];
+		    case(3) : return in_class[row];
 	    }
 	    return null;
 	  }
