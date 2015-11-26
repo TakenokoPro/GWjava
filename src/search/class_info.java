@@ -63,6 +63,9 @@ public class class_info {
 		}
 		return return_str;
 	}
+	public ArrayList<new_class> new_class_get(){
+		return new_classes;
+	}
 	public ArrayList<method_type> definition_get(){
 		return definitionMethod;
 	}

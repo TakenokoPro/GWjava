@@ -69,7 +69,7 @@ public class Search_sourse {
 		//search_object(filePath);
 		
 		//new ...を抽出()
-		//search_new(filePath);
+		search_new(filePath);
 		
 		System.out.println("=====");
 		//テーブルの表示
@@ -297,17 +297,20 @@ public class Search_sourse {
 			File javaFile = new File(filePath);
 			BufferedReader br = new BufferedReader(new FileReader(javaFile));
 			String str = br.readLine();
-			int readnum = 1;//読む行
+			int readline = 1;//読む行
 			while(str != null){
 				str = str_encode(str);
 				if(str.matches(".*\\s*[A-Za-z_][0-9A-Za-z_]*\\s*=\\s(new)\\s[A-Za-z_][0-9A-Za-z_]*.*")){
 					split_str = split_token(str);
 					String temp_str = "";
 					for(int i=0;i<split_str.size();i++)
-						temp_str += str_decode(split_str.get(i))+" ";
-					String_Write(readnum+",new,"+temp_str+"\n");
+						if(split_str.get(i).equals("new")){
+							class_infos.get(returnClassNumToLine(readline)).new_class_add(0,split_str.get(i+1),split_str.get(i-2));
+							temp_str += str_decode(split_str.get(i))+" ";
+							String_Write(readline+",new,"+temp_str+"\n");
+					}
 				}
-				readnum++;
+				readline++;
 				str = br.readLine();
 			}
 			br.close();
