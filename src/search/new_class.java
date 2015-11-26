@@ -1,13 +1,17 @@
 package search;
 
 public class new_class {
-	int class_id;
 	String class_name;
 	String identifier;
+	int line;
 	
-	public new_class(int id,String name,String identifier) {
-		this.class_id = id;
+	public new_class(String name,String identifier,int line) {
 		this.class_name = name;
 		this.identifier = identifier;
+		this.line = line;
+	}
+	
+	public String identifier_get(){
+		return identifier;
 	}
 }

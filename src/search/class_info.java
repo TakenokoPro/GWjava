@@ -10,7 +10,7 @@ public class class_info {
 	ArrayList<new_class> new_classes = new ArrayList<new_class>();
 	ArrayList<object_type> object_types = new ArrayList<object_type>();
 	ArrayList<method_type> definitionMethod = new ArrayList<method_type>();
-	ArrayList<String> callMethod = new ArrayList<String>();
+	ArrayList<method_type> callMethod = new ArrayList<method_type>();
 	
 	//開始行
 	int startLine;
@@ -27,17 +27,17 @@ public class class_info {
 	public void extend_add(String eString){
 		this.extendString.add(eString);
 	}
-	public void new_class_add(int id,String name,String identifer){
-		this.new_classes.add(new new_class(id,name,identifer));
+	public void new_class_add(String name,String identifer,int line){
+		this.new_classes.add(new new_class(name,identifer,line));
 	}
-	public void object_types_add(String type,String identifier){
-		this.object_types.add(new object_type(type,identifier));
+	public void object_types_add(String type,String identifier,int line){
+		this.object_types.add(new object_type(type,identifier,line));
 	}
-	public void definitionMethod_add(String type,String identifier){
-		this.definitionMethod.add(new method_type(type,identifier));
+	public void definitionMethod_add(String type,String identifier,int line){
+		this.definitionMethod.add(new method_type(type,identifier,line));
 	}
-	public void callMethod_add(String identifier){
-		this.callMethod.add(identifier);
+	public void callMethod_add(String identifier,int line){
+		this.callMethod.add(new method_type("",identifier,line));
 	}
 	
 	/*getter*/
@@ -66,10 +66,13 @@ public class class_info {
 	public ArrayList<new_class> new_class_get(){
 		return new_classes;
 	}
+	public ArrayList<object_type> object_get(){
+		return object_types;
+	}
 	public ArrayList<method_type> definition_get(){
 		return definitionMethod;
 	}
-	public ArrayList<String> callmethod_get(){
+	public ArrayList<method_type> callmethod_get(){
 		return callMethod;
 	}
 	
@@ -77,6 +80,11 @@ public class class_info {
 	public boolean definition_search(String search){
 		for(int i=0;i<definitionMethod.size();i++)
 			if(definitionMethod.get(i).identifier_get().equals(search))return true;
+		return false;
+	}
+	public boolean new_class_search(String search){
+		for(int i=0;i<new_classes.size();i++)
+			if(new_classes.get(i).identifier_get().equals(search))return true;
 		return false;
 	}
 	

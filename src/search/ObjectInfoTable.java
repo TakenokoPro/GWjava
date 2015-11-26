@@ -1,6 +1,8 @@
 package search;
 
 
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.MouseEvent;
 import java.util.Vector;
 
@@ -9,6 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableColumnModel;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableRowSorter;
 
 public class ObjectInfoTable {
@@ -27,13 +30,15 @@ public class ObjectInfoTable {
 		column.add("返り値");
 		column.add("識別子");
 		column.add("クラス");
+		column.add("行");
 	}	
-	public static void Add(String kind,String returnObject,String identifier,String in_class){
+	public static void Add(String kind,String returnObject,String identifier,String in_class,int line){
 		Vector<String> temp = new Vector<String>();
 		temp.add(kind);
 		temp.add(returnObject);
 		temp.add(identifier);
 		temp.add(in_class);
+		temp.add(String.valueOf(line));
 		row.add(temp);
 	}
 	public void DisplayTable(){
@@ -74,7 +79,8 @@ class ObjectTableModel extends AbstractTableModel {
 	private String[] returnObject;
 	private String[] identifier;
 	private String[] in_class;
-	private int colcount = 4;//列数
+	private int[] line;
+	private int colcount = 5;//列数
 
 	public ObjectTableModel(Vector<Vector<String>> vector){
 	  
@@ -82,6 +88,7 @@ class ObjectTableModel extends AbstractTableModel {
 		returnObject =new String[vector.size()];
 		identifier = new String[vector.size()];
 		in_class = new String[vector.size()];
+		line = new int[vector.size()];
 	  
 		for(int i=0;i<vector.size();i++){
 			Vector<String> vec = (Vector<String>)vector.get(i);
@@ -89,23 +96,27 @@ class ObjectTableModel extends AbstractTableModel {
 			returnObject[i] = (String)vec.get(1);
 			identifier[i] = (String)vec.get(2);
 			in_class[i] = (String)vec.get(3);
+			line[i] = Integer.valueOf(vec.get(4));
 		}	  
 	}
 	public JTable Table_init(ObjectTableModel model){
-		JTable table = new JTable(model) {/*
+		JTable table = new JTable(model) {
 			@Override
 	    	public Component prepareRenderer(TableCellRenderer tcr, int row, int column) {
 		    	Component c = super.prepareRenderer(tcr, row, column);
-		    	if(column==3){
+		    	if(column==0){
 		    		c.setForeground(Color.WHITE);
-			    	c.setBackground(new Color(colors[(Integer)getValueAt(row,0)]));
+		    		if(getValueAt(row,column).equals("オブジェクト生成"))c.setBackground(Color.red);
+		    		if(getValueAt(row,column).equals("関数定義"))c.setBackground(Color.blue);
+		    		if(getValueAt(row,column).equals("関数呼出"))c.setBackground(Color.green);
+		    		if(getValueAt(row,column).equals("変数生成"))c.setBackground(Color.yellow);
 		    	}
 		    	else{
 		    		c.setForeground(getForeground());
 		    		c.setBackground(getBackground());
 		    	}
 		    	return c;
-	    	}*/
+	    	}
 	    };
 	   return table;
 	}
@@ -117,6 +128,7 @@ class ObjectTableModel extends AbstractTableModel {
 			case(1) : return String.class;
 			case(2) : return String.class;
 			case(3) : return String.class;
+			case(4) : return Integer.class;
 		}
 		return null;
 	}
@@ -126,6 +138,7 @@ class ObjectTableModel extends AbstractTableModel {
 		    case(1) : return "返り値";
 		    case(2) : return "識別子";
 		    case(3) : return "クラス";
+		    case(4) : return "行";
 	    }
 	    return null;
   }
@@ -137,6 +150,7 @@ class ObjectTableModel extends AbstractTableModel {
 		    case(1) : return returnObject[row];
 		    case(2) : return identifier[row];
 		    case(3) : return in_class[row];
+		    case(4) : return line[row];
 	    }
 	    return null;
 	  }

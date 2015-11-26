@@ -21,7 +21,7 @@ import org.xml.sax.SAXException;
 public class Inport_file extends Frame implements GlobalValue{
 	/**=============================*/	
 	/**object*/
-	static String in_Path = "xml\\cl_geoapi1.0.0.xml";//""内に分析したいフォルダを(\は２連続で)
+	static String in_Path = "xml\\cl_gwjava.xml";//""内に分析したいフォルダを(\は２連続で)
 	int count = 0;
 	ArrayList<String> split_str;
 	static int centerX=500;
