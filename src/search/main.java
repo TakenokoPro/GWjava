@@ -19,7 +19,14 @@ public class main {
 
 			ArrayList<method_type> temp_m = class_infos.get(i).definition_get();
 			for(int j=0;j<temp_m.size();j++){
-				ObjectInfoTable.Add("関数定義",temp_m.get(j).returnType_get(),temp_m.get(j).identifier_get(),class_infos.get(i).name_get(),temp_m.get(j).line_get());
+				ObjectInfoTable.Add(
+						"関数定義",
+						temp_m.get(j).returnType_get(),
+						temp_m.get(j).identifier_get(),
+						"",
+						class_infos.get(i).name_get(),
+						temp_m.get(j).line_get()
+				);
 			}
 			ArrayList<method_type> temp_s = class_infos.get(i).callmethod_get();
 			for(int j=0;j<temp_s.size();j++){
@@ -28,7 +35,14 @@ public class main {
 				if(num != -1){
 					aString = class_infos.get(getNameForMethod(temp_s.get(j).identifier_get())).name_get();	
 				}
-				ObjectInfoTable.Add("関数呼出","",temp_s.get(j).identifier_get(),aString,temp_s.get(j).line);
+				ObjectInfoTable.Add(
+						"関数呼出",
+						"",
+						temp_s.get(j).identifier_get(),
+						aString,
+						class_infos.get(i).name_get(),
+						temp_s.get(j).line
+				);
 			}
 			ArrayList<new_class> temp_c = class_infos.get(i).new_class_get();
 			for(int j=0;j<temp_c.size();j++){
@@ -37,12 +51,30 @@ public class main {
 				if(num != -1){
 					aString = class_infos.get(getNameForNew(temp_c.get(j).class_name)).name_get();	
 				}
-				ObjectInfoTable.Add("オブジェクト生成",temp_c.get(j).class_name,temp_c.get(j).identifier,aString,temp_c.get(j).line);
+				ObjectInfoTable.Add(
+						"オブジェクト生成",
+						temp_c.get(j).class_name,
+						temp_c.get(j).identifier,
+						aString,
+						class_infos.get(i).name_get(),
+						temp_c.get(j).line
+				);
 
 			}
 			ArrayList<object_type> temp_o = class_infos.get(i).object_types;
 			for(int j=0;j<temp_o.size();j++){
-				ObjectInfoTable.Add("変数生成",temp_o.get(j).type,temp_o.get(j).identifier,"",temp_o.get(j).line);
+				int num = getNameForNew(temp_o.get(j).type);
+				String oString = null;
+				if(num != -1){
+					oString = class_infos.get(getNameForNew(temp_o.get(j).type)).name_get();	
+				}
+				ObjectInfoTable.Add(
+						"変数生成",
+						temp_o.get(j).type,temp_o.get(j).identifier,
+						oString,
+						class_infos.get(i).name_get(),
+						temp_o.get(j).line
+				);
 
 			}
 		}
@@ -65,7 +97,13 @@ public class main {
 	public static int getNameForNew(String className){
 		for(int i=0;i<class_infos.size();i++){
 			if(className.equals(class_infos.get(i).name_get()))return i;
+			String[] temp = className.split("[<>]");
+			for(int j=0;j<temp.length;j++)
+				if(temp[j].equals(class_infos.get(i).name_get())){
+					return i;
+				}
 		}
 		return -1;
 	}
+
 }

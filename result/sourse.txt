@@ -327,70 +327,6 @@ element++) {
     NODE_FOCUS(element);
         }
 }
-public void clustering_draw(){
-int rgb_str;
-for (int k = 0;
- k < Cnodes.length;
- k++) {
-if(!Cnodes[k].init){
-if(Cnodes[k].num<max_num*1/4)rgb_str=0xCCCCCC;
-else if(Cnodes[k].num<max_num*2/4)rgb_str=0x999999;
-else if(Cnodes[k].num<max_num*3/4)rgb_str=0x666666;
-else if(Cnodes[k].num<max_num*4/4)rgb_str=0x333333;
-else rgb_str = 0xFF6666;
-this.circle(Cnodes[k].x, Cnodes[k].y, Cnodes[k].r,rgb_str);
-this.text(Cnodes[k].value, Cnodes[k].x, Cnodes[k].y);
-}
-}
-}
-private void NODE_CONNECT(int element){
-boolean[][] connected = new boolean[elements.get(element).classNodes.size()][elements.get(element).classNodes.size()];
-for (int i=0;
-i<elements.get(element).classNodes.size();
-i++)for (int j=0;
-j<elements.get(element).classNodes.size();
-j++){
-connected[i][j] = false;
-}
-for (int i=0;
-i<elements.get(element).classNodes.size();
-i++){
-ClassNode node = elements.get(element).classNodes.get(i);
-for (int j=0;
-j<node.connections.size();
-j++){
-if (connected[i][j] || connected[j][i])continue;
-connected[i][j] = true;
-connected[j][i] = true;
-line(node.x, node.y, node.connections.get(j).x, node.connections.get(j).y,0xCCCCCC);
-}
-}
-}
-private void NODE_FOCUS(int element){
-for (int i=0;
-i<elements.get(element).classNodes.size();
-i++){
-ClassNode node = elements.get(element).classNodes.get(i);
-for (int j=0;
-j<elements.get(element).classNodes.size();
- j++){
-}
-}
-for (int i=0;
-i<elements.get(element).classNodes.size();
-i++){
-ClassNode node = elements.get(element).classNodes.get(i);
-if(i==click_focus)circle(node.x, node.y, node.r+3, 0xFF0000);
-if(node.colorflag){
-circle(node.x, node.y, node.r, node.background);
-}
-else{
-circle(node.x, node.y, node.r, 0xCCCCCC);
-}
-text(node.value,node.x,node.y,0xFF0000);
-}
-}
-private void DRAWPOINT(){
 }
 private void drawaxis() {
 }
@@ -549,43 +485,6 @@ for(int j=0;
 j<usedInternal.length;
 j++){
 if(usedInternal[j]==null)continue;
-}
-System.out.println("------------------");
-for(int i=0;
-i<list_xml.size();
-i++){
-}
-System.out.println("------------------");
-for(int i=0;
-i<node_Name.size();
-i++){
-}
-System.out.println("------------------");
-for(int i=0;
-i<node_branch.size();
-i++){
-}
-for(int i=0;
-i<node_branch.size();
-i++)    if(internal_max < Integer.parseInt(node_branch.get(i))){
-        internal_max = Integer.parseInt(node_branch.get(i));
-        max_class = i;
-    }
-for(int i=0;
-i<node_Name.size();
-i++)no_used.add(true);
-for(int i=0;
-i<node_Name.size();
-i++){
-  for(int k=i;
-k<node_Name.size();
-k++){
-    String connect = node_Name.get(k);
-    int key = node_Name.indexOf(connect);
-    no_used.set(i,false);
-no_used.set(key,false);
-  }
-}
 }
 public void divide_package(){
 for(int i =0;
@@ -1543,7 +1442,7 @@ ArrayList<String> extendString = new ArrayList<String>();
 ArrayList<new_class> new_classes = new ArrayList<new_class>();
 ArrayList<object_type> object_types = new ArrayList<object_type>();
 ArrayList<method_type> definitionMethod = new ArrayList<method_type>();
-ArrayList<String> callMethod = new ArrayList<String>();
+ArrayList<method_type> callMethod = new ArrayList<method_type>();
 int startLine;
 public class_info(String class_name,String kind,int startLine){
 this.class_name = class_name;
@@ -1556,17 +1455,17 @@ this.interfaceString.add(iString);
 public void extend_add(String eString){
 this.extendString.add(eString);
 }
-public void new_class_add(int id,String name,String identifer){
-this.new_classes.add(new new_class(id,name,identifer));
+public void new_class_add(String name,String identifer,int line){
+this.new_classes.add(new new_class(name,identifer,line));
 }
-public void object_types_add(String type,String identifier){
-this.object_types.add(new object_type(type,identifier));
+public void object_types_add(String type,String identifier,int line){
+this.object_types.add(new object_type(type,identifier,line));
 }
-public void definitionMethod_add(String type,String identifier){
-this.definitionMethod.add(new method_type(type,identifier));
+public void definitionMethod_add(String type,String identifier,int line){
+this.definitionMethod.add(new method_type(type,identifier,line));
 }
-public void callMethod_add(String identifier){
-this.callMethod.add(identifier);
+public void callMethod_add(String identifier,int line){
+this.callMethod.add(new method_type("",identifier,line));
 }
 public String name_get(){
 return class_name;
@@ -1597,16 +1496,25 @@ return return_str;
 public ArrayList<new_class> new_class_get(){
 return new_classes;
 }
+public ArrayList<object_type> object_get(){
+return object_types;
+}
 public ArrayList<method_type> definition_get(){
 return definitionMethod;
 }
-public ArrayList<String> callmethod_get(){
+public ArrayList<method_type> callmethod_get(){
 return callMethod;
 }
 public boolean definition_search(String search){
 for(int i=0;
 i<definitionMethod.size();
 i++)if(definitionMethod.get(i).identifier_get().equals(search))return true;
+return false;
+}
+public boolean new_class_search(String search){
+for(int i=0;
+i<new_classes.size();
+i++)if(new_classes.get(i).identifier_get().equals(search))return true;
 return false;
 }
 public int startline_get(){
@@ -1625,7 +1533,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 public class Clear_source {
 static String path_str = "Z:\\Dropbox\\";
-static String in_Path = "C:\\pleiades\\workspace\\GWjava\\src";
+static String in_Path = "Z:\\Eclipse\\GWjava\\src";
 static String out_path = "result\\sourse.txt";
 int count = 0;
 ArrayList<String> split_str;
@@ -1805,18 +1713,18 @@ ArrayList<method_type> temp_m = class_infos.get(i).definition_get();
 for(int j=0;
 j<temp_m.size();
 j++){
-ObjectInfoTable.Add("関数定義",temp_m.get(j).returnType_get(),temp_m.get(j).identifier_get(),class_infos.get(i).name_get());
+ObjectInfoTable.Add("関数定義",temp_m.get(j).returnType_get(),temp_m.get(j).identifier_get(),"",class_infos.get(i).name_get(),temp_m.get(j).line_get());
 }
-ArrayList<String> temp_s = class_infos.get(i).callmethod_get();
+ArrayList<method_type> temp_s = class_infos.get(i).callmethod_get();
 for(int j=0;
 j<temp_s.size();
 j++){
-int num = getNameForMethod(temp_s.get(j));
+int num = getNameForMethod(temp_s.get(j).identifier_get());
 String aString = null;
 if(num != -1){
-aString = class_infos.get(getNameForMethod(temp_s.get(j))).name_get();
+aString = class_infos.get(getNameForMethod(temp_s.get(j).identifier_get())).name_get();
 }
-ObjectInfoTable.Add("関数呼出","",temp_s.get(j),aString);
+ObjectInfoTable.Add("関数呼出","",temp_s.get(j).identifier_get(),aString,class_infos.get(i).name_get(),temp_s.get(j).line);
 }
 ArrayList<new_class> temp_c = class_infos.get(i).new_class_get();
 for(int j=0;
@@ -1827,7 +1735,13 @@ String aString = null;
 if(num != -1){
 aString = class_infos.get(getNameForNew(temp_c.get(j).class_name)).name_get();
 }
-ObjectInfoTable.Add("オブジェクト生成",temp_c.get(j).class_name,temp_c.get(j).identifier,aString);
+ObjectInfoTable.Add("オブジェクト生成",temp_c.get(j).class_name,temp_c.get(j).identifier,aString,class_infos.get(i).name_get(),temp_c.get(j).line);
+}
+ArrayList<object_type> temp_o = class_infos.get(i).object_types;
+for(int j=0;
+j<temp_o.size();
+j++){
+ObjectInfoTable.Add("変数生成",temp_o.get(j).type,temp_o.get(j).identifier,"",class_infos.get(i).name_get(),temp_o.get(j).line);
 }
 }
 objectTable.DisplayTable();
@@ -1838,13 +1752,31 @@ i<class_infos.size();
 i++){
 if(class_infos.get(i).definition_search(methodName))return i;
 }
+String temp[] = methodName.split("\\.");
+for(int i=0;
+i<class_infos.size();
+i++){
+for(int j=0;
+j<class_infos.get(i).new_class_get().size();
+j++)if(class_infos.get(i).new_class_search(temp[0])&&temp.length>1)return i;
+}
 return -1;
 }
 public static int getNameForNew(String className){
 for(int i=0;
 i<class_infos.size();
 i++){
+System.out.println(class_infos.get(i).name_get()+"***");
 if(className.equals(class_infos.get(i).name_get()))return i;
+String[] temp = className.split("[<>]");
+for(int j=0;
+j<temp.length;
+j++)if(temp[j].equals(class_infos.get(i).name_get())){
+System.out.print(" "+temp[j]);
+System.out.print("--"+class_infos.get(i).name_get()+"\n");
+System.out.print("!!!!!");
+return i;
+}
 }
 return -1;
 }
@@ -1853,9 +1785,11 @@ package search;
 public class method_type {
 String returnType;
 String identifier;
-public method_type(String type,String identifier) {
+int line;
+public method_type(String type,String identifier,int line) {
 this.returnType = type;
 this.identifier = identifier;
+this.line = line;
 }
 public String returnType_get(){
 return returnType;
@@ -1863,19 +1797,27 @@ return returnType;
 public String identifier_get(){
 return identifier;
 }
+public int line_get(){
+return line;
+}
 }
 package search;
 public class new_class {
-int class_id;
 String class_name;
 String identifier;
-public new_class(int id,String name,String identifier) {
-this.class_id = id;
+int line;
+public new_class(String name,String identifier,int line) {
 this.class_name = name;
 this.identifier = identifier;
+this.line = line;
+}
+public String identifier_get(){
+return identifier;
 }
 }
 package search;
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.MouseEvent;
 import java.util.Vector;
 import javax.swing.JFrame;
@@ -1883,6 +1825,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableColumnModel;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableRowSorter;
 public class ObjectInfoTable {
 static Vector<Vector<String>> row = new Vector<Vector<String>>();
@@ -1893,14 +1836,18 @@ Vector<String> column = new Vector<String>();
 column.add("種類");
 column.add("返り値");
 column.add("識別子");
-column.add("クラス");
+column.add("生成元クラス");
+column.add("生成先クラス");
+column.add("行");
 }
-public static void Add(String kind,String returnObject,String identifier,String in_class){
+public static void Add(String kind,String returnObject,String identifier,String in_class,String out_class,int line){
 Vector<String> temp = new Vector<String>();
 temp.add(kind);
 temp.add(returnObject);
 temp.add(identifier);
 temp.add(in_class);
+temp.add(out_class);
+temp.add(String.valueOf(line));
 row.add(temp);
 }
 public void DisplayTable(){
@@ -1933,12 +1880,16 @@ private String[] kind;
 private String[] returnObject;
 private String[] identifier;
 private String[] in_class;
-private int colcount = 4;
+private String[] out_class;
+private int[] line;
+private int colcount = 6;
 public ObjectTableModel(Vector<Vector<String>> vector){
   kind =new String[vector.size()];
 returnObject =new String[vector.size()];
 identifier = new String[vector.size()];
 in_class = new String[vector.size()];
+out_class = new String[vector.size()];
+line = new int[vector.size()];
   for(int i=0;
 i<vector.size();
 i++){
@@ -1947,10 +1898,27 @@ kind[i] =  (String)vec.get(0);
 returnObject[i] = (String)vec.get(1);
 identifier[i] = (String)vec.get(2);
 in_class[i] = (String)vec.get(3);
+out_class[i] = (String)vec.get(4);
+line[i] = Integer.valueOf(vec.get(5));
 }
   }
 public JTable Table_init(ObjectTableModel model){
 JTable table = new JTable(model) {
+    public Component prepareRenderer(TableCellRenderer tcr, int row, int column) {
+    Component c = super.prepareRenderer(tcr, row, column);
+    if(column==0){
+    c.setForeground(Color.WHITE);
+    if(getValueAt(row,column).equals("オブジェクト生成"))c.setBackground(Color.red);
+    if(getValueAt(row,column).equals("関数定義"))c.setBackground(Color.blue);
+    if(getValueAt(row,column).equals("関数呼出"))c.setBackground(Color.green);
+    if(getValueAt(row,column).equals("変数生成"))c.setBackground(Color.orange);
+    }
+    else{
+    c.setForeground(getForeground());
+    c.setBackground(getBackground());
+    }
+    return c;
+    }
     }
 ;
    return table;
@@ -1961,6 +1929,8 @@ case(0) : return String.class;
 case(1) : return String.class;
 case(2) : return String.class;
 case(3) : return String.class;
+case(4) : return String.class;
+case(5) : return Integer.class;
 }
 return null;
 }
@@ -1969,7 +1939,9 @@ public String getColumnName(int column) {
     case(0) : return "種類";
     case(1) : return "返り値";
     case(2) : return "識別子";
-    case(3) : return "クラス";
+    case(3) : return "生成元クラス";
+    case(4) : return "生成先クラス";
+    case(5) : return "行";
     }
     return null;
   }
@@ -1985,6 +1957,8 @@ return colcount;
     case(1) : return returnObject[row];
     case(2) : return identifier[row];
     case(3) : return in_class[row];
+    case(4) : return out_class[row];
+    case(5) : return line[row];
     }
     return null;
   }
@@ -1993,9 +1967,11 @@ package search;
 public class object_type {
 String type;
 String identifier;
-public object_type(String type,String identifier) {
+int line;
+public object_type(String type,String identifier,int line) {
 this.type = type;
 this.identifier = identifier;
+this.line = line;
 }
 }
 package search;
@@ -2026,6 +2002,7 @@ public void execute() {
 String filePath = in_Path;
 String search_str="";
 search_class(filePath);
+search_new(filePath);
 search_method(filePath);
 List<String> str_identifier = str_identifier();
 for(int i=0;
@@ -2035,7 +2012,7 @@ search_str = ".*\\s+"+str_identifier.get(i)+"\\s+[A-Za-z_][0-9A-Za-z_]*\\s*(=|;
 ).*";
 search_obj(filePath,search_str);
 }
-*/search_new(filePath);
+*/search_object(filePath);
 System.out.println("=====");
 for(int i=0;
 i<class_infos.size();
@@ -2087,7 +2064,7 @@ result.add(return_str[i]);
 return result;
 }
 public String token_lure() {
-return ""+ "(\\s)"+ "|(?<=\\=)|(?=\\=)"+ "|(?<=,)|(?=,)"+ "|(?<=;
+return ""+ "(\\s)"+ "|(?<=\\=)|(?=\\=)"+ "|(?<=;
 )|(?=;
 )"+ "|(?<=\\{
 )|(?=\\{
@@ -2149,44 +2126,37 @@ String str = br.readLine();
 readline = 1;
 while(str != null){
 str = str_encode(str);
-if(str.matches(".*\\s*[A-Za-z_][0-9A-Za-z_]*(\\()[^\\)]*(\\))\\s*(\\{
+if(str.matches(".*\\s*[A-Za-z_][0-9A-Za-z_<>]*(\\()[^\\)]*(\\))\\s*(\\{
 ).*")){
 split_str = split_token(str);
 String temp_str = "";
 String type_str = "";
 for(int i=1;
 i<split_str.size();
-i++)System.out.print("["+str_decode(split_str.get(i-1))+"]");
-System.out.print("\n");
- for(int i=1;
-i<split_str.size();
 i++){
 if(split_str.get(i).equals("(")&&!reserved_word(split_str.get(i-1))){
 temp_str = split_str.get(i-1);
+if(i>1){
 type_str = split_str.get(i-2);
 if(split_str.get(i-2).equals("]"))type_str = split_str.get(i-4)+split_str.get(i-3)+split_str.get(i-2);
 String_Write(readline+",method,"+",definition,"+temp_str+","+str_decode(str)+"\n");
-////抽出class_infos.get(returnClassNumToLine(readline)).definitionMethod_add(type_str,str_decode(temp_str));
+////抽出}
+class_infos.get(returnClassNumToLine(readline)).definitionMethod_add(type_str,str_decode(temp_str),readline);
 }
 }
 }
-else if(str.matches(".*\\s*[A-Za-z_][0-9A-Za-z_]*(\\().*(\\)).*")){
-split_str = null;
+else if(str.matches(".*\\s*[A-Za-z_][0-9A-Za-z_<>]*(\\().*(\\)).*")){
 split_str = split_token(str);
 String temp_str = "";
 temp_str = "";
 for(int i=1;
-i<split_str.size();
-i++)System.out.print("["+str_decode(split_str.get(i-1))+"]");
-System.out.print("\n");
- for(int i=1;
 i<split_str.size();
 i++){
 if(split_str.get(i).equals("(")&&!reserved_word(split_str.get(i-1))){
 if(!split_str.get(i-1).matches("[A-Za-z_][0-9A-Za-z_]*"))continue;
 temp_str = split_str.get(i-1);
 String_Write(readline+",method,"+ ",call,"+temp_str+","+str+"\n");
-////抽出class_infos.get(returnClassNumToLine(readline)).callMethod_add(str_decode(temp_str));
+////抽出class_infos.get(returnClassNumToLine(readline)).callMethod_add(str_decode(temp_str),readline);
 }
 }
 }
@@ -2204,40 +2174,32 @@ System.out.println(e);
 }
 public void search_object(String filePath){
 try{
-File javaFile = new File(filePath);
-BufferedReader br = new BufferedReader(new FileReader(javaFile));
+BufferedReader br = new BufferedReader(new FileReader(filePath));
 String str = br.readLine();
-int readnum = 1;
+readline = 1;
 List<String> str_identifier = str_identifier();
+List<String> reserved_word = reserved_word();
 while(str != null){
 str = str_encode(str);
-for(int i=0;
-i<str_identifier.size();
-i++){
-split_str = split_token(str);
-for(int j=0;
-j<split_str.size();
-j++)if(split_str.get(j).matches(str_identifier.get(i)))String_Write(readnum+",object,"+split_str.get(j)+","+split_str.get(j+1)+"\n");
-}
-if(str.matches(".*[A-Za-z_][0-9A-Za-z_<>]*(\\[\\])*\\s+[A-Za-z_][0-9A-Za-z_]*(\\[\\])*\\s*(=|;
+if(str.matches(".*[A-Za-z_][0-9A-Za-z_<>\\[\\]]*\\s+[A-Za-z_][0-9A-Za-z_\\[\\],]*\\s*(=|;
 ).*")){
 split_str = split_token(str);
 for(int i=2;
 i<split_str.size();
-i++)if(split_str.get(i).matches("(=|;
-)"))if(split_str.get(i-2).matches("[A-Za-z_][0-9A-Za-z_<>]*")&&split_str.get(i-1).matches("[A-Za-z_][0-9A-Za-z_]*")&&!reserved_word(split_str.get(i-1))&&!reserved_word(split_str.get(i-2))&&!split_str.get(i-2).equals("DottttT"))String_Write(readnum+",object,"+split_str.get(i-2)+","+split_str.get(i-1)+"\n");
-else if(split_str.get(i-1).matches("\\]")){
-int k=2;
-while(!split_str.get(i-k).matches("\\["))k++;
-if(split_str.get(i-k-2).matches("[A-Za-z_][0-9A-Za-z_]*"))String_Write(readnum+",object,"+split_str.get(i-k-2)+"[],"+split_str.get(i-k-1)+"\n");
+i++)if(split_str.get(i-2).matches("[A-Za-z_][0-9A-Za-z_<>\\[\\]]*")&& split_str.get(i-1).matches("[A-Za-z_][0-9A-Za-z_<>\\[\\],]*")&& split_str.get(i).matches("(=|;
+)")){
+boolean reserved_word_flag = false;
+for(int ide=0;
+ide<reserved_word.size();
+ide++)if(split_str.get(i-2).matches(reserved_word.get(ide))){
+System.out.print("||"+str_decode(split_str.get(i-2)+" "+split_str.get(i-1))+"||");
+System.out.print("\n");
+reserved_word_flag = true;
 }
-else if(split_str.get(i-2).matches("\\]")){
-int k=3;
-while(!split_str.get(i-k).matches("\\["))k++;
-if(split_str.get(i-k-1).matches("[A-Za-z_][0-9A-Za-z_]*"))String_Write(readnum+",object,"+split_str.get(i-k-1)+"[],"+split_str.get(i-1)+"\n");
+if(!reserved_word_flag)class_infos.get(returnClassNumToLine(readline)).object_types_add(str_decode(split_str.get(i-2)),str_decode(split_str.get(i-1)),readline);
 }
 }
-readnum++;
+readline++;
 str = br.readLine();
 }
 br.close();
@@ -2263,7 +2225,7 @@ String temp_str = "";
 for(int i=0;
 i<split_str.size();
 i++)if(split_str.get(i).equals("new")){
-class_infos.get(returnClassNumToLine(readline)).new_class_add(0,split_str.get(i+1),split_str.get(i-2));
+class_infos.get(returnClassNumToLine(readline)).new_class_add(split_str.get(i+1),split_str.get(i-2),readline);
 temp_str += str_decode(split_str.get(i))+" ";
 String_Write(readline+",new,"+temp_str+"\n");
 }
@@ -2387,9 +2349,6 @@ public List<String> reserved_word(){
 List<String> str = new ArrayList<String>();
 str.add("abstract");
 str.add("assert");
-str.add("doolean");
-str.add("break");
-str.add("byte");
 str.add("case");
 str.add("catch");
 str.add("char");
@@ -2398,7 +2357,6 @@ str.add("const");
 str.add("continue");
 str.add("default");
 str.add("do");
-str.add("double");
 str.add("else");
 str.add("extends");
 str.add("final");
@@ -2410,9 +2368,6 @@ str.add("if");
 str.add("implements");
 str.add("import");
 str.add("instanceof");
-str.add("int");
-str.add("interface");
-str.add("long");
 str.add("native");
 str.add("new");
 str.add("package");

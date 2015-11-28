@@ -29,15 +29,17 @@ public class ObjectInfoTable {
 		column.add("種類");
 		column.add("返り値");
 		column.add("識別子");
-		column.add("クラス");
+		column.add("生成元クラス");
+		column.add("生成先クラス");
 		column.add("行");
 	}	
-	public static void Add(String kind,String returnObject,String identifier,String in_class,int line){
+	public static void Add(String kind,String returnObject,String identifier,String in_class,String out_class,int line){
 		Vector<String> temp = new Vector<String>();
 		temp.add(kind);
 		temp.add(returnObject);
 		temp.add(identifier);
 		temp.add(in_class);
+		temp.add(out_class);
 		temp.add(String.valueOf(line));
 		row.add(temp);
 	}
@@ -79,8 +81,9 @@ class ObjectTableModel extends AbstractTableModel {
 	private String[] returnObject;
 	private String[] identifier;
 	private String[] in_class;
+	private String[] out_class;
 	private int[] line;
-	private int colcount = 5;//列数
+	private int colcount = 6;//列数
 
 	public ObjectTableModel(Vector<Vector<String>> vector){
 	  
@@ -88,6 +91,7 @@ class ObjectTableModel extends AbstractTableModel {
 		returnObject =new String[vector.size()];
 		identifier = new String[vector.size()];
 		in_class = new String[vector.size()];
+		out_class = new String[vector.size()];
 		line = new int[vector.size()];
 	  
 		for(int i=0;i<vector.size();i++){
@@ -96,7 +100,8 @@ class ObjectTableModel extends AbstractTableModel {
 			returnObject[i] = (String)vec.get(1);
 			identifier[i] = (String)vec.get(2);
 			in_class[i] = (String)vec.get(3);
-			line[i] = Integer.valueOf(vec.get(4));
+			out_class[i] = (String)vec.get(4);
+			line[i] = Integer.valueOf(vec.get(5));
 		}	  
 	}
 	public JTable Table_init(ObjectTableModel model){
@@ -109,7 +114,7 @@ class ObjectTableModel extends AbstractTableModel {
 		    		if(getValueAt(row,column).equals("オブジェクト生成"))c.setBackground(Color.red);
 		    		if(getValueAt(row,column).equals("関数定義"))c.setBackground(Color.blue);
 		    		if(getValueAt(row,column).equals("関数呼出"))c.setBackground(Color.green);
-		    		if(getValueAt(row,column).equals("変数生成"))c.setBackground(Color.yellow);
+		    		if(getValueAt(row,column).equals("変数生成"))c.setBackground(Color.orange);
 		    	}
 		    	else{
 		    		c.setForeground(getForeground());
@@ -128,7 +133,8 @@ class ObjectTableModel extends AbstractTableModel {
 			case(1) : return String.class;
 			case(2) : return String.class;
 			case(3) : return String.class;
-			case(4) : return Integer.class;
+			case(4) : return String.class;
+			case(5) : return Integer.class;
 		}
 		return null;
 	}
@@ -137,8 +143,9 @@ class ObjectTableModel extends AbstractTableModel {
 		    case(0) : return "種類";
 		    case(1) : return "返り値";
 		    case(2) : return "識別子";
-		    case(3) : return "クラス";
-		    case(4) : return "行";
+		    case(3) : return "生成元クラス";
+		    case(4) : return "生成先クラス";
+		    case(5) : return "行";
 	    }
 	    return null;
   }
@@ -150,7 +157,8 @@ class ObjectTableModel extends AbstractTableModel {
 		    case(1) : return returnObject[row];
 		    case(2) : return identifier[row];
 		    case(3) : return in_class[row];
-		    case(4) : return line[row];
+		    case(4) : return out_class[row];
+		    case(5) : return line[row];
 	    }
 	    return null;
 	  }

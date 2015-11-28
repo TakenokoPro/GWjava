@@ -84,11 +84,11 @@ public class Search_sourse {
 			if(!return_str[i].matches("(^\\s*$)|(\\{)"))
 				result.add(return_str[i]);	
 		}
-		for(int i=0;i<result.size();i++){
+		//for(int i=0;i<result.size();i++){
 			//半角英数値のみかをチェック
-			if(!result.get(i).matches("\\w*"))return null;
+			//if(!result.get(i).matches("\\w*"))return null;
 			
-		}
+		//}
 		return result;
 	}
 	public ArrayList<String> split_token(String str) {
@@ -162,7 +162,7 @@ public class Search_sourse {
 			readline=1;
 			while(str != null){
 				str = str_encode(str);
-				if(str.matches("(.*\\s(class)\\s.*(\\{))|(.*\\s(interface)\\s.*)")){	
+				if(str.matches("(.*\\s(class)\\s.*(\\{))|(.*\\s(interface)\\s.*)")){
 					if(split_class(str)!=null){
 						split_str = split_class(str);		
 						OutputFunction(split_str,count++);
@@ -325,7 +325,7 @@ public class Search_sourse {
 		String ClassKind = "";
 		String ClassName = "";
 		String Stringkind = "";
-
+		
 		if(str.get(i).equals("static")){
 			Modifier += ","+str.get(i);
 			i++;
@@ -351,7 +351,7 @@ public class Search_sourse {
 			ClassName += str.get(i);i++;
 			//System.out.print(num+"::");
 			class_infos.add(new class_info(ClassName,ClassKind,readline));
-			//System.out.println(class_infos.get(class_infos.size()-1).class_name);
+			System.out.println(class_infos.get(class_infos.size()-1).class_name);
 		}
 		else if(str.get(i).equals("interface")){
 			ClassKind = "interface";i++;
