@@ -25,7 +25,7 @@ public class searchIO {
 	public SearchIOmodel get_searchIOmodel() {
 		SearchIOmodel searchIOmodel = new SearchIOmodel();
 		for(int i=0;i<class_infos.size();i++)
-			searchIOmodel.add(class_infos.get(i).name_get(),class_infos.get(i).kind_get(),class_infos.get(i).extend_get(),class_infos.get(i).interface_get());
+			searchIOmodel.add(class_infos.get(i).name_get(),class_infos.get(i).pack_get(),class_infos.get(i).kind_get(),class_infos.get(i).extend_get(),class_infos.get(i).interface_get());
 		return searchIOmodel;
 	}
 	

@@ -22,7 +22,8 @@ public class Search_sourse {
 	int count = 0;
 	ArrayList<String> split_str;
 	ArrayList<class_info> class_infos = new ArrayList<class_info>();
-	int readline=1;//読み取り行
+	String path = "";//パッケージ
+	int readline = 1;//読み取り行
 	
 	//paint method
 	ClassInfoTable classTable = new ClassInfoTable();
@@ -31,8 +32,6 @@ public class Search_sourse {
 	public Search_sourse() {
 		String_Clear();
 		execute();
-		//for(int i=0;i<class_infos.size();i++)
-			//System.out.println(class_infos.get(i));
 	}
 	/**=============================*/
 	/**method**/
@@ -54,19 +53,8 @@ public class Search_sourse {
 		//メソッド呼び出し()
 		search_method(filePath);
 		
-		/*
-		//変数定義
-		List<String> str_identifier = str_identifier();
-		for(int i=0;i<str_identifier.size();i++){
-			search_str = ".*\\s+"+str_identifier.get(i)+"\\s+[A-Za-z_][0-9A-Za-z_]*\\s*(=|;).*";
-			//String search_str = ".*\\s*[A-Za-z_][0-9A-Za-z_]*\\("+str_identifier.get(i)+"\\s*[A-Za-z_][0-9A-Za-z_]*.*";
-			search_obj(filePath,search_str);
-		}*/
-		
 		//変数 ...を抽出()
 		search_object(filePath);
-		
-		System.out.println("=====");
 		
 		//テーブルの表示
 		for(int i=0;i<class_infos.size();i++){
@@ -75,7 +63,7 @@ public class Search_sourse {
 			String int_get = temp.interface_get();
 			ClassInfoTable.Add(i,temp.class_name,temp.kind,ext_get,int_get);
 		}
-		classTable.DisplayTable();
+		//classTable.DisplayTable();
 	}
 	public ArrayList<String> split_class(String str) {
 		String[] return_str = str.split("(\\s)|(,)", 0);
@@ -142,9 +130,7 @@ public class Search_sourse {
 			String str = br.readLine();
 			while(str != null){
 				str = str_encode(str);
-				if(str.matches("(.*\\s(void main).*)")){
-					//System.out.print(str);
-				} 
+				if(str.matches("(.*\\s(void main).*)")){System.out.print(str);} 
 				str = br.readLine();
 			}
 			br.close();
@@ -155,13 +141,16 @@ public class Search_sourse {
 	public void search_class(String filePath){
 		try{
 			File javaFile = new File(filePath);
-			//System.out.println("===="+javaFile.length()+"====");
 			BufferedReader br = new BufferedReader(new FileReader(javaFile),1024 * 1024);
-			//System.out.println("===="+br.length()+"====");
 			String str = br.readLine();
 			readline=1;
 			while(str != null){
 				str = str_encode(str);
+				if(str.matches("\\s*(package)\\s.*;")){
+					String[] temp = str.split("[\\s;]");
+					for(int i=0;i<temp.length;i++)
+						if(temp[i].equals("package"))path = str_decode("."+temp[i+1]);
+				}
 				if(str.matches("(.*\\s(class)\\s.*(\\{))|(.*\\s(interface)\\s.*)")){
 					if(split_class(str)!=null){
 						split_str = split_class(str);		
@@ -185,10 +174,9 @@ public class Search_sourse {
 				str = str_encode(str);
 				//定義文
 				if(str.matches(".*\\s*[A-Za-z_][0-9A-Za-z_<>]*(\\()[^\\)]*(\\))\\s*(\\{).*")){
-					split_str = split_token(str);//System.out.print("******");
+					split_str = split_token(str);
 					String temp_str = "";
 					String type_str = "";
-					//for(int i=1;i<split_str.size();i++)System.out.print("["+str_decode(split_str.get(i-1))+"]");System.out.print("\n"); 
 					for(int i=1;i<split_str.size();i++){
 						if(split_str.get(i).equals("(")&&!reserved_word(split_str.get(i-1))){
 							temp_str = split_str.get(i-1);
@@ -198,7 +186,6 @@ public class Search_sourse {
 									type_str = split_str.get(i-4)+split_str.get(i-3)+split_str.get(i-2);
 									String_Write(readline+",method,"//+filePath
 											+",definition,"+temp_str+","+str_decode(str)+"\n");////抽出
-									//System.out.println(readline+",method,"+returnClassToLine(readline)+",definition,"+temp_str+","+str_decode(str));
 						}
 							class_infos.get(returnClassNumToLine(readline)).definitionMethod_add(type_str,str_decode(temp_str),readline);
 						}
@@ -206,11 +193,9 @@ public class Search_sourse {
 				}
 				//呼び出し文
 				else if(str.matches(".*\\s*[A-Za-z_][0-9A-Za-z_<>]*(\\().*(\\)).*")){
-					split_str = split_token(str);//System.out.print("======");
+					split_str = split_token(str);
 					String temp_str = "";
 					temp_str = "";
-					//System.out.print(str);
-					//for(int i=1;i<split_str.size();i++)System.out.print("["+str_decode(split_str.get(i-1))+"]");System.out.print("\n"); 
 					for(int i=1;i<split_str.size();i++){
 						if(split_str.get(i).equals("(")&&!reserved_word(split_str.get(i-1))){
 							if(!split_str.get(i-1).matches("[A-Za-z_][0-9A-Za-z_]*"))continue;
@@ -245,7 +230,6 @@ public class Search_sourse {
 
 				if(str.matches(".*[A-Za-z_][0-9A-Za-z_<>\\[\\]]*\\s+[A-Za-z_][0-9A-Za-z_\\[\\],]*\\s*(=|;).*")){
 					split_str = split_token(str);
-					//for(int i=1;i<split_str.size();i++)System.out.print("["+str_decode(split_str.get(i-1))+"]");System.out.print("\n");
 					for(int i=2;i<split_str.size();i++)
 						if(split_str.get(i-2).matches("[A-Za-z_][0-9A-Za-z_<>\\[\\]]*")
 							&& split_str.get(i-1).matches("[A-Za-z_][0-9A-Za-z_<>\\[\\],]*")
@@ -254,7 +238,6 @@ public class Search_sourse {
 							boolean reserved_word_flag = false;
 							for(int ide=0;ide<reserved_word.size();ide++)
 								if(split_str.get(i-2).matches(reserved_word.get(ide))){
-									System.out.print("||"+str_decode(split_str.get(i-2)+" "+split_str.get(i-1))+"||");System.out.print("\n");
 									reserved_word_flag = true;
 								}
 							if(!reserved_word_flag)
@@ -318,7 +301,7 @@ public class Search_sourse {
 		catch(IOException e){System.out.println(e);}
 	}
 	
-	// 出力処理  
+	// クラスの出力処理  
 	public void OutputFunction(ArrayList<String> str,int num){
 		int i=0;
 		String Modifier = "";
@@ -349,16 +332,14 @@ public class Search_sourse {
 		if(str.get(i).equals("class")){
 			ClassKind = "class";i++;
 			ClassName += str.get(i);i++;
-			//System.out.print(num+"::");
-			class_infos.add(new class_info(ClassName,ClassKind,readline));
-			System.out.println(class_infos.get(class_infos.size()-1).class_name);
+			class_infos.add(new class_info(ClassName,ClassKind,path,readline));
+			path="";
 		}
 		else if(str.get(i).equals("interface")){
 			ClassKind = "interface";i++;
 			ClassName += str.get(i);i++;
-			//System.out.print(num+"::");
-			class_infos.add(new class_info(ClassName,ClassKind,readline));
-			//System.out.println(class_infos.get(class_infos.size()-1).class_name);
+			class_infos.add(new class_info(ClassName,ClassKind,path,readline));
+			path="";
 		}
 		
 		//クラスの代入
@@ -368,7 +349,6 @@ public class Search_sourse {
 			else if(str.get(i).equals("implements"))
 				Stringkind = "implements";
 			else{
-				//System.out.println(num+"::"+(class_infos.size()-1)+",class,"+Modifier+","+ClassKind+","+ClassName+","+Stringkind+","+str_decode(str.get(i)));
 				if(Stringkind.equals("extends"))
 					(class_infos.get(num)).extendString.add(str_decode(str.get(i)));
 				else if(Stringkind.equals("implements"))
@@ -377,7 +357,6 @@ public class Search_sourse {
 			}
 			i++;	
 		}
-		//System.out.println("-----------");
 		return;
 	}
 	
@@ -461,7 +440,6 @@ public class Search_sourse {
 			FileWriter fw = new FileWriter(out_path, true);
 			PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
 			pw.print(str);
-			//System.out.print(str);
 			pw.close();
 		} catch (IOException e) {e.printStackTrace();}
 	}

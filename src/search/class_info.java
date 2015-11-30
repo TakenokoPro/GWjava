@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class class_info {
 	String class_name; 
 	String kind;
+	String pack;
 	ArrayList<String> interfaceString = new ArrayList<String>();
 	ArrayList<String> extendString = new ArrayList<String>();
 	ArrayList<new_class> new_classes = new ArrayList<new_class>();
@@ -15,10 +16,11 @@ public class class_info {
 	//開始行
 	int startLine;
 	
-	public class_info(String class_name,String kind,int startLine){
+	public class_info(String class_name,String kind,String path,int startLine){
 		this.class_name = class_name;
 		this.kind = kind;
 		this.startLine = startLine;
+		this.pack = path;
 	}
 	
 	public void interface_add(String iString){
@@ -46,6 +48,9 @@ public class class_info {
 	}
 	public String kind_get(){
 		return kind;
+	}
+	public String pack_get(){
+		return pack;
 	}
 	public String interface_get(){
 		String return_str = "";

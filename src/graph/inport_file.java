@@ -165,17 +165,17 @@ public class Inport_file extends Frame implements GlobalValue{
 	// 変数リストの作成
 	// ---------------------------------------------------*/
 		//XMLに存在するクラスのリスト
-		System.out.println("------------------");
+		//System.out.println("------------------");
 		for(int i=0;i<list_xml.size();i++){
 			//System.out.println("["+i+"]"+list_xml.get(i));
 		}
 		//ノードの設定
-		System.out.println("------------------");
+		//System.out.println("------------------");
 		for(int i=0;i<node_Name.size();i++){
 			//System.out.println("["+i+"]"+node_Name.get(i));
 		}
 		//アークの設定
-		System.out.println("------------------");
+		//System.out.println("------------------");
 		for(int i=0;i<node_branch.size();i++){
 			//System.out.print("["+i+"]"+node_branch.get(i));
 		}
@@ -186,8 +186,6 @@ public class Inport_file extends Frame implements GlobalValue{
 		        internal_max = Integer.parseInt(node_branch.get(i));
 		        max_class = i;
 		    }
-		//System.out.println("\n--max----------------");
-		//System.out.print("["+node_Name.get(max_class)+"]"+internal_max+"\n");
 		
 		//利用関係のないクラスの計算
 		for(int i=0;i<node_Name.size();i++)no_used.add(true);
@@ -203,7 +201,6 @@ public class Inport_file extends Frame implements GlobalValue{
 	
 	/**パッケージごとに分ける=============================*/
 	public void divide_package(){
-		//System.out.print("==DIVIDE============\n");
 		//パッケージ名を抽出
 		for(int i =0;i < node_Name.size();i++){
 		    String temp = "";
@@ -297,8 +294,6 @@ public class Inport_file extends Frame implements GlobalValue{
 			if(i==max_class){
 				nodes.add(new ClassNode(i,centerX,centerY,classgroup_number.get(i),temp_color));
 			}else{
-				System.out.print(classgroup_color1.get(classgroup_number.get(i))+"::");
-				System.out.println(classgroup_color2.get(classgroup_number.get(i)));
 				nodes.add(new ClassNode(i,centerX-250+(int)(Math.random()*500),centerY-250+(int)(Math.random()*500),classgroup_number.get(i),temp_color));
 			}
 		}

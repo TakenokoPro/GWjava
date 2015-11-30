@@ -10,4 +10,13 @@ public class object_type {
 		this.identifier = identifier;
 		this.line = line;
 	}
+	public String type_get(){
+		return type;
+	}
+	public String identifier_get(){
+		return identifier;
+	}
+	public int line_get(){
+		return line;
+	}
 }

@@ -32,6 +32,8 @@ public class ObjectInfoTable {
 		column.add("生成元クラス");
 		column.add("生成先クラス");
 		column.add("行");
+		row = new Vector<Vector<String>>();
+		column = new Vector<String>();
 	}	
 	public static void Add(String kind,String returnObject,String identifier,String in_class,String out_class,int line){
 		Vector<String> temp = new Vector<String>();

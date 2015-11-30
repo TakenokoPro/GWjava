@@ -4,12 +4,15 @@ import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.FocusAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
+
+import main.ShowFocus;
 
 public class SpringAnim extends Frame implements Runnable,MouseListener,MouseMotionListener{
 	
@@ -24,6 +27,7 @@ public class SpringAnim extends Frame implements Runnable,MouseListener,MouseMot
 	Inport_file inport_file = new Inport_file();
 	static int click_x,click_y;//クリックされた座標
 	static boolean click_act = false;//クリックされているか
+	boolean Focus_flag = false;//フォーカスが当たったフラグ
 	/**=============================*/
 	
 	//TODO:初期化処理
@@ -89,6 +93,7 @@ public class SpringAnim extends Frame implements Runnable,MouseListener,MouseMot
 		for(int i=0;i<nodes.size();i++){
 			if( calcDistance(nodes.get(i).x,nodes.get(i).y,click_x,click_y)<10){
 				inport_file.springGraph.click_focus = i;
+				Focus_flag = true;
 			}
 		}
 		System.out.print(inport_file.springGraph.click_focus);
@@ -127,7 +132,18 @@ public class SpringAnim extends Frame implements Runnable,MouseListener,MouseMot
 		return (int)d;
 	}
 
+	//getter
 	public Inport_file get_inport_file() {
 		return inport_file;
+	}
+	public boolean get_focus_flag(){
+		if(Focus_flag){
+			Focus_flag = false;
+			return true;
+		}
+		else return false;
+	}
+	public int get_focus(){
+		return inport_file.springGraph.click_focus;
 	}
 }

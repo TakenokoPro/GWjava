@@ -1,3 +1,4 @@
+package main;
 
 
 
@@ -131,9 +132,9 @@ class TableModel extends AbstractTableModel {
 				@Override
 		    	public Component prepareRenderer(TableCellRenderer tcr, int row, int column) {
 			    	Component c = super.prepareRenderer(tcr, row, column);
-			    	if(column==3){
+			    	if(column==3){;
 			    		c.setForeground(Color.WHITE);
-				    	c.setBackground(new Color(colors[(Integer)getValueAt(row,0)]));
+				    	c.setBackground(new Color((Integer)getValueAt(row,7)));
 			    	}
 			    	else{
 			    		c.setForeground(getForeground());

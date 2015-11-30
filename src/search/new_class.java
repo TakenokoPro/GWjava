@@ -11,7 +11,13 @@ public class new_class {
 		this.line = line;
 	}
 	
+	public String name_get(){
+		return class_name;
+	}
 	public String identifier_get(){
 		return identifier;
+	}
+	public int line_get(){
+		return line;
 	}
 }
