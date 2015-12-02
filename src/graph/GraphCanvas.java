@@ -11,6 +11,10 @@ import java.awt.Image;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 
+import com.sun.org.apache.bcel.internal.generic.LNEG;
+
+import search.new_class;
+
 
 public class GraphCanvas extends Canvas{
 	
@@ -85,9 +89,10 @@ public class GraphCanvas extends Canvas{
 		if(connect==null)return;
 		for(int i=0;i<connect.length;i++){
 			ClassNode node = elements.get(element).classNodes.get(i);
-			for(int j=0;i<connect[j].length;j++)
-			if(connect!=null&&connect[i][j]>0)
-				line(node.x, node.y, node.connections.get(j).x, node.connections.get(j).y,0.1F*connect[i][j],0xFFCCCC);
+			for(int j=0;j<connect.length;j++)
+			if(connect!=null&&connect[i][j]>0)//node.xが不十分
+				//System.out.println("["+i+"]["+j+"]="+connect[i][j]);
+				//line(node.x, node.y, node.connections.get(j).x, node.connections.get(j).y,connect[i][j],0xFFCCCC);
 		}
 	}
 	
@@ -142,7 +147,11 @@ public class GraphCanvas extends Canvas{
 
 	//ノードの太さをセット
 	public void set_connect(int a[][]){
+		connect = new int[a.length][a[0].length];
 		connect = a;
+		for(int i=0;i<connect.length;i++)
+			for(int j=0;j<connect.length;j++)
+				System.out.print("["+connect[i][j]+"]");
 	}
 	
 	//円の描写(座標(x,y),半径r)

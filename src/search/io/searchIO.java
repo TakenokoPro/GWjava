@@ -48,10 +48,10 @@ public class searchIO {
 				int num= getNameForMethod(temp_s.get(j).identifier_get());
 				if(num == -1||get_connect(connect,num)==-1||get_connect(connect,i)==-1)continue;
 				if(i!=num)System.out.print(num+",");
-				returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
-				returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
-				//returnnum[i][num]++;
-				//returnnum[num][i]++;
+				//returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
+				//returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
+				returnnum[i][num]++;
+				returnnum[num][i]++;
 			}
 			/*************************/
 			ArrayList<new_class> temp_c = class_infos.get(i).new_class_get();
@@ -59,10 +59,10 @@ public class searchIO {
 				int num = getNameForNew(temp_c.get(j).name_get());
 				if(num == -1||get_connect(connect,num)==-1||get_connect(connect,i)==-1)continue;
 				if(i!=num)System.out.print(num+",");
-				returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
-				returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
-				//returnnum[i][num]++;
-				//returnnum[num][i]++;
+				//returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
+				//returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
+				returnnum[i][num]++;
+				returnnum[num][i]++;
 			}
 			/*************************/
 			ArrayList<object_type> temp_o = class_infos.get(i).object_get();
@@ -70,17 +70,15 @@ public class searchIO {
 				int num = getNameForNew(temp_o.get(j).type_get());
 				if(num == -1||get_connect(connect,num)==-1||get_connect(connect,i)==-1)continue;
 				if(i!=num)System.out.print(num+",");
-				returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
-				returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
-				//returnnum[i][num]++;
-				//returnnum[num][i]++;
+				//returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
+				//returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
+				returnnum[i][num]++;
+				returnnum[num][i]++;
 			}
 			System.out.print("\n");
 		}
-		for(int i=0;i<returnnum.length;i++)for(int j=0;j<returnnum.length;j++)
-				System.out.println("["+i+"]["+j+"]="+returnnum[i][j]);
-		//return returnnum;
-		return null;
+		return returnnum;
+		//return null;
 	}
 
 	//メソッド名からクラス名を取得

@@ -70,6 +70,9 @@ public class main {
 		
 		//ノードの太さを変える
 		int con[][] = sIo.usednternalCounter(connect);
+		for(int i=0;i<con.length;i++)for(int j=0;j<con[i].length;j++)
+			if(con[i][j]>0)
+				System.out.println("["+i+"]["+j+"]="+con[i][j]);
 		gIo.get_springanim().get_inport_file().get_graphCanvas().set_connect(con);
 		
 		showFocus.show(sIo.get_classinfo());
