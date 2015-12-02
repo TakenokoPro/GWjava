@@ -1,21 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?xml-stylesheet type='text/xsl' href='reportXMLtoHTML.xsl'?>
-<classycle title='C:\pleiades\workspace\GWjava' date='2015-11-26'>
+<classycle title='C:\pleiades\workspace\GWjava' date='2015-12-02'>
   <cycles>
-    <cycle name="TableModel and inner classes" size="2" longestWalk="0" girth="2" radius="1" diameter="1" bestFragmentSize="1">
-      <classes>
-        <classRef name="TableModel" eccentricity="1" maximumFragmentSize="1"/>
-        <classRef name="TableModel$1" eccentricity="1" maximumFragmentSize="1"/>
-      </classes>
-      <centerClasses>
-        <classRef name="TableModel"/>
-        <classRef name="TableModel$1"/>
-      </centerClasses>
-      <bestFragmenters>
-        <classRef name="TableModel"/>
-        <classRef name="TableModel$1"/>
-      </bestFragmenters>
-    </cycle>
     <cycle name="graph.TableModel and inner classes" size="2" longestWalk="0" girth="2" radius="1" diameter="1" bestFragmentSize="1">
       <classes>
         <classRef name="graph.TableModel" eccentricity="1" maximumFragmentSize="1"/>
@@ -28,20 +14,6 @@
       <bestFragmenters>
         <classRef name="graph.TableModel"/>
         <classRef name="graph.TableModel$1"/>
-      </bestFragmenters>
-    </cycle>
-    <cycle name="search.TableModel and inner classes" size="2" longestWalk="0" girth="2" radius="1" diameter="1" bestFragmentSize="1">
-      <classes>
-        <classRef name="search.TableModel" eccentricity="1" maximumFragmentSize="1"/>
-        <classRef name="search.TableModel$1" eccentricity="1" maximumFragmentSize="1"/>
-      </classes>
-      <centerClasses>
-        <classRef name="search.TableModel"/>
-        <classRef name="search.TableModel$1"/>
-      </centerClasses>
-      <bestFragmenters>
-        <classRef name="search.TableModel"/>
-        <classRef name="search.TableModel$1"/>
       </bestFragmenters>
     </cycle>
     <cycle name="search.ObjectTableModel and inner classes" size="2" longestWalk="0" girth="2" radius="1" diameter="1" bestFragmentSize="1">
@@ -58,18 +30,32 @@
         <classRef name="search.ObjectTableModel$1"/>
       </bestFragmenters>
     </cycle>
-    <cycle name="TotalInfoTable and inner classes" size="2" longestWalk="1" girth="2" radius="1" diameter="1" bestFragmentSize="1">
+    <cycle name="main.TableModel and inner classes" size="2" longestWalk="0" girth="2" radius="1" diameter="1" bestFragmentSize="1">
       <classes>
-        <classRef name="TotalInfoTable" eccentricity="1" maximumFragmentSize="1"/>
-        <classRef name="TotalInfoTable$1" eccentricity="1" maximumFragmentSize="1"/>
+        <classRef name="main.TableModel" eccentricity="1" maximumFragmentSize="1"/>
+        <classRef name="main.TableModel$1" eccentricity="1" maximumFragmentSize="1"/>
       </classes>
       <centerClasses>
-        <classRef name="TotalInfoTable"/>
-        <classRef name="TotalInfoTable$1"/>
+        <classRef name="main.TableModel"/>
+        <classRef name="main.TableModel$1"/>
       </centerClasses>
       <bestFragmenters>
-        <classRef name="TotalInfoTable"/>
-        <classRef name="TotalInfoTable$1"/>
+        <classRef name="main.TableModel"/>
+        <classRef name="main.TableModel$1"/>
+      </bestFragmenters>
+    </cycle>
+    <cycle name="search.TableModel and inner classes" size="2" longestWalk="0" girth="2" radius="1" diameter="1" bestFragmentSize="1">
+      <classes>
+        <classRef name="search.TableModel" eccentricity="1" maximumFragmentSize="1"/>
+        <classRef name="search.TableModel$1" eccentricity="1" maximumFragmentSize="1"/>
+      </classes>
+      <centerClasses>
+        <classRef name="search.TableModel"/>
+        <classRef name="search.TableModel$1"/>
+      </centerClasses>
+      <bestFragmenters>
+        <classRef name="search.TableModel"/>
+        <classRef name="search.TableModel$1"/>
       </bestFragmenters>
     </cycle>
     <cycle name="graph.ClassTable and inner classes" size="2" longestWalk="1" girth="2" radius="1" diameter="1" bestFragmentSize="1">
@@ -86,20 +72,6 @@
         <classRef name="graph.ClassTable$1"/>
       </bestFragmenters>
     </cycle>
-    <cycle name="search.ClassInfoTable and inner classes" size="2" longestWalk="1" girth="2" radius="1" diameter="1" bestFragmentSize="1">
-      <classes>
-        <classRef name="search.ClassInfoTable" eccentricity="1" maximumFragmentSize="1"/>
-        <classRef name="search.ClassInfoTable$1" eccentricity="1" maximumFragmentSize="1"/>
-      </classes>
-      <centerClasses>
-        <classRef name="search.ClassInfoTable"/>
-        <classRef name="search.ClassInfoTable$1"/>
-      </centerClasses>
-      <bestFragmenters>
-        <classRef name="search.ClassInfoTable"/>
-        <classRef name="search.ClassInfoTable$1"/>
-      </bestFragmenters>
-    </cycle>
     <cycle name="search.ObjectInfoTable and inner classes" size="2" longestWalk="1" girth="2" radius="1" diameter="1" bestFragmentSize="1">
       <classes>
         <classRef name="search.ObjectInfoTable" eccentricity="1" maximumFragmentSize="1"/>
@@ -112,6 +84,34 @@
       <bestFragmenters>
         <classRef name="search.ObjectInfoTable"/>
         <classRef name="search.ObjectInfoTable$1"/>
+      </bestFragmenters>
+    </cycle>
+    <cycle name="main.TotalInfoTable and inner classes" size="2" longestWalk="1" girth="2" radius="1" diameter="1" bestFragmentSize="1">
+      <classes>
+        <classRef name="main.TotalInfoTable" eccentricity="1" maximumFragmentSize="1"/>
+        <classRef name="main.TotalInfoTable$1" eccentricity="1" maximumFragmentSize="1"/>
+      </classes>
+      <centerClasses>
+        <classRef name="main.TotalInfoTable"/>
+        <classRef name="main.TotalInfoTable$1"/>
+      </centerClasses>
+      <bestFragmenters>
+        <classRef name="main.TotalInfoTable"/>
+        <classRef name="main.TotalInfoTable$1"/>
+      </bestFragmenters>
+    </cycle>
+    <cycle name="search.ClassInfoTable and inner classes" size="2" longestWalk="1" girth="2" radius="1" diameter="1" bestFragmentSize="1">
+      <classes>
+        <classRef name="search.ClassInfoTable" eccentricity="1" maximumFragmentSize="1"/>
+        <classRef name="search.ClassInfoTable$1" eccentricity="1" maximumFragmentSize="1"/>
+      </classes>
+      <centerClasses>
+        <classRef name="search.ClassInfoTable"/>
+        <classRef name="search.ClassInfoTable$1"/>
+      </centerClasses>
+      <bestFragmenters>
+        <classRef name="search.ClassInfoTable"/>
+        <classRef name="search.ClassInfoTable$1"/>
       </bestFragmenters>
     </cycle>
     <cycle name="graph.SpringAnim and inner classes" size="2" longestWalk="5" girth="2" radius="1" diameter="1" bestFragmentSize="1">
@@ -130,86 +130,7 @@
     </cycle>
   </cycles>
   <classes numberOfExternalClasses="69">
-    <class name="ReadFolder" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="12008" usedBy="0" usesInternal="0" usesExternal="17" layer="0" cycle="">
-      <classRef name="java.lang.Object" type="usesExternal"/>
-      <classRef name="java.lang.String" type="usesExternal"/>
-      <classRef name="java.util.ArrayList" type="usesExternal"/>
-      <classRef name="java.io.File" type="usesExternal"/>
-      <classRef name="java.util.List" type="usesExternal"/>
-      <classRef name="java.lang.StringBuilder" type="usesExternal"/>
-      <classRef name="java.io.BufferedReader" type="usesExternal"/>
-      <classRef name="java.io.FileReader" type="usesExternal"/>
-      <classRef name="java.io.Reader" type="usesExternal"/>
-      <classRef name="java.lang.System" type="usesExternal"/>
-      <classRef name="java.io.PrintStream" type="usesExternal"/>
-      <classRef name="java.io.FileNotFoundException" type="usesExternal"/>
-      <classRef name="java.io.IOException" type="usesExternal"/>
-      <classRef name="java.io.FileWriter" type="usesExternal"/>
-      <classRef name="java.io.PrintWriter" type="usesExternal"/>
-      <classRef name="java.io.BufferedWriter" type="usesExternal"/>
-      <classRef name="java.io.Writer" type="usesExternal"/>
-    </class>
-    <class name="TableModel" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="2660" usedBy="3" usesInternal="1" usesExternal="8" layer="0" cycle="TableModel and inner classes">
-      <classRef name="TableModel$1" type="usedBy"/>
-      <classRef name="TotalInfoTable" type="usedBy"/>
-      <classRef name="TotalInfoTable$1" type="usedBy"/>
-      <classRef name="javax.swing.table.AbstractTableModel" type="usesExternal"/>
-      <classRef name="java.lang.String" type="usesExternal"/>
-      <classRef name="java.util.Vector" type="usesExternal"/>
-      <classRef name="java.lang.Object" type="usesExternal"/>
-      <classRef name="java.lang.Integer" type="usesExternal"/>
-      <classRef name="javax.swing.JTable" type="usesExternal"/>
-      <classRef name="TableModel$1" type="usesInternal"/>
-      <classRef name="javax.swing.table.TableModel" type="usesExternal"/>
-      <classRef name="java.lang.Class" type="usesExternal"/>
-    </class>
-    <class name="TableModel$1" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="true" size="1308" usedBy="1" usesInternal="1" usesExternal="7" layer="0" cycle="TableModel and inner classes">
-      <classRef name="TableModel" type="usedBy"/>
-      <classRef name="javax.swing.JTable" type="usesExternal"/>
-      <classRef name="TableModel" type="usesInternal"/>
-      <classRef name="javax.swing.table.TableModel" type="usesExternal"/>
-      <classRef name="javax.swing.table.TableCellRenderer" type="usesExternal"/>
-      <classRef name="java.awt.Component" type="usesExternal"/>
-      <classRef name="java.awt.Color" type="usesExternal"/>
-      <classRef name="java.lang.Object" type="usesExternal"/>
-      <classRef name="java.lang.Integer" type="usesExternal"/>
-    </class>
-    <class name="TotalInfoTable" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="3319" usedBy="2" usesInternal="2" usesExternal="17" layer="1" cycle="TotalInfoTable and inner classes">
-      <classRef name="TotalInfoTable$1" type="usedBy"/>
-      <classRef name="main" type="usedBy"/>
-      <classRef name="java.lang.Object" type="usesExternal"/>
-      <classRef name="java.util.Vector" type="usesExternal"/>
-      <classRef name="java.lang.String" type="usesExternal"/>
-      <classRef name="java.lang.Integer" type="usesExternal"/>
-      <classRef name="TableModel" type="usesInternal"/>
-      <classRef name="javax.swing.JTable" type="usesExternal"/>
-      <classRef name="javax.swing.JScrollPane" type="usesExternal"/>
-      <classRef name="java.awt.Component" type="usesExternal"/>
-      <classRef name="javax.swing.table.TableRowSorter" type="usesExternal"/>
-      <classRef name="javax.swing.table.TableModel" type="usesExternal"/>
-      <classRef name="javax.swing.table.JTableHeader" type="usesExternal"/>
-      <classRef name="javax.swing.RowSorter" type="usesExternal"/>
-      <classRef name="TotalInfoTable$1" type="usesInternal"/>
-      <classRef name="java.awt.event.MouseListener" type="usesExternal"/>
-      <classRef name="javax.swing.table.TableColumnModel" type="usesExternal"/>
-      <classRef name="javax.swing.table.DefaultTableColumnModel" type="usesExternal"/>
-      <classRef name="javax.swing.table.TableColumn" type="usesExternal"/>
-      <classRef name="javax.swing.JFrame" type="usesExternal"/>
-      <classRef name="java.awt.Container" type="usesExternal"/>
-    </class>
-    <class name="TotalInfoTable$1" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="true" size="1264" usedBy="1" usesInternal="2" usesExternal="7" layer="1" cycle="TotalInfoTable and inner classes">
-      <classRef name="TotalInfoTable" type="usedBy"/>
-      <classRef name="java.awt.event.MouseAdapter" type="usesExternal"/>
-      <classRef name="TotalInfoTable" type="usesInternal"/>
-      <classRef name="java.awt.event.MouseEvent" type="usesExternal"/>
-      <classRef name="javax.swing.JTable" type="usesExternal"/>
-      <classRef name="java.lang.System" type="usesExternal"/>
-      <classRef name="java.io.PrintStream" type="usesExternal"/>
-      <classRef name="java.lang.StringBuilder" type="usesExternal"/>
-      <classRef name="java.lang.String" type="usesExternal"/>
-      <classRef name="TableModel" type="usesInternal"/>
-    </class>
-    <class name="graph.ClassNode" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="1482" usedBy="4" usesInternal="1" usesExternal="3" layer="1" cycle="">
+    <class name="graph.ClassNode" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="1648" usedBy="4" usesInternal="1" usesExternal="3" layer="1" cycle="">
       <classRef name="graph.ForceDirectedGraph" type="usedBy"/>
       <classRef name="graph.GraphCanvas" type="usedBy"/>
       <classRef name="graph.Inport_file" type="usedBy"/>
@@ -219,11 +140,10 @@
       <classRef name="java.lang.String" type="usesExternal"/>
       <classRef name="java.util.ArrayList" type="usesExternal"/>
     </class>
-    <class name="graph.ClassTable" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="3093" usedBy="4" usesInternal="2" usesExternal="17" layer="1" cycle="graph.ClassTable and inner classes">
+    <class name="graph.ClassTable" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="3093" usedBy="3" usesInternal="2" usesExternal="17" layer="1" cycle="graph.ClassTable and inner classes">
       <classRef name="graph.ClassTable$1" type="usedBy"/>
       <classRef name="graph.Inport_file" type="usedBy"/>
       <classRef name="graph.main" type="usedBy"/>
-      <classRef name="main" type="usedBy"/>
       <classRef name="java.lang.Object" type="usesExternal"/>
       <classRef name="java.util.Vector" type="usesExternal"/>
       <classRef name="java.lang.String" type="usesExternal"/>
@@ -256,7 +176,7 @@
       <classRef name="java.lang.String" type="usesExternal"/>
       <classRef name="graph.TableModel" type="usesInternal"/>
     </class>
-    <class name="graph.ForceDirectedGraph" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="2255" usedBy="3" usesInternal="2" usesExternal="3" layer="2" cycle="">
+    <class name="graph.ForceDirectedGraph" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="2521" usedBy="3" usesInternal="2" usesExternal="3" layer="2" cycle="">
       <classRef name="graph.GraphCanvas" type="usedBy"/>
       <classRef name="graph.Inport_file" type="usedBy"/>
       <classRef name="graph.SpringAnim" type="usedBy"/>
@@ -266,13 +186,13 @@
       <classRef name="graph.ClassNode" type="usesInternal"/>
       <classRef name="java.lang.Math" type="usesExternal"/>
     </class>
-    <class name="graph.GlobalValue" sources="C:\pleiades\workspace\GWjava" type="interface" innerClass="false" size="1051" usedBy="3" usesInternal="0" usesExternal="1" layer="0" cycle="">
+    <class name="graph.GlobalValue" sources="C:\pleiades\workspace\GWjava" type="interface" innerClass="false" size="1137" usedBy="3" usesInternal="0" usesExternal="1" layer="0" cycle="">
       <classRef name="graph.ClassNode" type="usedBy"/>
       <classRef name="graph.ForceDirectedGraph" type="usedBy"/>
       <classRef name="graph.Inport_file" type="usedBy"/>
       <classRef name="java.lang.Object" type="usesExternal"/>
     </class>
-    <class name="graph.GraphCanvas" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="4122" usedBy="2" usesInternal="2" usesExternal="14" layer="3" cycle="">
+    <class name="graph.GraphCanvas" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="4516" usedBy="2" usesInternal="2" usesExternal="14" layer="3" cycle="">
       <classRef name="graph.Inport_file" type="usedBy"/>
       <classRef name="graph.SpringAnim" type="usedBy"/>
       <classRef name="java.awt.Canvas" type="usesExternal"/>
@@ -292,10 +212,10 @@
       <classRef name="java.awt.geom.Rectangle2D" type="usesExternal"/>
       <classRef name="java.awt.Rectangle" type="usesExternal"/>
     </class>
-    <class name="graph.Inport_file" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="9380" usedBy="3" usesInternal="6" usesExternal="21" layer="4" cycle="">
+    <class name="graph.Inport_file" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="9155" usedBy="3" usesInternal="6" usesExternal="21" layer="4" cycle="">
       <classRef name="graph.SpringAnim" type="usedBy"/>
       <classRef name="graph.main" type="usedBy"/>
-      <classRef name="main" type="usedBy"/>
+      <classRef name="main.main" type="usedBy"/>
       <classRef name="java.awt.Frame" type="usesExternal"/>
       <classRef name="graph.GlobalValue" type="usesInternal"/>
       <classRef name="java.lang.String" type="usesExternal"/>
@@ -324,11 +244,11 @@
       <classRef name="graph.ClassTable" type="usesInternal"/>
       <classRef name="graph.io.GraphIOmodel" type="usesInternal"/>
     </class>
-    <class name="graph.SpringAnim" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="4258" usedBy="4" usesInternal="5" usesExternal="18" layer="5" cycle="graph.SpringAnim and inner classes">
+    <class name="graph.SpringAnim" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="4175" usedBy="4" usesInternal="5" usesExternal="16" layer="5" cycle="graph.SpringAnim and inner classes">
       <classRef name="graph.SpringAnim$Adapter" type="usedBy"/>
       <classRef name="graph.io.graphIO" type="usedBy"/>
       <classRef name="graph.main" type="usedBy"/>
-      <classRef name="main" type="usedBy"/>
+      <classRef name="main.main" type="usedBy"/>
       <classRef name="java.awt.Frame" type="usesExternal"/>
       <classRef name="java.lang.Runnable" type="usesExternal"/>
       <classRef name="java.awt.event.MouseListener" type="usesExternal"/>
@@ -348,8 +268,6 @@
       <classRef name="graph.GraphCanvas" type="usesInternal"/>
       <classRef name="java.lang.System" type="usesExternal"/>
       <classRef name="java.io.PrintStream" type="usesExternal"/>
-      <classRef name="java.lang.StringBuilder" type="usesExternal"/>
-      <classRef name="java.lang.String" type="usesExternal"/>
       <classRef name="java.lang.Math" type="usesExternal"/>
       <classRef name="graph.SpringAnim$Adapter" type="usesInternal"/>
     </class>
@@ -392,14 +310,14 @@
     </class>
     <class name="graph.io.GraphIOmodel" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="986" usedBy="2" usesInternal="0" usesExternal="4" layer="0" cycle="">
       <classRef name="graph.Inport_file" type="usedBy"/>
-      <classRef name="main" type="usedBy"/>
+      <classRef name="main.main" type="usedBy"/>
       <classRef name="java.lang.Object" type="usesExternal"/>
       <classRef name="java.util.Vector" type="usesExternal"/>
       <classRef name="java.lang.String" type="usesExternal"/>
       <classRef name="java.lang.Integer" type="usesExternal"/>
     </class>
-    <class name="graph.io.graphIO" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="989" usedBy="1" usesInternal="2" usesExternal="6" layer="6" cycle="">
-      <classRef name="main" type="usedBy"/>
+    <class name="graph.io.graphIO" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="1067" usedBy="1" usesInternal="2" usesExternal="6" layer="6" cycle="">
+      <classRef name="main.main" type="usedBy"/>
       <classRef name="java.lang.Object" type="usesExternal"/>
       <classRef name="graph.SpringAnim" type="usesInternal"/>
       <classRef name="java.awt.event.MouseListener" type="usesExternal"/>
@@ -423,19 +341,117 @@
       <classRef name="java.lang.System" type="usesExternal"/>
       <classRef name="java.io.PrintStream" type="usesExternal"/>
     </class>
-    <class name="main" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="1980" usedBy="0" usesInternal="8" usesExternal="4" layer="7" cycle="">
+    <class name="main.ShowFocus" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="5410" usedBy="2" usesInternal="5" usesExternal="6" layer="2" cycle="">
+      <classRef name="main.main" type="usedBy"/>
+      <classRef name="search.main" type="usedBy"/>
       <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="search.ObjectInfoTable" type="usesInternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.StringBuilder" type="usesExternal"/>
       <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.util.ArrayList" type="usesExternal"/>
+      <classRef name="search.class_info" type="usesInternal"/>
+      <classRef name="search.method_type" type="usesInternal"/>
+      <classRef name="search.new_class" type="usesInternal"/>
+      <classRef name="search.object_type" type="usesInternal"/>
+    </class>
+    <class name="main.TableModel" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="2616" usedBy="3" usesInternal="1" usesExternal="8" layer="0" cycle="main.TableModel and inner classes">
+      <classRef name="main.TableModel$1" type="usedBy"/>
+      <classRef name="main.TotalInfoTable" type="usedBy"/>
+      <classRef name="main.TotalInfoTable$1" type="usedBy"/>
+      <classRef name="javax.swing.table.AbstractTableModel" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.util.Vector" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="javax.swing.JTable" type="usesExternal"/>
+      <classRef name="main.TableModel$1" type="usesInternal"/>
+      <classRef name="javax.swing.table.TableModel" type="usesExternal"/>
+      <classRef name="java.lang.Class" type="usesExternal"/>
+    </class>
+    <class name="main.TableModel$1" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="true" size="1291" usedBy="1" usesInternal="1" usesExternal="7" layer="0" cycle="main.TableModel and inner classes">
+      <classRef name="main.TableModel" type="usedBy"/>
+      <classRef name="javax.swing.JTable" type="usesExternal"/>
+      <classRef name="main.TableModel" type="usesInternal"/>
+      <classRef name="javax.swing.table.TableModel" type="usesExternal"/>
+      <classRef name="javax.swing.table.TableCellRenderer" type="usesExternal"/>
+      <classRef name="java.awt.Component" type="usesExternal"/>
+      <classRef name="java.awt.Color" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+    </class>
+    <class name="main.TotalInfoTable" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="3359" usedBy="2" usesInternal="2" usesExternal="17" layer="1" cycle="main.TotalInfoTable and inner classes">
+      <classRef name="main.TotalInfoTable$1" type="usedBy"/>
+      <classRef name="main.main" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.util.Vector" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="main.TableModel" type="usesInternal"/>
+      <classRef name="javax.swing.JTable" type="usesExternal"/>
+      <classRef name="javax.swing.JScrollPane" type="usesExternal"/>
+      <classRef name="java.awt.Component" type="usesExternal"/>
+      <classRef name="javax.swing.table.TableRowSorter" type="usesExternal"/>
+      <classRef name="javax.swing.table.TableModel" type="usesExternal"/>
+      <classRef name="javax.swing.table.JTableHeader" type="usesExternal"/>
+      <classRef name="javax.swing.RowSorter" type="usesExternal"/>
+      <classRef name="main.TotalInfoTable$1" type="usesInternal"/>
+      <classRef name="java.awt.event.MouseListener" type="usesExternal"/>
+      <classRef name="javax.swing.table.TableColumnModel" type="usesExternal"/>
+      <classRef name="javax.swing.table.DefaultTableColumnModel" type="usesExternal"/>
+      <classRef name="javax.swing.table.TableColumn" type="usesExternal"/>
+      <classRef name="javax.swing.JFrame" type="usesExternal"/>
+      <classRef name="java.awt.Container" type="usesExternal"/>
+    </class>
+    <class name="main.TotalInfoTable$1" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="true" size="1304" usedBy="1" usesInternal="2" usesExternal="7" layer="1" cycle="main.TotalInfoTable and inner classes">
+      <classRef name="main.TotalInfoTable" type="usedBy"/>
+      <classRef name="java.awt.event.MouseAdapter" type="usesExternal"/>
+      <classRef name="main.TotalInfoTable" type="usesInternal"/>
+      <classRef name="java.awt.event.MouseEvent" type="usesExternal"/>
+      <classRef name="javax.swing.JTable" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.StringBuilder" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="main.TableModel" type="usesInternal"/>
+    </class>
+    <class name="main.main" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="3277" usedBy="0" usesInternal="8" usesExternal="8" layer="7" cycle="">
+      <classRef name="java.lang.Object" type="usesExternal"/>
       <classRef name="search.io.searchIO" type="usesInternal"/>
       <classRef name="graph.io.graphIO" type="usesInternal"/>
+      <classRef name="main.ShowFocus" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
       <classRef name="graph.SpringAnim" type="usesInternal"/>
       <classRef name="graph.Inport_file" type="usesInternal"/>
-      <classRef name="graph.ClassTable" type="usesInternal"/>
       <classRef name="graph.io.GraphIOmodel" type="usesInternal"/>
       <classRef name="search.io.SearchIOmodel" type="usesInternal"/>
-      <classRef name="TotalInfoTable" type="usesInternal"/>
+      <classRef name="main.TotalInfoTable" type="usesInternal"/>
       <classRef name="java.util.Vector" type="usesExternal"/>
       <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.StringBuilder" type="usesExternal"/>
+      <classRef name="java.util.ArrayList" type="usesExternal"/>
+    </class>
+    <class name="other.ReadFolder" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="12020" usedBy="0" usesInternal="0" usesExternal="17" layer="0" cycle="">
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.util.ArrayList" type="usesExternal"/>
+      <classRef name="java.io.File" type="usesExternal"/>
+      <classRef name="java.util.List" type="usesExternal"/>
+      <classRef name="java.lang.StringBuilder" type="usesExternal"/>
+      <classRef name="java.io.BufferedReader" type="usesExternal"/>
+      <classRef name="java.io.FileReader" type="usesExternal"/>
+      <classRef name="java.io.Reader" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.io.FileNotFoundException" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.io.FileWriter" type="usesExternal"/>
+      <classRef name="java.io.PrintWriter" type="usesExternal"/>
+      <classRef name="java.io.BufferedWriter" type="usesExternal"/>
+      <classRef name="java.io.Writer" type="usesExternal"/>
     </class>
     <class name="search.ClassInfoTable" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="3032" usedBy="2" usesInternal="2" usesExternal="16" layer="1" cycle="search.ClassInfoTable and inner classes">
       <classRef name="search.ClassInfoTable$1" type="usedBy"/>
@@ -471,17 +487,17 @@
       <classRef name="java.lang.String" type="usesExternal"/>
       <classRef name="search.TableModel" type="usesInternal"/>
     </class>
-    <class name="search.Clear_source" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="4390" usedBy="0" usesInternal="0" usesExternal="16" layer="0" cycle="">
+    <class name="search.Clear_source" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="4321" usedBy="0" usesInternal="0" usesExternal="16" layer="0" cycle="">
       <classRef name="java.lang.Object" type="usesExternal"/>
       <classRef name="java.lang.String" type="usesExternal"/>
       <classRef name="java.util.ArrayList" type="usesExternal"/>
-      <classRef name="java.lang.StringBuilder" type="usesExternal"/>
       <classRef name="java.io.File" type="usesExternal"/>
       <classRef name="java.lang.System" type="usesExternal"/>
       <classRef name="java.io.PrintStream" type="usesExternal"/>
       <classRef name="java.io.BufferedReader" type="usesExternal"/>
       <classRef name="java.io.FileReader" type="usesExternal"/>
       <classRef name="java.io.Reader" type="usesExternal"/>
+      <classRef name="java.lang.StringBuilder" type="usesExternal"/>
       <classRef name="java.io.FileNotFoundException" type="usesExternal"/>
       <classRef name="java.io.IOException" type="usesExternal"/>
       <classRef name="java.io.FileWriter" type="usesExternal"/>
@@ -489,9 +505,9 @@
       <classRef name="java.io.BufferedWriter" type="usesExternal"/>
       <classRef name="java.io.Writer" type="usesExternal"/>
     </class>
-    <class name="search.ObjectInfoTable" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="2734" usedBy="2" usesInternal="2" usesExternal="15" layer="1" cycle="search.ObjectInfoTable and inner classes">
+    <class name="search.ObjectInfoTable" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="2964" usedBy="2" usesInternal="2" usesExternal="15" layer="1" cycle="search.ObjectInfoTable and inner classes">
+      <classRef name="main.ShowFocus" type="usedBy"/>
       <classRef name="search.ObjectInfoTable$1" type="usedBy"/>
-      <classRef name="search.main" type="usedBy"/>
       <classRef name="java.lang.Object" type="usesExternal"/>
       <classRef name="java.util.Vector" type="usesExternal"/>
       <classRef name="java.lang.String" type="usesExternal"/>
@@ -522,7 +538,7 @@
       <classRef name="java.lang.String" type="usesExternal"/>
       <classRef name="search.ObjectTableModel" type="usesInternal"/>
     </class>
-    <class name="search.ObjectTableModel" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="2070" usedBy="3" usesInternal="1" usesExternal="7" layer="0" cycle="search.ObjectTableModel and inner classes">
+    <class name="search.ObjectTableModel" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="2428" usedBy="3" usesInternal="1" usesExternal="8" layer="0" cycle="search.ObjectTableModel and inner classes">
       <classRef name="search.ObjectInfoTable" type="usedBy"/>
       <classRef name="search.ObjectInfoTable$1" type="usedBy"/>
       <classRef name="search.ObjectTableModel$1" type="usedBy"/>
@@ -530,18 +546,23 @@
       <classRef name="java.lang.String" type="usesExternal"/>
       <classRef name="java.util.Vector" type="usesExternal"/>
       <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
       <classRef name="javax.swing.JTable" type="usesExternal"/>
       <classRef name="search.ObjectTableModel$1" type="usesInternal"/>
       <classRef name="javax.swing.table.TableModel" type="usesExternal"/>
       <classRef name="java.lang.Class" type="usesExternal"/>
     </class>
-    <class name="search.ObjectTableModel$1" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="true" size="627" usedBy="1" usesInternal="1" usesExternal="2" layer="0" cycle="search.ObjectTableModel and inner classes">
+    <class name="search.ObjectTableModel$1" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="true" size="1557" usedBy="1" usesInternal="1" usesExternal="6" layer="0" cycle="search.ObjectTableModel and inner classes">
       <classRef name="search.ObjectTableModel" type="usedBy"/>
       <classRef name="javax.swing.JTable" type="usesExternal"/>
       <classRef name="search.ObjectTableModel" type="usesInternal"/>
       <classRef name="javax.swing.table.TableModel" type="usesExternal"/>
+      <classRef name="javax.swing.table.TableCellRenderer" type="usesExternal"/>
+      <classRef name="java.awt.Component" type="usesExternal"/>
+      <classRef name="java.awt.Color" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
     </class>
-    <class name="search.Search_sourse" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="12427" usedBy="2" usesInternal="2" usesExternal="17" layer="2" cycle="">
+    <class name="search.Search_sourse" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="11872" usedBy="2" usesInternal="2" usesExternal="17" layer="2" cycle="">
       <classRef name="search.io.searchIO" type="usedBy"/>
       <classRef name="search.main" type="usedBy"/>
       <classRef name="java.lang.Object" type="usesExternal"/>
@@ -549,13 +570,13 @@
       <classRef name="java.util.ArrayList" type="usesExternal"/>
       <classRef name="search.class_info" type="usesInternal"/>
       <classRef name="search.ClassInfoTable" type="usesInternal"/>
-      <classRef name="java.lang.System" type="usesExternal"/>
-      <classRef name="java.io.PrintStream" type="usesExternal"/>
       <classRef name="java.lang.StringBuilder" type="usesExternal"/>
       <classRef name="java.io.File" type="usesExternal"/>
       <classRef name="java.io.BufferedReader" type="usesExternal"/>
       <classRef name="java.io.FileReader" type="usesExternal"/>
       <classRef name="java.io.Reader" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
       <classRef name="java.io.FileNotFoundException" type="usesExternal"/>
       <classRef name="java.io.IOException" type="usesExternal"/>
       <classRef name="java.util.List" type="usesExternal"/>
@@ -584,10 +605,10 @@
       <classRef name="search.TableModel" type="usesInternal"/>
       <classRef name="javax.swing.table.TableModel" type="usesExternal"/>
     </class>
-    <class name="search.class_info" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="3345" usedBy="3" usesInternal="3" usesExternal="4" layer="1" cycle="">
+    <class name="search.class_info" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="3711" usedBy="3" usesInternal="3" usesExternal="4" layer="1" cycle="">
+      <classRef name="main.ShowFocus" type="usedBy"/>
       <classRef name="search.Search_sourse" type="usedBy"/>
       <classRef name="search.io.searchIO" type="usedBy"/>
-      <classRef name="search.main" type="usedBy"/>
       <classRef name="java.lang.Object" type="usesExternal"/>
       <classRef name="java.lang.String" type="usesExternal"/>
       <classRef name="java.util.ArrayList" type="usesExternal"/>
@@ -596,85 +617,93 @@
       <classRef name="search.method_type" type="usesInternal"/>
       <classRef name="java.lang.StringBuilder" type="usesExternal"/>
     </class>
-    <class name="search.io.SearchIOmodel" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="892" usedBy="2" usesInternal="0" usesExternal="3" layer="0" cycle="">
-      <classRef name="main" type="usedBy"/>
+    <class name="search.io.SearchIOmodel" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="1299" usedBy="2" usesInternal="0" usesExternal="4" layer="0" cycle="">
+      <classRef name="main.main" type="usedBy"/>
       <classRef name="search.io.searchIO" type="usedBy"/>
       <classRef name="java.lang.Object" type="usesExternal"/>
       <classRef name="java.util.Vector" type="usesExternal"/>
       <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
     </class>
-    <class name="search.io.searchIO" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="1283" usedBy="1" usesInternal="3" usesExternal="3" layer="3" cycle="">
-      <classRef name="main" type="usedBy"/>
+    <class name="search.io.searchIO" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="4210" usedBy="1" usesInternal="6" usesExternal="6" layer="3" cycle="">
+      <classRef name="main.main" type="usedBy"/>
       <classRef name="java.lang.Object" type="usesExternal"/>
       <classRef name="java.util.ArrayList" type="usesExternal"/>
       <classRef name="search.class_info" type="usesInternal"/>
       <classRef name="search.io.SearchIOmodel" type="usesInternal"/>
       <classRef name="search.Search_sourse" type="usesInternal"/>
       <classRef name="java.lang.String" type="usesExternal"/>
-    </class>
-    <class name="search.main" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="2587" usedBy="0" usesInternal="5" usesExternal="3" layer="3" cycle="">
-      <classRef name="java.lang.Object" type="usesExternal"/>
-      <classRef name="java.util.ArrayList" type="usesExternal"/>
-      <classRef name="search.class_info" type="usesInternal"/>
-      <classRef name="search.ObjectInfoTable" type="usesInternal"/>
-      <classRef name="java.lang.String" type="usesExternal"/>
-      <classRef name="search.Search_sourse" type="usesInternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.StringBuilder" type="usesExternal"/>
       <classRef name="search.method_type" type="usesInternal"/>
       <classRef name="search.new_class" type="usesInternal"/>
+      <classRef name="search.object_type" type="usesInternal"/>
     </class>
-    <class name="search.method_type" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="625" usedBy="2" usesInternal="0" usesExternal="2" layer="0" cycle="">
+    <class name="search.main" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="591" usedBy="0" usesInternal="2" usesExternal="3" layer="3" cycle="">
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="search.Search_sourse" type="usesInternal"/>
+      <classRef name="main.ShowFocus" type="usesInternal"/>
+      <classRef name="java.util.ArrayList" type="usesExternal"/>
+    </class>
+    <class name="search.method_type" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="752" usedBy="3" usesInternal="0" usesExternal="2" layer="0" cycle="">
+      <classRef name="main.ShowFocus" type="usedBy"/>
       <classRef name="search.class_info" type="usedBy"/>
-      <classRef name="search.main" type="usedBy"/>
+      <classRef name="search.io.searchIO" type="usedBy"/>
       <classRef name="java.lang.Object" type="usesExternal"/>
       <classRef name="java.lang.String" type="usesExternal"/>
     </class>
-    <class name="search.new_class" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="452" usedBy="2" usesInternal="0" usesExternal="2" layer="0" cycle="">
+    <class name="search.new_class" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="658" usedBy="3" usesInternal="0" usesExternal="2" layer="0" cycle="">
+      <classRef name="main.ShowFocus" type="usedBy"/>
       <classRef name="search.class_info" type="usedBy"/>
-      <classRef name="search.main" type="usedBy"/>
+      <classRef name="search.io.searchIO" type="usedBy"/>
       <classRef name="java.lang.Object" type="usesExternal"/>
       <classRef name="java.lang.String" type="usesExternal"/>
     </class>
-    <class name="search.object_type" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="433" usedBy="1" usesInternal="0" usesExternal="2" layer="0" cycle="">
+    <class name="search.object_type" sources="C:\pleiades\workspace\GWjava" type="class" innerClass="false" size="651" usedBy="3" usesInternal="0" usesExternal="2" layer="0" cycle="">
+      <classRef name="main.ShowFocus" type="usedBy"/>
       <classRef name="search.class_info" type="usedBy"/>
+      <classRef name="search.io.searchIO" type="usedBy"/>
       <classRef name="java.lang.Object" type="usesExternal"/>
       <classRef name="java.lang.String" type="usesExternal"/>
     </class>
   </classes>
   <packageCycles>
-    <packageCycle name="graph.io et al." size="2" longestWalk="0" girth="1" radius="1" diameter="1" bestFragmentSize="1">
+    <packageCycle name="graph et al." size="2" longestWalk="0" girth="1" radius="1" diameter="1" bestFragmentSize="1">
       <packages>
-        <packageRef name="graph.io" eccentricity="1" maximumFragmentSize="1"/>
         <packageRef name="graph" eccentricity="1" maximumFragmentSize="1"/>
+        <packageRef name="graph.io" eccentricity="1" maximumFragmentSize="1"/>
       </packages>
       <centerPackages>
-        <packageRef name="graph.io"/>
         <packageRef name="graph"/>
+        <packageRef name="graph.io"/>
       </centerPackages>
       <bestFragmenters>
-        <packageRef name="graph.io"/>
         <packageRef name="graph"/>
+        <packageRef name="graph.io"/>
+      </bestFragmenters>
+    </packageCycle>
+    <packageCycle name="main et al." size="3" longestWalk="1" girth="1" radius="1" diameter="2" bestFragmentSize="1">
+      <packages>
+        <packageRef name="main" eccentricity="1" maximumFragmentSize="1"/>
+        <packageRef name="search" eccentricity="2" maximumFragmentSize="1"/>
+        <packageRef name="search.io" eccentricity="2" maximumFragmentSize="2"/>
+      </packages>
+      <centerPackages>
+        <packageRef name="main"/>
+      </centerPackages>
+      <bestFragmenters>
+        <packageRef name="main"/>
+        <packageRef name="search"/>
       </bestFragmenters>
     </packageCycle>
   </packageCycles>
   <packages>
-    <package name="(default package)" sources="C:\pleiades\workspace\GWjava"  size="6" usedBy="1" usesInternal="4" usesExternal="7" layer="2" cycle="">
-      <packageRef name="(default package)" type="usedBy"/>
-      <packageRef name="java.lang" type="usesExternal"/>
-      <packageRef name="java.util" type="usesExternal"/>
-      <packageRef name="java.io" type="usesExternal"/>
-      <packageRef name="javax.swing.table" type="usesExternal"/>
-      <packageRef name="javax.swing" type="usesExternal"/>
-      <packageRef name="(default package)" type="usesInternal"/>
-      <packageRef name="java.awt" type="usesExternal"/>
-      <packageRef name="java.awt.event" type="usesExternal"/>
-      <packageRef name="search.io" type="usesInternal"/>
-      <packageRef name="graph.io" type="usesInternal"/>
-      <packageRef name="graph" type="usesInternal"/>
-    </package>
-    <package name="graph" sources="C:\pleiades\workspace\GWjava"  size="12" usedBy="3" usesInternal="2" usesExternal="12" layer="0" cycle="graph.io et al.">
+    <package name="graph" sources="C:\pleiades\workspace\GWjava"  size="12" usedBy="3" usesInternal="2" usesExternal="12" layer="0" cycle="graph et al.">
       <packageRef name="graph" type="usedBy"/>
       <packageRef name="graph.io" type="usedBy"/>
-      <packageRef name="(default package)" type="usedBy"/>
+      <packageRef name="main" type="usedBy"/>
       <packageRef name="java.lang" type="usesExternal"/>
       <packageRef name="graph" type="usesInternal"/>
       <packageRef name="java.util" type="usesExternal"/>
@@ -690,15 +719,37 @@
       <packageRef name="graph.io" type="usesInternal"/>
       <packageRef name="java.awt.image" type="usesExternal"/>
     </package>
-    <package name="graph.io" sources="C:\pleiades\workspace\GWjava"  size="2" usedBy="2" usesInternal="1" usesExternal="3" layer="0" cycle="graph.io et al.">
+    <package name="graph.io" sources="C:\pleiades\workspace\GWjava"  size="2" usedBy="2" usesInternal="1" usesExternal="3" layer="0" cycle="graph et al.">
       <packageRef name="graph" type="usedBy"/>
-      <packageRef name="(default package)" type="usedBy"/>
+      <packageRef name="main" type="usedBy"/>
       <packageRef name="java.lang" type="usesExternal"/>
       <packageRef name="java.util" type="usesExternal"/>
       <packageRef name="graph" type="usesInternal"/>
       <packageRef name="java.awt.event" type="usesExternal"/>
     </package>
-    <package name="search" sources="C:\pleiades\workspace\GWjava"  size="15" usedBy="2" usesInternal="1" usesExternal="7" layer="0" cycle="">
+    <package name="main" sources="C:\pleiades\workspace\GWjava"  size="6" usedBy="2" usesInternal="5" usesExternal="7" layer="1" cycle="main et al.">
+      <packageRef name="main" type="usedBy"/>
+      <packageRef name="search" type="usedBy"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="search" type="usesInternal"/>
+      <packageRef name="java.io" type="usesExternal"/>
+      <packageRef name="java.util" type="usesExternal"/>
+      <packageRef name="javax.swing.table" type="usesExternal"/>
+      <packageRef name="javax.swing" type="usesExternal"/>
+      <packageRef name="main" type="usesInternal"/>
+      <packageRef name="java.awt" type="usesExternal"/>
+      <packageRef name="java.awt.event" type="usesExternal"/>
+      <packageRef name="search.io" type="usesInternal"/>
+      <packageRef name="graph.io" type="usesInternal"/>
+      <packageRef name="graph" type="usesInternal"/>
+    </package>
+    <package name="other" sources="C:\pleiades\workspace\GWjava"  size="1" usedBy="0" usesInternal="0" usesExternal="3" layer="0" cycle="">
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="java.util" type="usesExternal"/>
+      <packageRef name="java.io" type="usesExternal"/>
+    </package>
+    <package name="search" sources="C:\pleiades\workspace\GWjava"  size="15" usedBy="3" usesInternal="2" usesExternal="7" layer="1" cycle="main et al.">
+      <packageRef name="main" type="usedBy"/>
       <packageRef name="search" type="usedBy"/>
       <packageRef name="search.io" type="usedBy"/>
       <packageRef name="java.lang" type="usesExternal"/>
@@ -709,14 +760,16 @@
       <packageRef name="javax.swing.table" type="usesExternal"/>
       <packageRef name="java.awt.event" type="usesExternal"/>
       <packageRef name="java.io" type="usesExternal"/>
+      <packageRef name="main" type="usesInternal"/>
     </package>
-    <package name="search.io" sources="C:\pleiades\workspace\GWjava"  size="2" usedBy="2" usesInternal="2" usesExternal="2" layer="1" cycle="">
-      <packageRef name="(default package)" type="usedBy"/>
+    <package name="search.io" sources="C:\pleiades\workspace\GWjava"  size="2" usedBy="2" usesInternal="2" usesExternal="3" layer="1" cycle="main et al.">
+      <packageRef name="main" type="usedBy"/>
       <packageRef name="search.io" type="usedBy"/>
       <packageRef name="java.lang" type="usesExternal"/>
       <packageRef name="java.util" type="usesExternal"/>
       <packageRef name="search" type="usesInternal"/>
       <packageRef name="search.io" type="usesInternal"/>
+      <packageRef name="java.io" type="usesExternal"/>
     </package>
   </packages>
 </classycle>

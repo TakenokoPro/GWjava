@@ -339,5 +339,7 @@ public class Inport_file extends Frame implements GlobalValue{
 		}
 		return graphIOmodel;
 	} 
-
+	public GraphCanvas get_graphCanvas(){
+		return springGraph;
+	}
 }

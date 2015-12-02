@@ -20,6 +20,7 @@ public class GraphCanvas extends Canvas{
 	ArrayList<ForceDirectedGraph> elements = new ArrayList<ForceDirectedGraph>();
 	public Object balance; 
 	int click_focus=0;
+	int connect[][] = null;
 	/**=============================*/
 	
 	// TODO:graphのコンストラクタ
@@ -40,6 +41,7 @@ public class GraphCanvas extends Canvas{
 	    for (int element=0;element<this.elements.size();element++) {
     		NODE_CONNECT(element);
     		NODE_FOCUS(element);
+    		NODE_WEIGHT(element);
     		//DRAWPOINT(element);
 	    }
 	}
@@ -75,8 +77,17 @@ public class GraphCanvas extends Canvas{
 				if (connected[i][j] || connected[j][i])continue;
 				connected[i][j] = true;
 				connected[j][i] = true;
-				line(node.x, node.y, node.connections.get(j).x, node.connections.get(j).y,0xCCCCCC);
+				line(node.x, node.y, node.connections.get(j).x, node.connections.get(j).y,0.5F,0xCCCCCC);
 			}
+		}
+	}
+	private void NODE_WEIGHT(int element){
+		if(connect==null)return;
+		for(int i=0;i<connect.length;i++){
+			ClassNode node = elements.get(element).classNodes.get(i);
+			for(int j=0;i<connect[j].length;j++)
+			if(connect!=null&&connect[i][j]>0)
+				line(node.x, node.y, node.connections.get(j).x, node.connections.get(j).y,0.1F*connect[i][j],0xFFCCCC);
 		}
 	}
 	
@@ -129,6 +140,11 @@ public class GraphCanvas extends Canvas{
 		
 	}
 
+	//ノードの太さをセット
+	public void set_connect(int a[][]){
+		connect = a;
+	}
+	
 	//円の描写(座標(x,y),半径r)
 	private void circle(double x,double y,int r,int bg){
 		graphics.setColor(new Color(bg));
@@ -142,9 +158,10 @@ public class GraphCanvas extends Canvas{
 	}
 
 	//線の描写(始点(fromX,fromY),終点(toX,toY))
-	private void line(double fromX,double fromY,double toX,double toY,int color) {
+	private void line(double fromX,double fromY,double toX,double toY,float w,int color) {
 		Graphics2D g = (Graphics2D)graphics;
-		BasicStroke wideStroke = new BasicStroke(0.5f);
+		BasicStroke wideStroke = new BasicStroke(w);
+		//BasicStroke wideStroke = new BasicStroke(0.5f);
 		g.setStroke(wideStroke);
 	    g.setColor(new Color(color));
 	    g.drawLine((int)fromX,(int)fromY,(int)toX,(int)toY);

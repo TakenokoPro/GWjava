@@ -70,7 +70,7 @@ public class ObjectInfoTable {
 		DefaultTableColumnModel columnModel
 	      = (DefaultTableColumnModel)table.getColumnModel();
 		JFrame win = new JFrame();
-		win.setTitle("ClassTable");
+		win.setTitle("");
 		win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		win.setBounds(10 , 10 , 400 , 800);
 		win.getContentPane().add(scrollPane);

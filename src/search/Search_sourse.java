@@ -14,11 +14,8 @@ import java.util.List;
 public class Search_sourse {
 	/**=============================*/	
 	/**object**/
-	static String //path_str = "Z:\\Dropbox\\";
-	path_str = "C:\\"; 
 	static String in_Path = "result\\sourse.txt";//""内に分析したいフォルダを(\は２連続で)
 	static String out_path = "result\\out.csv";
-	//static String out_path= "C:\\pleiades\\workspace\\ReadFolder\\out\\out.txt";
 	int count = 0;
 	ArrayList<String> split_str;
 	ArrayList<class_info> class_infos = new ArrayList<class_info>();
@@ -72,11 +69,6 @@ public class Search_sourse {
 			if(!return_str[i].matches("(^\\s*$)|(\\{)"))
 				result.add(return_str[i]);	
 		}
-		//for(int i=0;i<result.size();i++){
-			//半角英数値のみかをチェック
-			//if(!result.get(i).matches("\\w*"))return null;
-			
-		//}
 		return result;
 	}
 	public ArrayList<String> split_token(String str) {
@@ -98,7 +90,6 @@ public class Search_sourse {
 				result.add(return_str[i]);
 			}
 		}
-		//for(int i=0;i<result.size();i++)String_Write(result.get(i));
 		return result;
 	}
 	public String token_lure() {
@@ -474,13 +465,7 @@ public class Search_sourse {
 		return ans;
 	}
 	
-	//getter
-	//卒論の構成
-	//グラフを書いた
-	//変数にフォーカスを当てて分析した時に結果が出た。
-	//凝集度の高すぎるものを分解できそうだ
-	//以上
-	
+	//getter	
 	public ArrayList<class_info> get_classinfo(){
 		return class_infos;
 	}

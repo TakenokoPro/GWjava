@@ -21,6 +21,7 @@ public class ShowFocus {
 	
 	public void connect(int a,int b){
 		connect[b] = a;
+		System.out.println("["+b+"]="+connect[b]);
 	}
 	
 	//テーブルの表示
@@ -94,39 +95,51 @@ public class ShowFocus {
 	//フォーカスのテーブルの表示
     public void show_f(ArrayList<class_info> class_infos,int a){
     	objectTable = new ObjectInfoTable();
-    	System.out.println("----------"+a+","+connect[a]+"**"+objectTable);
-		int i = connect[a];
-		for(int s=0;s<class_infos.size();s++)System.out.println(s+","+connect[s]+"::"+class_infos.get(s).name_get());
+    	System.out.println(class_infos.get(connect[a]).name_get()+"**"+objectTable);
+    	for(int i=0;i<class_infos.size();i++){
+		//for(int s=0;s<class_infos.size();s++)System.out.println(s+","+connect[s]+"::"+class_infos.get(s).name_get());
 		
-		ArrayList<method_type> temp_m = class_infos.get(i).definition_get();
+		/*ArrayList<method_type> temp_m = class_infos.get(i).definition_get();
 		for(int j=0;j<temp_m.size();j++){
-			objectTable.Add("関数定義",temp_m.get(j).returnType_get(),temp_m.get(j).identifier_get(),"",class_infos.get(i).name_get(),temp_m.get(j).line_get());
-		}
+			if(class_infos.get(i).name_get().equals(class_infos.get(connect[a]).name_get()))
+				objectTable.Add("関数定義",temp_m.get(j).returnType_get(),temp_m.get(j).identifier_get(),"",class_infos.get(i).name_get(),temp_m.get(j).line_get());
+		}*/
 		
 		ArrayList<method_type> temp_s = class_infos.get(i).callmethod_get();
 		for(int j=0;j<temp_s.size();j++){
 			int num = getNameForMethod(class_infos,temp_s.get(j).identifier_get());
-			String aString = null;
-			if(num != -1){aString = class_infos.get(getNameForMethod(class_infos,temp_s.get(j).identifier_get())).name_get();}
-			objectTable.Add("関数呼出","",temp_s.get(j).identifier_get(),aString,class_infos.get(i).name_get(),temp_s.get(j).line_get());
+			String sString = "";
+			if(num != -1){sString = class_infos.get(getNameForMethod(class_infos,temp_s.get(j).identifier_get())).name_get();}
+			if((sString.equals(class_infos.get(connect[a]).name_get())|| class_infos.get(i).name_get().equals(class_infos.get(connect[a]).name_get()))){
+				if((sString.equals(class_infos.get(connect[a]).name_get())|| class_infos.get(i).name_get().equals(class_infos.get(connect[a]).name_get())))continue;
+				if(sString.equals(""))continue;
+				objectTable.Add("関数呼出","",temp_s.get(j).identifier_get(),sString,class_infos.get(i).name_get(),temp_s.get(j).line_get());
+			}
 		}
 		
 		ArrayList<new_class> temp_c = class_infos.get(i).new_class_get();
 		for(int j=0;j<temp_c.size();j++){
 			int num = getNameForNew(class_infos,temp_c.get(j).name_get());
-			String aString = null;
-			if(num != -1){aString = class_infos.get(getNameForNew(class_infos,temp_c.get(j).name_get())).name_get();}
-			objectTable.Add("オブジェクト生成",temp_c.get(j).name_get(),temp_c.get(j).identifier_get(),aString,class_infos.get(i).name_get(),temp_c.get(j).line_get());
-
+			String cString = "";
+			if(num != -1){cString = class_infos.get(getNameForNew(class_infos,temp_c.get(j).name_get())).name_get();}
+			if(cString.equals(class_infos.get(connect[a]).name_get()) || class_infos.get(i).name_get().equals(class_infos.get(connect[a]).name_get())){
+				if(cString.equals(class_infos.get(connect[a]).name_get()) && class_infos.get(i).name_get().equals(class_infos.get(connect[a]).name_get()))continue;
+				if(cString.equals(""))continue;
+				objectTable.Add("オブジェクト生成",temp_c.get(j).name_get(),temp_c.get(j).identifier_get(),cString,class_infos.get(i).name_get(),temp_c.get(j).line_get());
+			}
 		}
 		ArrayList<object_type> temp_o = class_infos.get(i).object_get();
 		for(int j=0;j<temp_o.size();j++){
 			int num = getNameForNew(class_infos,temp_o.get(j).type_get());
-			String oString = null;
+			String oString = "";
 			if(num != -1){oString = class_infos.get(getNameForNew(class_infos,temp_o.get(j).type_get())).name_get();}
-			objectTable.Add("変数生成",temp_o.get(j).type_get(),temp_o.get(j).identifier_get(),oString,class_infos.get(i).name_get(),temp_o.get(j).line_get());
-
+			if(oString.equals(class_infos.get(connect[a]).name_get()) || class_infos.get(i).name_get().equals(class_infos.get(connect[a]).name_get())){
+				if(oString.equals(class_infos.get(connect[a]).name_get()) && class_infos.get(i).name_get().equals(class_infos.get(connect[a]).name_get()))continue;
+				if(oString.equals(""))continue;
+				objectTable.Add("変数生成",temp_o.get(j).type_get(),temp_o.get(j).identifier_get(),oString,class_infos.get(i).name_get(),temp_o.get(j).line_get());
+			}
 		}
+    	}
 		objectTable.DisplayTable();
     }
 	

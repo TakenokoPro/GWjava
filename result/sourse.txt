@@ -327,6 +327,70 @@ element++) {
     NODE_FOCUS(element);
         }
 }
+public void clustering_draw(){
+int rgb_str;
+for (int k = 0;
+ k < Cnodes.length;
+ k++) {
+if(!Cnodes[k].init){
+if(Cnodes[k].num<max_num*1/4)rgb_str=0xCCCCCC;
+else if(Cnodes[k].num<max_num*2/4)rgb_str=0x999999;
+else if(Cnodes[k].num<max_num*3/4)rgb_str=0x666666;
+else if(Cnodes[k].num<max_num*4/4)rgb_str=0x333333;
+else rgb_str = 0xFF6666;
+this.circle(Cnodes[k].x, Cnodes[k].y, Cnodes[k].r,rgb_str);
+this.text(Cnodes[k].value, Cnodes[k].x, Cnodes[k].y);
+}
+}
+}
+private void NODE_CONNECT(int element){
+boolean[][] connected = new boolean[elements.get(element).classNodes.size()][elements.get(element).classNodes.size()];
+for (int i=0;
+i<elements.get(element).classNodes.size();
+i++)for (int j=0;
+j<elements.get(element).classNodes.size();
+j++){
+connected[i][j] = false;
+}
+for (int i=0;
+i<elements.get(element).classNodes.size();
+i++){
+ClassNode node = elements.get(element).classNodes.get(i);
+for (int j=0;
+j<node.connections.size();
+j++){
+if (connected[i][j] || connected[j][i])continue;
+connected[i][j] = true;
+connected[j][i] = true;
+line(node.x, node.y, node.connections.get(j).x, node.connections.get(j).y,0xCCCCCC);
+}
+}
+}
+private void NODE_FOCUS(int element){
+for (int i=0;
+i<elements.get(element).classNodes.size();
+i++){
+ClassNode node = elements.get(element).classNodes.get(i);
+for (int j=0;
+j<elements.get(element).classNodes.size();
+ j++){
+}
+}
+for (int i=0;
+i<elements.get(element).classNodes.size();
+i++){
+ClassNode node = elements.get(element).classNodes.get(i);
+if(i==click_focus)circle(node.x, node.y, node.r+3, 0xFF0000);
+if(node.colorflag){
+circle(node.x, node.y, node.r, node.background);
+}
+else{
+circle(node.x, node.y, node.r, 0xCCCCCC);
+}
+text(node.value,node.x,node.y,0xFF0000);
+}
+}
+private void DRAWPOINT(){
 }
 private void drawaxis() {
 }
@@ -486,6 +550,40 @@ j<usedInternal.length;
 j++){
 if(usedInternal[j]==null)continue;
 }
+for(int i=0;
+i<list_xml.size();
+i++){
+}
+for(int i=0;
+i<node_Name.size();
+i++){
+}
+for(int i=0;
+i<node_branch.size();
+i++){
+}
+for(int i=0;
+i<node_branch.size();
+i++)    if(internal_max < Integer.parseInt(node_branch.get(i))){
+        internal_max = Integer.parseInt(node_branch.get(i));
+        max_class = i;
+    }
+for(int i=0;
+i<node_Name.size();
+i++)no_used.add(true);
+for(int i=0;
+i<node_Name.size();
+i++){
+  for(int k=i;
+k<node_Name.size();
+k++){
+    String connect = node_Name.get(k);
+    int key = node_Name.indexOf(connect);
+    no_used.set(i,false);
+no_used.set(key,false);
+  }
+}
+}
 public void divide_package(){
 for(int i =0;
 i < node_Name.size();
@@ -583,8 +681,6 @@ if(i==max_class){
 nodes.add(new ClassNode(i,centerX,centerY,classgroup_number.get(i),temp_color));
 }
 else{
-System.out.print(classgroup_color1.get(classgroup_number.get(i))+"::");
-System.out.println(classgroup_color2.get(classgroup_number.get(i)));
 nodes.add(new ClassNode(i,centerX-250+(int)(Math.random()*500),centerY-250+(int)(Math.random()*500),classgroup_number.get(i),temp_color));
 }
 }
@@ -702,6 +798,7 @@ int delay = 200;
 Inport_file inport_file = new Inport_file();
 static int click_x,click_y;
 static boolean click_act = false;
+boolean Focus_flag = false;
 public void init() {
 dimension = getSize();
 OSI = createImage(dimension.width,dimension.height);
@@ -750,6 +847,7 @@ i<nodes.size();
 i++){
 if( calcDistance(nodes.get(i).x,nodes.get(i).y,click_x,click_y)<10){
 inport_file.springGraph.click_focus = i;
+Focus_flag = true;
 }
 }
 System.out.print(inport_file.springGraph.click_focus);
@@ -765,7 +863,6 @@ click_act = false;
 public void mouseDragged(MouseEvent e) {
 int x = click_x - e.getX();
 int y = click_y - e.getY();
-System.out.print("("+x+","+y+")\n");
 ArrayList<ClassNode> nodes = inport_file.graph.classNodes;
 for(int i=0;
 i<nodes.size();
@@ -788,33 +885,404 @@ return (int)d;
 public Inport_file get_inport_file() {
 return inport_file;
 }
+public boolean get_focus_flag(){
+if(Focus_flag){
+Focus_flag = false;
+return true;
 }
-import graph.ClassTable;
+else return false;
+}
+public int get_focus(){
+return inport_file.springGraph.click_focus;
+}
+}
+package main;
 import graph.io.GraphIOmodel;
 import graph.io.graphIO;
-import search.new_class;
 import search.io.SearchIOmodel;
 import search.io.searchIO;
 public class main {
+static searchIO sIo;
+static graphIO gIo;
+static ShowFocus showFocus;
+static int connect[];
 public static void main(String[] arg) {
-searchIO sUi = new searchIO();
-graphIO gUi = new graphIO();
-ClassTable classTable = gUi.get_springanim().get_inport_file().get_ClassTable();
-classTable.DisplayTable();
-GraphIOmodel graphIOmodel = gUi.get_springanim().get_inport_file().get_GraphIOmodel();
-SearchIOmodel searchIOmodel = sUi.get_searchIOmodel();
+sIo = new searchIO();
+gIo = new graphIO();
+showFocus = new ShowFocus();
+GraphIOmodel graphIOmodel = gIo.get_springanim().get_inport_file().get_GraphIOmodel();
+SearchIOmodel searchIOmodel = sIo.get_searchIOmodel();
 TotalInfoTable totalInfoTable = new TotalInfoTable();
+for(int i=0;
+i<searchIOmodel.length();
+i++)System.out.println(searchIOmodel.name.get(i));
+for(int i=0;
+i<graphIOmodel.length();
+i++)System.out.println(graphIOmodel.name.get(i));
+connect = new int[graphIOmodel.length()];
 for(int i=0;
 i<graphIOmodel.length();
 i++){
+connect[i]=0;
 for(int j=0;
 j<searchIOmodel.length();
-j++)if(graphIOmodel.name.get(i).equals(searchIOmodel.name.get(j)))totalInfoTable.Add(i,graphIOmodel.name.get(i),graphIOmodel.internal.get(i),graphIOmodel.packagePath.get(i),searchIOmodel.classinternal.get(j),searchIOmodel.extend.get(j),searchIOmodel.inplement.get(j),graphIOmodel.colorHex.get(i));
+j++){
+String temp_g = str_encode(graphIOmodel.packagePath.get(i));
+String temp_s = str_encode(searchIOmodel.pack.get(j));
+if(graphIOmodel.name.get(i).equals(searchIOmodel.name.get(j))&&temp_g.equals(str_encode(temp_s))){
+showFocus.connect(j,i);
+connect[j] = i;
+ totalInfoTable.Add(i,graphIOmodel.name.get(i),graphIOmodel.internal.get(i),graphIOmodel.packagePath.get(i),searchIOmodel.classinternal.get(j),searchIOmodel.extend.get(j),searchIOmodel.inplement.get(j),graphIOmodel.colorHex.get(i));
+}
+}
 }
 totalInfoTable.DisplayTable();
-while(true)gUi.springAnim.repaint();
+for(int i=0;
+i<connect.length;
+i++)System.out.println("["+i+"]="+connect[i]);
+int a[][] = sIo.usednternalCounter(connect);
+showFocus.show(sIo.get_classinfo());
+while(true){
+gIo.springAnim.repaint();
+if(gIo.springAnim.get_focus_flag())show(gIo.springAnim.get_focus());
 }
 }
+public static void show(int a){
+showFocus.show_f(sIo.get_classinfo(),a);
+}
+public static String str_encode(String str){
+str = str.replaceAll("\\.","DottttT");
+return str;
+}
+public String str_decode(String str){
+str = str.replaceAll("DottttT","\\.");
+return str;
+}
+}
+package main;
+import java.util.ArrayList;
+import search.ObjectInfoTable;
+import search.class_info;
+import search.method_type;
+import search.new_class;
+import search.object_type;
+public class ShowFocus {
+ObjectInfoTable objectTable = new ObjectInfoTable();
+int connect[] = new int[1000];
+public ShowFocus(){
+}
+public void connect(int a,int b){
+connect[b] = a;
+System.out.println("["+b+"]="+connect[b]);
+}
+public void show(ArrayList<class_info> class_infos){
+objectTable = new ObjectInfoTable();
+for(int i=0;
+i<class_infos.size();
+i++){
+ArrayList<method_type> temp_m = class_infos.get(i).definition_get();
+for(int j=0;
+j<temp_m.size();
+j++){
+objectTable.Add("関数定義",temp_m.get(j).returnType_get(),temp_m.get(j).identifier_get(),"",class_infos.get(i).name_get(),temp_m.get(j).line_get());
+}
+ArrayList<method_type> temp_s = class_infos.get(i).callmethod_get();
+for(int j=0;
+j<temp_s.size();
+j++){
+int num = getNameForMethod(class_infos,temp_s.get(j).identifier_get());
+String aString = null;
+if(num != -1){
+aString = class_infos.get(getNameForMethod(class_infos,temp_s.get(j).identifier_get())).name_get();
+}
+objectTable.Add("関数呼出","",temp_s.get(j).identifier_get(),aString,class_infos.get(i).name_get(),temp_s.get(j).line_get());
+}
+ArrayList<new_class> temp_c = class_infos.get(i).new_class_get();
+for(int j=0;
+j<temp_c.size();
+j++){
+int num = getNameForNew(class_infos,temp_c.get(j).name_get());
+String aString = null;
+if(num != -1){
+aString = class_infos.get(getNameForNew(class_infos,temp_c.get(j).name_get())).name_get();
+}
+objectTable.Add("オブジェクト生成",temp_c.get(j).name_get(),temp_c.get(j).identifier_get(),aString,class_infos.get(i).name_get(),temp_c.get(j).line_get());
+}
+ArrayList<object_type> temp_o = class_infos.get(i).object_get();
+for(int j=0;
+j<temp_o.size();
+j++){
+int num = getNameForNew(class_infos,temp_o.get(j).type_get());
+String oString = null;
+if(num != -1){
+oString = class_infos.get(getNameForNew(class_infos,temp_o.get(j).type_get())).name_get();
+}
+ObjectInfoTable.Add("変数生成",temp_o.get(j).type_get(),temp_o.get(j).identifier_get(),oString,class_infos.get(i).name_get(),temp_o.get(j).line_get());
+}
+}
+objectTable.DisplayTable();
+}
+    public void show_f(ArrayList<class_info> class_infos,int a){
+    objectTable = new ObjectInfoTable();
+    System.out.println(class_infos.get(connect[a]).name_get()+"**"+objectTable);
+    for(int i=0;
+i<class_infos.size();
+i++){
+ArrayList<method_type> temp_m = class_infos.get(i).definition_get();
+for(int j=0;
+j<temp_m.size();
+j++){
+if(class_infos.get(i).name_get().equals(class_infos.get(connect[a]).name_get()))objectTable.Add("関数定義",temp_m.get(j).returnType_get(),temp_m.get(j).identifier_get(),"",class_infos.get(i).name_get(),temp_m.get(j).line_get());
+}
+ArrayList<method_type> temp_s = class_infos.get(i).callmethod_get();
+for(int j=0;
+j<temp_s.size();
+j++){
+int num = getNameForMethod(class_infos,temp_s.get(j).identifier_get());
+String sString = "";
+if(num != -1){
+sString = class_infos.get(getNameForMethod(class_infos,temp_s.get(j).identifier_get())).name_get();
+}
+if((sString.equals(class_infos.get(connect[a]).name_get())|| class_infos.get(i).name_get().equals(class_infos.get(connect[a]).name_get()))){
+if(sString.equals(""))continue;
+objectTable.Add("関数呼出","",temp_s.get(j).identifier_get(),sString,class_infos.get(i).name_get(),temp_s.get(j).line_get());
+}
+}
+ArrayList<new_class> temp_c = class_infos.get(i).new_class_get();
+for(int j=0;
+j<temp_c.size();
+j++){
+int num = getNameForNew(class_infos,temp_c.get(j).name_get());
+String cString = "";
+if(num != -1){
+cString = class_infos.get(getNameForNew(class_infos,temp_c.get(j).name_get())).name_get();
+}
+if(cString.equals(class_infos.get(connect[a]).name_get()) || class_infos.get(i).name_get().equals(class_infos.get(connect[a]).name_get())){
+if(cString.equals(""))continue;
+objectTable.Add("オブジェクト生成",temp_c.get(j).name_get(),temp_c.get(j).identifier_get(),cString,class_infos.get(i).name_get(),temp_c.get(j).line_get());
+}
+}
+ArrayList<object_type> temp_o = class_infos.get(i).object_get();
+for(int j=0;
+j<temp_o.size();
+j++){
+int num = getNameForNew(class_infos,temp_o.get(j).type_get());
+String oString = "";
+if(num != -1){
+oString = class_infos.get(getNameForNew(class_infos,temp_o.get(j).type_get())).name_get();
+}
+if(oString.equals(class_infos.get(connect[a]).name_get()) || class_infos.get(i).name_get().equals(class_infos.get(connect[a]).name_get())){
+if(oString.equals(""))continue;
+objectTable.Add("変数生成",temp_o.get(j).type_get(),temp_o.get(j).identifier_get(),oString,class_infos.get(i).name_get(),temp_o.get(j).line_get());
+}
+}
+    }
+objectTable.DisplayTable();
+    }
+public int getNameForMethod(ArrayList<class_info> class_infos,String methodName){
+for(int i=0;
+i<class_infos.size();
+i++){
+if(class_infos.get(i).definition_search(methodName))return i;
+}
+String temp[] = methodName.split("\\.");
+for(int i=0;
+i<class_infos.size();
+i++){
+for(int j=0;
+j<class_infos.get(i).new_class_get().size();
+j++)if(class_infos.get(i).new_class_search(temp[0])&&temp.length>1)return i;
+}
+return -1;
+}
+public int getNameForNew(ArrayList<class_info> class_infos,String className){
+for(int i=0;
+i<class_infos.size();
+i++){
+if(className.equals(class_infos.get(i).name_get()))return i;
+String[] temp = className.split("[<>]");
+for(int j=0;
+j<temp.length;
+j++)if(temp[j].equals(class_infos.get(i).name_get())){
+return i;
+}
+}
+return -1;
+}
+}
+package main;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.event.MouseEvent;
+import java.util.Vector;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableColumnModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableRowSorter;
+public class TotalInfoTable {
+static Vector<Vector<String>> row = new Vector<Vector<String>>();
+Vector<String> column = new Vector<String>();
+Vector<Integer> color = new Vector<Integer>();
+    TableModel model;
+    JTable table;
+   public TotalInfoTable() {
+column.add("番号");
+column.add("クラス名");
+column.add("Internal数");
+column.add("パッケージ");
+column.add("class/interface");
+column.add("extend");
+column.add("implements");
+column.add("色");
+}
+public void Add(int i,String name,int internal,String pac,String kind,String ext,String imp,int color){
+Vector<String> temp = new Vector<String>();
+temp.add(String.valueOf(i));
+temp.add(name);
+temp.add(String.valueOf(internal));
+temp.add(pac);
+temp.add(kind);
+temp.add(ext);
+temp.add(imp);
+temp.add(String.valueOf(color));
+row.add(temp);
+this.color.add(color);
+}
+public void DisplayTable(){
+     model = new TableModel(row);
+    table = model.Table_init(model);
+    JScrollPane scrollPane = new JScrollPane(table);
+TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel> (new TableModel(row));
+table.getTableHeader().setReorderingAllowed(false);
+table.setRowSorter(sorter);
+table.addMouseListener(new java.awt.event.MouseAdapter() {
+public void mouseClicked(MouseEvent e) {
+        int row = table.getSelectedRow();
+    int col = table.getSelectedColumn();
+    System.out.println("行" + row + "::" + "列" + col);
+    table = model.Table_init(model);
+}
+}
+);
+DefaultTableColumnModel columnModel      = (DefaultTableColumnModel)table.getColumnModel();
+    TableColumn col = null;
+    col = columnModel.getColumn(0);
+    col.setPreferredWidth(20);
+    col = columnModel.getColumn(2);
+    col.setPreferredWidth(20);
+    col = columnModel.getColumn(4);
+    col.setPreferredWidth(30);
+    JFrame win = new JFrame();
+win.setTitle("ClassTable");
+win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+win.setBounds(10 , 10 , 400 , 800);
+win.getContentPane().add(scrollPane);
+win.show();
+}
+}
+class TableModel extends AbstractTableModel {
+  private int[] index;
+  private String[] name;
+  private int[] internal;
+  private String[] pac;
+  private String[] kind;
+  private String[] ext;
+  private String[] imp;
+  private int[] colors;
+  private int colcount = 8;
+  public TableModel(Vector<Vector<String>> vector){
+    index =new int[vector.size()];
+  name =new String[vector.size()];
+  internal =new int[vector.size()];
+  pac =new String[vector.size()];
+  kind =new String[vector.size()];
+  ext =new String[vector.size()];
+  imp =new String[vector.size()];
+  colors =new int[vector.size()];
+    for(int i=0;
+i<vector.size();
+i++){
+  Vector<String> vec = (Vector<String>)vector.get(i);
+  index[i] = Integer.valueOf((String) vec.get(0));
+  name[i] =   vec.get(1).toString();
+  internal[i] = Integer.valueOf((String)vec.get(2));
+  pac[i] = (String)vec.get(3);
+  kind[i] = (String)vec.get(4);
+  ext[i] =  (String)vec.get(5);
+  imp[i] = (String)vec.get(6);
+  colors[i] = Integer.valueOf((String)vec.get(7));
+  }
+    }
+  public JTable Table_init(TableModel model){
+   JTable table = new JTable(model) {
+    public Component prepareRenderer(TableCellRenderer tcr, int row, int column) {
+    Component c = super.prepareRenderer(tcr, row, column);
+    if(column==3){
+;
+    c.setForeground(Color.WHITE);
+    c.setBackground(new Color((Integer)getValueAt(row,7)));
+    }
+    else{
+    c.setForeground(getForeground());
+    c.setBackground(getBackground());
+    }
+    return c;
+    }
+    }
+;
+   return table;
+  }
+      public Class getColumnClass(int columnIndex) {
+    switch(columnIndex) {
+    case(0) : return Integer.class;
+    case(1) : return String.class;
+    case(2) : return Integer.class;
+    case(3) : return String.class;
+    case(4) : return String.class;
+    case(5) : return String.class;
+    case(6) : return String.class;
+    case(7) : return Integer.class;
+    }
+    return null;
+  }
+  public String getColumnName(int column) {
+    switch(column) {
+    case(0) : return "番号";
+    case(1) : return "クラス名";
+    case(2) : return "Internal数";
+    case(3) : return "パッケージ";
+    case(4) : return "class/interface";
+    case(5) : return "extend";
+    case(6) : return "implements";
+    case(7) : return "色";
+    }
+    return null;
+  }
+  public int getRowCount() {
+return index.length;
+}
+   public int getColumnCount() {
+return colcount;
+}
+   public Object getValueAt(int row, int column) {
+    switch(column) {
+    case(0) : return index[row];
+    case(1) : return name[row];
+    case(2) : return internal[row];
+    case(3) : return pac[row];
+    case(4) : return kind[row];
+    case(5) : return ext[row];
+    case(6) : return imp[row];
+    case(7) : return colors[row];
+    }
+    return null;
+  }
+}
+package other;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -1437,6 +1905,7 @@ import java.util.ArrayList;
 public class class_info {
 String class_name;
  String kind;
+String pack;
 ArrayList<String> interfaceString = new ArrayList<String>();
 ArrayList<String> extendString = new ArrayList<String>();
 ArrayList<new_class> new_classes = new ArrayList<new_class>();
@@ -1444,10 +1913,11 @@ ArrayList<object_type> object_types = new ArrayList<object_type>();
 ArrayList<method_type> definitionMethod = new ArrayList<method_type>();
 ArrayList<method_type> callMethod = new ArrayList<method_type>();
 int startLine;
-public class_info(String class_name,String kind,int startLine){
+public class_info(String class_name,String kind,String path,int startLine){
 this.class_name = class_name;
 this.kind = kind;
 this.startLine = startLine;
+this.pack = path;
 }
 public void interface_add(String iString){
 this.interfaceString.add(iString);
@@ -1472,6 +1942,9 @@ return class_name;
 }
 public String kind_get(){
 return kind;
+}
+public String pack_get(){
+return pack;
 }
 public String interface_get(){
 String return_str = "";
@@ -1532,8 +2005,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 public class Clear_source {
-static String path_str = "Z:\\Dropbox\\";
-static String in_Path = "Z:\\Eclipse\\GWjava\\src";
+static String in_Path = "C:\\pleiades\\workspace\\GWjava\\src";
 static String out_path = "result\\sourse.txt";
 int count = 0;
 ArrayList<String> split_str;
@@ -1659,13 +2131,17 @@ e.printStackTrace();
 }
 package search.io;
 import java.util.ArrayList;
+import search.Clear_source;
 import search.Search_sourse;
 import search.class_info;
+import search.method_type;
 import search.new_class;
+import search.object_type;
 public class searchIO {
 private ArrayList<class_info> class_infos;
 SearchIOmodel searchIOmodel = new SearchIOmodel();
 public searchIO(){
+Clear_source clear_source = new Clear_source();
 Search_sourse search_sourse = new Search_sourse();
 class_infos = search_sourse.get_classinfo();
 }
@@ -1676,77 +2152,56 @@ public SearchIOmodel get_searchIOmodel() {
 SearchIOmodel searchIOmodel = new SearchIOmodel();
 for(int i=0;
 i<class_infos.size();
-i++)searchIOmodel.add(class_infos.get(i).name_get(),class_infos.get(i).kind_get(),class_infos.get(i).extend_get(),class_infos.get(i).interface_get());
+i++)searchIOmodel.add(class_infos.get(i).name_get(),class_infos.get(i).pack_get(),class_infos.get(i).kind_get(),class_infos.get(i).extend_get(),class_infos.get(i).interface_get());
 return searchIOmodel;
 }
+public int[][] usednternalCounter(int[] connect){
+int max = 0;
+for(int i=0;
+i<connect.length;
+i++){
+if(connect[i]>max)max=connect[i];
 }
-package search.io;
-import java.util.Vector;
-public class SearchIOmodel {
-public Vector<String> name = new Vector<String>();
-public Vector<String> classinternal = new Vector<String>();
-public Vector<String> extend = new Vector<String>();
-public Vector<String> inplement = new Vector<String>();
-public void add(String name,String classinternal,String extend,String inplement) {
-this.name.add(name);
-this.classinternal.add(classinternal);
-this.extend.add(extend);
-this.inplement.add(inplement);
-}
-public int length(){
-return name.size();
-}
-}
-package search;
-import java.util.ArrayList;
-public class main {
-private static ArrayList<class_info> class_infos;
-static ObjectInfoTable objectTable = new ObjectInfoTable();
-public static void main(String[] args) {
-Clear_source clear_source = new Clear_source();
-Search_sourse search_sourse = new Search_sourse();
-class_infos = search_sourse.get_classinfo();
+System.out.println("****"+connect.length);
+int[][] returnnum = new int[max][max];
 for(int i=0;
 i<class_infos.size();
 i++){
-ArrayList<method_type> temp_m = class_infos.get(i).definition_get();
 for(int j=0;
-j<temp_m.size();
-j++){
-ObjectInfoTable.Add("関数定義",temp_m.get(j).returnType_get(),temp_m.get(j).identifier_get(),"",class_infos.get(i).name_get(),temp_m.get(j).line_get());
-}
+j<class_infos.size();
+j++)returnnum[i][j]=0;
 ArrayList<method_type> temp_s = class_infos.get(i).callmethod_get();
 for(int j=0;
 j<temp_s.size();
 j++){
-int num = getNameForMethod(temp_s.get(j).identifier_get());
-String aString = null;
-if(num != -1){
-aString = class_infos.get(getNameForMethod(temp_s.get(j).identifier_get())).name_get();
-}
-ObjectInfoTable.Add("関数呼出","",temp_s.get(j).identifier_get(),aString,class_infos.get(i).name_get(),temp_s.get(j).line);
+int num= getNameForMethod(temp_s.get(j).identifier_get());
+if(num == -1)continue;
+returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
+returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
 }
 ArrayList<new_class> temp_c = class_infos.get(i).new_class_get();
 for(int j=0;
 j<temp_c.size();
 j++){
-int num = getNameForNew(temp_c.get(j).class_name);
-String aString = null;
-if(num != -1){
-aString = class_infos.get(getNameForNew(temp_c.get(j).class_name)).name_get();
+int num = getNameForNew(temp_c.get(j).name_get());
+if(num == -1)continue;
 }
-ObjectInfoTable.Add("オブジェクト生成",temp_c.get(j).class_name,temp_c.get(j).identifier,aString,class_infos.get(i).name_get(),temp_c.get(j).line);
-}
-ArrayList<object_type> temp_o = class_infos.get(i).object_types;
+ArrayList<object_type> temp_o = class_infos.get(i).object_get();
 for(int j=0;
 j<temp_o.size();
 j++){
-ObjectInfoTable.Add("変数生成",temp_o.get(j).type,temp_o.get(j).identifier,"",class_infos.get(i).name_get(),temp_o.get(j).line);
+int num = getNameForNew(temp_o.get(j).type_get());
+if(num == -1)continue;
 }
 }
-objectTable.DisplayTable();
+for(int i=0;
+i<class_infos.size();
+i++)for(int j=0;
+j<class_infos.size();
+j++)if(returnnum[i][j]>0)System.out.println("["+i+"]["+j+"]="+returnnum[i][j]);
+return returnnum;
 }
-public static int getNameForMethod(String methodName){
+public int getNameForMethod(String methodName){
 for(int i=0;
 i<class_infos.size();
 i++){
@@ -1762,23 +2217,75 @@ j++)if(class_infos.get(i).new_class_search(temp[0])&&temp.length>1)return i;
 }
 return -1;
 }
-public static int getNameForNew(String className){
+public int getNameForNew(String className){
 for(int i=0;
 i<class_infos.size();
 i++){
-System.out.println(class_infos.get(i).name_get()+"***");
 if(className.equals(class_infos.get(i).name_get()))return i;
 String[] temp = className.split("[<>]");
 for(int j=0;
 j<temp.length;
 j++)if(temp[j].equals(class_infos.get(i).name_get())){
-System.out.print(" "+temp[j]);
-System.out.print("--"+class_infos.get(i).name_get()+"\n");
-System.out.print("!!!!!");
 return i;
 }
 }
 return -1;
+}
+public int getNumforName(String str){
+for(int i=0;
+i<class_infos.size();
+i++){
+if(str.equals(class_infos.get(i).name_get()))return i;
+String[] temp = str.split("[<>]");
+for(int j=0;
+j<temp.length;
+j++)if(temp[j].equals(class_infos.get(i).name_get())){
+return i;
+}
+}
+return -1;
+}
+public int get_connect(int a[],int ans){
+for(int i=0;
+i<a.length;
+i++)if(a[i]==ans)return i;
+return 0;
+}
+                     }
+package search.io;
+import java.net.ConnectException;
+import java.util.Vector;
+import search.new_class;
+public class SearchIOmodel {
+public Vector<String> name = new Vector<String>();
+public Vector<String> pack = new Vector<String>();
+public Vector<String> classinternal = new Vector<String>();
+public Vector<String> extend = new Vector<String>();
+public Vector<String> inplement = new Vector<String>();
+public Vector<Integer> connect = new Vector<Integer>();
+public void add(String name,String pack,String classinternal,String extend,String inplement) {
+this.name.add(name);
+this.pack.add(pack);
+this.classinternal.add(classinternal);
+this.extend.add(extend);
+this.inplement.add(inplement);
+this.connect.add(0);
+}
+public void connect(int i,int j){
+connect.set(i,j);
+}
+public int length(){
+return name.size();
+}
+}
+package search;
+import java.util.ArrayList;
+import main.ShowFocus;
+public class main {
+public static void main(String[] args) {
+Search_sourse search_sourse = new Search_sourse();
+ShowFocus showFocus = new ShowFocus();
+showFocus.show(search_sourse.class_infos);
 }
 }
 package search;
@@ -1811,8 +2318,14 @@ this.class_name = name;
 this.identifier = identifier;
 this.line = line;
 }
+public String name_get(){
+return class_name;
+}
 public String identifier_get(){
 return identifier;
+}
+public int line_get(){
+return line;
 }
 }
 package search;
@@ -1839,6 +2352,8 @@ column.add("識別子");
 column.add("生成元クラス");
 column.add("生成先クラス");
 column.add("行");
+row = new Vector<Vector<String>>();
+column = new Vector<String>();
 }
 public static void Add(String kind,String returnObject,String identifier,String in_class,String out_class,int line){
 Vector<String> temp = new Vector<String>();
@@ -1973,6 +2488,15 @@ this.type = type;
 this.identifier = identifier;
 this.line = line;
 }
+public String type_get(){
+return type;
+}
+public String identifier_get(){
+return identifier;
+}
+public int line_get(){
+return line;
+}
 }
 package search;
 import java.io.BufferedReader;
@@ -1986,13 +2510,13 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 public class Search_sourse {
-static String path_str = "C:\\";
- static String in_Path = "result\\sourse.txt";
+static String in_Path = "result\\sourse.txt";
 static String out_path = "result\\out.csv";
 int count = 0;
 ArrayList<String> split_str;
 ArrayList<class_info> class_infos = new ArrayList<class_info>();
-int readline=1;
+String path = "";
+int readline = 1;
 ClassInfoTable classTable = new ClassInfoTable();
 public Search_sourse() {
 String_Clear();
@@ -2004,16 +2528,7 @@ String search_str="";
 search_class(filePath);
 search_new(filePath);
 search_method(filePath);
-List<String> str_identifier = str_identifier();
-for(int i=0;
-i<str_identifier.size();
-i++){
-search_str = ".*\\s+"+str_identifier.get(i)+"\\s+[A-Za-z_][0-9A-Za-z_]*\\s*(=|;
-).*";
-search_obj(filePath,search_str);
-}
-*/search_object(filePath);
-System.out.println("=====");
+search_object(filePath);
 for(int i=0;
 i<class_infos.size();
 i++){
@@ -2022,7 +2537,6 @@ String ext_get = temp.extend_get();
 String int_get = temp.interface_get();
 ClassInfoTable.Add(i,temp.class_name,temp.kind,ext_get,int_get);
 }
-classTable.DisplayTable();
 }
 public ArrayList<String> split_class(String str) {
 String[] return_str = str.split("(\\s)|(,)", 0);
@@ -2032,11 +2546,6 @@ i<return_str.length;
 i++){
 if(!return_str[i].matches("(^\\s*$)|(\\{
 )"))result.add(return_str[i]);
-}
-for(int i=0;
-i<result.size();
-i++){
-if(!result.get(i).matches("\\w*"))return null;
 }
 return result;
 }
@@ -2080,6 +2589,7 @@ String str = br.readLine();
 while(str != null){
 str = str_encode(str);
 if(str.matches("(.*\\s(void main).*)")){
+System.out.print(str);
 }
  str = br.readLine();
 }
@@ -2100,6 +2610,14 @@ String str = br.readLine();
 readline=1;
 while(str != null){
 str = str_encode(str);
+if(str.matches("\\s*(package)\\s.*;
+")){
+String[] temp = str.split("[\\s;
+]");
+for(int i=0;
+i<temp.length;
+i++)if(temp[i].equals("package"))path = str_decode("."+temp[i+1]);
+}
 if(str.matches("(.*\\s(class)\\s.*(\\{
 ))|(.*\\s(interface)\\s.*)")){
 if(split_class(str)!=null){
@@ -2192,8 +2710,6 @@ boolean reserved_word_flag = false;
 for(int ide=0;
 ide<reserved_word.size();
 ide++)if(split_str.get(i-2).matches(reserved_word.get(ide))){
-System.out.print("||"+str_decode(split_str.get(i-2)+" "+split_str.get(i-1))+"||");
-System.out.print("\n");
 reserved_word_flag = true;
 }
 if(!reserved_word_flag)class_infos.get(returnClassNumToLine(readline)).object_types_add(str_decode(split_str.get(i-2)),str_decode(split_str.get(i-1)),readline);
@@ -2304,14 +2820,16 @@ ClassKind = "class";
 i++;
 ClassName += str.get(i);
 i++;
-class_infos.add(new class_info(ClassName,ClassKind,readline));
+class_infos.add(new class_info(ClassName,ClassKind,path,readline));
+path="";
 }
 else if(str.get(i).equals("interface")){
 ClassKind = "interface";
 i++;
 ClassName += str.get(i);
 i++;
-class_infos.add(new class_info(ClassName,ClassKind,readline));
+class_infos.add(new class_info(ClassName,ClassKind,path,readline));
+path="";
 }
 while(i<str.size()){
 if(str.get(i).equals("extends"))Stringkind = "extends";
@@ -2445,174 +2963,4 @@ return ans;
 public ArrayList<class_info> get_classinfo(){
 return class_infos;
 }
-}
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.event.MouseEvent;
-import java.util.Vector;
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableColumnModel;
-import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableColumn;
-import javax.swing.table.TableRowSorter;
-public class TotalInfoTable {
-static Vector<Vector<String>> row = new Vector<Vector<String>>();
-Vector<String> column = new Vector<String>();
-Vector<Integer> color = new Vector<Integer>();
-    TableModel model;
-    JTable table;
-   public TotalInfoTable() {
-column.add("番号");
-column.add("クラス名");
-column.add("Internal数");
-column.add("パッケージ");
-column.add("class/interface");
-column.add("extend");
-column.add("implements");
-column.add("色");
-}
-public void Add(int i,String name,int internal,String pac,String kind,String ext,String imp,int color){
-Vector<String> temp = new Vector<String>();
-temp.add(String.valueOf(i));
-temp.add(name);
-temp.add(String.valueOf(internal));
-temp.add(pac);
-temp.add(kind);
-temp.add(ext);
-temp.add(imp);
-temp.add(String.valueOf(color));
-row.add(temp);
-this.color.add(color);
-}
-public void DisplayTable(){
-     model = new TableModel(row);
-    table = model.Table_init(model);
-    JScrollPane scrollPane = new JScrollPane(table);
-TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel> (new TableModel(row));
-table.getTableHeader().setReorderingAllowed(false);
-table.setRowSorter(sorter);
-table.addMouseListener(new java.awt.event.MouseAdapter() {
-public void mouseClicked(MouseEvent e) {
-        int row = table.getSelectedRow();
-    int col = table.getSelectedColumn();
-    System.out.println("行" + row + "::" + "列" + col);
-    table = model.Table_init(model);
-}
-}
-);
-DefaultTableColumnModel columnModel      = (DefaultTableColumnModel)table.getColumnModel();
-    TableColumn col = null;
-    col = columnModel.getColumn(0);
-    col.setPreferredWidth(20);
-    col = columnModel.getColumn(2);
-    col.setPreferredWidth(20);
-    col = columnModel.getColumn(4);
-    col.setPreferredWidth(30);
-    JFrame win = new JFrame();
-win.setTitle("ClassTable");
-win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-win.setBounds(10 , 10 , 400 , 800);
-win.getContentPane().add(scrollPane);
-win.show();
-}
-}
-class TableModel extends AbstractTableModel {
-  private int[] index;
-  private String[] name;
-  private int[] internal;
-  private String[] pac;
-  private String[] kind;
-  private String[] ext;
-  private String[] imp;
-  private int[] colors;
-  private int colcount = 8;
-  public TableModel(Vector<Vector<String>> vector){
-    index =new int[vector.size()];
-  name =new String[vector.size()];
-  internal =new int[vector.size()];
-  pac =new String[vector.size()];
-  kind =new String[vector.size()];
-  ext =new String[vector.size()];
-  imp =new String[vector.size()];
-  colors =new int[vector.size()];
-    for(int i=0;
-i<vector.size();
-i++){
-  Vector<String> vec = (Vector<String>)vector.get(i);
-  index[i] = Integer.valueOf((String) vec.get(0));
-  name[i] =   vec.get(1).toString();
-  internal[i] = Integer.valueOf((String)vec.get(2));
-  pac[i] = (String)vec.get(3);
-  kind[i] = (String)vec.get(4);
-  ext[i] =  (String)vec.get(5);
-  imp[i] = (String)vec.get(6);
-  colors[i] = Integer.valueOf((String)vec.get(7));
-  }
-    }
-  public JTable Table_init(TableModel model){
-   JTable table = new JTable(model) {
-    public Component prepareRenderer(TableCellRenderer tcr, int row, int column) {
-    Component c = super.prepareRenderer(tcr, row, column);
-    if(column==3){
-    c.setForeground(Color.WHITE);
-    c.setBackground(new Color(colors[(Integer)getValueAt(row,0)]));
-    }
-    else{
-    c.setForeground(getForeground());
-    c.setBackground(getBackground());
-    }
-    return c;
-    }
-    }
-;
-   return table;
-  }
-      public Class getColumnClass(int columnIndex) {
-    switch(columnIndex) {
-    case(0) : return Integer.class;
-    case(1) : return String.class;
-    case(2) : return Integer.class;
-    case(3) : return String.class;
-    case(4) : return String.class;
-    case(5) : return String.class;
-    case(6) : return String.class;
-    case(7) : return Integer.class;
-    }
-    return null;
-  }
-  public String getColumnName(int column) {
-    switch(column) {
-    case(0) : return "番号";
-    case(1) : return "クラス名";
-    case(2) : return "Internal数";
-    case(3) : return "パッケージ";
-    case(4) : return "class/interface";
-    case(5) : return "extend";
-    case(6) : return "implements";
-    case(7) : return "色";
-    }
-    return null;
-  }
-  public int getRowCount() {
-return index.length;
-}
-   public int getColumnCount() {
-return colcount;
-}
-   public Object getValueAt(int row, int column) {
-    switch(column) {
-    case(0) : return index[row];
-    case(1) : return name[row];
-    case(2) : return internal[row];
-    case(3) : return pac[row];
-    case(4) : return kind[row];
-    case(5) : return ext[row];
-    case(6) : return imp[row];
-    case(7) : return colors[row];
-    }
-    return null;
-  }
 }
