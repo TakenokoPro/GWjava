@@ -88,11 +88,15 @@ public class GraphCanvas extends Canvas{
 	private void NODE_WEIGHT(int element){
 		if(connect==null)return;
 		for(int i=0;i<connect.length;i++){
-			ClassNode node = elements.get(element).classNodes.get(i);
-			//for(int j=0;j<connect.length;j++)
-			//if(connect!=null&&connect[i][j]>0)//node.xが不十分
-				//System.out.println("["+i+"]["+j+"]="+connect[i][j]);
-				//line(node.x, node.y, node.connections.get(j).x, node.connections.get(j).y,connect[i][j],0xFFCCCC);
+			ClassNode node1 = elements.get(element).classNodes.get(i);
+			for(int j=0;j<connect.length;j++){
+				ClassNode node2 = elements.get(element).classNodes.get(j);
+				if(connect!=null&&connect[i][j]>0){
+					int weight;
+					if(connect[i][j]>100)weight=10;else weight=(int)(connect[i][j]*0.1);
+					line(node1.x, node1.y, node2.x, node2.y,(float)weight,0xFFCCCC);
+				}
+			}
 		}
 	}
 	

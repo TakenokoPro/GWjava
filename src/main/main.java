@@ -48,7 +48,7 @@ public class main {
 				String temp_s = str_encode(searchIOmodel.pack.get(j));
 				if(graphIOmodel.name.get(i).equals(searchIOmodel.name.get(j))&&temp_g.equals(str_encode(temp_s))){
 					showFocus.connect(j,i);
-					connect[j] = i; 
+					connect[i] = j; 
 					flag = true; 
 					totalInfoTable.Add(
 						i,
@@ -66,13 +66,12 @@ public class main {
 		}
 		totalInfoTable.DisplayTable();
 		
-		for(int i=0;i<connect.length;i++)System.out.println("["+i+"]="+connect[i]);
+		for(int i=0;i<connect.length;i++)System.out.println("connect["+i+"]="+connect[i]);
 		
 		//ノードの太さを変える
 		int con[][] = sIo.usednternalCounter(connect);
 		for(int i=0;i<con.length;i++)for(int j=0;j<con[i].length;j++)
-			if(con[i][j]>0)
-				System.out.println("["+i+"]["+j+"]="+con[i][j]);
+			if(con[i][j]>0)System.out.println("["+i+"]["+j+"]="+con[i][j]);
 		gIo.get_springanim().get_inport_file().get_graphCanvas().set_connect(con);
 		
 		showFocus.show(sIo.get_classinfo());

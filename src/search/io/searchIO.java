@@ -36,44 +36,51 @@ public class searchIO {
 		for(int i=0;i<connect.length;i++){
 			if(connect[i]>max)max=connect[i];
 		}
+		if(connect.length>max)max=connect.length;
 		System.out.println("****"+connect.length);
 		int[][] returnnum = new int[max][max];
+		for(int i=0;i<class_infos.size();i++)
+			for(int j=0;j<class_infos.size();j++)returnnum[i][j]=0;
 		
 		for(int i=0;i<class_infos.size();i++){
-			for(int j=0;j<class_infos.size();j++)returnnum[i][j]=0;
-			System.out.print(i+"----");
+			System.out.print(get_connect(connect,i)+"----");
 			/*************************/
 			ArrayList<method_type> temp_s = class_infos.get(i).callmethod_get();
 			for(int j=0;j<temp_s.size();j++){
 				int num= getNameForMethod(temp_s.get(j).identifier_get());
-				if(num == -1||get_connect(connect,num)==-1||get_connect(connect,i)==-1)continue;
-				if(i!=num)System.out.print(num+",");
+				if(num == -1
+					//	||get_connect(connect,num)==-1
+					//	||get_connect(connect,i)==-1
+				)continue;
+				//if(i!=num)System.out.print(get_connect(connect,num)+",");
+				returnnum[connect[i]][connect[num]]++;
+				returnnum[connect[num]][connect[i]]++;
 				//returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
 				//returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
-				returnnum[i][num]++;
-				returnnum[num][i]++;
+				//returnnum[i][num]++;
+				//returnnum[num][i]++;
 			}
 			/*************************/
 			ArrayList<new_class> temp_c = class_infos.get(i).new_class_get();
 			for(int j=0;j<temp_c.size();j++){
 				int num = getNameForNew(temp_c.get(j).name_get());
-				if(num == -1||get_connect(connect,num)==-1||get_connect(connect,i)==-1)continue;
-				if(i!=num)System.out.print(num+",");
+				//if(num == -1||get_connect(connect,num)==-1||get_connect(connect,i)==-1)continue;
+				//if(i!=num)System.out.print(num+",");
 				//returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
 				//returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
-				returnnum[i][num]++;
-				returnnum[num][i]++;
+				//returnnum[i][num]++;
+				//returnnum[num][i]++;
 			}
 			/*************************/
 			ArrayList<object_type> temp_o = class_infos.get(i).object_get();
 			for(int j=0;j<temp_o.size();j++){
 				int num = getNameForNew(temp_o.get(j).type_get());
-				if(num == -1||get_connect(connect,num)==-1||get_connect(connect,i)==-1)continue;
-				if(i!=num)System.out.print(num+",");
+				//if(num == -1||get_connect(connect,num)==-1||get_connect(connect,i)==-1)continue;
+				//if(i!=num)System.out.print(num+",");
 				//returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
 				//returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
-				returnnum[i][num]++;
-				returnnum[num][i]++;
+				//returnnum[i][num]++;
+				//returnnum[num][i]++;
 			}
 			System.out.print("\n");
 		}
