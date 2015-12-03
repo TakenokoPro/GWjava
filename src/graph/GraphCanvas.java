@@ -89,8 +89,8 @@ public class GraphCanvas extends Canvas{
 		if(connect==null)return;
 		for(int i=0;i<connect.length;i++){
 			ClassNode node = elements.get(element).classNodes.get(i);
-			for(int j=0;j<connect.length;j++)
-			if(connect!=null&&connect[i][j]>0)//node.xが不十分
+			//for(int j=0;j<connect.length;j++)
+			//if(connect!=null&&connect[i][j]>0)//node.xが不十分
 				//System.out.println("["+i+"]["+j+"]="+connect[i][j]);
 				//line(node.x, node.y, node.connections.get(j).x, node.connections.get(j).y,connect[i][j],0xFFCCCC);
 		}
