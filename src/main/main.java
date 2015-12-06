@@ -36,9 +36,6 @@ public class main {
 		
 		TotalInfoTable totalInfoTable = new TotalInfoTable();
 		
-		for(int i=0;i<searchIOmodel.length();i++)System.out.println("=="+searchIOmodel.name.get(i));
-		for(int i=0;i<graphIOmodel.length();i++)System.out.println("++"+graphIOmodel.name.get(i));
-		
 		connect = new int[graphIOmodel.length()];
 		for(int i=0;i<graphIOmodel.length();i++){
 			connect[i]=0;
@@ -46,7 +43,6 @@ public class main {
 			for(int j=0;j<searchIOmodel.length();j++){
 				String temp_g = str_encode(graphIOmodel.packagePath.get(i));
 				String temp_s = str_encode(searchIOmodel.pack.get(j));
-				System.out.println(graphIOmodel.name.get(i)+"**"+searchIOmodel.name.get(j));
 				if(graphIOmodel.name.get(i).equals(searchIOmodel.name.get(j))&&temp_g.equals(temp_s)){
 					showFocus.connect(j,i);
 					connect[i] = j; 
