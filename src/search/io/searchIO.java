@@ -2,6 +2,7 @@ package search.io;
 
 import java.util.ArrayList;
 
+import search.Clear_source;
 import search.Search_sourse;
 import search.class_info;
 import search.method_type;
@@ -15,7 +16,7 @@ public class searchIO {
 
 	public searchIO(){
 		// TODO: UI（検索）
-		//Clear_source clear_source = new Clear_source();
+		Clear_source clear_source = new Clear_source();
 		Search_sourse search_sourse = new Search_sourse();
 		class_infos = search_sourse.get_classinfo();
 	}
@@ -64,7 +65,12 @@ public class searchIO {
 			ArrayList<new_class> temp_c = class_infos.get(i).new_class_get();
 			for(int j=0;j<temp_c.size();j++){
 				int num = getNameForNew(temp_c.get(j).name_get());
-				//if(num == -1||get_connect(connect,num)==-1||get_connect(connect,i)==-1)continue;
+				if(num == -1
+						//||get_connect(connect,num)==-1
+						//||get_connect(connect,i)==-1
+				)continue;
+				returnnum[connect[i]][connect[num]]++;
+				returnnum[connect[num]][connect[i]]++;
 				//if(i!=num)System.out.print(num+",");
 				//returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
 				//returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
@@ -75,7 +81,12 @@ public class searchIO {
 			ArrayList<object_type> temp_o = class_infos.get(i).object_get();
 			for(int j=0;j<temp_o.size();j++){
 				int num = getNameForNew(temp_o.get(j).type_get());
-				//if(num == -1||get_connect(connect,num)==-1||get_connect(connect,i)==-1)continue;
+				if(num == -1
+						//||get_connect(connect,num)==-1
+						//||get_connect(connect,i)==-1
+				)continue;
+				returnnum[connect[i]][connect[num]]++;
+				returnnum[connect[num]][connect[i]]++;
 				//if(i!=num)System.out.print(num+",");
 				//returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
 				//returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
@@ -130,5 +141,5 @@ public class searchIO {
 	public int get_connect(int a[],int ans){
 		for(int i=0;i<a.length;i++)if(a[i]==ans)return i;
 		return -1;
-	}                     
+	}
 }

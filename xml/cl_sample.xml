@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet type='text/xsl' href='reportXMLtoHTML.xsl'?>
+<classycle title='C:\Dropbox\GraduationWork\ResearchResults\Sample_GS\SampleClass' date='2015-12-06'>
+  <cycles>
+  </cycles>
+  <classes numberOfExternalClasses="5">
+    <class name="a.A" sources="C:\Dropbox\GraduationWork\ResearchResults\Sample_GS\SampleClass" type="class" innerClass="false" size="463" usedBy="1" usesInternal="2" usesExternal="1" layer="1" cycle="">
+      <classRef name="main.Main" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="a.E" type="usesInternal"/>
+      <classRef name="a.F" type="usesInternal"/>
+    </class>
+    <class name="a.E" sources="C:\Dropbox\GraduationWork\ResearchResults\Sample_GS\SampleClass" type="class" innerClass="false" size="345" usedBy="2" usesInternal="0" usesExternal="1" layer="0" cycle="">
+      <classRef name="a.A" type="usedBy"/>
+      <classRef name="main.Main" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+    </class>
+    <class name="a.F" sources="C:\Dropbox\GraduationWork\ResearchResults\Sample_GS\SampleClass" type="class" innerClass="false" size="345" usedBy="3" usesInternal="0" usesExternal="1" layer="0" cycle="">
+      <classRef name="a.A" type="usedBy"/>
+      <classRef name="b.B" type="usedBy"/>
+      <classRef name="main.Main" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+    </class>
+    <class name="b.B" sources="C:\Dropbox\GraduationWork\ResearchResults\Sample_GS\SampleClass" type="class" innerClass="false" size="522" usedBy="1" usesInternal="3" usesExternal="1" layer="1" cycle="">
+      <classRef name="main.Main" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="b.G" type="usesInternal"/>
+      <classRef name="b.H" type="usesInternal"/>
+      <classRef name="a.F" type="usesInternal"/>
+    </class>
+    <class name="b.G" sources="C:\Dropbox\GraduationWork\ResearchResults\Sample_GS\SampleClass" type="class" innerClass="false" size="346" usedBy="2" usesInternal="0" usesExternal="1" layer="0" cycle="">
+      <classRef name="b.B" type="usedBy"/>
+      <classRef name="main.Main" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+    </class>
+    <class name="b.H" sources="C:\Dropbox\GraduationWork\ResearchResults\Sample_GS\SampleClass" type="class" innerClass="false" size="346" usedBy="2" usesInternal="0" usesExternal="1" layer="0" cycle="">
+      <classRef name="b.B" type="usedBy"/>
+      <classRef name="main.Main" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+    </class>
+    <class name="c.C" sources="C:\Dropbox\GraduationWork\ResearchResults\Sample_GS\SampleClass" type="class" innerClass="false" size="464" usedBy="1" usesInternal="2" usesExternal="1" layer="1" cycle="">
+      <classRef name="main.Main" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="c.I" type="usesInternal"/>
+      <classRef name="c.J" type="usesInternal"/>
+    </class>
+    <class name="c.I" sources="C:\Dropbox\GraduationWork\ResearchResults\Sample_GS\SampleClass" type="class" innerClass="false" size="345" usedBy="2" usesInternal="0" usesExternal="1" layer="0" cycle="">
+      <classRef name="c.C" type="usedBy"/>
+      <classRef name="main.Main" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+    </class>
+    <class name="c.J" sources="C:\Dropbox\GraduationWork\ResearchResults\Sample_GS\SampleClass" type="class" innerClass="false" size="346" usedBy="2" usesInternal="0" usesExternal="1" layer="0" cycle="">
+      <classRef name="c.C" type="usedBy"/>
+      <classRef name="main.Main" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+    </class>
+    <class name="d.D" sources="C:\Dropbox\GraduationWork\ResearchResults\Sample_GS\SampleClass" type="class" innerClass="false" size="346" usedBy="1" usesInternal="0" usesExternal="1" layer="0" cycle="">
+      <classRef name="main.Main" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+    </class>
+    <class name="main.Main" sources="C:\Dropbox\GraduationWork\ResearchResults\Sample_GS\SampleClass" type="class" innerClass="false" size="1559" usedBy="0" usesInternal="10" usesExternal="5" layer="2" cycle="">
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="a.A" type="usesInternal"/>
+      <classRef name="b.B" type="usesInternal"/>
+      <classRef name="c.C" type="usesInternal"/>
+      <classRef name="d.D" type="usesInternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.StringBuilder" type="usesExternal"/>
+      <classRef name="a.E" type="usesInternal"/>
+      <classRef name="a.F" type="usesInternal"/>
+      <classRef name="b.G" type="usesInternal"/>
+      <classRef name="b.H" type="usesInternal"/>
+      <classRef name="c.I" type="usesInternal"/>
+      <classRef name="c.J" type="usesInternal"/>
+    </class>
+  </classes>
+  <packageCycles>
+  </packageCycles>
+  <packages>
+    <package name="a" sources="C:\Dropbox\GraduationWork\ResearchResults\Sample_GS\SampleClass"  size="3" usedBy="3" usesInternal="1" usesExternal="1" layer="0" cycle="">
+      <packageRef name="a" type="usedBy"/>
+      <packageRef name="b" type="usedBy"/>
+      <packageRef name="main" type="usedBy"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="a" type="usesInternal"/>
+    </package>
+    <package name="b" sources="C:\Dropbox\GraduationWork\ResearchResults\Sample_GS\SampleClass"  size="3" usedBy="2" usesInternal="2" usesExternal="1" layer="1" cycle="">
+      <packageRef name="b" type="usedBy"/>
+      <packageRef name="main" type="usedBy"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="b" type="usesInternal"/>
+      <packageRef name="a" type="usesInternal"/>
+    </package>
+    <package name="c" sources="C:\Dropbox\GraduationWork\ResearchResults\Sample_GS\SampleClass"  size="3" usedBy="2" usesInternal="1" usesExternal="1" layer="0" cycle="">
+      <packageRef name="c" type="usedBy"/>
+      <packageRef name="main" type="usedBy"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="c" type="usesInternal"/>
+    </package>
+    <package name="d" sources="C:\Dropbox\GraduationWork\ResearchResults\Sample_GS\SampleClass"  size="1" usedBy="1" usesInternal="0" usesExternal="1" layer="0" cycle="">
+      <packageRef name="main" type="usedBy"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+    </package>
+    <package name="main" sources="C:\Dropbox\GraduationWork\ResearchResults\Sample_GS\SampleClass"  size="1" usedBy="0" usesInternal="4" usesExternal="2" layer="2" cycle="">
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="a" type="usesInternal"/>
+      <packageRef name="b" type="usesInternal"/>
+      <packageRef name="c" type="usesInternal"/>
+      <packageRef name="d" type="usesInternal"/>
+      <packageRef name="java.io" type="usesExternal"/>
+    </package>
+  </packages>
+</classycle>

@@ -6,6 +6,7 @@ import java.awt.Frame;
 import java.awt.Graphics;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -17,6 +18,10 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
+
+import search.new_class;
 
 public class Inport_file extends Frame implements GlobalValue{
 	/**=============================*/	
@@ -99,7 +104,6 @@ public class Inport_file extends Frame implements GlobalValue{
 		
 		for(int i=0; i < rootChildren.getLength(); i++) {
 			Node node = rootChildren.item(i);
-			ArrayList<String> usedInternal_temp = new ArrayList<String>(); 
 			
 			if (node.getNodeType() == Node.ELEMENT_NODE) {
 				Element element = (Element)node;
@@ -109,24 +113,25 @@ public class Inport_file extends Frame implements GlobalValue{
 				NodeList pChildren = node.getChildNodes();
 				
 				System.out.println("子要素の数：" + pChildren.getLength());
-				System.out.println("------------------"); 
+				System.out.println("------------------");
+				
 				
 				for (int j=0;j<pChildren.getLength();j++) {
 					Node Pnode = pChildren.item(j);
 					NamedNodeMap pAtr = Pnode.getAttributes();
-					int class_num=0;
+					
+					ArrayList<String> usedInternal_temp = new ArrayList<String>();
+					int class_num = 999;
 					
 					if (pAtr!=null) {
 						// innerClass="true"の<class>を削除 
-						if(pAtr.getNamedItem("innerClass").getNodeValue().equals("true")){
-							continue;
-						}
+						if(pAtr.getNamedItem("innerClass").getNodeValue().equals("true"))continue;
 						
 						// XMLに存在するクラスのリストを作成
 						list_xml.add(pAtr.getNamedItem("name").getNodeValue());	
 						node_Name.add(pAtr.getNamedItem("name").getNodeValue());
 						class_num = node_Name.size()-1;
-						if(pAtr.getNamedItem("usesInternal")!=null){					
+						if(pAtr.getNamedItem("usesInternal")!=null){
 							node_branch.add(pAtr.getNamedItem("usesInternal").getNodeValue());
 						}
 					}
@@ -149,15 +154,24 @@ public class Inport_file extends Frame implements GlobalValue{
 							usedInternal_temp.add(ppAtr.getNamedItem("name").getNodeValue());
 						}
 					}
-					usedInternal[class_num]=(String[])usedInternal_temp.toArray(new String[0]);
+					String[] a = new String[usedInternal_temp.size()];
+					for(int num1=0; num1<usedInternal_temp.size();num1++)
+						a[num1] = new String(usedInternal_temp.get(num1));
+					usedInternal[class_num]=new String[a.length];
+					for(int num1=0;num1<a.length;num1++){
+						usedInternal[class_num][num1] = a[num1];
+					}
 					usedInternal_temp.clear();
 				}
-				
 			}
 		}
 		//usedInternalの配列
-		for(int j=0;j<usedInternal.length;j++){
-			if(usedInternal[j]==null)continue;
+		for(int jj=0;jj<usedInternal.length;jj++){
+			if(usedInternal[jj]!= null)
+			for(int k=0;k<usedInternal[jj].length;k++){
+				if(usedInternal[jj][k]!= null)
+					System.out.println(jj+" "+k+" "+usedInternal[jj][k]);
+			}
 		}
 		/**inport_file=============================*/
 		
@@ -308,8 +322,7 @@ public class Inport_file extends Frame implements GlobalValue{
 		
 		//アークの定義
 		for(int j=0;j<usedInternal.length;j++){
-			if(usedInternal[j]==null)
-				continue;
+			if(usedInternal[j]==null)continue;
 			int key;
 			for(int k=0;k<usedInternal[j].length;k++){
 				key = node_Name.indexOf(usedInternal[j][k]);

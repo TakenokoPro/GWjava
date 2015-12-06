@@ -14,7 +14,9 @@ public class Clear_source {
 
 	/**=============================*/	
 	/**object**/
-	static String in_Path = "C:\\pleiades\\workspace\\GWjava\\src";//""内に分析したいフォルダを(\は２連続で)
+	//static String in_Path = "C:\\pleiades\\workspace\\GWjava\\src";//""内に分析したいフォルダを(\は２連続で)
+	static String in_Path = "Z:\\Dropbox\\Dropbox\\GraduationWork\\ResearchResults\\Sample_GS\\SampleClass\\src";
+	
 	static String out_path = "result\\sourse.txt";
 	int count = 0;
 	ArrayList<String> split_str;

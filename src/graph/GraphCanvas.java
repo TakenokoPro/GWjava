@@ -45,7 +45,6 @@ public class GraphCanvas extends Canvas{
 	    for (int element=0;element<this.elements.size();element++) {
     		NODE_CONNECT(element);
     		NODE_FOCUS(element);
-    		NODE_WEIGHT(element);
     		//DRAWPOINT(element);
 	    }
 	}
@@ -75,6 +74,7 @@ public class GraphCanvas extends Canvas{
 			for (int j=0;j<elements.get(element).classNodes.size();j++){
 				connected[i][j] = false;
 			}
+		NODE_WEIGHT(element);
 		for (int i=0;i<elements.get(element).classNodes.size();i++){
 			ClassNode node = elements.get(element).classNodes.get(i);
 			for (int j=0;j<node.connections.size();j++){
@@ -89,11 +89,12 @@ public class GraphCanvas extends Canvas{
 		if(connect==null)return;
 		for(int i=0;i<connect.length;i++){
 			ClassNode node1 = elements.get(element).classNodes.get(i);
-			for(int j=0;j<connect.length;j++){
+			for(int j=0;j<connect.length&&i!=j;j++){
 				ClassNode node2 = elements.get(element).classNodes.get(j);
 				if(connect!=null&&connect[i][j]>0){
 					int weight;
-					if(connect[i][j]>100)weight=10;else weight=(int)(connect[i][j]*0.1);
+					if(connect[i][j]>100)weight=10;else weight=(int)(connect[i][j]*1.0);
+					//System.out.println("["+i+"]["+j+"]"+connect[i][j]);
 					line(node1.x, node1.y, node2.x, node2.y,(float)weight,0xFFCCCC);
 				}
 			}

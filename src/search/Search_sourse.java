@@ -63,7 +63,7 @@ public class Search_sourse {
 		//classTable.DisplayTable();
 	}
 	public ArrayList<String> split_class(String str) {
-		String[] return_str = str.split("(\\s)|(,)", 0);
+		String[] return_str = str.split("(\\s)|(,)|(\\{)", 0);
 		ArrayList<String> result = new ArrayList<String>();
 		for(int i=0;i<return_str.length;i++){
 			if(!return_str[i].matches("(^\\s*$)|(\\{)"))
@@ -144,7 +144,8 @@ public class Search_sourse {
 				}
 				if(str.matches("(.*\\s(class)\\s.*(\\{))|(.*\\s(interface)\\s.*)")){
 					if(split_class(str)!=null){
-						split_str = split_class(str);		
+						split_str = split_class(str);
+						for(int i=0;i<split_str.size();i++)System.out.print("||"+split_str.get(i));
 						OutputFunction(split_str,count++);
 					}
 				}
