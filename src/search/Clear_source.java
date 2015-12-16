@@ -16,7 +16,8 @@ public class Clear_source {
 	/**object**/
 	//static String in_Path = "C:\\pleiades\\workspace\\GWjava\\src";//""内に分析したいフォルダを(\は２連続で)
 	//static String in_Path = "Z:\\Dropbox\\Dropbox\\GraduationWork\\ResearchResults\\Sample_GS\\SampleClass\\src";
-	static String in_Path = "Z:\\Eclipse\\GWjava\\src";
+	//static String in_Path = "Z:\\Eclipse\\GWjava\\src";
+	static String in_Path;
 	static String out_path = "result\\sourse.txt";
 	int count = 0;
 	ArrayList<String> split_str;
@@ -26,7 +27,8 @@ public class Clear_source {
 	boolean block_comment_flag = false; //ブロックコメント
 	/**=============================*/
 	/**main**/
-	public Clear_source(){
+	public Clear_source(String path){
+		in_Path = path;
 		String_Clear();
 		File readfolder = new File(in_Path);
 		readFolder(readfolder);

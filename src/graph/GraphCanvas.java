@@ -11,10 +11,6 @@ import java.awt.Image;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 
-import com.sun.org.apache.bcel.internal.generic.LNEG;
-
-import search.new_class;
-
 
 public class GraphCanvas extends Canvas{
 	
@@ -93,7 +89,7 @@ public class GraphCanvas extends Canvas{
 				ClassNode node2 = elements.get(element).classNodes.get(j);
 				if(connect!=null&&connect[i][j]>0){
 					int weight;
-					if(connect[i][j]>100)weight=10;else weight=(int)(connect[i][j]*0.1);
+					if(connect[i][j]>100)weight=10;else weight=(int)(connect[i][j]*1);
 					//System.out.println("["+i+"]["+j+"]"+connect[i][j]);
 					line(node1.x, node1.y, node2.x, node2.y,(float)weight,0xFFCCCC);
 				}

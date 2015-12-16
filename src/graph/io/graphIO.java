@@ -4,10 +4,11 @@ import graph.SpringAnim;
 
 public class graphIO {
 	
-	public SpringAnim springAnim =new SpringAnim();
+	public SpringAnim springAnim;
 	
-	public graphIO(){
+	public graphIO(String path){
 		// TODO: UI（スプリングアルゴリズム）
+		springAnim =new SpringAnim(path);
 		springAnim.addMouseListener(springAnim);
 		springAnim.addMouseMotionListener(springAnim);
 		springAnim.setSize(1000,1000);

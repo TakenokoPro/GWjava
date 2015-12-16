@@ -6,7 +6,6 @@ import java.awt.Frame;
 import java.awt.Graphics;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -19,14 +18,10 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
-
-import search.new_class;
-
 public class Inport_file extends Frame implements GlobalValue{
 	/**=============================*/	
 	/**object*/
-	static String in_Path = "xml\\cl_gwjava.xml";//""内に分析したいフォルダを(\は２連続で)
+	static String in_Path;//""内に分析したいフォルダを(\は２連続で)
 	int count = 0;
 	ArrayList<String> split_str;
 	static int centerX=500;
@@ -68,7 +63,8 @@ public class Inport_file extends Frame implements GlobalValue{
 	}
 	
 	/**inport_file=============================*/
-	public Inport_file(){
+	public Inport_file(String path){
+		in_Path = "xml\\"+path;
 		import_method();
 		divide_package();
 		graph_draw();

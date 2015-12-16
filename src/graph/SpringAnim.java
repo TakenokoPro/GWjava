@@ -21,11 +21,15 @@ public class SpringAnim extends Frame implements Runnable,MouseListener,MouseMot
 	Thread th = null;	//スレッドオブジェクト宣言
 	int delay = 200;	//スレッドの待ち時間
 	
-	Inport_file inport_file = new Inport_file();
+	Inport_file inport_file;
 	static int click_x,click_y;//クリックされた座標
 	static boolean click_act = false;//クリックされているか
 	boolean Focus_flag = false;//フォーカスが当たったフラグ
 	/**=============================*/
+	
+	public SpringAnim(String path) {
+		 inport_file = new Inport_file(path);
+	}
 	
 	//TODO:初期化処理
 	public void init() {

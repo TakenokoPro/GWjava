@@ -17,12 +17,16 @@ public class main {
 	
 	public static void main(String[] arg) {
 		
+		
+		String SourcePath = "C:\\pleiades\\workspace\\GWsampleProject2\\src";
+		String XmlPath = "cl_gwSamplejava2.xml";
 		/**=============================*/	
 		// TODO: メイン実行
-		sIo = new searchIO();
-		gIo = new graphIO();
+		sIo = new searchIO(SourcePath);
+		gIo = new graphIO(XmlPath);
 		showFocus = new ShowFocus();
 		/**=============================*/
+		
 		
 		
 		
@@ -69,9 +73,9 @@ public class main {
 		int con[][] = sIo.usednternalCounter(connect);
 		//for(int i=0;i<con.length;i++)for(int j=0;j<con[i].length;j++)
 			//if(con[i][j]>0)System.out.println("["+i+"]["+j+"]="+con[i][j]);
-		gIo.get_springanim().get_inport_file().get_graphCanvas().set_connect(con);
+		//gIo.get_springanim().get_inport_file().get_graphCanvas().set_connect(con);
 		
-		showFocus.show(sIo.get_classinfo());
+		//showFocus.show(sIo.get_classinfo());
 		while(true){
 			gIo.springAnim.repaint();
 			if(gIo.springAnim.get_focus_flag())show(gIo.springAnim.get_focus());

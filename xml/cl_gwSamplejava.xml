@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet type='text/xsl' href='reportXMLtoHTML.xsl'?>
+<classycle title='C:\pleiades\workspace\GWsampleProject' date='2015-12-09'>
+  <cycles>
+  </cycles>
+  <classes numberOfExternalClasses="5">
+    <class name="Call" sources="C:\pleiades\workspace\GWsampleProject" type="class" innerClass="false" size="387" usedBy="2" usesInternal="0" usesExternal="4" layer="0" cycle="">
+      <classRef name="ClassInfo" type="usedBy"/>
+      <classRef name="SearchSource" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="ClassInfo" sources="C:\pleiades\workspace\GWsampleProject" type="class" innerClass="false" size="875" usedBy="2" usesInternal="4" usesExternal="5" layer="1" cycle="">
+      <classRef name="SearchSource" type="usedBy"/>
+      <classRef name="SpringFrame" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.util.ArrayList" type="usesExternal"/>
+      <classRef name="NewM" type="usesInternal"/>
+      <classRef name="ObjectT" type="usesInternal"/>
+      <classRef name="Definition" type="usesInternal"/>
+      <classRef name="Call" type="usesInternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+    </class>
+    <class name="ClassNode" sources="C:\pleiades\workspace\GWsampleProject" type="class" innerClass="false" size="402" usedBy="1" usesInternal="0" usesExternal="4" layer="0" cycle="">
+      <classRef name="InportFile" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="ClearSource" sources="C:\pleiades\workspace\GWsampleProject" type="class" innerClass="false" size="611" usedBy="1" usesInternal="0" usesExternal="4" layer="0" cycle="">
+      <classRef name="main" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="Definition" sources="C:\pleiades\workspace\GWsampleProject" type="class" innerClass="false" size="405" usedBy="2" usesInternal="0" usesExternal="4" layer="0" cycle="">
+      <classRef name="ClassInfo" type="usedBy"/>
+      <classRef name="SearchSource" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="FourceDirected" sources="C:\pleiades\workspace\GWsampleProject" type="class" innerClass="false" size="498" usedBy="1" usesInternal="0" usesExternal="4" layer="0" cycle="">
+      <classRef name="InportFile" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="InportFile" sources="C:\pleiades\workspace\GWsampleProject" type="class" innerClass="false" size="1032" usedBy="1" usesInternal="3" usesExternal="5" layer="1" cycle="">
+      <classRef name="SpringFrame" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.util.ArrayList" type="usesExternal"/>
+      <classRef name="ClassNode" type="usesInternal"/>
+      <classRef name="FourceDirected" type="usesInternal"/>
+      <classRef name="SpringCanvas" type="usesInternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="NewM" sources="C:\pleiades\workspace\GWsampleProject" type="class" innerClass="false" size="393" usedBy="2" usesInternal="0" usesExternal="4" layer="0" cycle="">
+      <classRef name="ClassInfo" type="usedBy"/>
+      <classRef name="SearchSource" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="ObjectT" sources="C:\pleiades\workspace\GWsampleProject" type="class" innerClass="false" size="405" usedBy="2" usesInternal="0" usesExternal="4" layer="0" cycle="">
+      <classRef name="ClassInfo" type="usedBy"/>
+      <classRef name="SearchSource" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="SearchSource" sources="C:\pleiades\workspace\GWsampleProject" type="class" innerClass="false" size="1367" usedBy="2" usesInternal="5" usesExternal="5" layer="2" cycle="">
+      <classRef name="SpringFrame" type="usedBy"/>
+      <classRef name="main" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.util.ArrayList" type="usesExternal"/>
+      <classRef name="ClassInfo" type="usesInternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="NewM" type="usesInternal"/>
+      <classRef name="Call" type="usesInternal"/>
+      <classRef name="Definition" type="usesInternal"/>
+      <classRef name="ObjectT" type="usesInternal"/>
+    </class>
+    <class name="SpringCanvas" sources="C:\pleiades\workspace\GWsampleProject" type="class" innerClass="false" size="491" usedBy="1" usesInternal="0" usesExternal="4" layer="0" cycle="">
+      <classRef name="InportFile" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="SpringFrame" sources="C:\pleiades\workspace\GWsampleProject" type="class" innerClass="false" size="824" usedBy="1" usesInternal="3" usesExternal="5" layer="3" cycle="">
+      <classRef name="main" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.util.ArrayList" type="usesExternal"/>
+      <classRef name="ClassInfo" type="usesInternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="InportFile" type="usesInternal"/>
+      <classRef name="SearchSource" type="usesInternal"/>
+    </class>
+    <class name="main" sources="C:\pleiades\workspace\GWsampleProject" type="class" innerClass="false" size="806" usedBy="0" usesInternal="3" usesExternal="4" layer="4" cycle="">
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="ClearSource" type="usesInternal"/>
+      <classRef name="SearchSource" type="usesInternal"/>
+      <classRef name="SpringFrame" type="usesInternal"/>
+    </class>
+  </classes>
+  <packageCycles>
+  </packageCycles>
+  <packages>
+    <package name="(default package)" sources="C:\pleiades\workspace\GWsampleProject"  size="13" usedBy="1" usesInternal="1" usesExternal="3" layer="0" cycle="">
+      <packageRef name="(default package)" type="usedBy"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="java.io" type="usesExternal"/>
+      <packageRef name="java.util" type="usesExternal"/>
+      <packageRef name="(default package)" type="usesInternal"/>
+    </package>
+  </packages>
+</classycle>
