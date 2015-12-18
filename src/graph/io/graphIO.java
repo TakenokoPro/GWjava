@@ -11,7 +11,7 @@ public class graphIO {
 		springAnim =new SpringAnim(path);
 		springAnim.addMouseListener(springAnim);
 		springAnim.addMouseMotionListener(springAnim);
-		springAnim.setSize(1000,1000);
+		springAnim.setSize(2000,2000);
 		springAnim.setVisible(true);
 	    springAnim.addWindowListener(springAnim.new Adapter());
 		springAnim.init();

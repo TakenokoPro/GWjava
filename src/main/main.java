@@ -17,9 +17,11 @@ public class main {
 	
 	public static void main(String[] arg) {
 		
-		
-		String SourcePath = "C:\\pleiades\\workspace\\GWsampleProject2\\src";
-		String XmlPath = "cl_gwSamplejava2.xml";
+		String aaaa = "SampleClass\\src";
+		String SourcePath = "C:\\pleiades\\workspace\\"+aaaa;
+		//String SourcePath = "C:\\Dropbox\\GraduationWork\\ResearchResults\\jlgui\\jlgui2.2\\E_\\jlGui2.2\\src\\javazoom";
+		//String SourcePath = "C:\\Dropbox\\GraduationWork\\ResearchResults\\jackcess\\1.2.10";
+		String XmlPath = "cl_junit3.5.xml";
 		/**=============================*/	
 		// TODO: メイン実行
 		sIo = new searchIO(SourcePath);
@@ -31,7 +33,7 @@ public class main {
 		
 		
 		// TODO: 結合テスト（テーブル）
-		//ClassTable classTable = gUi.get_springanim().get_inport_file().get_ClassTable();
+		//ClassTable classTable = gIo.get_springanim().get_inport_file().get_ClassTable();
 		//classTable.DisplayTable();
 		
 		// TODO: 結合テスト（テーブル）
@@ -70,12 +72,10 @@ public class main {
 		//for(int i=0;i<connect.length;i++)System.out.println("connect["+i+"]="+connect[i]);
 		
 		//ノードの太さを変える
-		int con[][] = sIo.usednternalCounter(connect);
-		//for(int i=0;i<con.length;i++)for(int j=0;j<con[i].length;j++)
-			//if(con[i][j]>0)System.out.println("["+i+"]["+j+"]="+con[i][j]);
-		//gIo.get_springanim().get_inport_file().get_graphCanvas().set_connect(con);
+		/*int con[][] = sIo.usednternalCounter(connect);
+		gIo.get_springanim().get_inport_file().get_graphCanvas().set_connect(con);		
+		showFocus.show(sIo.get_classinfo());*/
 		
-		//showFocus.show(sIo.get_classinfo());
 		while(true){
 			gIo.springAnim.repaint();
 			if(gIo.springAnim.get_focus_flag())show(gIo.springAnim.get_focus());

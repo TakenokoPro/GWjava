@@ -1,160 +1,122 @@
 
-package clear;
-public class ClearSource {
-public ClearSource() {
-System.out.println("ClearSource");
-readFolder();
+package a;
+public class A{
+int a;
+public E e = new E();
+public F f = new F();
+public A() {
+a = 1;
 }
-private void readFolder() {
-System.out.println("readFolder");
-execute();
-}
-private void execute() {
-System.out.println("execute");
+public int getA() {
+return a;
 }
 }
-package graph;
-public class ClassNode {
-public ClassNode() {
-System.out.println("ClassNode");
+package a;
+public class E{
+int e;
+public E(){
+e = 2;
+}
+public int getE() {
+return e;
 }
 }
-package graph;
-public class FourceDirected {
-public FourceDirected() {
-System.out.println("FourceDirected");
+package a;
+public class F{
+int f;
+public F(){
+f = 4;
 }
-void blance(){
-System.out.println("blance");
-}
-}
-package graph;
-import java.util.ArrayList;
-public class InportFile {
-ArrayList<ClassNode> classNodes = new ArrayList<ClassNode>();
-FourceDirected fourceDirected;
-SpringCanvas springCanvas;
-public InportFile() {
-System.out.println("InportFile");
-classNodes.add(new ClassNode());
-fourceDirected = new FourceDirected();
-springCanvas = new SpringCanvas();
-}
-void run(){
-System.out.println("run");
-fourceDirected.blance();
-}
-void print(){
-System.out.println("print");
-springCanvas.print();
+public int getF() {
+return f;
 }
 }
-package graph;
-public class SpringCanvas {
-public SpringCanvas() {
-System.out.println("SpringCanvas");
+package b;
+import a.F;
+public class B{
+int b;
+public G g = new G();
+public H h = new H();
+public F f = new F();
+public B() {
+b = 5;
 }
-void print(){
-System.out.println("print");
+public int getB() {
+return b;
 }
-;
 }
-package graph;
-import java.util.ArrayList;
-import search.ClassInfo;
-import search.SearchSource;
-public class SpringFrame {
-static ArrayList<ClassInfo> classInfo;
-public SpringFrame() {
-System.out.println("SpringFrame");
-InportFile inportFile = new InportFile();
-inportFile.run();
-inportFile.print();
+package b;
+public class G{
+int g;
+public G(){
+g = 8;
 }
-public static void marge(SearchSource searchSource) {
-System.out.println("marge");
-classInfo = searchSource.classInfos;
+public int getG() {
+return g;
+}
+}
+package b;
+public class H{
+int h;
+public H(){
+h = 9;
+}
+public int getH() {
+return h;
+}
+}
+package c;
+public class C{
+int c;
+public I i = new I();
+public J j = new J();
+public C(){
+c = 6;
+}
+public int getC() {
+return c;
+}
+}
+package c;
+public class I{
+int i;
+public I() {
+i = 3;
+}
+public int getI() {
+return i;
+}
+}
+package c;
+public class J{
+int j;
+public J(){
+j = 7;
+}
+public int getJ() {
+return j;
+}
+}
+package d;
+public class D{
+int d;
+public D() {
+d = 10;
+}
+public int getD() {
+return d;
 }
 }
 package main;
-import graph.SpringFrame;
-import search.SearchSource;
-import clear.ClearSource;
-public class main {
+import a.A;
+import b.B;
+import c.C;
+import d.D;
+public class Main{
 public static void main(String[] args) {
-System.out.println("mainSTART");
-new ClearSource();
-System.out.println("main1");
-SearchSource searchSource =  new SearchSource();
-System.out.println("main2");
-SpringFrame springFrame = new SpringFrame();
-System.out.println("mainEND");
-SpringFrame.marge(searchSource);
-}
-}
-package search;
-public class Call {
-Call(){
-System.out.println("Call");
-}
-}
-package search;
-import java.util.ArrayList;
-public class ClassInfo {
-String className;
-ArrayList<NewM> news = new ArrayList<NewM>();
-ArrayList<ObjectT> objects = new ArrayList<ObjectT>();
-ArrayList<Definition> definitions = new ArrayList<Definition>();
-ArrayList<Call> calls = new ArrayList<Call>();
-public ClassInfo() {
-System.out.println("ClassInfo");
-this.className = "";
-}
-}
-package search;
-public class Definition {
-public Definition() {
-System.out.println("Definition");
-}
-}
-package search;
-public class NewM {
-public NewM() {
-System.out.println("New");
-}
-}
-package search;
-public class ObjectT {
-public ObjectT() {
-System.out.println("Object");
-}
-}
-package search;
-import java.util.ArrayList;
-public class SearchSource {
-public ArrayList<ClassInfo> classInfos = new ArrayList<ClassInfo>();
-public SearchSource() {
-System.out.println("SearchSource");
-SearchClass();
-SearchNew();
-SearchMethod();
-SearchObject();
-}
-private void SearchClass() {
-System.out.println("SearchClass");
-classInfos.add(new ClassInfo());
-}
-private void SearchNew() {
-System.out.println("SearchNew");
-classInfos.get(0).news.add(new NewM());
-}
-private void SearchMethod() {
-System.out.println("SearchMethod");
-classInfos.get(0).calls.add(new Call());
-classInfos.get(0).definitions.add(new Definition());
-}
-private void SearchObject() {
-System.out.println("SearchObject");
-classInfos.get(0).objects.add(new ObjectT());
+A classA = new A();
+B classB = new B();
+C classC = new C();
+ D classD = new D();
 }
 }

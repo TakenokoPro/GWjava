@@ -1,0 +1,715 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet type='text/xsl' href='reportXMLtoHTML.xsl'?>
+<classycle title='C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar' date='2015-09-03'>
+  <cycles>
+    <cycle name="javazoom.jlGui.playlist.ui.MP3Files et al." size="5" longestWalk="8" girth="2" radius="1" diameter="2" bestFragmentSize="1">
+      <classes>
+        <classRef name="javazoom.jlGui.Player" eccentricity="2" maximumFragmentSize="4"/>
+        <classRef name="javazoom.jlGui.playlist.ui.MP3Files" eccentricity="1" maximumFragmentSize="1"/>
+        <classRef name="javazoom.jlGui.playlist.ui.MP3Files$1" eccentricity="2" maximumFragmentSize="4"/>
+        <classRef name="javazoom.jlGui.playlist.ui.MP3Files$AddThread" eccentricity="2" maximumFragmentSize="4"/>
+        <classRef name="javazoom.jlGui.playlist.ui.MP3Files$2" eccentricity="2" maximumFragmentSize="4"/>
+      </classes>
+      <centerClasses>
+        <classRef name="javazoom.jlGui.playlist.ui.MP3Files"/>
+      </centerClasses>
+      <bestFragmenters>
+        <classRef name="javazoom.jlGui.playlist.ui.MP3Files"/>
+      </bestFragmenters>
+    </cycle>
+  </cycles>
+  <classes numberOfExternalClasses="135">
+    <class name="javazoom.Util.BMPLoader" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="3477" usedBy="1" usesInternal="0" usesExternal="12" layer="0" cycle="">
+      <classRef name="javazoom.jlGui.skin.SkinLoader" type="usedBy"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java.awt.image.IndexColorModel" type="usesExternal"/>
+      <classRef name="java.awt.image.MemoryImageSource" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.io.InputStream" type="usesExternal"/>
+      <classRef name="java.awt.Image" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.awt.Toolkit" type="usesExternal"/>
+      <classRef name="java.awt.image.ColorModel" type="usesExternal"/>
+      <classRef name="java.awt.image.ImageProducer" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="javazoom.Util.Config" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="5391" usedBy="5" usesInternal="1" usesExternal="5" layer="3" cycle="">
+      <classRef name="javazoom.Util.FileUtil" type="usedBy"/>
+      <classRef name="javazoom.jlGui.Player" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.BasePlaylist" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.PlaylistFactory" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usedBy"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="javazoom.Util.ini.Configuration" type="usesInternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.util.Properties" type="usesExternal"/>
+    </class>
+    <class name="javazoom.Util.Debug" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="1337" usedBy="5" usesInternal="0" usesExternal="10" layer="0" cycle="">
+      <classRef name="javazoom.jlGui.BasicPlayer" type="usedBy"/>
+      <classRef name="javazoom.jlGui.Player" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.BasePlaylist" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.PlaylistFactory" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.PlaylistItem" type="usedBy"/>
+      <classRef name="java.io.PrintWriter" type="usesExternal"/>
+      <classRef name="java.io.FileOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.io.OutputStream" type="usesExternal"/>
+    </class>
+    <class name="javazoom.Util.FileNameFilter" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="1551" usedBy="1" usesInternal="0" usesExternal="6" layer="0" cycle="">
+      <classRef name="javazoom.Util.FileSelector" type="usedBy"/>
+      <classRef name="java.util.Vector" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.io.FilenameFilter" type="usesExternal"/>
+      <classRef name="java.io.File" type="usesExternal"/>
+    </class>
+    <class name="javazoom.Util.FileSelector" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="2044" usedBy="2" usesInternal="1" usesExternal="8" layer="1" cycle="">
+      <classRef name="javazoom.jlGui.Player" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usedBy"/>
+      <classRef name="javazoom.Util.FileNameFilter" type="usesInternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java.awt.FileDialog" type="usesExternal"/>
+      <classRef name="java.lang.InterruptedException" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.awt.Frame" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.Thread" type="usesExternal"/>
+      <classRef name="java.io.FilenameFilter" type="usesExternal"/>
+    </class>
+    <class name="javazoom.Util.FileUtil" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="2659" usedBy="1" usesInternal="1" usesExternal="7" layer="4" cycle="">
+      <classRef name="javazoom.jlGui.playlist.PlaylistItem" type="usedBy"/>
+      <classRef name="java.io.File" type="usesExternal"/>
+      <classRef name="java.util.Vector" type="usesExternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.util.StringTokenizer" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="javazoom.Util.Config" type="usesInternal"/>
+      <classRef name="java.util.Arrays" type="usesExternal"/>
+    </class>
+    <class name="javazoom.Util.ini.Alphabetizer" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="739" usedBy="1" usesInternal="0" usesExternal="3" layer="0" cycle="">
+      <classRef name="javazoom.Util.ini.SortedStrings" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.Math" type="usesExternal"/>
+    </class>
+    <class name="javazoom.Util.ini.Array" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="1322" usedBy="1" usesInternal="0" usesExternal="5" layer="0" cycle="">
+      <classRef name="javazoom.Util.ini.SortedStrings" type="usedBy"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.Math" type="usesExternal"/>
+    </class>
+    <class name="javazoom.Util.ini.CRC32OutputStream" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="373" usedBy="1" usesInternal="0" usesExternal="2" layer="0" cycle="">
+      <classRef name="javazoom.Util.ini.Configuration" type="usedBy"/>
+      <classRef name="java.util.zip.CRC32" type="usesExternal"/>
+      <classRef name="java.io.OutputStream" type="usesExternal"/>
+    </class>
+    <class name="javazoom.Util.ini.Configuration" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="4408" usedBy="1" usesInternal="2" usesExternal="20" layer="2" cycle="">
+      <classRef name="javazoom.Util.Config" type="usedBy"/>
+      <classRef name="java.util.Hashtable" type="usesExternal"/>
+      <classRef name="java.net.URL" type="usesExternal"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java.io.File" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.Double" type="usesExternal"/>
+      <classRef name="java.io.BufferedReader" type="usesExternal"/>
+      <classRef name="java.io.InputStreamReader" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.io.FileReader" type="usesExternal"/>
+      <classRef name="java.io.PrintWriter" type="usesExternal"/>
+      <classRef name="java.io.FileWriter" type="usesExternal"/>
+      <classRef name="javazoom.Util.ini.SortedStrings" type="usesInternal"/>
+      <classRef name="javazoom.Util.ini.CRC32OutputStream" type="usesInternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="java.util.Enumeration" type="usesExternal"/>
+      <classRef name="java.io.InputStream" type="usesExternal"/>
+      <classRef name="java.io.Reader" type="usesExternal"/>
+      <classRef name="java.io.Writer" type="usesExternal"/>
+      <classRef name="java.io.OutputStream" type="usesExternal"/>
+    </class>
+    <class name="javazoom.Util.ini.SortedStrings" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="3170" usedBy="1" usesInternal="2" usesExternal="8" layer="1" cycle="">
+      <classRef name="javazoom.Util.ini.Configuration" type="usedBy"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.CloneNotSupportedException" type="usesExternal"/>
+      <classRef name="javazoom.Util.ini.Alphabetizer" type="usesInternal"/>
+      <classRef name="java.lang.Cloneable" type="usesExternal"/>
+      <classRef name="java.io.DataInput" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.io.DataOutput" type="usesExternal"/>
+      <classRef name="javazoom.Util.ini.Array" type="usesInternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+    </class>
+    <class name="javazoom.jlGui.BasicPlayer" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="11334" usedBy="1" usesInternal="2" usesExternal="35" layer="1" cycle="">
+      <classRef name="javazoom.jlGui.Player" type="usedBy"/>
+      <classRef name="java.lang.ClassNotFoundException" type="usesExternal"/>
+      <classRef name="java.lang.NoClassDefFoundError" type="usesExternal"/>
+      <classRef name="java.net.URL" type="usesExternal"/>
+      <classRef name="java.io.File" type="usesExternal"/>
+      <classRef name="java.io.InputStream" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.AudioFormat" type="usesExternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.DataLine$Info" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.SourceDataLine" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.FloatControl" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java.lang.Thread" type="usesExternal"/>
+      <classRef name="java.util.StringTokenizer" type="usesExternal"/>
+      <classRef name="java.io.FileInputStream" type="usesExternal"/>
+      <classRef name="java.io.BufferedInputStream" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.Runnable" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.AudioInputStream" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.AudioFileFormat" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.BasicPlayerListener" type="usesInternal"/>
+      <classRef name="java.lang.Class" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.UnsupportedAudioFileException" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.LineUnavailableException" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.AudioSystem" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.AudioFormat$Encoding" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.DataLine" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.Control" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.FloatControl$Type" type="usesExternal"/>
+      <classRef name="java.lang.Math" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.AudioFileFormat$Type" type="usesExternal"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="javazoom.Util.Debug" type="usesInternal"/>
+      <classRef name="javax.sound.sampled.Line$Info" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.Line" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.Control$Type" type="usesExternal"/>
+    </class>
+    <class name="javazoom.jlGui.BasicPlayerListener" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="interface" innerClass="false" size="202" usedBy="2" usesInternal="0" usesExternal="2" layer="0" cycle="">
+      <classRef name="javazoom.jlGui.BasicPlayer" type="usedBy"/>
+      <classRef name="javazoom.jlGui.Player" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="javazoom.jlGui.Player" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="33818" usedBy="1" usesInternal="13" usesExternal="47" layer="8" cycle="javazoom.jlGui.playlist.ui.MP3Files et al.">
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usedBy"/>
+      <classRef name="java.awt.Image" type="usesExternal"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="javax.swing.ImageIcon" type="usesExternal"/>
+      <classRef name="java.awt.dnd.DropTarget" type="usesExternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.BasicPlayer" type="usesInternal"/>
+      <classRef name="javazoom.jlGui.playlist.PlaylistItem" type="usesInternal"/>
+      <classRef name="javazoom.jlGui.skin.SkinLoader" type="usesInternal"/>
+      <classRef name="javazoom.jlGui.skin.taftb" type="usesInternal"/>
+      <classRef name="java.awt.PopupMenu" type="usesExternal"/>
+      <classRef name="java.awt.MenuItem" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usesInternal"/>
+      <classRef name="javazoom.jlGui.skin.activeComponent" type="usesInternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.awt.Frame" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.skin.UrlDialog" type="usesInternal"/>
+      <classRef name="java.net.URL" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.UnsupportedAudioFileException" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.LineUnavailableException" type="usesExternal"/>
+      <classRef name="java.util.List" type="usesExternal"/>
+      <classRef name="java.io.File" type="usesExternal"/>
+      <classRef name="java.awt.datatransfer.UnsupportedFlavorException" type="usesExternal"/>
+      <classRef name="java.lang.NumberFormatException" type="usesExternal"/>
+      <classRef name="java.awt.Window" type="usesExternal"/>
+      <classRef name="java.awt.event.ActionListener" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.BasicPlayerListener" type="usesInternal"/>
+      <classRef name="java.awt.dnd.DropTargetListener" type="usesExternal"/>
+      <classRef name="java.awt.event.WindowListener" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.awt.Graphics" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.playlist.Playlist" type="usesInternal"/>
+      <classRef name="javazoom.Util.Config" type="usesInternal"/>
+      <classRef name="java.io.InputStream" type="usesExternal"/>
+      <classRef name="java.awt.event.ActionEvent" type="usesExternal"/>
+      <classRef name="java.awt.event.WindowEvent" type="usesExternal"/>
+      <classRef name="java.awt.dnd.DropTargetDragEvent" type="usesExternal"/>
+      <classRef name="java.awt.dnd.DropTargetEvent" type="usesExternal"/>
+      <classRef name="java.awt.dnd.DropTargetDropEvent" type="usesExternal"/>
+      <classRef name="javazoom.Util.Debug" type="usesInternal"/>
+      <classRef name="java.awt.Toolkit" type="usesExternal"/>
+      <classRef name="java.awt.Dimension" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.Class" type="usesExternal"/>
+      <classRef name="java.lang.ClassLoader" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.playlist.PlaylistFactory" type="usesInternal"/>
+      <classRef name="java.awt.Color" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.lang.Math" type="usesExternal"/>
+      <classRef name="java.awt.Rectangle" type="usesExternal"/>
+      <classRef name="javazoom.Util.FileSelector" type="usesInternal"/>
+      <classRef name="javax.sound.sampled.AudioFormat" type="usesExternal"/>
+      <classRef name="javax.sound.sampled.AudioFileFormat" type="usesExternal"/>
+      <classRef name="java.awt.datatransfer.DataFlavor" type="usesExternal"/>
+      <classRef name="java.awt.datatransfer.Transferable" type="usesExternal"/>
+      <classRef name="java.util.ListIterator" type="usesExternal"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.awt.Component" type="usesExternal"/>
+      <classRef name="java.awt.image.ImageObserver" type="usesExternal"/>
+      <classRef name="java.awt.LayoutManager" type="usesExternal"/>
+    </class>
+    <class name="javazoom.jlGui.playlist.BasePlaylist" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="5134" usedBy="0" usesInternal="4" usesExternal="21" layer="7" cycle="">
+      <classRef name="java.util.Vector" type="usesExternal"/>
+      <classRef name="java.io.BufferedReader" type="usesExternal"/>
+      <classRef name="java.io.InputStreamReader" type="usesExternal"/>
+      <classRef name="java.net.URL" type="usesExternal"/>
+      <classRef name="java.io.FileReader" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.playlist.PlaylistItem" type="usesInternal"/>
+      <classRef name="java.io.File" type="usesExternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java.io.BufferedWriter" type="usesExternal"/>
+      <classRef name="java.io.FileWriter" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.playlist.Playlist" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.util.Collection" type="usesExternal"/>
+      <classRef name="javazoom.Util.Config" type="usesInternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.lang.Class" type="usesExternal"/>
+      <classRef name="java.util.Iterator" type="usesExternal"/>
+      <classRef name="java.lang.Math" type="usesExternal"/>
+      <classRef name="javazoom.Util.Debug" type="usesInternal"/>
+      <classRef name="java.io.InputStream" type="usesExternal"/>
+      <classRef name="java.io.Reader" type="usesExternal"/>
+      <classRef name="java.io.Writer" type="usesExternal"/>
+    </class>
+    <class name="javazoom.jlGui.playlist.Playlist" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="interface" innerClass="false" size="824" usedBy="4" usesInternal="1" usesExternal="3" layer="6" cycle="">
+      <classRef name="javazoom.jlGui.Player" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.BasePlaylist" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.PlaylistFactory" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.playlist.PlaylistItem" type="usesInternal"/>
+      <classRef name="java.util.Collection" type="usesExternal"/>
+    </class>
+    <class name="javazoom.jlGui.playlist.PlaylistFactory" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="2085" usedBy="1" usesInternal="3" usesExternal="6" layer="7" cycle="">
+      <classRef name="javazoom.jlGui.Player" type="usedBy"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java.lang.Class" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.playlist.Playlist" type="usesInternal"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="javazoom.Util.Config" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.reflect.Constructor" type="usesExternal"/>
+      <classRef name="javazoom.Util.Debug" type="usesInternal"/>
+    </class>
+    <class name="javazoom.jlGui.playlist.PlaylistItem" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="3021" usedBy="4" usesInternal="5" usesExternal="8" layer="5" cycle="">
+      <classRef name="javazoom.jlGui.Player" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.BasePlaylist" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.Playlist" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usedBy"/>
+      <classRef name="javazoom.jlGui.tag.MpegInfo" type="usesInternal"/>
+      <classRef name="helliker.id3.ID3Exception" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="javazoom.jl.decoder.JavaLayerException" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.tag.OggVorbisInfo" type="usesInternal"/>
+      <classRef name="com.jcraft.jorbis.JOrbisException" type="usesExternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.tag.TagInfo" type="usesInternal"/>
+      <classRef name="java.lang.Class" type="usesExternal"/>
+      <classRef name="javazoom.Util.FileUtil" type="usesInternal"/>
+      <classRef name="javazoom.Util.Debug" type="usesInternal"/>
+    </class>
+    <class name="javazoom.jlGui.playlist.ui.MP3Files" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="16499" usedBy="4" usesInternal="16" usesExternal="34" layer="8" cycle="javazoom.jlGui.playlist.ui.MP3Files et al.">
+      <classRef name="javazoom.jlGui.Player" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files$1" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files$2" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files$AddThread" type="usedBy"/>
+      <classRef name="java.awt.Color" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files$1" type="usesInternal"/>
+      <classRef name="javazoom.jlGui.skin.activeComponent" type="usesInternal"/>
+      <classRef name="java.awt.PopupMenu" type="usesExternal"/>
+      <classRef name="java.awt.MenuItem" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.io.ByteArrayInputStream" type="usesExternal"/>
+      <classRef name="java.io.BufferedReader" type="usesExternal"/>
+      <classRef name="java.io.InputStreamReader" type="usesExternal"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java.awt.Font" type="usesExternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java.awt.Frame" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.playlist.PlaylistItem" type="usesInternal"/>
+      <classRef name="javazoom.jlGui.skin.UrlDialog" type="usesInternal"/>
+      <classRef name="java.io.File" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.tag.OggVorbisInfo" type="usesInternal"/>
+      <classRef name="javazoom.jlGui.tag.ui.OggVorbisDialog" type="usesInternal"/>
+      <classRef name="javazoom.jlGui.tag.MpegInfo" type="usesInternal"/>
+      <classRef name="javazoom.jlGui.tag.ui.MpegDialog" type="usesInternal"/>
+      <classRef name="java.awt.Window" type="usesExternal"/>
+      <classRef name="java.awt.GridLayout" type="usesExternal"/>
+      <classRef name="java.util.StringTokenizer" type="usesExternal"/>
+      <classRef name="java.util.Vector" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files$AddThread" type="usesInternal"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files$2" type="usesInternal"/>
+      <classRef name="java.awt.event.ActionListener" type="usesExternal"/>
+      <classRef name="java.awt.Image" type="usesExternal"/>
+      <classRef name="java.awt.Graphics" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.playlist.Playlist" type="usesInternal"/>
+      <classRef name="javazoom.Util.Config" type="usesInternal"/>
+      <classRef name="javazoom.jlGui.Player" type="usesInternal"/>
+      <classRef name="javazoom.jlGui.skin.SkinLoader" type="usesInternal"/>
+      <classRef name="java.awt.event.ActionEvent" type="usesExternal"/>
+      <classRef name="java.awt.event.MouseEvent" type="usesExternal"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.awt.Rectangle" type="usesExternal"/>
+      <classRef name="javazoom.Util.FileSelector" type="usesInternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.awt.Point" type="usesExternal"/>
+      <classRef name="java.lang.Thread" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.awt.LayoutManager" type="usesExternal"/>
+      <classRef name="java.awt.event.MouseListener" type="usesExternal"/>
+      <classRef name="java.awt.image.ImageObserver" type="usesExternal"/>
+      <classRef name="java.awt.Component" type="usesExternal"/>
+      <classRef name="java.io.InputStream" type="usesExternal"/>
+      <classRef name="java.io.Reader" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.tag.TagInfo" type="usesInternal"/>
+    </class>
+    <class name="javazoom.jlGui.playlist.ui.MP3Files$1" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="true" size="483" usedBy="1" usesInternal="1" usesExternal="2" layer="8" cycle="javazoom.jlGui.playlist.ui.MP3Files et al.">
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usedBy"/>
+      <classRef name="java.awt.event.MouseAdapter" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usesInternal"/>
+      <classRef name="java.awt.event.MouseEvent" type="usesExternal"/>
+    </class>
+    <class name="javazoom.jlGui.playlist.ui.MP3Files$2" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="true" size="695" usedBy="1" usesInternal="1" usesExternal="3" layer="8" cycle="javazoom.jlGui.playlist.ui.MP3Files et al.">
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usedBy"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java.lang.Thread" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="javazoom.jlGui.playlist.ui.MP3Files$AddThread" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="true" size="786" usedBy="1" usesInternal="1" usesExternal="3" layer="8" cycle="javazoom.jlGui.playlist.ui.MP3Files et al.">
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usedBy"/>
+      <classRef name="java.lang.Thread" type="usesExternal"/>
+      <classRef name="java.io.File" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="javazoom.jlGui.skin.SkinLoader" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="2427" usedBy="2" usesInternal="1" usesExternal="15" layer="1" cycle="">
+      <classRef name="javazoom.jlGui.Player" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usedBy"/>
+      <classRef name="java.util.Hashtable" type="usesExternal"/>
+      <classRef name="java.util.zip.ZipInputStream" type="usesExternal"/>
+      <classRef name="java.net.URL" type="usesExternal"/>
+      <classRef name="java.io.FileInputStream" type="usesExternal"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="javazoom.Util.BMPLoader" type="usesInternal"/>
+      <classRef name="java.io.ByteArrayOutputStream" type="usesExternal"/>
+      <classRef name="java.io.ByteArrayInputStream" type="usesExternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.awt.Image" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.io.InputStream" type="usesExternal"/>
+      <classRef name="java.lang.Class" type="usesExternal"/>
+      <classRef name="java.lang.ClassLoader" type="usesExternal"/>
+      <classRef name="java.util.zip.ZipEntry" type="usesExternal"/>
+    </class>
+    <class name="javazoom.jlGui.skin.UrlDialog" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="1767" usedBy="2" usesInternal="0" usesExternal="14" layer="0" cycle="">
+      <classRef name="javazoom.jlGui.Player" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usedBy"/>
+      <classRef name="java.awt.Frame" type="usesExternal"/>
+      <classRef name="java.awt.Label" type="usesExternal"/>
+      <classRef name="java.awt.TextField" type="usesExternal"/>
+      <classRef name="java.awt.Button" type="usesExternal"/>
+      <classRef name="java.awt.GridLayout" type="usesExternal"/>
+      <classRef name="java.awt.Panel" type="usesExternal"/>
+      <classRef name="java.awt.FlowLayout" type="usesExternal"/>
+      <classRef name="java.awt.Dialog" type="usesExternal"/>
+      <classRef name="java.awt.event.ActionListener" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.awt.event.ActionEvent" type="usesExternal"/>
+      <classRef name="java.awt.LayoutManager" type="usesExternal"/>
+      <classRef name="java.awt.Component" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+    </class>
+    <class name="javazoom.jlGui.skin.activeComponent" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="3137" usedBy="2" usesInternal="0" usesExternal="15" layer="0" cycle="">
+      <classRef name="javazoom.jlGui.Player" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usedBy"/>
+      <classRef name="java.awt.event.MouseEvent" type="usesExternal"/>
+      <classRef name="java.awt.event.ActionEvent" type="usesExternal"/>
+      <classRef name="java.awt.Canvas" type="usesExternal"/>
+      <classRef name="java.awt.Image" type="usesExternal"/>
+      <classRef name="java.awt.event.ActionListener" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.awt.PopupMenu" type="usesExternal"/>
+      <classRef name="java.awt.Graphics" type="usesExternal"/>
+      <classRef name="java.awt.Dimension" type="usesExternal"/>
+      <classRef name="java.awt.AWTEvent" type="usesExternal"/>
+      <classRef name="java.awt.Color" type="usesExternal"/>
+      <classRef name="java.awt.AWTEventMulticaster" type="usesExternal"/>
+      <classRef name="java.awt.image.ImageObserver" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.awt.Component" type="usesExternal"/>
+    </class>
+    <class name="javazoom.jlGui.skin.taftb" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="1979" usedBy="1" usesInternal="0" usesExternal="12" layer="0" cycle="">
+      <classRef name="javazoom.jlGui.Player" type="usedBy"/>
+      <classRef name="java.awt.image.PixelGrabber" type="usesExternal"/>
+      <classRef name="java.lang.InterruptedException" type="usesExternal"/>
+      <classRef name="java.awt.image.MemoryImageSource" type="usesExternal"/>
+      <classRef name="java.awt.image.CropImageFilter" type="usesExternal"/>
+      <classRef name="java.awt.image.FilteredImageSource" type="usesExternal"/>
+      <classRef name="java.awt.Panel" type="usesExternal"/>
+      <classRef name="java.awt.Image" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.Math" type="usesExternal"/>
+      <classRef name="java.awt.image.ImageObserver" type="usesExternal"/>
+      <classRef name="java.awt.image.ImageProducer" type="usesExternal"/>
+      <classRef name="java.awt.image.ImageFilter" type="usesExternal"/>
+    </class>
+    <class name="javazoom.jlGui.tag.MpegInfo" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="4236" usedBy="3" usesInternal="1" usesExternal="14" layer="1" cycle="">
+      <classRef name="javazoom.jlGui.playlist.PlaylistItem" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usedBy"/>
+      <classRef name="javazoom.jlGui.tag.ui.MpegDialog" type="usedBy"/>
+      <classRef name="java.io.File" type="usesExternal"/>
+      <classRef name="java.io.FileInputStream" type="usesExternal"/>
+      <classRef name="helliker.id3.MP3File" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="javazoom.jl.decoder.Bitstream" type="usesExternal"/>
+      <classRef name="javazoom.jl.decoder.JavaLayerException" type="usesExternal"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java.util.Vector" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.tag.TagInfo" type="usesInternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="helliker.id3.ID3Exception" type="usesExternal"/>
+      <classRef name="java.io.InputStream" type="usesExternal"/>
+      <classRef name="helliker.id3.ID3v2FormatException" type="usesExternal"/>
+      <classRef name="javazoom.jl.decoder.Header" type="usesExternal"/>
+    </class>
+    <class name="javazoom.jlGui.tag.OggVorbisInfo" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="4934" usedBy="3" usesInternal="1" usesExternal="16" layer="1" cycle="">
+      <classRef name="javazoom.jlGui.playlist.PlaylistItem" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usedBy"/>
+      <classRef name="javazoom.jlGui.tag.ui.OggVorbisDialog" type="usedBy"/>
+      <classRef name="java.io.File" type="usesExternal"/>
+      <classRef name="java.io.FileInputStream" type="usesExternal"/>
+      <classRef name="com.jcraft.jorbis.VorbisFile" type="usesExternal"/>
+      <classRef name="com.jcraft.jorbis.JOrbisException" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.util.Vector" type="usesExternal"/>
+      <classRef name="java.util.StringTokenizer" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.tag.TagInfo" type="usesInternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.io.InputStream" type="usesExternal"/>
+      <classRef name="java.util.Arrays" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.lang.Math" type="usesExternal"/>
+      <classRef name="com.jcraft.jorbis.Info" type="usesExternal"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="com.jcraft.jorbis.Comment" type="usesExternal"/>
+    </class>
+    <class name="javazoom.jlGui.tag.TagInfo" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="interface" innerClass="false" size="340" usedBy="4" usesInternal="0" usesExternal="3" layer="0" cycle="">
+      <classRef name="javazoom.jlGui.playlist.PlaylistItem" type="usedBy"/>
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usedBy"/>
+      <classRef name="javazoom.jlGui.tag.MpegInfo" type="usedBy"/>
+      <classRef name="javazoom.jlGui.tag.OggVorbisInfo" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.util.Vector" type="usesExternal"/>
+    </class>
+    <class name="javazoom.jlGui.tag.ui.MpegDialog" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="4405" usedBy="1" usesInternal="1" usesExternal="21" layer="2" cycle="">
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usedBy"/>
+      <classRef name="java.awt.Frame" type="usesExternal"/>
+      <classRef name="java.awt.Button" type="usesExternal"/>
+      <classRef name="java.awt.GridBagLayout" type="usesExternal"/>
+      <classRef name="java.awt.GridBagConstraints" type="usesExternal"/>
+      <classRef name="java.awt.Font" type="usesExternal"/>
+      <classRef name="java.awt.Label" type="usesExternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java.awt.Panel" type="usesExternal"/>
+      <classRef name="java.awt.GridLayout" type="usesExternal"/>
+      <classRef name="java.awt.TextArea" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.text.DecimalFormat" type="usesExternal"/>
+      <classRef name="java.awt.FlowLayout" type="usesExternal"/>
+      <classRef name="java.awt.Dialog" type="usesExternal"/>
+      <classRef name="java.awt.event.ActionListener" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.tag.MpegInfo" type="usesInternal"/>
+      <classRef name="java.awt.event.ActionEvent" type="usesExternal"/>
+      <classRef name="java.util.Vector" type="usesExternal"/>
+      <classRef name="java.lang.Math" type="usesExternal"/>
+      <classRef name="java.awt.LayoutManager" type="usesExternal"/>
+      <classRef name="java.awt.Component" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+    </class>
+    <class name="javazoom.jlGui.tag.ui.OggVorbisDialog" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar" type="class" innerClass="false" size="4770" usedBy="1" usesInternal="1" usesExternal="22" layer="2" cycle="">
+      <classRef name="javazoom.jlGui.playlist.ui.MP3Files" type="usedBy"/>
+      <classRef name="java.awt.Frame" type="usesExternal"/>
+      <classRef name="java.awt.Button" type="usesExternal"/>
+      <classRef name="java.awt.GridBagLayout" type="usesExternal"/>
+      <classRef name="java.awt.GridBagConstraints" type="usesExternal"/>
+      <classRef name="java.awt.Font" type="usesExternal"/>
+      <classRef name="java.awt.Label" type="usesExternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java.awt.Panel" type="usesExternal"/>
+      <classRef name="java.awt.GridLayout" type="usesExternal"/>
+      <classRef name="java.awt.TextArea" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.text.DecimalFormat" type="usesExternal"/>
+      <classRef name="java.awt.FlowLayout" type="usesExternal"/>
+      <classRef name="javazoom.jlGui.tag.OggVorbisInfo" type="usesInternal"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java.awt.Dialog" type="usesExternal"/>
+      <classRef name="java.awt.event.ActionListener" type="usesExternal"/>
+      <classRef name="java.awt.event.ActionEvent" type="usesExternal"/>
+      <classRef name="java.util.Vector" type="usesExternal"/>
+      <classRef name="java.lang.Math" type="usesExternal"/>
+      <classRef name="java.awt.LayoutManager" type="usesExternal"/>
+      <classRef name="java.awt.Component" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+    </class>
+  </classes>
+  <packageCycles>
+    <packageCycle name="javazoom.jlGui et al." size="2" longestWalk="3" girth="1" radius="1" diameter="1" bestFragmentSize="1">
+      <packages>
+        <packageRef name="javazoom.jlGui" eccentricity="1" maximumFragmentSize="1"/>
+        <packageRef name="javazoom.jlGui.playlist.ui" eccentricity="1" maximumFragmentSize="1"/>
+      </packages>
+      <centerPackages>
+        <packageRef name="javazoom.jlGui"/>
+        <packageRef name="javazoom.jlGui.playlist.ui"/>
+      </centerPackages>
+      <bestFragmenters>
+        <packageRef name="javazoom.jlGui"/>
+        <packageRef name="javazoom.jlGui.playlist.ui"/>
+      </bestFragmenters>
+    </packageCycle>
+  </packageCycles>
+  <packages>
+    <package name="javazoom.Util" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar"  size="6" usedBy="5" usesInternal="2" usesExternal="5" layer="1" cycle="">
+      <packageRef name="javazoom.Util" type="usedBy"/>
+      <packageRef name="javazoom.jlGui" type="usedBy"/>
+      <packageRef name="javazoom.jlGui.playlist" type="usedBy"/>
+      <packageRef name="javazoom.jlGui.playlist.ui" type="usedBy"/>
+      <packageRef name="javazoom.jlGui.skin" type="usedBy"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="java.awt.image" type="usesExternal"/>
+      <packageRef name="java.io" type="usesExternal"/>
+      <packageRef name="java.awt" type="usesExternal"/>
+      <packageRef name="javazoom.Util.ini" type="usesInternal"/>
+      <packageRef name="java.util" type="usesExternal"/>
+      <packageRef name="javazoom.Util" type="usesInternal"/>
+    </package>
+    <package name="javazoom.Util.ini" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar"  size="5" usedBy="2" usesInternal="1" usesExternal="5" layer="0" cycle="">
+      <packageRef name="javazoom.Util" type="usedBy"/>
+      <packageRef name="javazoom.Util.ini" type="usedBy"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="java.io" type="usesExternal"/>
+      <packageRef name="java.util.zip" type="usesExternal"/>
+      <packageRef name="java.util" type="usesExternal"/>
+      <packageRef name="java.net" type="usesExternal"/>
+      <packageRef name="javazoom.Util.ini" type="usesInternal"/>
+    </package>
+    <package name="javazoom.jlGui" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar"  size="3" usedBy="2" usesInternal="5" usesExternal="11" layer="3" cycle="javazoom.jlGui et al.">
+      <packageRef name="javazoom.jlGui" type="usedBy"/>
+      <packageRef name="javazoom.jlGui.playlist.ui" type="usedBy"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="java.net" type="usesExternal"/>
+      <packageRef name="java.io" type="usesExternal"/>
+      <packageRef name="javax.sound.sampled" type="usesExternal"/>
+      <packageRef name="java.util" type="usesExternal"/>
+      <packageRef name="javazoom.jlGui" type="usesInternal"/>
+      <packageRef name="javazoom.Util" type="usesInternal"/>
+      <packageRef name="java.awt" type="usesExternal"/>
+      <packageRef name="javax.swing" type="usesExternal"/>
+      <packageRef name="java.awt.dnd" type="usesExternal"/>
+      <packageRef name="javazoom.jlGui.playlist" type="usesInternal"/>
+      <packageRef name="javazoom.jlGui.skin" type="usesInternal"/>
+      <packageRef name="javazoom.jlGui.playlist.ui" type="usesInternal"/>
+      <packageRef name="java.awt.datatransfer" type="usesExternal"/>
+      <packageRef name="java.awt.event" type="usesExternal"/>
+      <packageRef name="java.awt.image" type="usesExternal"/>
+    </package>
+    <package name="javazoom.jlGui.playlist" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar"  size="4" usedBy="3" usesInternal="3" usesExternal="8" layer="2" cycle="">
+      <packageRef name="javazoom.jlGui" type="usedBy"/>
+      <packageRef name="javazoom.jlGui.playlist" type="usedBy"/>
+      <packageRef name="javazoom.jlGui.playlist.ui" type="usedBy"/>
+      <packageRef name="java.util" type="usesExternal"/>
+      <packageRef name="java.io" type="usesExternal"/>
+      <packageRef name="java.net" type="usesExternal"/>
+      <packageRef name="javazoom.jlGui.playlist" type="usesInternal"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="javazoom.Util" type="usesInternal"/>
+      <packageRef name="java.lang.reflect" type="usesExternal"/>
+      <packageRef name="javazoom.jlGui.tag" type="usesInternal"/>
+      <packageRef name="helliker.id3" type="usesExternal"/>
+      <packageRef name="javazoom.jl.decoder" type="usesExternal"/>
+      <packageRef name="com.jcraft.jorbis" type="usesExternal"/>
+    </package>
+    <package name="javazoom.jlGui.playlist.ui" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar"  size="4" usedBy="2" usesInternal="7" usesExternal="6" layer="3" cycle="javazoom.jlGui et al.">
+      <packageRef name="javazoom.jlGui" type="usedBy"/>
+      <packageRef name="javazoom.jlGui.playlist.ui" type="usedBy"/>
+      <packageRef name="java.awt" type="usesExternal"/>
+      <packageRef name="javazoom.jlGui.playlist.ui" type="usesInternal"/>
+      <packageRef name="javazoom.jlGui.skin" type="usesInternal"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="java.io" type="usesExternal"/>
+      <packageRef name="javazoom.jlGui.playlist" type="usesInternal"/>
+      <packageRef name="javazoom.jlGui.tag" type="usesInternal"/>
+      <packageRef name="javazoom.jlGui.tag.ui" type="usesInternal"/>
+      <packageRef name="java.util" type="usesExternal"/>
+      <packageRef name="java.awt.event" type="usesExternal"/>
+      <packageRef name="javazoom.Util" type="usesInternal"/>
+      <packageRef name="javazoom.jlGui" type="usesInternal"/>
+      <packageRef name="java.awt.image" type="usesExternal"/>
+    </package>
+    <package name="javazoom.jlGui.skin" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar"  size="4" usedBy="2" usesInternal="1" usesExternal="8" layer="2" cycle="">
+      <packageRef name="javazoom.jlGui" type="usedBy"/>
+      <packageRef name="javazoom.jlGui.playlist.ui" type="usedBy"/>
+      <packageRef name="java.util" type="usesExternal"/>
+      <packageRef name="java.util.zip" type="usesExternal"/>
+      <packageRef name="java.net" type="usesExternal"/>
+      <packageRef name="java.io" type="usesExternal"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="javazoom.Util" type="usesInternal"/>
+      <packageRef name="java.awt" type="usesExternal"/>
+      <packageRef name="java.awt.event" type="usesExternal"/>
+      <packageRef name="java.awt.image" type="usesExternal"/>
+    </package>
+    <package name="javazoom.jlGui.tag" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar"  size="3" usedBy="4" usesInternal="1" usesExternal="6" layer="0" cycle="">
+      <packageRef name="javazoom.jlGui.playlist" type="usedBy"/>
+      <packageRef name="javazoom.jlGui.playlist.ui" type="usedBy"/>
+      <packageRef name="javazoom.jlGui.tag" type="usedBy"/>
+      <packageRef name="javazoom.jlGui.tag.ui" type="usedBy"/>
+      <packageRef name="java.io" type="usesExternal"/>
+      <packageRef name="helliker.id3" type="usesExternal"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="javazoom.jl.decoder" type="usesExternal"/>
+      <packageRef name="java.util" type="usesExternal"/>
+      <packageRef name="javazoom.jlGui.tag" type="usesInternal"/>
+      <packageRef name="com.jcraft.jorbis" type="usesExternal"/>
+    </package>
+    <package name="javazoom.jlGui.tag.ui" sources="C:\Dropbox\GraduationWork\ResearchResults\jlgui\jlgui2.2\E_\jlGui2.2\jlGui2.2.jar"  size="2" usedBy="1" usesInternal="1" usesExternal="5" layer="1" cycle="">
+      <packageRef name="javazoom.jlGui.playlist.ui" type="usedBy"/>
+      <packageRef name="java.awt" type="usesExternal"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="java.text" type="usesExternal"/>
+      <packageRef name="java.awt.event" type="usesExternal"/>
+      <packageRef name="javazoom.jlGui.tag" type="usesInternal"/>
+      <packageRef name="java.util" type="usesExternal"/>
+    </package>
+  </packages>
+</classycle>

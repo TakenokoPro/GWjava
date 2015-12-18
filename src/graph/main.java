@@ -5,7 +5,7 @@ public class main {
 
 	public static void main(String[] args) {
 		// TODO: 単体テスト（スプリングアルゴリズム）
-		String XmlPath = "cl_gwSamplejava2.xml";
+		String XmlPath = "cl_jlgui2.2.xml";
 		SpringAnim springAnim =new SpringAnim(XmlPath);
 		springAnim.addMouseListener(springAnim);
 		springAnim.addMouseMotionListener(springAnim);

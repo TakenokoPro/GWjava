@@ -146,6 +146,7 @@ public class Search_sourse {
 					if(split_class(str)!=null){
 						split_str = split_class(str);
 						for(int i=0;i<split_str.size();i++)System.out.print("||"+split_str.get(i));
+						System.out.print("\n");
 						OutputFunction(split_str,count++);
 					}
 				}
@@ -300,6 +301,7 @@ public class Search_sourse {
 		String ClassKind = "";
 		String ClassName = "";
 		String Stringkind = "";
+		System.out.println(str.size()+","+i+","+num+"::"+class_infos.size());
 		
 		if(str.get(i).equals("static")){
 			Modifier += ","+str.get(i);
@@ -333,21 +335,23 @@ public class Search_sourse {
 			class_infos.add(new class_info(ClassName,ClassKind,path,readline));
 			path="";
 		}
+		else {
+			class_infos.add(new class_info("","","",readline));
+		}
 		
 		//クラスの代入
 		while(i<str.size()){
-			if(str.get(i).equals("extends"))
+			if(str.get(i).equals("extends")){
 				Stringkind = "extends";
-			else if(str.get(i).equals("implements"))
+			} else if(str.get(i).equals("implements")){
 				Stringkind = "implements";
-			else{
+			} else{
 				if(Stringkind.equals("extends"))
 					(class_infos.get(num)).extendString.add(str_decode(str.get(i)));
 				else if(Stringkind.equals("implements"))
 					(class_infos.get(num)).interfaceString.add(str_decode(str.get(i)));
-				
 			}
-			i++;	
+			i++;
 		}
 		return;
 	}
@@ -436,12 +440,12 @@ public class Search_sourse {
 		} catch (IOException e) {e.printStackTrace();}
 	}
 	static void String_Clear(){
-		try {
+		/*try {
 			FileWriter fw = new FileWriter(out_path, false);
 			PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
 			pw.println("");
 			pw.close();
-		} catch (IOException e) {e.printStackTrace();}
+		} catch (IOException e) {e.printStackTrace();}*/
 	}
 	
 	//該当する行のクラスを返す

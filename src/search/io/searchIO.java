@@ -33,15 +33,16 @@ public class searchIO {
 	}
 	
 	public int[][] usednternalCounter(int[] connect){
-		int max = 0;
+		System.out.println("usedInternalCounter");
+		int max = connect.length+1;
 		for(int i=0;i<connect.length;i++){
-			if(connect[i]>max)max=connect[i];
+			if(connect[i]>max)max =connect[i];
+			System.out.print(connect[i]+",");
 		}
+		System.out.println("\nmax======"+max);
 		if(connect.length>max)max=connect.length;
-		int[][] returnnum = new int[max][max];
-		for(int i=0;i<class_infos.size();i++)
-			for(int j=0;j<class_infos.size();j++)returnnum[i][j]=0;
-		
+		int[][] returnnum = new int[max+1][max+1];
+		for(int i=0;i<max+1;i++)for(int j=0;j<max+1;j++)returnnum[i][j]=-1;
 		for(int i=0;i<class_infos.size();i++){
 			/*************************/
 			ArrayList<method_type> temp_s = class_infos.get(i).callmethod_get();

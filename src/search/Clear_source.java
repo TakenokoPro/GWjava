@@ -77,7 +77,7 @@ public class Clear_source {
 			BufferedReader br = new BufferedReader(new FileReader(javaFile));
 			String str = br.readLine();
 			while(str != null){
-				//System.out.println("\n\n="+str+"=");
+				System.out.println("="+str+"=");
 				//str += str_encode(temp_str+str);
 				String[] str_split = str.split( (""
 						+ "(?<=;)|(?<=\\{)|(?<=\\})"
@@ -91,7 +91,7 @@ public class Clear_source {
 					str_split[i] = str_split[i].replaceAll("\t","");
 					if(str_split[i].equals("\\s*"))break;
 					if(str_split[i].equals(""))break;
-					if(str_split[i].matches("//")){
+					if(str_split[i].matches("//") || str_split[i].matches("@")){
 						comment_flag = true;
 						break;
 					}

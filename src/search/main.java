@@ -1,13 +1,12 @@
 package search;
 
-import java.util.ArrayList;
-
 import main.ShowFocus;
 
 
 public class main {
 	public static void main(String[] args) {
-		//Clear_source clear_source = new Clear_source();
+		String string = "C:\\Dropbox\\GraduationWork\\ResearchResults\\jackcess\\1.2.10";
+		Clear_source clear_source = new Clear_source(string);
 		Search_sourse search_sourse = new Search_sourse();
 		//ReadFolder readFolder = new ReadFolder();
 		

@@ -229,8 +229,9 @@ public class Inport_file extends Frame implements GlobalValue{
 		    }
 		    //classgroupに存在していなければ追加
 		    if(!group_flag){
-		         classgroup.add(temp);
-		         classgroup_number.add(classgroup.size()-1);
+		    	System.out.println(temp);
+		        classgroup.add(temp);
+		        classgroup_number.add(classgroup.size()-1);
 		    }
 		}
 		
@@ -238,7 +239,7 @@ public class Inport_file extends Frame implements GlobalValue{
 		for(int i=0;i<classgroup.size();i++){
 		    int stl_len = 0;
 		    String str1 = classgroup.get(i).replaceAll("\\.","Dooooooooott");
-		    classgroup_internal.add(0);
+		    classgroup_internal.add(-1);
 		    for(int j=0;j<classgroup.size();j++){
 		        String str2 = classgroup.get(j).replaceAll("\\.","Dooooooooott");
 		        str2 += "Dooooooooott";
@@ -247,30 +248,29 @@ public class Inport_file extends Frame implements GlobalValue{
 		                classgroup_internal.set(i,j);
 		                stl_len = classgroup.get(j).length();
 		            }
-		        }
+		        }     
 		    }
 		}
 		
-		//一番多く上の階層になっているものを探す。
-		int max_pac = 0; //一番上の階層
-		/*
-		$count_num = array();
-		for($i =0;$i < count($classgroup_internal);$i++){
-		    $count_num[$classgroup_internal[$i]]++;
+		int temp_nnn = 0;
+		int temp_paaac = 0;
+		for(int i=0;i<classgroup_internal.size();i++){
+			System.out.println(classgroup_internal.get(i)+"---------");
+			if(classgroup_internal.get(i)==(-1)){
+				temp_nnn++;
+				temp_paaac = i;
+			}
 		}
-		$max_pac = 0; //一番上の階層
-		for($i =0;$i < count($count_num);$i++){
-		    if($count_num[$max_pac]<$count_num[$i]){
-		        //$max_pac = i;
-		    }
-		}*/
-		
+		if(temp_nnn>1)temp_paaac=-1;
+		System.out.println("----------"+temp_paaac+"---------");
+				
 		//パッケージのカラーパレットを計算しておく
 		int color_num = 0;
 		int package_num = 0;
 		/**------------------------------------------------*/
 		for(int i=0;i<classgroup_internal.size();i++){
-		    if(classgroup_internal.get(i)== max_pac){
+		    if(classgroup_internal.get(i) == temp_paaac
+		    		|| classgroup_internal.get(i) == -1){
 		        classgroup_color1.add(color_num);
 		        classgroup_color2.add(0);
 		        color_num++;
@@ -282,16 +282,17 @@ public class Inport_file extends Frame implements GlobalValue{
 		    	classgroup_color1.add(0);
 		        classgroup_color2.add(0);
 		        parent_package.add(0);
-		    }
+		   }
 		}
-		
 		for(int i=0;i<classgroup_internal.size();i++){
-		    if(classgroup_internal.get(i)!=max_pac){
-		        classgroup_color1.add(i,classgroup_color1.get(classgroup_internal.get(i)));
-		        classgroup_color2.add(i,classgroup_color2.get(classgroup_internal.get(i))+1);
+		    if(!(classgroup_internal.get(i) == temp_paaac
+		    		|| classgroup_internal.get(i) == -1)){
+		        classgroup_color1.set(i,classgroup_color1.get(classgroup_internal.get(i)));
+		        classgroup_color2.set(i,classgroup_color2.get(classgroup_internal.get(i))+1);
 		        parent_package.set(i,parent_package.get(classgroup_internal.get(i)));
 		    }
 		}
+		for(int i=0;i<parent_package.size();i++)System.out.println(parent_package.get(i));
 	}
 	
 	/**スプリングアルゴリズム=============================*/
@@ -301,6 +302,7 @@ public class Inport_file extends Frame implements GlobalValue{
 		//ノードの定義
 		for(int i=0;i<node_Name.size();i++){
 			int temp_color = colorPalettes[classgroup_color1.get(classgroup_number.get(i))][classgroup_color2.get(classgroup_number.get(i))];
+			
 			if(i==max_class){
 				nodes.add(new ClassNode(i,centerX,centerY,classgroup_number.get(i),temp_color));
 			}else{
