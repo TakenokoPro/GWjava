@@ -17,11 +17,11 @@ public class main {
 	
 	public static void main(String[] arg) {
 		
-		String aaaa = "SampleClass\\src";
-		String SourcePath = "C:\\pleiades\\workspace\\"+aaaa;
+		String aaaa = "Z:\\Dropbox\\Dropbox\\GraduationWork\\GWsampleProject\\src";
+		String SourcePath = /*"C:\\pleiades\\workspace\\"+*/aaaa;
 		//String SourcePath = "C:\\Dropbox\\GraduationWork\\ResearchResults\\jlgui\\jlgui2.2\\E_\\jlGui2.2\\src\\javazoom";
 		//String SourcePath = "C:\\Dropbox\\GraduationWork\\ResearchResults\\jackcess\\1.2.10";
-		String XmlPath = "cl_junit3.5.xml";
+		String XmlPath = "cl_gwSamplejava.xml";
 		/**=============================*/	
 		// TODO: メイン実行
 		sIo = new searchIO(SourcePath);
@@ -72,9 +72,9 @@ public class main {
 		//for(int i=0;i<connect.length;i++)System.out.println("connect["+i+"]="+connect[i]);
 		
 		//ノードの太さを変える
-		/*int con[][] = sIo.usednternalCounter(connect);
+		int con[][] = sIo.usednternalCounter(connect);
 		gIo.get_springanim().get_inport_file().get_graphCanvas().set_connect(con);		
-		showFocus.show(sIo.get_classinfo());*/
+		showFocus.show(sIo.get_classinfo());
 		
 		while(true){
 			gIo.springAnim.repaint();

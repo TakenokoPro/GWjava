@@ -42,39 +42,33 @@ public class searchIO {
 		System.out.println("\nmax======"+max);
 		if(connect.length>max)max=connect.length;
 		int[][] returnnum = new int[max+1][max+1];
-		for(int i=0;i<max+1;i++)for(int j=0;j<max+1;j++)returnnum[i][j]=-1;
+		for(int i=0;i<max+1;i++)for(int j=0;j<max+1;j++)returnnum[i][j]=0;
 		for(int i=0;i<class_infos.size();i++){
 			/*************************/
 			ArrayList<method_type> temp_s = class_infos.get(i).callmethod_get();
 			for(int j=0;j<temp_s.size();j++){
 				int num= getNameForMethod(temp_s.get(j).identifier_get());
+				
 				if(num == -1
 					//	||get_connect(connect,num)==-1
 					//	||get_connect(connect,i)==-1
 				)continue;
-				//if(i!=num)System.out.print(get_connect(connect,num)+",");
-				//returnnum[connect[i]][connect[num]]++;
-				//returnnum[connect[num]][connect[i]]++;
-				//returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
-				//returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
-				returnnum[i][num]++;
-				returnnum[num][i]++;
+				//System.out.print("method["+get_connect(connect,i)+"]"+class_infos.get(i).name_get()+"|||||"+temp_s.get(j).identifier_get());
+				//System.out.println("["+get_connect(connect,num)+"]");
+				returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
+				returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
 			}
 			/*************************/
 			ArrayList<new_class> temp_c = class_infos.get(i).new_class_get();
 			for(int j=0;j<temp_c.size();j++){
 				int num = getNameForNew(temp_c.get(j).name_get());
+				
 				if(num == -1
 						//||get_connect(connect,num)==-1
 						//||get_connect(connect,i)==-1
 				)continue;
-				//returnnum[connect[i]][connect[num]]++;
-				//returnnum[connect[num]][connect[i]]++;
-				//if(i!=num)System.out.print(num+",");
-				//returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
-				//returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
-				returnnum[i][num]++;
-				returnnum[num][i]++;
+				returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
+				returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
 			}
 			/*************************/
 			ArrayList<object_type> temp_o = class_infos.get(i).object_get();
@@ -84,13 +78,10 @@ public class searchIO {
 						//||get_connect(connect,num)==-1
 						//||get_connect(connect,i)==-1
 				)continue;
-				//returnnum[connect[i]][connect[num]]++;
-				//returnnum[connect[num]][connect[i]]++;
-				//if(i!=num)System.out.print(num+",");
-				//returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
-				//returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
-				returnnum[i][num]++;
-				returnnum[num][i]++;
+				System.out.print("newclass["+i+"]"+class_infos.get(i).name_get()+"|||||"+temp_o.get(j).identifier_get());
+				System.out.println("["+num+"]");
+				returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
+				returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
 			}
 		}
 		return returnnum;

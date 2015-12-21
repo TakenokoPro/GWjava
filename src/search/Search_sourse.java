@@ -220,14 +220,14 @@ public class Search_sourse {
 			
 			while(str != null){
 				str = str_encode(str);
-
-				if(str.matches(".*[A-Za-z_][0-9A-Za-z_<>\\[\\]]*\\s+[A-Za-z_][0-9A-Za-z_\\[\\],]*\\s*(=|;).*")){
+				if(str.matches(".*[A-Za-z_][0-9A-Za-z_<>\\[\\]]*\\s+[A-Za-z_][0-9A-Za-z_\\[\\],]*\\s*(=|;).*"
+						+ "")){
 					split_str = split_token(str);
-					for(int i=2;i<split_str.size();i++)
+					for(int i=2;i<split_str.size()+1;i++)
 						if(split_str.get(i-2).matches("[A-Za-z_][0-9A-Za-z_<>\\[\\]]*")
 							&& split_str.get(i-1).matches("[A-Za-z_][0-9A-Za-z_<>\\[\\],]*")
-							&& split_str.get(i).matches("(=|;)")){
-							
+							&& split_str.get(i).matches("(=|;)")
+							){
 							boolean reserved_word_flag = false;
 							for(int ide=0;ide<reserved_word.size();ide++)
 								if(split_str.get(i-2).matches(reserved_word.get(ide))){
