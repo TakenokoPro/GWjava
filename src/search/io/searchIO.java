@@ -55,10 +55,10 @@ public class searchIO {
 				//if(i!=num)System.out.print(get_connect(connect,num)+",");
 				//returnnum[connect[i]][connect[num]]++;
 				//returnnum[connect[num]][connect[i]]++;
-				//returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
-				//returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
-				returnnum[i][num]++;
-				returnnum[num][i]++;
+				returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
+				returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
+				//returnnum[i][num]++;
+				//returnnum[num][i]++;
 			}
 			/*************************/
 			ArrayList<new_class> temp_c = class_infos.get(i).new_class_get();
@@ -71,10 +71,10 @@ public class searchIO {
 				//returnnum[connect[i]][connect[num]]++;
 				//returnnum[connect[num]][connect[i]]++;
 				//if(i!=num)System.out.print(num+",");
-				//returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
-				//returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
-				returnnum[i][num]++;
-				returnnum[num][i]++;
+				returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
+				returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
+				//returnnum[i][num]++;
+				//returnnum[num][i]++;
 			}
 			/*************************/
 			ArrayList<object_type> temp_o = class_infos.get(i).object_get();
@@ -87,10 +87,10 @@ public class searchIO {
 				//returnnum[connect[i]][connect[num]]++;
 				//returnnum[connect[num]][connect[i]]++;
 				//if(i!=num)System.out.print(num+",");
-				//returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
-				//returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
-				returnnum[i][num]++;
-				returnnum[num][i]++;
+				returnnum[get_connect(connect,num)][get_connect(connect,i)]++;
+				returnnum[get_connect(connect,i)][get_connect(connect,num)]++;
+				//returnnum[i][num]++;
+				//returnnum[num][i]++;
 			}
 		}
 		return returnnum;

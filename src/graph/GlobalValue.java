@@ -20,13 +20,13 @@ public interface GlobalValue {
 	/**スプリングアルゴリズムのパラメータ  */
 	//TODO: バネ定数(BOUNCE < 0.1[推奨]) 0.05
 	double BOUNCE = 0.05;
-	// BOUNCE = 0.1;
+	//double BOUNCE = 0.1;
 	
 	//TODO: 減衰定数(ATTENUATION < 1[必須])
 	double ATTENUATION = 0.8;
 	
 	//TODO: クーロン数 50
 	double COULOMB = 50;
-	//double COULOMB = 20;
+	//double COULOMB = 10;
 
 }

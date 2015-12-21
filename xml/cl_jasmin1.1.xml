@@ -1,0 +1,1147 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet type='text/xsl' href='reportXMLtoHTML.xsl'?>
+<classycle title='C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1' date='2015-08-17'>
+  <cycles>
+    <cycle name="jas.CodeAttr et al." size="27" longestWalk="1" girth="2" radius="3" diameter="4" bestFragmentSize="11">
+      <classes>
+        <classRef name="jas.AsciiCP" eccentricity="4" maximumFragmentSize="26"/>
+        <classRef name="jas.CP" eccentricity="4" maximumFragmentSize="26"/>
+        <classRef name="jas.ClassEnv" eccentricity="3" maximumFragmentSize="16"/>
+        <classRef name="jas.LongCP" eccentricity="4" maximumFragmentSize="26"/>
+        <classRef name="jas.DoubleCP" eccentricity="4" maximumFragmentSize="26"/>
+        <classRef name="jas.Var" eccentricity="4" maximumFragmentSize="25"/>
+        <classRef name="jas.ConstAttr" eccentricity="4" maximumFragmentSize="26"/>
+        <classRef name="jas.Method" eccentricity="3" maximumFragmentSize="26"/>
+        <classRef name="jas.CodeAttr" eccentricity="3" maximumFragmentSize="11"/>
+        <classRef name="jas.Insn" eccentricity="3" maximumFragmentSize="19"/>
+        <classRef name="jas.ByteOperand" eccentricity="3" maximumFragmentSize="26"/>
+        <classRef name="jas.InsnOperand" eccentricity="3" maximumFragmentSize="26"/>
+        <classRef name="jas.ShortOperand" eccentricity="3" maximumFragmentSize="26"/>
+        <classRef name="jas.UnsignedByteOperand" eccentricity="3" maximumFragmentSize="26"/>
+        <classRef name="jas.UnsignedByteWideOperand" eccentricity="3" maximumFragmentSize="26"/>
+        <classRef name="jas.LabelOperand" eccentricity="3" maximumFragmentSize="26"/>
+        <classRef name="jas.Label" eccentricity="3" maximumFragmentSize="26"/>
+        <classRef name="jas.CPOperand" eccentricity="3" maximumFragmentSize="26"/>
+        <classRef name="jas.LdcOperand" eccentricity="3" maximumFragmentSize="26"/>
+        <classRef name="jas.GenericAttr" eccentricity="4" maximumFragmentSize="26"/>
+        <classRef name="jas.Catchtable" eccentricity="3" maximumFragmentSize="25"/>
+        <classRef name="jas.CatchEntry" eccentricity="3" maximumFragmentSize="26"/>
+        <classRef name="jas.LineTableAttr" eccentricity="3" maximumFragmentSize="26"/>
+        <classRef name="jas.LocalVarTableAttr" eccentricity="3" maximumFragmentSize="25"/>
+        <classRef name="jas.LocalVarEntry" eccentricity="3" maximumFragmentSize="26"/>
+        <classRef name="jas.ExceptAttr" eccentricity="4" maximumFragmentSize="26"/>
+        <classRef name="jas.SourceAttr" eccentricity="4" maximumFragmentSize="26"/>
+      </classes>
+      <centerClasses>
+        <classRef name="jas.ClassEnv"/>
+        <classRef name="jas.Method"/>
+        <classRef name="jas.CodeAttr"/>
+        <classRef name="jas.Insn"/>
+        <classRef name="jas.ByteOperand"/>
+        <classRef name="jas.InsnOperand"/>
+        <classRef name="jas.ShortOperand"/>
+        <classRef name="jas.UnsignedByteOperand"/>
+        <classRef name="jas.UnsignedByteWideOperand"/>
+        <classRef name="jas.LabelOperand"/>
+        <classRef name="jas.Label"/>
+        <classRef name="jas.CPOperand"/>
+        <classRef name="jas.LdcOperand"/>
+        <classRef name="jas.Catchtable"/>
+        <classRef name="jas.CatchEntry"/>
+        <classRef name="jas.LineTableAttr"/>
+        <classRef name="jas.LocalVarTableAttr"/>
+        <classRef name="jas.LocalVarEntry"/>
+      </centerClasses>
+      <bestFragmenters>
+        <classRef name="jas.CodeAttr"/>
+      </bestFragmenters>
+    </cycle>
+    <cycle name="jasmin.ClassFile et al." size="3" longestWalk="4" girth="2" radius="1" diameter="2" bestFragmentSize="1">
+      <classes>
+        <classRef name="jasmin.CUP$actions" eccentricity="2" maximumFragmentSize="2"/>
+        <classRef name="jasmin.ClassFile" eccentricity="2" maximumFragmentSize="1"/>
+        <classRef name="jasmin.parser" eccentricity="1" maximumFragmentSize="1"/>
+      </classes>
+      <centerClasses>
+        <classRef name="jasmin.parser"/>
+      </centerClasses>
+      <bestFragmenters>
+        <classRef name="jasmin.ClassFile"/>
+        <classRef name="jasmin.parser"/>
+      </bestFragmenters>
+    </cycle>
+  </cycles>
+  <classes numberOfExternalClasses="29">
+    <class name="jas.AsciiCP" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1067" usedBy="13" usesInternal="3" usesExternal="4" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.ClassCP" type="usedBy"/>
+      <classRef name="jas.ClassEnv" type="usedBy"/>
+      <classRef name="jas.CodeAttr" type="usedBy"/>
+      <classRef name="jas.ConstAttr" type="usedBy"/>
+      <classRef name="jas.ExceptAttr" type="usedBy"/>
+      <classRef name="jas.GenericAttr" type="usedBy"/>
+      <classRef name="jas.LineTableAttr" type="usedBy"/>
+      <classRef name="jas.LocalVarEntry" type="usedBy"/>
+      <classRef name="jas.LocalVarTableAttr" type="usedBy"/>
+      <classRef name="jas.NameTypeCP" type="usedBy"/>
+      <classRef name="jas.SourceAttr" type="usedBy"/>
+      <classRef name="jas.StringCP" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+    </class>
+    <class name="jas.ByteOperand" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="884" usedBy="1" usesInternal="3" usesExternal="2" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.Insn" type="usedBy"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+    </class>
+    <class name="jas.CP" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="abstract class" innerClass="false" size="547" usedBy="32" usesInternal="2" usesExternal="4" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.AsciiCP" type="usedBy"/>
+      <classRef name="jas.CPOperand" type="usedBy"/>
+      <classRef name="jas.CatchEntry" type="usedBy"/>
+      <classRef name="jas.Catchtable" type="usedBy"/>
+      <classRef name="jas.ClassCP" type="usedBy"/>
+      <classRef name="jas.ClassEnv" type="usedBy"/>
+      <classRef name="jas.CodeAttr" type="usedBy"/>
+      <classRef name="jas.ConstAttr" type="usedBy"/>
+      <classRef name="jas.DoubleCP" type="usedBy"/>
+      <classRef name="jas.ExceptAttr" type="usedBy"/>
+      <classRef name="jas.FieldCP" type="usedBy"/>
+      <classRef name="jas.FloatCP" type="usedBy"/>
+      <classRef name="jas.GenericAttr" type="usedBy"/>
+      <classRef name="jas.Insn" type="usedBy"/>
+      <classRef name="jas.IntegerCP" type="usedBy"/>
+      <classRef name="jas.InterfaceCP" type="usedBy"/>
+      <classRef name="jas.InvokeinterfaceInsn" type="usedBy"/>
+      <classRef name="jas.InvokeinterfaceOperand" type="usedBy"/>
+      <classRef name="jas.LdcOperand" type="usedBy"/>
+      <classRef name="jas.LineTableAttr" type="usedBy"/>
+      <classRef name="jas.LocalVarEntry" type="usedBy"/>
+      <classRef name="jas.LocalVarTableAttr" type="usedBy"/>
+      <classRef name="jas.LongCP" type="usedBy"/>
+      <classRef name="jas.Method" type="usedBy"/>
+      <classRef name="jas.MethodCP" type="usedBy"/>
+      <classRef name="jas.MultiarrayInsn" type="usedBy"/>
+      <classRef name="jas.MultiarrayOperand" type="usedBy"/>
+      <classRef name="jas.NameTypeCP" type="usedBy"/>
+      <classRef name="jas.SourceAttr" type="usedBy"/>
+      <classRef name="jas.StringCP" type="usedBy"/>
+      <classRef name="jas.Var" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+    </class>
+    <class name="jas.CPOperand" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1554" usedBy="1" usesInternal="5" usesExternal="5" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.Insn" type="usedBy"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+    </class>
+    <class name="jas.CatchEntry" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1303" usedBy="1" usesInternal="6" usesExternal="3" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.Catchtable" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="jas.Label" type="usesInternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="jas.Insn" type="usesInternal"/>
+    </class>
+    <class name="jas.Catchtable" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1699" usedBy="2" usesInternal="6" usesExternal="5" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.CodeAttr" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.util.Vector" type="usesExternal"/>
+      <classRef name="jas.CatchEntry" type="usesInternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="jas.Label" type="usesInternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.util.Enumeration" type="usesExternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+    </class>
+    <class name="jas.ClassCP" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1224" usedBy="4" usesInternal="5" usesExternal="4" layer="2" cycle="">
+      <classRef name="jas.FieldCP" type="usedBy"/>
+      <classRef name="jas.InterfaceCP" type="usedBy"/>
+      <classRef name="jas.MethodCP" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="jas.AsciiCP" type="usesInternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+    </class>
+    <class name="jas.ClassEnv" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="5091" usedBy="41" usesInternal="12" usesExternal="9" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.AsciiCP" type="usedBy"/>
+      <classRef name="jas.ByteOperand" type="usedBy"/>
+      <classRef name="jas.CP" type="usedBy"/>
+      <classRef name="jas.CPOperand" type="usedBy"/>
+      <classRef name="jas.CatchEntry" type="usedBy"/>
+      <classRef name="jas.Catchtable" type="usedBy"/>
+      <classRef name="jas.ClassCP" type="usedBy"/>
+      <classRef name="jas.CodeAttr" type="usedBy"/>
+      <classRef name="jas.ConstAttr" type="usedBy"/>
+      <classRef name="jas.DoubleCP" type="usedBy"/>
+      <classRef name="jas.ExceptAttr" type="usedBy"/>
+      <classRef name="jas.FieldCP" type="usedBy"/>
+      <classRef name="jas.FloatCP" type="usedBy"/>
+      <classRef name="jas.GenericAttr" type="usedBy"/>
+      <classRef name="jas.IincOperand" type="usedBy"/>
+      <classRef name="jas.Insn" type="usedBy"/>
+      <classRef name="jas.InsnOperand" type="usedBy"/>
+      <classRef name="jas.IntegerCP" type="usedBy"/>
+      <classRef name="jas.IntegerOperand" type="usedBy"/>
+      <classRef name="jas.InterfaceCP" type="usedBy"/>
+      <classRef name="jas.InvokeinterfaceOperand" type="usedBy"/>
+      <classRef name="jas.Label" type="usedBy"/>
+      <classRef name="jas.LabelOperand" type="usedBy"/>
+      <classRef name="jas.LdcOperand" type="usedBy"/>
+      <classRef name="jas.LineTableAttr" type="usedBy"/>
+      <classRef name="jas.LocalVarEntry" type="usedBy"/>
+      <classRef name="jas.LocalVarTableAttr" type="usedBy"/>
+      <classRef name="jas.LongCP" type="usedBy"/>
+      <classRef name="jas.LookupswitchOperand" type="usedBy"/>
+      <classRef name="jas.Method" type="usedBy"/>
+      <classRef name="jas.MethodCP" type="usedBy"/>
+      <classRef name="jas.MultiarrayOperand" type="usedBy"/>
+      <classRef name="jas.NameTypeCP" type="usedBy"/>
+      <classRef name="jas.ShortOperand" type="usedBy"/>
+      <classRef name="jas.SourceAttr" type="usedBy"/>
+      <classRef name="jas.StringCP" type="usedBy"/>
+      <classRef name="jas.TableswitchOperand" type="usedBy"/>
+      <classRef name="jas.UnsignedByteOperand" type="usedBy"/>
+      <classRef name="jas.UnsignedByteWideOperand" type="usedBy"/>
+      <classRef name="jas.Var" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.util.Hashtable" type="usesExternal"/>
+      <classRef name="java.util.Vector" type="usesExternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="jas.LongCP" type="usesInternal"/>
+      <classRef name="jas.DoubleCP" type="usesInternal"/>
+      <classRef name="jas.Var" type="usesInternal"/>
+      <classRef name="jas.Method" type="usesInternal"/>
+      <classRef name="jas.GenericAttr" type="usesInternal"/>
+      <classRef name="jas.AsciiCP" type="usesInternal"/>
+      <classRef name="jas.SourceAttr" type="usesInternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.util.Enumeration" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="jas.ExceptAttr" type="usesInternal"/>
+    </class>
+    <class name="jas.CodeAttr" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="4592" usedBy="24" usesInternal="10" usesExternal="9" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.ByteOperand" type="usedBy"/>
+      <classRef name="jas.CPOperand" type="usedBy"/>
+      <classRef name="jas.CatchEntry" type="usedBy"/>
+      <classRef name="jas.Catchtable" type="usedBy"/>
+      <classRef name="jas.ClassEnv" type="usedBy"/>
+      <classRef name="jas.IincOperand" type="usedBy"/>
+      <classRef name="jas.Insn" type="usedBy"/>
+      <classRef name="jas.InsnOperand" type="usedBy"/>
+      <classRef name="jas.IntegerOperand" type="usedBy"/>
+      <classRef name="jas.InvokeinterfaceOperand" type="usedBy"/>
+      <classRef name="jas.Label" type="usedBy"/>
+      <classRef name="jas.LabelOperand" type="usedBy"/>
+      <classRef name="jas.LdcOperand" type="usedBy"/>
+      <classRef name="jas.LineTableAttr" type="usedBy"/>
+      <classRef name="jas.LocalVarEntry" type="usedBy"/>
+      <classRef name="jas.LocalVarTableAttr" type="usedBy"/>
+      <classRef name="jas.LookupswitchOperand" type="usedBy"/>
+      <classRef name="jas.Method" type="usedBy"/>
+      <classRef name="jas.MultiarrayOperand" type="usedBy"/>
+      <classRef name="jas.ShortOperand" type="usedBy"/>
+      <classRef name="jas.TableswitchOperand" type="usedBy"/>
+      <classRef name="jas.UnsignedByteOperand" type="usedBy"/>
+      <classRef name="jas.UnsignedByteWideOperand" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.util.Vector" type="usesExternal"/>
+      <classRef name="jas.Insn" type="usesInternal"/>
+      <classRef name="jas.GenericAttr" type="usesInternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="jas.Label" type="usesInternal"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java.util.Hashtable" type="usesExternal"/>
+      <classRef name="jas.AsciiCP" type="usesInternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.Catchtable" type="usesInternal"/>
+      <classRef name="jas.LineTableAttr" type="usesInternal"/>
+      <classRef name="jas.LocalVarTableAttr" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.util.Enumeration" type="usesExternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="jas.ConstAttr" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1054" usedBy="2" usesInternal="4" usesExternal="4" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.Var" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="jas.AsciiCP" type="usesInternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="jas.DoubleCP" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1083" usedBy="2" usesInternal="3" usesExternal="4" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.ClassEnv" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="jas.ExceptAttr" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1553" usedBy="3" usesInternal="4" usesExternal="6" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.ClassEnv" type="usedBy"/>
+      <classRef name="jas.Method" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.util.Vector" type="usesExternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.AsciiCP" type="usesInternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.util.Enumeration" type="usesExternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="jas.FieldCP" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1497" usedBy="1" usesInternal="6" usesExternal="4" layer="3" cycle="">
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="jas.ClassCP" type="usesInternal"/>
+      <classRef name="jas.NameTypeCP" type="usesInternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+    </class>
+    <class name="jas.FloatCP" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1077" usedBy="1" usesInternal="3" usesExternal="4" layer="2" cycle="">
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="jas.GenericAttr" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1279" usedBy="2" usesInternal="4" usesExternal="4" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.ClassEnv" type="usedBy"/>
+      <classRef name="jas.CodeAttr" type="usedBy"/>
+      <classRef name="jas.AsciiCP" type="usesInternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+    </class>
+    <class name="jas.IincInsn" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="449" usedBy="1" usesInternal="4" usesExternal="0" layer="3" cycle="">
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="jas.IincOperand" type="usesInternal"/>
+      <classRef name="jas.Insn" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+    </class>
+    <class name="jas.IincOperand" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1272" usedBy="1" usesInternal="4" usesExternal="2" layer="2" cycle="">
+      <classRef name="jas.IincInsn" type="usedBy"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+    </class>
+    <class name="jas.Insn" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="3212" usedBy="15" usesInternal="14" usesExternal="5" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.CatchEntry" type="usedBy"/>
+      <classRef name="jas.CodeAttr" type="usedBy"/>
+      <classRef name="jas.IincInsn" type="usedBy"/>
+      <classRef name="jas.InvokeinterfaceInsn" type="usedBy"/>
+      <classRef name="jas.Label" type="usedBy"/>
+      <classRef name="jas.LabelOperand" type="usedBy"/>
+      <classRef name="jas.LdcOperand" type="usedBy"/>
+      <classRef name="jas.LineTableAttr" type="usedBy"/>
+      <classRef name="jas.LocalVarEntry" type="usedBy"/>
+      <classRef name="jas.LookupswitchInsn" type="usedBy"/>
+      <classRef name="jas.LookupswitchOperand" type="usedBy"/>
+      <classRef name="jas.MultiarrayInsn" type="usedBy"/>
+      <classRef name="jas.TableswitchInsn" type="usedBy"/>
+      <classRef name="jas.TableswitchOperand" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="jas.ByteOperand" type="usesInternal"/>
+      <classRef name="jas.ShortOperand" type="usesInternal"/>
+      <classRef name="jas.UnsignedByteOperand" type="usesInternal"/>
+      <classRef name="jas.UnsignedByteWideOperand" type="usesInternal"/>
+      <classRef name="jas.LabelOperand" type="usesInternal"/>
+      <classRef name="jas.CPOperand" type="usesInternal"/>
+      <classRef name="jas.LdcOperand" type="usesInternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+      <classRef name="jas.Label" type="usesInternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="jas.InsnOperand" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="abstract class" innerClass="false" size="698" usedBy="20" usesInternal="3" usesExternal="3" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.ByteOperand" type="usedBy"/>
+      <classRef name="jas.CPOperand" type="usedBy"/>
+      <classRef name="jas.IincInsn" type="usedBy"/>
+      <classRef name="jas.IincOperand" type="usedBy"/>
+      <classRef name="jas.Insn" type="usedBy"/>
+      <classRef name="jas.IntegerOperand" type="usedBy"/>
+      <classRef name="jas.InvokeinterfaceInsn" type="usedBy"/>
+      <classRef name="jas.InvokeinterfaceOperand" type="usedBy"/>
+      <classRef name="jas.Label" type="usedBy"/>
+      <classRef name="jas.LabelOperand" type="usedBy"/>
+      <classRef name="jas.LdcOperand" type="usedBy"/>
+      <classRef name="jas.LookupswitchInsn" type="usedBy"/>
+      <classRef name="jas.LookupswitchOperand" type="usedBy"/>
+      <classRef name="jas.MultiarrayInsn" type="usedBy"/>
+      <classRef name="jas.MultiarrayOperand" type="usedBy"/>
+      <classRef name="jas.ShortOperand" type="usedBy"/>
+      <classRef name="jas.TableswitchInsn" type="usedBy"/>
+      <classRef name="jas.TableswitchOperand" type="usedBy"/>
+      <classRef name="jas.UnsignedByteOperand" type="usedBy"/>
+      <classRef name="jas.UnsignedByteWideOperand" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+    </class>
+    <class name="jas.IntegerCP" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1076" usedBy="1" usesInternal="3" usesExternal="4" layer="2" cycle="">
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="jas.IntegerOperand" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="888" usedBy="0" usesInternal="3" usesExternal="2" layer="2" cycle="">
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+    </class>
+    <class name="jas.InterfaceCP" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1520" usedBy="1" usesInternal="6" usesExternal="4" layer="3" cycle="">
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="jas.ClassCP" type="usesInternal"/>
+      <classRef name="jas.NameTypeCP" type="usesInternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+    </class>
+    <class name="jas.InvokeinterfaceInsn" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="504" usedBy="1" usesInternal="5" usesExternal="0" layer="3" cycle="">
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="jas.InvokeinterfaceOperand" type="usesInternal"/>
+      <classRef name="jas.Insn" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+    </class>
+    <class name="jas.InvokeinterfaceOperand" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1144" usedBy="1" usesInternal="5" usesExternal="2" layer="2" cycle="">
+      <classRef name="jas.InvokeinterfaceInsn" type="usedBy"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+    </class>
+    <class name="jas.Label" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1780" usedBy="12" usesInternal="6" usesExternal="4" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.CatchEntry" type="usedBy"/>
+      <classRef name="jas.Catchtable" type="usedBy"/>
+      <classRef name="jas.CodeAttr" type="usedBy"/>
+      <classRef name="jas.Insn" type="usedBy"/>
+      <classRef name="jas.LabelOperand" type="usedBy"/>
+      <classRef name="jas.LineTableAttr" type="usedBy"/>
+      <classRef name="jas.LocalVarEntry" type="usedBy"/>
+      <classRef name="jas.LookupswitchInsn" type="usedBy"/>
+      <classRef name="jas.LookupswitchOperand" type="usedBy"/>
+      <classRef name="jas.TableswitchInsn" type="usedBy"/>
+      <classRef name="jas.TableswitchOperand" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="jas.Insn" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+    </class>
+    <class name="jas.LabelOperand" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1273" usedBy="1" usesInternal="6" usesExternal="2" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.Insn" type="usedBy"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+      <classRef name="jas.Label" type="usesInternal"/>
+      <classRef name="jas.Insn" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+    </class>
+    <class name="jas.LdcOperand" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1802" usedBy="1" usesInternal="7" usesExternal="5" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.Insn" type="usedBy"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.Insn" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+    </class>
+    <class name="jas.LineTableAttr" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1971" usedBy="2" usesInternal="7" usesExternal="7" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.CodeAttr" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.util.Vector" type="usesExternal"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="jas.Label" type="usesInternal"/>
+      <classRef name="jas.AsciiCP" type="usesInternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.util.Enumeration" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="jas.Insn" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="jas.LocalVarEntry" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1644" usedBy="2" usesInternal="7" usesExternal="4" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.LocalVarTableAttr" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="jas.AsciiCP" type="usesInternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="jas.Label" type="usesInternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="jas.Insn" type="usesInternal"/>
+    </class>
+    <class name="jas.LocalVarTableAttr" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1801" usedBy="2" usesInternal="6" usesExternal="6" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.CodeAttr" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.util.Vector" type="usesExternal"/>
+      <classRef name="jas.LocalVarEntry" type="usesInternal"/>
+      <classRef name="jas.AsciiCP" type="usesInternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.util.Enumeration" type="usesExternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="jas.LongCP" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1072" usedBy="2" usesInternal="3" usesExternal="4" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.ClassEnv" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="jas.LookupswitchInsn" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="593" usedBy="1" usesInternal="5" usesExternal="0" layer="3" cycle="">
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="jas.LookupswitchOperand" type="usesInternal"/>
+      <classRef name="jas.Insn" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="jas.Label" type="usesInternal"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+    </class>
+    <class name="jas.LookupswitchOperand" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1662" usedBy="1" usesInternal="6" usesExternal="2" layer="2" cycle="">
+      <classRef name="jas.LookupswitchInsn" type="usedBy"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+      <classRef name="jas.Label" type="usesInternal"/>
+      <classRef name="jas.Insn" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+    </class>
+    <class name="jas.Method" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1375" usedBy="1" usesInternal="5" usesExternal="3" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.ClassEnv" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="jas.ExceptAttr" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+    </class>
+    <class name="jas.MethodCP" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1469" usedBy="1" usesInternal="6" usesExternal="4" layer="3" cycle="">
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="jas.ClassCP" type="usesInternal"/>
+      <classRef name="jas.NameTypeCP" type="usesInternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+    </class>
+    <class name="jas.MultiarrayInsn" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="481" usedBy="1" usesInternal="5" usesExternal="0" layer="3" cycle="">
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="jas.MultiarrayOperand" type="usesInternal"/>
+      <classRef name="jas.Insn" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+    </class>
+    <class name="jas.MultiarrayOperand" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1122" usedBy="1" usesInternal="5" usesExternal="2" layer="2" cycle="">
+      <classRef name="jas.MultiarrayInsn" type="usedBy"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+    </class>
+    <class name="jas.NameTypeCP" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1372" usedBy="3" usesInternal="5" usesExternal="4" layer="2" cycle="">
+      <classRef name="jas.FieldCP" type="usedBy"/>
+      <classRef name="jas.InterfaceCP" type="usedBy"/>
+      <classRef name="jas.MethodCP" type="usedBy"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="jas.AsciiCP" type="usesInternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+    </class>
+    <class name="jas.RuntimeConstants" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="interface" innerClass="false" size="11650" usedBy="22" usesInternal="0" usesExternal="2" layer="0" cycle="">
+      <classRef name="jas.AsciiCP" type="usedBy"/>
+      <classRef name="jas.ClassCP" type="usedBy"/>
+      <classRef name="jas.ClassEnv" type="usedBy"/>
+      <classRef name="jas.DoubleCP" type="usedBy"/>
+      <classRef name="jas.FieldCP" type="usedBy"/>
+      <classRef name="jas.FloatCP" type="usedBy"/>
+      <classRef name="jas.IincInsn" type="usedBy"/>
+      <classRef name="jas.IincOperand" type="usedBy"/>
+      <classRef name="jas.Insn" type="usedBy"/>
+      <classRef name="jas.IntegerCP" type="usedBy"/>
+      <classRef name="jas.InterfaceCP" type="usedBy"/>
+      <classRef name="jas.InvokeinterfaceInsn" type="usedBy"/>
+      <classRef name="jas.Label" type="usedBy"/>
+      <classRef name="jas.LdcOperand" type="usedBy"/>
+      <classRef name="jas.LongCP" type="usedBy"/>
+      <classRef name="jas.LookupswitchInsn" type="usedBy"/>
+      <classRef name="jas.MethodCP" type="usedBy"/>
+      <classRef name="jas.MultiarrayInsn" type="usedBy"/>
+      <classRef name="jas.NameTypeCP" type="usedBy"/>
+      <classRef name="jas.StringCP" type="usedBy"/>
+      <classRef name="jas.TableswitchInsn" type="usedBy"/>
+      <classRef name="jas.UnsignedByteWideOperand" type="usedBy"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+    </class>
+    <class name="jas.ShortOperand" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="890" usedBy="1" usesInternal="3" usesExternal="2" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.Insn" type="usedBy"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+    </class>
+    <class name="jas.SourceAttr" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1138" usedBy="1" usesInternal="4" usesExternal="4" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.ClassEnv" type="usedBy"/>
+      <classRef name="jas.AsciiCP" type="usesInternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+    </class>
+    <class name="jas.StringCP" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1228" usedBy="1" usesInternal="5" usesExternal="4" layer="2" cycle="">
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="jas.AsciiCP" type="usesInternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+    </class>
+    <class name="jas.TableswitchInsn" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="595" usedBy="1" usesInternal="5" usesExternal="0" layer="3" cycle="">
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="jas.TableswitchOperand" type="usesInternal"/>
+      <classRef name="jas.Insn" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="jas.Label" type="usesInternal"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+    </class>
+    <class name="jas.TableswitchOperand" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1697" usedBy="1" usesInternal="6" usesExternal="2" layer="2" cycle="">
+      <classRef name="jas.TableswitchInsn" type="usedBy"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+      <classRef name="jas.Label" type="usesInternal"/>
+      <classRef name="jas.Insn" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+    </class>
+    <class name="jas.UnsignedByteOperand" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1254" usedBy="1" usesInternal="4" usesExternal="4" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.Insn" type="usedBy"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="jas.UnsignedByteWideOperand" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1156" usedBy="1" usesInternal="4" usesExternal="2" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.Insn" type="usedBy"/>
+      <classRef name="jas.InsnOperand" type="usesInternal"/>
+      <classRef name="jas.RuntimeConstants" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+    </class>
+    <class name="jas.Var" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1183" usedBy="2" usesInternal="4" usesExternal="3" layer="1" cycle="jas.CodeAttr et al.">
+      <classRef name="jas.ClassEnv" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jas.ConstAttr" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+    </class>
+    <class name="jas.jasError" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="391" usedBy="34" usesInternal="0" usesExternal="2" layer="0" cycle="">
+      <classRef name="jas.CP" type="usedBy"/>
+      <classRef name="jas.CPOperand" type="usedBy"/>
+      <classRef name="jas.CatchEntry" type="usedBy"/>
+      <classRef name="jas.Catchtable" type="usedBy"/>
+      <classRef name="jas.ClassCP" type="usedBy"/>
+      <classRef name="jas.ClassEnv" type="usedBy"/>
+      <classRef name="jas.CodeAttr" type="usedBy"/>
+      <classRef name="jas.ConstAttr" type="usedBy"/>
+      <classRef name="jas.ExceptAttr" type="usedBy"/>
+      <classRef name="jas.FieldCP" type="usedBy"/>
+      <classRef name="jas.GenericAttr" type="usedBy"/>
+      <classRef name="jas.Insn" type="usedBy"/>
+      <classRef name="jas.InsnOperand" type="usedBy"/>
+      <classRef name="jas.InterfaceCP" type="usedBy"/>
+      <classRef name="jas.InvokeinterfaceOperand" type="usedBy"/>
+      <classRef name="jas.Label" type="usedBy"/>
+      <classRef name="jas.LabelOperand" type="usedBy"/>
+      <classRef name="jas.LdcOperand" type="usedBy"/>
+      <classRef name="jas.LineTableAttr" type="usedBy"/>
+      <classRef name="jas.LocalVarEntry" type="usedBy"/>
+      <classRef name="jas.LocalVarTableAttr" type="usedBy"/>
+      <classRef name="jas.LookupswitchOperand" type="usedBy"/>
+      <classRef name="jas.Method" type="usedBy"/>
+      <classRef name="jas.MethodCP" type="usedBy"/>
+      <classRef name="jas.MultiarrayOperand" type="usedBy"/>
+      <classRef name="jas.NameTypeCP" type="usedBy"/>
+      <classRef name="jas.SourceAttr" type="usedBy"/>
+      <classRef name="jas.StringCP" type="usedBy"/>
+      <classRef name="jas.TableswitchOperand" type="usedBy"/>
+      <classRef name="jas.UnsignedByteOperand" type="usedBy"/>
+      <classRef name="jas.Var" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="jasmin.Main" type="usedBy"/>
+      <classRef name="jasmin.Scanner" type="usedBy"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="jasmin.CUP$actions" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="true" size="8630" usedBy="1" usesInternal="10" usesExternal="8" layer="4" cycle="jasmin.ClassFile et al.">
+      <classRef name="jasmin.parser" type="usedBy"/>
+      <classRef name="java_cup.runtime.symbol" type="usesInternal"/>
+      <classRef name="java_cup.runtime.str_token" type="usesInternal"/>
+      <classRef name="java_cup.runtime.int_token" type="usesInternal"/>
+      <classRef name="jasmin.num_token" type="usesInternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java_cup.runtime.token" type="usesInternal"/>
+      <classRef name="jasmin.var_token" type="usesInternal"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="jasmin.ClassFile" type="usesInternal"/>
+      <classRef name="jasmin.Scanner" type="usesInternal"/>
+      <classRef name="java_cup.runtime.lr_parser" type="usesInternal"/>
+      <classRef name="java.util.Stack" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.util.Hashtable" type="usesExternal"/>
+      <classRef name="jasmin.ScannerUtils" type="usesInternal"/>
+      <classRef name="java.lang.Number" type="usesExternal"/>
+    </class>
+    <class name="jasmin.ClassFile" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="13992" usedBy="3" usesInternal="32" usesExternal="18" layer="4" cycle="jasmin.ClassFile et al.">
+      <classRef name="jasmin.CUP$actions" type="usedBy"/>
+      <classRef name="jasmin.Main" type="usedBy"/>
+      <classRef name="jasmin.parser" type="usedBy"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="jas.ClassCP" type="usesInternal"/>
+      <classRef name="jas.Var" type="usesInternal"/>
+      <classRef name="jas.AsciiCP" type="usesInternal"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="jas.IntegerCP" type="usesInternal"/>
+      <classRef name="java.lang.Float" type="usesExternal"/>
+      <classRef name="jas.FloatCP" type="usesInternal"/>
+      <classRef name="java.lang.Double" type="usesExternal"/>
+      <classRef name="jas.DoubleCP" type="usesInternal"/>
+      <classRef name="java.lang.Long" type="usesExternal"/>
+      <classRef name="jas.LongCP" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="jas.StringCP" type="usesInternal"/>
+      <classRef name="jas.ConstAttr" type="usesInternal"/>
+      <classRef name="java.util.Hashtable" type="usesExternal"/>
+      <classRef name="jas.Insn" type="usesInternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="jas.IincInsn" type="usesInternal"/>
+      <classRef name="jas.InvokeinterfaceInsn" type="usesInternal"/>
+      <classRef name="jas.InterfaceCP" type="usesInternal"/>
+      <classRef name="jas.MultiarrayInsn" type="usesInternal"/>
+      <classRef name="jas.MethodCP" type="usesInternal"/>
+      <classRef name="jas.FieldCP" type="usesInternal"/>
+      <classRef name="java.util.Vector" type="usesExternal"/>
+      <classRef name="jas.Label" type="usesInternal"/>
+      <classRef name="jas.LookupswitchInsn" type="usesInternal"/>
+      <classRef name="jas.TableswitchInsn" type="usesInternal"/>
+      <classRef name="jas.LocalVarTableAttr" type="usesInternal"/>
+      <classRef name="jas.LocalVarEntry" type="usesInternal"/>
+      <classRef name="jas.LineTableAttr" type="usesInternal"/>
+      <classRef name="jas.ExceptAttr" type="usesInternal"/>
+      <classRef name="jas.Catchtable" type="usesInternal"/>
+      <classRef name="jas.CodeAttr" type="usesInternal"/>
+      <classRef name="jas.ClassEnv" type="usesInternal"/>
+      <classRef name="jasmin.Scanner" type="usesInternal"/>
+      <classRef name="jasmin.parser" type="usesInternal"/>
+      <classRef name="java.io.DataOutputStream" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="jas.CP" type="usesInternal"/>
+      <classRef name="jasmin.InsnInfo" type="usesInternal"/>
+      <classRef name="java.lang.Number" type="usesExternal"/>
+      <classRef name="java.util.Enumeration" type="usesExternal"/>
+      <classRef name="java.io.InputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java.io.OutputStream" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="jasmin.ScannerUtils" type="usesInternal"/>
+    </class>
+    <class name="jasmin.InsnInfo" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="6547" usedBy="2" usesInternal="0" usesExternal="3" layer="0" cycle="">
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="jasmin.Scanner" type="usedBy"/>
+      <classRef name="java.util.Hashtable" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="jasmin.Main" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="3796" usedBy="0" usesInternal="3" usesExternal="15" layer="5" cycle="">
+      <classRef name="java.io.File" type="usesExternal"/>
+      <classRef name="jasmin.ClassFile" type="usesInternal"/>
+      <classRef name="java.io.BufferedInputStream" type="usesExternal"/>
+      <classRef name="java.io.FileInputStream" type="usesExternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.io.FileOutputStream" type="usesExternal"/>
+      <classRef name="java.io.FileNotFoundException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.io.InputStream" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="jasmin.ScannerUtils" type="usesInternal"/>
+      <classRef name="java.lang.Class" type="usesExternal"/>
+      <classRef name="java.io.OutputStream" type="usesExternal"/>
+    </class>
+    <class name="jasmin.ReservedWords" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="abstract class" innerClass="false" size="2000" usedBy="1" usesInternal="1" usesExternal="3" layer="2" cycle="">
+      <classRef name="jasmin.Scanner" type="usedBy"/>
+      <classRef name="java_cup.runtime.token" type="usesInternal"/>
+      <classRef name="java.util.Hashtable" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="jasmin.Scanner" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="4361" usedBy="3" usesInternal="8" usesExternal="9" layer="3" cycle="">
+      <classRef name="jasmin.CUP$actions" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="jasmin.parser" type="usedBy"/>
+      <classRef name="java.util.Hashtable" type="usesExternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java_cup.runtime.token" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.NumberFormatException" type="usesExternal"/>
+      <classRef name="jas.jasError" type="usesInternal"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="java_cup.runtime.int_token" type="usesInternal"/>
+      <classRef name="jasmin.num_token" type="usesInternal"/>
+      <classRef name="java_cup.runtime.str_token" type="usesInternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.io.InputStream" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.lang.Number" type="usesExternal"/>
+      <classRef name="jasmin.ReservedWords" type="usesInternal"/>
+      <classRef name="jasmin.ScannerUtils" type="usesInternal"/>
+      <classRef name="jasmin.InsnInfo" type="usesInternal"/>
+    </class>
+    <class name="jasmin.ScannerUtils" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="abstract class" innerClass="false" size="2788" usedBy="4" usesInternal="0" usesExternal="9" layer="0" cycle="">
+      <classRef name="jasmin.CUP$actions" type="usedBy"/>
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="jasmin.Main" type="usedBy"/>
+      <classRef name="jasmin.Scanner" type="usedBy"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="java.lang.Long" type="usesExternal"/>
+      <classRef name="java.lang.Double" type="usesExternal"/>
+      <classRef name="java.lang.Float" type="usesExternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.Number" type="usesExternal"/>
+      <classRef name="java.lang.NumberFormatException" type="usesExternal"/>
+    </class>
+    <class name="jasmin.num_token" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="522" usedBy="2" usesInternal="1" usesExternal="2" layer="2" cycle="">
+      <classRef name="jasmin.CUP$actions" type="usedBy"/>
+      <classRef name="jasmin.Scanner" type="usedBy"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="java_cup.runtime.token" type="usesInternal"/>
+      <classRef name="java.lang.Number" type="usesExternal"/>
+    </class>
+    <class name="jasmin.parser" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="15617" usedBy="1" usesInternal="6" usesExternal="5" layer="4" cycle="jasmin.ClassFile et al.">
+      <classRef name="jasmin.ClassFile" type="usedBy"/>
+      <classRef name="jasmin.CUP$actions" type="usesInternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java_cup.runtime.lr_parser" type="usesInternal"/>
+      <classRef name="jasmin.Scanner" type="usesInternal"/>
+      <classRef name="jasmin.ClassFile" type="usesInternal"/>
+      <classRef name="java.util.Stack" type="usesExternal"/>
+      <classRef name="java_cup.runtime.symbol" type="usesInternal"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java_cup.runtime.token" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+    </class>
+    <class name="jasmin.sym" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1558" usedBy="0" usesInternal="0" usesExternal="1" layer="0" cycle="">
+      <classRef name="java.lang.Object" type="usesExternal"/>
+    </class>
+    <class name="jasmin.var_token" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="684" usedBy="1" usesInternal="1" usesExternal="4" layer="2" cycle="">
+      <classRef name="jasmin.CUP$actions" type="usedBy"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="java_cup.runtime.token" type="usesInternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.Number" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="java_cup.runtime.char_token" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="477" usedBy="0" usesInternal="1" usesExternal="0" layer="2" cycle="">
+      <classRef name="java_cup.runtime.token" type="usesInternal"/>
+    </class>
+    <class name="java_cup.runtime.double_token" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="485" usedBy="0" usesInternal="1" usesExternal="0" layer="2" cycle="">
+      <classRef name="java_cup.runtime.token" type="usesInternal"/>
+    </class>
+    <class name="java_cup.runtime.float_token" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="481" usedBy="0" usesInternal="1" usesExternal="0" layer="2" cycle="">
+      <classRef name="java_cup.runtime.token" type="usesInternal"/>
+    </class>
+    <class name="java_cup.runtime.int_token" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="470" usedBy="2" usesInternal="1" usesExternal="0" layer="2" cycle="">
+      <classRef name="jasmin.CUP$actions" type="usedBy"/>
+      <classRef name="jasmin.Scanner" type="usedBy"/>
+      <classRef name="java_cup.runtime.token" type="usesInternal"/>
+    </class>
+    <class name="java_cup.runtime.long_token" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="478" usedBy="0" usesInternal="1" usesExternal="0" layer="2" cycle="">
+      <classRef name="java_cup.runtime.token" type="usesInternal"/>
+    </class>
+    <class name="java_cup.runtime.lr_parser" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="abstract class" innerClass="false" size="9402" usedBy="2" usesInternal="3" usesExternal="7" layer="2" cycle="">
+      <classRef name="jasmin.CUP$actions" type="usedBy"/>
+      <classRef name="jasmin.parser" type="usedBy"/>
+      <classRef name="java.util.Stack" type="usesExternal"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java_cup.runtime.symbol" type="usesInternal"/>
+      <classRef name="java.lang.StringBuffer" type="usesExternal"/>
+      <classRef name="java_cup.runtime.token" type="usesInternal"/>
+      <classRef name="java_cup.runtime.virtual_parse_stack" type="usesInternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+    </class>
+    <class name="java_cup.runtime.str_token" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="514" usedBy="2" usesInternal="1" usesExternal="1" layer="2" cycle="">
+      <classRef name="jasmin.CUP$actions" type="usedBy"/>
+      <classRef name="jasmin.Scanner" type="usedBy"/>
+      <classRef name="java_cup.runtime.token" type="usesInternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="java_cup.runtime.symbol" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="499" usedBy="5" usesInternal="0" usesExternal="1" layer="0" cycle="">
+      <classRef name="jasmin.CUP$actions" type="usedBy"/>
+      <classRef name="jasmin.parser" type="usedBy"/>
+      <classRef name="java_cup.runtime.lr_parser" type="usedBy"/>
+      <classRef name="java_cup.runtime.token" type="usedBy"/>
+      <classRef name="java_cup.runtime.virtual_parse_stack" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+    </class>
+    <class name="java_cup.runtime.token" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="312" usedBy="13" usesInternal="1" usesExternal="0" layer="1" cycle="">
+      <classRef name="jasmin.CUP$actions" type="usedBy"/>
+      <classRef name="jasmin.ReservedWords" type="usedBy"/>
+      <classRef name="jasmin.Scanner" type="usedBy"/>
+      <classRef name="jasmin.num_token" type="usedBy"/>
+      <classRef name="jasmin.parser" type="usedBy"/>
+      <classRef name="jasmin.var_token" type="usedBy"/>
+      <classRef name="java_cup.runtime.char_token" type="usedBy"/>
+      <classRef name="java_cup.runtime.double_token" type="usedBy"/>
+      <classRef name="java_cup.runtime.float_token" type="usedBy"/>
+      <classRef name="java_cup.runtime.int_token" type="usedBy"/>
+      <classRef name="java_cup.runtime.long_token" type="usedBy"/>
+      <classRef name="java_cup.runtime.lr_parser" type="usedBy"/>
+      <classRef name="java_cup.runtime.str_token" type="usedBy"/>
+      <classRef name="java_cup.runtime.symbol" type="usesInternal"/>
+    </class>
+    <class name="java_cup.runtime.virtual_parse_stack" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar" type="class" innerClass="false" size="1785" usedBy="1" usesInternal="1" usesExternal="5" layer="1" cycle="">
+      <classRef name="java_cup.runtime.lr_parser" type="usedBy"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java.util.Stack" type="usesExternal"/>
+      <classRef name="java_cup.runtime.symbol" type="usesInternal"/>
+      <classRef name="java.lang.Integer" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.String" type="usesExternal"/>
+    </class>
+    <class name="regress" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1" type="class" innerClass="false" size="860" usedBy="0" usesInternal="0" usesExternal="10" layer="0" cycle="">
+      <classRef name="java.lang.Thread" type="usesExternal"/>
+      <classRef name="java.lang.Double" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.lang.Runnable" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java.lang.Number" type="usesExternal"/>
+      <classRef name="java.lang.Error" type="usesExternal"/>
+    </class>
+    <class name="scmregress" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1" type="class" innerClass="false" size="585" usedBy="0" usesInternal="0" usesExternal="10" layer="0" cycle="">
+      <classRef name="java.lang.Thread" type="usesExternal"/>
+      <classRef name="java.lang.Double" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.System" type="usesExternal"/>
+      <classRef name="java.lang.Runnable" type="usesExternal"/>
+      <classRef name="java.io.IOException" type="usesExternal"/>
+      <classRef name="java.io.PrintStream" type="usesExternal"/>
+      <classRef name="java.lang.Exception" type="usesExternal"/>
+      <classRef name="java.lang.Number" type="usesExternal"/>
+      <classRef name="java.lang.Error" type="usesExternal"/>
+    </class>
+  </classes>
+  <packageCycles>
+  </packageCycles>
+  <packages>
+    <package name="(default package)" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1"  size="2" usedBy="0" usesInternal="0" usesExternal="2" layer="0" cycle="">
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="java.io" type="usesExternal"/>
+    </package>
+    <package name="jas" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar"  size="48" usedBy="2" usesInternal="1" usesExternal="3" layer="0" cycle="">
+      <packageRef name="jas" type="usedBy"/>
+      <packageRef name="jasmin" type="usedBy"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="jas" type="usesInternal"/>
+      <packageRef name="java.io" type="usesExternal"/>
+      <packageRef name="java.util" type="usesExternal"/>
+    </package>
+    <package name="jasmin" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar"  size="11" usedBy="1" usesInternal="3" usesExternal="3" layer="1" cycle="">
+      <packageRef name="jasmin" type="usedBy"/>
+      <packageRef name="java_cup.runtime" type="usesInternal"/>
+      <packageRef name="jasmin" type="usesInternal"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="java.util" type="usesExternal"/>
+      <packageRef name="jas" type="usesInternal"/>
+      <packageRef name="java.io" type="usesExternal"/>
+    </package>
+    <package name="java_cup.runtime" sources="C:\Dropbox\GraduationWork\ResearchResults\jasmin-1.1\jasmin.jar"  size="10" usedBy="2" usesInternal="1" usesExternal="3" layer="0" cycle="">
+      <packageRef name="jasmin" type="usedBy"/>
+      <packageRef name="java_cup.runtime" type="usedBy"/>
+      <packageRef name="java_cup.runtime" type="usesInternal"/>
+      <packageRef name="java.util" type="usesExternal"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="java.io" type="usesExternal"/>
+    </package>
+  </packages>
+</classycle>
