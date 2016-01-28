@@ -1,26 +1,5 @@
 
-public class Call {
-Call(){
-System.out.println("Call");
-}
-}
-import java.util.ArrayList;
-public class ClassInfo {
-String className;
-ArrayList<NewM> news = new ArrayList<NewM>();
-ArrayList<ObjectT> objects = new ArrayList<ObjectT>();
-ArrayList<Definition> definitions = new ArrayList<Definition>();
-ArrayList<Call> calls = new ArrayList<Call>();
-public ClassInfo() {
-System.out.println("ClassInfo");
-this.className = "";
-}
-}
-public class ClassNode {
-public ClassNode() {
-System.out.println("ClassNode");
-}
-}
+package clear;
 public class ClearSource {
 public ClearSource() {
 System.out.println("ClearSource");
@@ -34,11 +13,13 @@ private void execute() {
 System.out.println("execute");
 }
 }
-public class Definition {
-public Definition() {
-System.out.println("Definition");
+package graph;
+public class ClassNode {
+public ClassNode() {
+System.out.println("ClassNode");
 }
 }
+package graph;
 public class FourceDirected {
 public FourceDirected() {
 System.out.println("FourceDirected");
@@ -47,6 +28,7 @@ void blance(){
 System.out.println("blance");
 }
 }
+package graph;
 import java.util.ArrayList;
 public class InportFile {
 ArrayList<ClassNode> classNodes = new ArrayList<ClassNode>();
@@ -67,6 +49,37 @@ System.out.println("print");
 springCanvas.print();
 }
 }
+package graph;
+public class SpringCanvas {
+public SpringCanvas() {
+System.out.println("SpringCanvas");
+}
+void print(){
+System.out.println("print");
+}
+;
+}
+package graph;
+import java.util.ArrayList;
+import search.ClassInfo;
+import search.SearchSource;
+public class SpringFrame {
+static ArrayList<ClassInfo> classInfo;
+public SpringFrame() {
+System.out.println("SpringFrame");
+InportFile inportFile = new InportFile();
+inportFile.run();
+inportFile.print();
+}
+public static void marge(SearchSource searchSource) {
+System.out.println("marge");
+classInfo = searchSource.classInfos;
+}
+}
+package main;
+import graph.SpringFrame;
+import search.SearchSource;
+import clear.ClearSource;
 public class main {
 public static void main(String[] args) {
 System.out.println("mainSTART");
@@ -79,19 +92,47 @@ System.out.println("mainEND");
 SpringFrame.marge(searchSource);
 }
 }
+package search;
+public class Call {
+Call(){
+System.out.println("Call");
+}
+}
+package search;
+import java.util.ArrayList;
+public class ClassInfo {
+String className;
+ArrayList<NewM> news = new ArrayList<NewM>();
+ArrayList<ObjectT> objects = new ArrayList<ObjectT>();
+ArrayList<Definition> definitions = new ArrayList<Definition>();
+ArrayList<Call> calls = new ArrayList<Call>();
+public ClassInfo() {
+System.out.println("ClassInfo");
+this.className = "";
+}
+}
+package search;
+public class Definition {
+public Definition() {
+System.out.println("Definition");
+}
+}
+package search;
 public class NewM {
 public NewM() {
 System.out.println("New");
 }
 }
+package search;
 public class ObjectT {
 public ObjectT() {
 System.out.println("Object");
 }
 }
+package search;
 import java.util.ArrayList;
 public class SearchSource {
-ArrayList<ClassInfo> classInfos = new ArrayList<ClassInfo>();
+public ArrayList<ClassInfo> classInfos = new ArrayList<ClassInfo>();
 public SearchSource() {
 System.out.println("SearchSource");
 SearchClass();
@@ -115,28 +156,5 @@ classInfos.get(0).definitions.add(new Definition());
 private void SearchObject() {
 System.out.println("SearchObject");
 classInfos.get(0).objects.add(new ObjectT());
-}
-}
-public class SpringCanvas {
-public SpringCanvas() {
-System.out.println("SpringCanvas");
-}
-void print(){
-System.out.println("print");
-}
-;
-}
-import java.util.ArrayList;
-public class SpringFrame {
-static ArrayList<ClassInfo> classInfo;
-public SpringFrame() {
-System.out.println("SpringFrame");
-InportFile inportFile = new InportFile();
-inportFile.run();
-inportFile.print();
-}
-public static void marge(SearchSource searchSource) {
-System.out.println("marge");
-classInfo = searchSource.classInfos;
 }
 }

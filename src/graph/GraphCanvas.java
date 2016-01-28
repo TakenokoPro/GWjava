@@ -89,7 +89,7 @@ public class GraphCanvas extends Canvas{
 				ClassNode node2 = elements.get(element).classNodes.get(j);
 				if(connect!=null&&connect[i][j]>0){
 					int weight;
-					if(connect[i][j]>100)weight=10;else weight=(int)(connect[i][j]*0.1);
+					if(connect[i][j]>100)weight=10;else weight=(int)(connect[i][j]*3);
 					//System.out.println("["+i+"]["+j+"]"+connect[i][j]);
 					line(node1.x, node1.y, node2.x, node2.y,(float)weight,0xFFCCCC);
 				}
@@ -151,6 +151,7 @@ public class GraphCanvas extends Canvas{
 		connect = new int[a.length][a[0].length];
 		connect = a;
 		for(int i=0;i<connect.length;i++){
+			System.out.print(i+"|||");
 			for(int j=0;j<connect.length;j++)
 				System.out.print("["+connect[i][j]+"]");
 			System.out.print("\n");
